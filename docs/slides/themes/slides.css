@@ -52,8 +52,20 @@ h1 {
 
 .columns {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+    gap: 1rem;
+}
+
+.columns-bl {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+.columns-br {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
 }
 
 .social_icons {
