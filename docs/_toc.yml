@@ -1,13 +1,8 @@
 format: jb-book
-root: abstract
+root: slides
 parts:
-  - caption: Preliminaries
-    chapters:
-    - file: introduction
-  - caption: References
-    chapters: 
-    - file: references
   - caption: Slides
     chapters:
-    - url: https://docs.neurodata.io/talks/example.pdf
-      title: Example
+    - file: slides
+    - url: https://docs.neurodata.io/talks/si.html
+      title: SI
