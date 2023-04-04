@@ -71,9 +71,6 @@ TODO: (5) highlight one example fly result (? maybe central complex) -->
   - scaleable / easy to use
   - neuroscientifically interesting... 
 
---- 
-# Tie into Allen more broadly!!!! 
-
 
 --- 
 
@@ -598,54 +595,6 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 
 
----
-
-![bg center blur:3px opacity:20%](../../images/background.svg)
-
-## References
-
-<!-- <div class="columns">
-<div> -->
-
-<!-- ## Larva brain connectome -->
-
-[Winding, M. & Pedigo, B.D. et al. The connectome of an insect brain. Science (2023).](https://www.science.org/doi/10.1126/science.add9330)
-
-[Pedigo, B. D. et al. Generative network modeling reveals quantitative definitions of bilateral symmetry exhibited by a whole insect brain connectome. eLife (2023).](https://elifesciences.org/articles/83739)
-
-[Pedigo, B. D. et al. Bisected graph matching improves automated pairing of bilaterally homologous neurons from connectomes. Network Neuroscience (2022).](https://direct.mit.edu/netn/article/doi/10.1162/netn_a_00287/113527/Bisected-graph-matching-improves-automated-pairing)
-
-## Code
-
-<div class="columns">
-<div>
-
-<div class="columns">
-<div>
-
-![h:100](../../../../../bilateral/bilateral-connectome/docs/images/graspologic_svg.svg)
-
-</div>
-<div>
-
-[![h:30](https://pepy.tech/badge/graspologic)](https://pepy.tech/project/graspologic)  [![h:30](https://img.shields.io/github/stars/microsoft/graspologic?style=social)](https://github.com/microsoft/graspologic)
-
-</div>
-</div>
-
-[github.com/microsoft/graspologic](https://github.com/microsoft/graspologic)
-
-</div>
-<div>
-
-[github.com/neurodata/maggot_models](github.com/neurodata/maggot_models)
-
-[github.com/neurodata/bilateral-connectome](github.com/neurodata/bilateral-connectome)
-
-[github.com/neurodata/bgm](github.com/neurodata/bgm)
-
-</div>
-</div>
 
 
 
@@ -669,6 +618,67 @@ where $\mathcal{P}$ is the set of permutation matrices
 <!-- 
 
  -->
+
+---
+# Open source tools
+
+<div class="columns">
+<div>
+
+![h:200](../../../../../bilateral/bilateral-connectome/docs/images/graspologic_svg.svg)
+
+
+[![h:40](https://pepy.tech/badge/graspologic)](https://pepy.tech/project/graspologic)  [![h:40](https://img.shields.io/github/stars/microsoft/graspologic?style=social)](https://github.com/microsoft/graspologic)
+
+
+[github.com/microsoft/graspologic](https://github.com/microsoft/graspologic)
+
+</div>
+<div>
+
+## Related publications
+
+[Chung, Pedigo et al. JMLR (2019)](https://jmlr.org/papers/v20/19-490.html)
+
+[Vogelstein et al. Curr. Opin. Neurobio. (2019)](https://www.sciencedirect.com/science/article/abs/pii/S0959438818301430?via%3Dihub)
+
+[Chung et al. Annual Review of Stats and Its Application (2021)](https://www.annualreviews.org/doi/abs/10.1146/annurev-statistics-042720-023234)
+
+
+</div>
+</div>
+
+---
+
+![bg center blur:3px opacity:20%](../../images/background.svg)
+
+## References
+
+<!-- <div class="columns">
+<div> -->
+
+<!-- ## Larva brain connectome -->
+
+[Winding, M. & Pedigo, B.D. et al. The connectome of an insect brain. Science (2023).](https://www.science.org/doi/10.1126/science.add9330)
+
+[Pedigo, B. D. et al. Generative network modeling reveals quantitative definitions of bilateral symmetry exhibited by a whole insect brain connectome. eLife (2023).](https://elifesciences.org/articles/83739)
+
+[Pedigo, B. D. et al. Bisected graph matching improves automated pairing of bilaterally homologous neurons from connectomes. Network Neuroscience (2022).](https://direct.mit.edu/netn/article/doi/10.1162/netn_a_00287/113527/Bisected-graph-matching-improves-automated-pairing)
+
+## Code
+
+<div class="columns">
+<div>
+
+
+[github.com/neurodata/maggot_models](github.com/neurodata/maggot_models)
+
+[github.com/neurodata/bilateral-connectome](github.com/neurodata/bilateral-connectome)
+
+[github.com/neurodata/bgm](github.com/neurodata/bgm)
+
+</div>
+</div>
 
 
 --- 
@@ -757,10 +767,14 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 
 ---
 
+
+![bg center blur:3px opacity:20%](../../images/background.svg)
+
+
 # Questions?
 
 
-#### Slides: 
+<!-- #### Slides:  -->
 <!-- ![h:150](../../images/princeton-slides-qr.png) -->
 
 
@@ -781,10 +795,10 @@ h1 {
 </style> -->
 
 ### Benjamin D. Pedigo
-![icon](../../images/email.png) [bpedigo@jhu.edu](mailto:bpedigo@jhu.edu)
-![icon](../../images/github.png) [@bdpedigo](https://github.com/bdpedigo)
-![icon](../../images/twitter.png) [@bpedigod](https://twitter.com/bpedigod)
-![icon](../../images/web.png) [bdpedigo.github.io](https://bdpedigo.github.io/)
+![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png) [bpedigo@jhu.edu](mailto:bpedigo@jhu.edu)
+![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/github.png) [@bdpedigo](https://github.com/bdpedigo)
+![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png) [@bpedigod](https://twitter.com/bpedigod)
+![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/web.png) [bdpedigo.github.io](https://bdpedigo.github.io/)
 
 
 ---
