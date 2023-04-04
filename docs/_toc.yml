@@ -3,6 +3,5 @@ root: slides
 parts:
   - caption: Slides
     chapters:
-    - file: slides
     - url: https://docs.neurodata.io/talks/si.html
       title: SI
