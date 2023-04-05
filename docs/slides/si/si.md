@@ -61,14 +61,34 @@ Johns Hopkins University - Biomedical Engineering
 <!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
 
 --- 
-# Depends on *contrast*
-- explain how it could help things 
+# Comparative connectomics as a solution
+
+<div class="columns">
+<div>
+
+## Development
+
+![h:300](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dev-example.png)
+
+</div>
+<div>
+
+## Behavior after activation
+
+![h:300](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/behave-example.png)
+
+</div>
+</div>
+
+#### Requires methods of comparing connectivity within and between connectomes
+
+<!-- - explain how it could help things 
 - Give some examples as they fit in to Allen institute work and what I'd want to do? 
 - (reach) try to tie in function... 
 - goals: 
   - statistically valid 
   - scaleable / easy to use
-  - neuroscientifically interesting... 
+  - neuroscientifically interesting...  -->
 
 
 --- 
@@ -122,7 +142,7 @@ Both hemispheres
 
 ---
 
-# High level (mostly anatomical) cell types
+# High-level cell types (mostly based on function) 
 
 ![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-cell-classes.png)
 
@@ -479,35 +499,6 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Pantazis et al. Applied Network Science (2022) -->
 
---- 
-
-![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
-
-# Outline
-
-- ### Larval connectome dataset
-- ### Connectome comparison via network hypothesis testing
-- ### Pairing neurons across connectomes via graph matching
-- ### **Future work**
-
----
-# Future work
-
-- Improve methods for mapping between datasets
-- 
-
----
-# Mapping representations between modalities
-- Give SegCLR example, how well does it generalize
-
----
-# Stereotypy of wiring rules across cortical regions, modalities
-- Naively, an application of some form of network testing
-- In reality, likely issues with differences in samples that need to be accounted for
-
----
-# Mapping between behavior/response and connectivity
-
 ---
 # Open source tools
 
@@ -536,6 +527,45 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 </div>
 </div>
+
+--- 
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
+
+# Outline
+
+- ### Larval connectome dataset
+- ### Connectome comparison via network hypothesis testing
+- ### Pairing neurons across connectomes via graph matching
+- ### **Future work**
+
+---
+# Future work
+
+## Methods, e.g.
+- Improve methods for mapping between datasets
+- Improve methods for evaluating differences between datasets
+
+## Applications, e.g. 
+- How do wiring rules generalize across regions of cortex
+
+---
+# Example: a structure-function relationship in the larva
+
+
+
+<!-- ---
+# Mapping representations between modalities
+- Give SegCLR example, how well does it generalize -->
+
+<!-- ---
+# Stereotypy of wiring rules across cortical regions, modalities
+- Naively, an application of some form of network testing
+- In reality, likely issues with differences in samples that need to be accounted for -->
+
+<!-- ---
+# Mapping between behavior/response and connectivity -->
+
 
 ---
 
