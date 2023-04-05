@@ -6,7 +6,7 @@ paginate: true
 ---
 <!-- _paginate: false -->
 
-![bg center blur:3px opacity:20%](../../images/background.svg)
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 
 <style scoped> 
@@ -74,7 +74,7 @@ TODO: (5) highlight one example fly result (? maybe central complex) -->
 
 --- 
 
-![bg center blur:3px opacity:20%](../../images/background.svg)
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 # Outline
 
@@ -155,9 +155,9 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 
 <!-- Where to stop splitting? -->
 
-![center](../../../../../bilateral/bilateral-connectome/docs/images/bar-dendrogram-wide.svg)
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/bar-dendrogram-wide.svg)
 
-![center w:700](../../../../../bilateral/bilateral-connectome/docs/images/cell-type-labels-legend.png)
+![center w:700](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/cell-type-labels-legend.png)
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
@@ -165,16 +165,16 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 
 <!-- ### Cluster morphology  -->
 
-![bg h:750 center](../../../../../bilateral/bilateral-connectome/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
+![bg h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
 
 
 --- 
 
 # Cluster morphology 
 
-![bg opacity:25% h:750 center](../../../../../bilateral/bilateral-connectome/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
+![bg opacity:25% h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
 
-![h:300 center](../../../../../bilateral/bilateral-connectome/docs/images/intra-cluster-morpho.png)
+![h:300 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/intra-cluster-morpho.png)
 
 ## Discriminability:
 $P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$ 
@@ -215,7 +215,7 @@ $P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$
 </div>
 <div>
 
-![center h:550](../../../../../bilateral/bilateral-connectome/docs/images/dcsbm-swap-arrows.png)
+![center h:550](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/dcsbm-swap-arrows.png)
 
 </div>
 </div>
@@ -245,7 +245,7 @@ h2 {
 
 --- 
 
-![bg center blur:3px opacity:20%](../../images/background.svg)
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 # Outline
 
@@ -347,11 +347,11 @@ _footer: Pedigo et al. eLife (2023) -->
 ---
 # Assumptions
 - Know the direction of synapses, so network is *directed*
-- For simplicity (for now), consider networks to be *unweighted*
-- For simplicity (for now), consider the <span style='color: var(--left)'> left $\rightarrow$ left </span> and <span style='color: var(--right)'> right $\rightarrow$ right </span> (*ipsilateral*) connections
+- Consider networks to be *unweighted*
+- Consider the <span style='color: var(--left)'> left $\rightarrow$ left </span> and <span style='color: var(--right)'> right $\rightarrow$ right </span> (*ipsilateral*) connections
 - Not going to assume any nodes are matched
-
-![center h:250](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/unmatched_vs_matched/unmatched_vs_matched.svg)
+![center h:200](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/unmatched_vs_matched/unmatched_vs_matched.svg)
+- If $F$ is again a stochastic block model, then...
 
 
 ---
@@ -486,7 +486,7 @@ Depends on what you mean...
 
 --- 
 
-![bg center blur:3px opacity:20%](../../images/background.svg)
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 
 # Outline
@@ -578,13 +578,13 @@ where $\mathcal{P}$ is the set of permutation matrices
 <!-- Timing: 31:00 -->
 
 # Performance improvement on the full brain
-![center](../../../../../bilateral/bilateral-connectome/docs/images/matching_accuracy_upset.svg)
+![center](https://raw.githubusercontent.com/neurodata/bgm/main/docs/images/matching_accuracy_upset.svg)
 
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Pantazis et al. Applied Network Science (2022) -->
 
 --- 
 
-![bg center blur:3px opacity:20%](../../../../../bilateral/bilateral-connectome/docs/images/background.svg)
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 # Outline
 
@@ -625,7 +625,7 @@ where $\mathcal{P}$ is the set of permutation matrices
 <div class="columns">
 <div>
 
-![h:200](../../../../../bilateral/bilateral-connectome/docs/images/graspologic_svg.svg)
+![h:200](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/graspologic_svg.svg)
 
 
 [![h:40](https://pepy.tech/badge/graspologic)](https://pepy.tech/project/graspologic)  [![h:40](https://img.shields.io/github/stars/microsoft/graspologic?style=social)](https://github.com/microsoft/graspologic)
@@ -650,7 +650,7 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 ---
 
-![bg center blur:3px opacity:20%](../../images/background.svg)
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 ## References
 
@@ -683,7 +683,7 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 --- 
 
-![bg center blur:3px opacity:20%](../../images/background.svg)
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 
 # Acknowledgements
@@ -768,7 +768,7 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 ---
 
 
-![bg center blur:3px opacity:20%](../../images/background.svg)
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 
 # Questions?
