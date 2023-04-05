@@ -48,7 +48,16 @@ Johns Hopkins University - Biomedical Engineering
 
 # Connectomes: maps of neural wiring
 
-![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-unmarked.png)
+![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-unmarked.png)
+
+<!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
+
+---
+
+# Goal: linking connectivity to other phenotypes
+
+![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-marked.png)
+
 <!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
 
 --- 
