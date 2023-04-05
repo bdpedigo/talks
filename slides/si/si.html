@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Tools for comparative connectomics &#8212; talks</title>
+    <title>Comparative connectomics: methods and applications &#8212; talks</title>
   
   
   
@@ -345,7 +345,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tools for comparative connectomics</h1>
+    <h1>Comparative connectomics: methods and applications</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -355,24 +355,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tools for comparative connectomics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Comparative connectomics: methods and applications</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benjamin-d-pedigo">Benjamin D. Pedigo</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#these-slides-at">These slides at:</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-linking-the-connectome-to-other-properties">Goals: linking the connectome to other properties</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#connectomes-maps-of-neural-wiring">Connectomes: maps of neural wiring</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#depends-on-contrast">Depends on <em>contrast</em></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#larval-connectome-dataset"><strong>Larval connectome dataset</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connectome-comparison-via-network-hypothesis-testing">Connectome comparison via network hypothesis testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pairing-neurons-across-connectomes-via-graph-matching">Pairing neurons across connectomes via graph matching</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future work…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future work</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#larval-drosophila-brain-connectome">Larval <em>Drosophila</em> brain connectome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-larval-brain-connecome">Analyzing the larval brain connecome</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-mostly-anatomical-cell-types">High level (mostly anatomical) cell types</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity-using-recursive-spectral-clustering">Neurons clustered by connectivity using recursive spectral clustering</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-morphology">Cluster morphology</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminability">Discriminability:</a></li>
@@ -425,6 +426,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>Future work</strong></a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Future work</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-representations-between-modalities">Mapping representations between modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stereotypy-of-wiring-rules-across-cortical-regions-modalities">Stereotypy of wiring rules across cortical regions, modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-between-behavior-response-and-connectivity">Mapping between behavior/response and connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-tools">Open source tools</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-publications">Related publications</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -437,9 +442,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">These slides at:</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extras">Extras</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-a-larval-drosophila-brain-connectome">Mapping a larval <em>Drosophila</em> brain connectome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#larval-drosophila-allows-access-to-many-properties-e-g">Larval <em>Drosophila</em> allows access to many properties, e.g.,</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genetics">Genetics</a></li>
@@ -450,7 +457,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erdos-renyi-model">Erdos-Renyi model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-a-difference-in-density">Detect a difference in density</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-connection-test">Group connection test</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-mostly-anatomical-cell-types">High level (mostly anatomical) cell types</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">High level (mostly anatomical) cell types</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-the-network">Sorting the network</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-high-level-feedforward-feedback">Quantifying high-level “feedforward/feedback”</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-enables-splitting-axons-dendrites">Morphology enables splitting axons/dendrites</a></li>
@@ -473,7 +480,6 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hypothetical-difference-we-want-to-detect">A hypothetical difference we want to detect…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pairs-facilitate-more-powerful-tests">Pairs facilitate more powerful tests</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 
             </nav>
@@ -493,8 +499,8 @@ p {
     font-size: 24px;
 }
 </style>
-<section class="tex2jax_ignore mathjax_ignore" id="tools-for-comparative-connectomics">
-<h1>Tools for comparative connectomics<a class="headerlink" href="#tools-for-comparative-connectomics" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="comparative-connectomics-methods-and-applications">
+<h1>Comparative connectomics: methods and applications<a class="headerlink" href="#comparative-connectomics-methods-and-applications" title="Permalink to this heading">#</a></h1>
 <br>
 <div class="columns">
 <div>
@@ -511,24 +517,18 @@ Johns Hopkins University - Biomedical Engineering</p>
 <div>
 <section id="these-slides-at">
 <h3>These slides at:<a class="headerlink" href="#these-slides-at" title="Permalink to this heading">#</a></h3>
-<p><img alt="" src="images/princeton-slides-qr.png" /></p>
-<!-- ### [tinyurl.com/princeton-bilarva](https://tinyurl.com/princeton-bilarva) -->
+<p><a class="reference external" href="https://bdpedigo.github.io/talks/si.html">bdpedigo.github.io/talks/si.html</a></p>
+<!-- ![](./../../images/princeton-slides-qr.png) -->
 </div>
 </div>
-<!-- ---
-
-# Connectomics is useful...
-
-TODO: (5) plot of "connectome prevalence over time"
-
-TODO: (5) highlight one example fly result (? maybe central complex) -->
 </section>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="goals-linking-the-connectome-to-other-properties">
-<h1>Goals: linking the connectome to other properties<a class="headerlink" href="#goals-linking-the-connectome-to-other-properties" title="Permalink to this heading">#</a></h1>
-<p><img alt="center h:480" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="connectomes-maps-of-neural-wiring">
+<h1>Connectomes: maps of neural wiring<a class="headerlink" href="#connectomes-maps-of-neural-wiring" title="Permalink to this heading">#</a></h1>
+<p><img alt="center" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-unmarked.png" /></p>
+<!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="depends-on-contrast">
@@ -566,7 +566,7 @@ TODO: (5) highlight one example fly result (? maybe central complex) -->
 <h2>Pairing neurons across connectomes via graph matching<a class="headerlink" href="#pairing-neurons-across-connectomes-via-graph-matching" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="future-work">
-<h2>Future work…<a class="headerlink" href="#future-work" title="Permalink to this heading">#</a></h2>
+<h2>Future work<a class="headerlink" href="#future-work" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 <hr class="docutils" />
@@ -591,20 +591,6 @@ Both hemispheres</p>
 </div>
 </div>
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
-<!-- ---
-# What do we do with these datasets once we have them?
-
-- Characterizing network structure, e.g.,
-  - How could signals travel on this network, from sensory inputs to motor outputs?
-  - What cells have similar patterns of connectivity?
-- Hypothesis testing
-  - Connectome (network) as an object that we want to "do inference" on  -->
-<!-- --- 
-# Connectome $\leftrightarrow$ {development, genetics}
-
-> ... we selectively altered the location or activity of [...] neurons and generated new EM volumes of the manipulated samples **to investigate the effects on connectivity**.
-
-*Emphasis added* -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="analyzing-the-larval-brain-connecome">
@@ -614,12 +600,13 @@ Both hemispheres</p>
 <li><p>Examined routes of hemisphere integration, sensory integration, and feedback</p></li>
 <li><p><strong>Grouped neurons into “connectotypes”</strong></p></li>
 </ul>
-<!-- ---
-# Spectral clustering proceedure
-- mention embedding
-- cluster - when to stop
-
-_footer: Winding, Pedigo et al. bioRxiv (2022) -->
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="high-level-mostly-anatomical-cell-types">
+<h1>High level (mostly anatomical) cell types<a class="headerlink" href="#high-level-mostly-anatomical-cell-types" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-cell-classes.png" /></p>
+<p><img alt="h:200 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/io.png" /></p>
+<!-- _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="neurons-clustered-by-connectivity-using-recursive-spectral-clustering">
@@ -748,51 +735,6 @@ vs.
 </div>
 </div>
 </div>
-<!-- <div class='center'>
-
-### Many ways to write what "symmetry" means! (different $F$, different statistics)
-
-</div> -->
-<!-- ---
-
-# Are these populations different?
-
-<div class="columns">
-<div>
-
-![center w:400](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/two_sample_testing/2_sample_real_line.svg)
-
-</div>
-<div>
-
-- Known as two-sample testing
-- $\color{#66c2a5} Y^{(1)} \sim F^{(1)}$, $\color{#fc8d62} Y^{(2)} \sim F^{(2)}$
-- $H_0: \color{#66c2a5} F^{(1)} \color{black} = \color{#fc8d62} F^{(2)}$  
-  $H_A: \color{#66c2a5} F^{(1)} \color{black} \neq \color{#fc8d62} F^{(2)}$
-
-</div>
-</div>
-
---- 
-# Are these _networks_ different?
-
-<div class="columns">
-<div>
-
-![center w:1000](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/show_data/2_network_layout.png)
-
-</div>
-<div>
-
-- Want a two-network-sample test!
-- <span style='color: var(--left)'> $A^{(L)} \sim F^{(L)}$</span>, <span style='color: var(--right)'> $A^{(R)} \sim F^{(R)}$ </span>
-- $H_0: \color{#66c2a5} F^{(L)} \color{black} = \color{#fc8d62}F^{(R)}$  
-  $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
-
-</div>
-</div>
-
-_footer: Pedigo et al. eLife (2023) -->
 </section>
 </section>
 <hr class="docutils" />
@@ -891,7 +833,6 @@ p {
 <blockquote>
 <div><p>“This brain is bilaterally symmetric.”</p>
 </div></blockquote>
-<!-- >   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -Neuroscientists -->
 <p>Depends on what you mean…</p>
 <div class="columns">
 <div>
@@ -973,9 +914,8 @@ p {
 <section id="id9">
 <h2>Ongoing extensions/applications<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 </section>
-<hr class="docutils" />
-<!-- Timing: 23:00  -->
 </section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="bilaterally-homologous-neuron-pairs">
 <h1>Bilaterally homologous neuron pairs<a class="headerlink" href="#bilaterally-homologous-neuron-pairs" title="Permalink to this heading">#</a></h1>
 <p>We believe a matching exists!</p>
@@ -994,33 +934,6 @@ p {
 <p>where <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> is the set of permutation matrices</p>
 </div>
 </div>
-<!-- ---
-# How do we measure network overlap?
-
-
-<style scoped>
-h2 {
-    justify-content: center;
-    text-align: center;
-}
-</style>
-
-<div class="columns">
-<div>
-
-## $\min_{P \in \mathcal{P}} \underbrace{\|A_1 - \overbrace{PA_2P^T}^{\text{reordered } A_2}\|_F^2}_{\text{distance between adj. mats.}}$
-
-where $\mathcal{P}$ is the set of permutation matrices
-
-<!-- TODO: (3) make a figure diagraming a permutation/matching of nodes -->
-<!-- </div>
-<div>
-
-- Measures the number of edge disagreements for unweighted networks,
-- Norm of edge disagreements for weighted networks
-
-</div>
-</div>-->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="from-graph-matching-to-bisected-graph-matching">
@@ -1033,9 +946,8 @@ where $\mathcal{P}$ is the set of permutation matrices
 <h1>Contralateral connections aid matching!<a class="headerlink" href="#contralateral-connections-aid-matching" title="Permalink to this heading">#</a></h1>
 <p><img alt="center h:550" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/match_accuracy_comparison.svg" /></p>
 <!-- _footer: Pedigo et al. Network Neuroscience (2022) -->
-<hr class="docutils" />
-<!-- Timing: 31:00 -->
 </section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="performance-improvement-on-the-full-brain">
 <h1>Performance improvement on the full brain<a class="headerlink" href="#performance-improvement-on-the-full-brain" title="Permalink to this heading">#</a></h1>
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bgm/main/docs/images/matching_accuracy_upset.svg" /></p>
@@ -1063,20 +975,33 @@ where $\mathcal{P}$ is the set of permutation matrices
 <section id="id14">
 <h2><strong>Future work</strong><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 </section>
-<!-- </div>
-<div> -->
-<!-- ## Model-based testing
-
-[![h:30](https://jupyterbook.org/badge.svg)](http://docs.neurodata.io/bilateral-connectome/) -->
-<!-- ## Improved matching
-[![h:30](https://jupyterbook.org/badge.svg)](http://docs.neurodata.io/bilateral-connectome/)
-
-(Or for WIP final implementation see
-[github.com/microsoft/graspologic/pull/960](github.com/microsoft/graspologic/pull/960)) -->
-<!-- ## graspologic -->
-<!-- 
-
- -->
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id15">
+<h1>Future work<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Improve methods for mapping between datasets</p></li>
+<li></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="mapping-representations-between-modalities">
+<h1>Mapping representations between modalities<a class="headerlink" href="#mapping-representations-between-modalities" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Give SegCLR example, how well does it generalize</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="stereotypy-of-wiring-rules-across-cortical-regions-modalities">
+<h1>Stereotypy of wiring rules across cortical regions, modalities<a class="headerlink" href="#stereotypy-of-wiring-rules-across-cortical-regions-modalities" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Naively, an application of some form of network testing</p></li>
+<li><p>In reality, likely issues with differences in samples that need to be accounted for</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="mapping-between-behavior-response-and-connectivity">
+<h1>Mapping between behavior/response and connectivity<a class="headerlink" href="#mapping-between-behavior-response-and-connectivity" title="Permalink to this heading">#</a></h1>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="open-source-tools">
@@ -1100,9 +1025,6 @@ where $\mathcal{P}$ is the set of permutation matrices
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
-<!-- <div class="columns">
-<div> -->
-<!-- ## Larva brain connectome -->
 <p><a class="reference external" href="https://www.science.org/doi/10.1126/science.add9330">Winding, M. &amp; Pedigo, B.D. et al. The connectome of an insect brain. Science (2023).</a></p>
 <p><a class="reference external" href="https://elifesciences.org/articles/83739">Pedigo, B. D. et al. Generative network modeling reveals quantitative definitions of bilateral symmetry exhibited by a whole insect brain connectome. eLife (2023).</a></p>
 <p><a class="reference external" href="https://direct.mit.edu/netn/article/doi/10.1162/netn_a_00287/113527/Bisected-graph-matching-improves-automated-pairing">Pedigo, B. D. et al. Bisected graph matching improves automated pairing of bilaterally homologous neurons from connectomes. Network Neuroscience (2022).</a></p>
@@ -1176,31 +1098,27 @@ Figures from Scidraw + Noun Project (Alexander Bates, Xuan Ma, Gil Costa, Vivek 
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="questions">
 <h1>Questions?<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h1>
-<!-- #### Slides:  -->
-<!-- ![h:150](../../images/princeton-slides-qr.png) -->
-<!-- <span> </span> -->
-<!-- <span> </span> -->
-<!-- <span> </span> -->
-<!-- <span> </span> -->
-<!-- 
-<style scoped>
-section {
-    justify-content: center;
-    text-align: center;
-}
-h1 {
-  justify-content: left;
-  text-align: left;
-}
-</style> -->
-<section id="id15">
-<h2>Benjamin D. Pedigo<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<div class="columns">
+<div>
+<section id="id16">
+<h2>Benjamin D. Pedigo<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
 <p><img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png" /> <a class="reference external" href="mailto:bpedigo&#37;&#52;&#48;jhu&#46;edu">bpedigo<span>&#64;</span>jhu<span>&#46;</span>edu</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/github.png" /> <a class="reference external" href="https://github.com/bdpedigo">&#64;bdpedigo</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png" /> <a class="reference external" href="https://twitter.com/bpedigod">&#64;bpedigod</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/web.png" /> <a class="reference external" href="https://bdpedigo.github.io/">bdpedigo.github.io</a></p>
-<hr class="docutils" />
+</div>
+<div>
 </section>
+<section id="id17">
+<h2>These slides at:<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://bdpedigo.github.io/talks/si.html">bdpedigo.github.io/talks/si.html</a></p>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="extras">
+<h1>Extras<a class="headerlink" href="#extras" title="Permalink to this heading">#</a></h1>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="mapping-a-larval-drosophila-brain-connectome">
@@ -1254,6 +1172,88 @@ p {
 <p>Almeida-Carvalho et al. J. Experimental Bio. (2017)</p>
 </div>
 </div>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_null_cdf.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/relative_power.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_power_matrix.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/null_distributions.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center h:500" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_sim_composite.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/single_subgraph_power/power_heatmap_contours.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_density.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_methods.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center h:600" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/kc_minus/kc_minus_composite.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/sbm_pvalues.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/n_possible_by_block.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/empirical_power_by_block.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/matched_vs_unmatched_sims/er_power_comparison.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center h:500" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/thresholding_methods.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_proportion_histogram.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_threshold_pvalues_legend.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues_legend.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/weight_notions.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_weight_histogram.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_uncorrected.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_methods_explain.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_simple_methods.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/fisher_sbm_pvalues.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/significant_p_comparison.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_scatter.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_composite.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/group_counts.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/adjusted_methods_explain.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/sbm_pvalues.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/adjusted_sbm_composite.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/sbm_pvalues_unlabeled.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/resampled_pvalues_distributions.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/resampled_pvalues_distribution.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/edge_removal_methods.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/two_sample_testing/2_sample_real_line_wide.svg" /></p>
+<hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/two_sample_testing/2_sample_real_line.svg" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -1295,8 +1295,8 @@ p {
 <p>skip</p>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="high-level-mostly-anatomical-cell-types">
-<h1>High level (mostly anatomical) cell types<a class="headerlink" href="#high-level-mostly-anatomical-cell-types" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id18">
+<h1>High level (mostly anatomical) cell types<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-cell-classes.png" /></p>
 <p><img alt="h:200 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/io.png" /></p>
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
@@ -1585,42 +1585,6 @@ p {
 <section class="tex2jax_ignore mathjax_ignore" id="pairs-facilitate-more-powerful-tests">
 <h1>Pairs facilitate more powerful tests<a class="headerlink" href="#pairs-facilitate-more-powerful-tests" title="Permalink to this heading">#</a></h1>
 <p><img alt="center" src="../results/figs/matched_vs_unmatched_sims_pn_lhn/er_power_comparison.svg" /></p>
-<!-- ---
-# Ensuring robustness to different alternatives
-
-![h:400 center](./../../../results/figs/revamp_sbm_methods_sim/tippett_power_matrix.svg) -->
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
-<!-- 41 min -->
-<ul class="simple">
-<li><p>Characterized “feedforwardness” of this connectome</p></li>
-<li><p>Estimated cell types by connectivity</p></li>
-</ul>
-<div class="columns-br">
-<div>
-<p><img alt="" src="../results/figs/draw_brain_comparisons/brain_approx_equals.png" /></p>
-</div>
-<div>
-<ul class="simple">
-<li><p>Model-based network comparison enables testing (and refining) hypotheses about connectomes</p></li>
-</ul>
-</div>
-</div>
-<div class="columns-br">
-<div>
-<p><img alt="" src="../results/figs/draw_brain_comparisons/brain_matching.png" /></p>
-</div>
-<div>
-<ul class="simple">
-<li><p>Graph matching can pair neurons across datasets</p></li>
-</ul>
-</div>
-</div>
-<p><strong>Aim to apply these (and other) tools to:</strong>
-<strong>- Inform the design of future comparative experiments,</strong>
-<strong>- Make inferences from connectome comparisons!</strong></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1672,24 +1636,25 @@ p {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tools for comparative connectomics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Comparative connectomics: methods and applications</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benjamin-d-pedigo">Benjamin D. Pedigo</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#these-slides-at">These slides at:</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-linking-the-connectome-to-other-properties">Goals: linking the connectome to other properties</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#connectomes-maps-of-neural-wiring">Connectomes: maps of neural wiring</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#depends-on-contrast">Depends on <em>contrast</em></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#larval-connectome-dataset"><strong>Larval connectome dataset</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connectome-comparison-via-network-hypothesis-testing">Connectome comparison via network hypothesis testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pairing-neurons-across-connectomes-via-graph-matching">Pairing neurons across connectomes via graph matching</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future work…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future work</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#larval-drosophila-brain-connectome">Larval <em>Drosophila</em> brain connectome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-larval-brain-connecome">Analyzing the larval brain connecome</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-mostly-anatomical-cell-types">High level (mostly anatomical) cell types</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity-using-recursive-spectral-clustering">Neurons clustered by connectivity using recursive spectral clustering</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-morphology">Cluster morphology</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminability">Discriminability:</a></li>
@@ -1742,6 +1707,10 @@ p {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>Future work</strong></a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Future work</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-representations-between-modalities">Mapping representations between modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stereotypy-of-wiring-rules-across-cortical-regions-modalities">Stereotypy of wiring rules across cortical regions, modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-between-behavior-response-and-connectivity">Mapping between behavior/response and connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-tools">Open source tools</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-publications">Related publications</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -1754,9 +1723,11 @@ p {
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">These slides at:</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extras">Extras</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-a-larval-drosophila-brain-connectome">Mapping a larval <em>Drosophila</em> brain connectome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#larval-drosophila-allows-access-to-many-properties-e-g">Larval <em>Drosophila</em> allows access to many properties, e.g.,</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genetics">Genetics</a></li>
@@ -1767,7 +1738,7 @@ p {
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erdos-renyi-model">Erdos-Renyi model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-a-difference-in-density">Detect a difference in density</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-connection-test">Group connection test</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-mostly-anatomical-cell-types">High level (mostly anatomical) cell types</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">High level (mostly anatomical) cell types</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-the-network">Sorting the network</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-high-level-feedforward-feedback">Quantifying high-level “feedforward/feedback”</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-enables-splitting-axons-dendrites">Morphology enables splitting axons/dendrites</a></li>
@@ -1790,7 +1761,6 @@ p {
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hypothetical-difference-we-want-to-detect">A hypothetical difference we want to detect…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pairs-facilitate-more-powerful-tests">Pairs facilitate more powerful tests</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 
   </nav></div>

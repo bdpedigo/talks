@@ -15,7 +15,7 @@ p {
 }
 </style>
 
-# Tools for comparative connectomics
+# Comparative connectomics: methods and applications
 
 <br>
 
@@ -38,28 +38,18 @@ Johns Hopkins University - Biomedical Engineering
 
 ### These slides at: 
 
-![](./../../images/princeton-slides-qr.png)
-
-<!-- ### [tinyurl.com/princeton-bilarva](https://tinyurl.com/princeton-bilarva) -->
+[bdpedigo.github.io/talks/si.html](https://bdpedigo.github.io/talks/si.html)
+<!-- ![](./../../images/princeton-slides-qr.png) -->
 
 </div>
 </div>
-
-<!-- ---
-
-# Connectomics is useful...
-
-TODO: (5) plot of "connectome prevalence over time"
-
-TODO: (5) highlight one example fly result (? maybe central complex) -->
 
 ---
 
-# Goals: linking the connectome to other properties
+# Connectomes: maps of neural wiring
 
-![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png)
-
-
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-unmarked.png)
+<!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
 
 --- 
 # Depends on *contrast*
@@ -81,9 +71,7 @@ TODO: (5) highlight one example fly result (? maybe central complex) -->
 - ### **Larval connectome dataset**
 - ### Connectome comparison via network hypothesis testing
 - ### Pairing neurons across connectomes via graph matching
-- ### Future work...
-
-
+- ### Future work
 
 ---
 
@@ -116,38 +104,23 @@ Both hemispheres
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
-
-<!-- ---
-# What do we do with these datasets once we have them?
-
-- Characterizing network structure, e.g.,
-  - How could signals travel on this network, from sensory inputs to motor outputs?
-  - What cells have similar patterns of connectivity?
-- Hypothesis testing
-  - Connectome (network) as an object that we want to "do inference" on  -->
-
-
-
-<!-- --- 
-# Connectome $\leftrightarrow$ {development, genetics}
-
-> ... we selectively altered the location or activity of [...] neurons and generated new EM volumes of the manipulated samples **to investigate the effects on connectivity**.
-
-*Emphasis added* -->
-
 ---
+
 # Analyzing the larval brain connecome
 - Characterized flow of information (i.e. sorting neurons from sensory to descending)
 - Examined routes of hemisphere integration, sensory integration, and feedback
 - **Grouped neurons into "connectotypes"**
 
+---
 
-<!-- ---
-# Spectral clustering proceedure
-- mention embedding
-- cluster - when to stop
+# High level (mostly anatomical) cell types
 
-_footer: Winding, Pedigo et al. bioRxiv (2022) -->
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-cell-classes.png)
+
+![h:200 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/io.png)
+
+<!-- _footer: Winding, Pedigo et al. bioRxiv (2022) -->
+
 
 ---
 
@@ -296,54 +269,6 @@ $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
 </div>
 </div>
 
-<!-- <div class='center'>
-
-### Many ways to write what "symmetry" means! (different $F$, different statistics)
-
-</div> -->
-
-
-<!-- ---
-
-# Are these populations different?
-
-<div class="columns">
-<div>
-
-![center w:400](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/two_sample_testing/2_sample_real_line.svg)
-
-</div>
-<div>
-
-- Known as two-sample testing
-- $\color{#66c2a5} Y^{(1)} \sim F^{(1)}$, $\color{#fc8d62} Y^{(2)} \sim F^{(2)}$
-- $H_0: \color{#66c2a5} F^{(1)} \color{black} = \color{#fc8d62} F^{(2)}$  
-  $H_A: \color{#66c2a5} F^{(1)} \color{black} \neq \color{#fc8d62} F^{(2)}$
-
-</div>
-</div>
-
---- 
-# Are these _networks_ different?
-
-<div class="columns">
-<div>
-
-![center w:1000](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/show_data/2_network_layout.png)
-
-</div>
-<div>
-
-- Want a two-network-sample test!
-- <span style='color: var(--left)'> $A^{(L)} \sim F^{(L)}$</span>, <span style='color: var(--right)'> $A^{(R)} \sim F^{(R)}$ </span>
-- $H_0: \color{#66c2a5} F^{(L)} \color{black} = \color{#fc8d62}F^{(R)}$  
-  $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
-
-</div>
-</div>
-
-_footer: Pedigo et al. eLife (2023) -->
-
 ---
 # Assumptions
 - Know the direction of synapses, so network is *directed*
@@ -454,7 +379,6 @@ Overall p-value: $<10^{-2}$
 # To sum up...
 
 > "This brain is bilaterally symmetric."
-<!-- >   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -Neuroscientists -->
 
 Depends on what you mean...
 
@@ -497,8 +421,6 @@ Depends on what you mean...
 - ### Ongoing extensions/applications
 ---
 
-<!-- Timing: 23:00  -->
-
 # Bilaterally homologous neuron pairs 
 
 We believe a matching exists!
@@ -526,39 +448,6 @@ where $\mathcal{P}$ is the set of permutation matrices
 </div>
 
 
-
-<!-- ---
-# How do we measure network overlap?
-
-
-<style scoped>
-h2 {
-    justify-content: center;
-    text-align: center;
-}
-</style>
-
-<div class="columns">
-<div>
-
-## $\min_{P \in \mathcal{P}} \underbrace{\|A_1 - \overbrace{PA_2P^T}^{\text{reordered } A_2}\|_F^2}_{\text{distance between adj. mats.}}$
-
-where $\mathcal{P}$ is the set of permutation matrices
-
-<!-- TODO: (3) make a figure diagraming a permutation/matching of nodes -->
-
-<!-- </div>
-<div>
-
-- Measures the number of edge disagreements for unweighted networks,
-- Norm of edge disagreements for weighted networks
-
-</div>
-</div>-->
-
-
-
-
 ---
 # From graph matching to bisected graph matching
 
@@ -575,7 +464,6 @@ where $\mathcal{P}$ is the set of permutation matrices
 <!-- _footer: Pedigo et al. Network Neuroscience (2022) -->
 
 ---
-<!-- Timing: 31:00 -->
 
 # Performance improvement on the full brain
 ![center](https://raw.githubusercontent.com/neurodata/bgm/main/docs/images/matching_accuracy_upset.svg)
@@ -593,31 +481,23 @@ where $\mathcal{P}$ is the set of permutation matrices
 - ### Pairing neurons across connectomes via graph matching
 - ### **Future work**
 
+---
+# Future work
 
+- Improve methods for mapping between datasets
+- 
 
+---
+# Mapping representations between modalities
+- Give SegCLR example, how well does it generalize
 
+---
+# Stereotypy of wiring rules across cortical regions, modalities
+- Naively, an application of some form of network testing
+- In reality, likely issues with differences in samples that need to be accounted for
 
-
-
-
-<!-- </div>
-<div> -->
-
-<!-- ## Model-based testing
-
-[![h:30](https://jupyterbook.org/badge.svg)](http://docs.neurodata.io/bilateral-connectome/) -->
-
-
-<!-- ## Improved matching
-[![h:30](https://jupyterbook.org/badge.svg)](http://docs.neurodata.io/bilateral-connectome/)
-
-(Or for WIP final implementation see
-[github.com/microsoft/graspologic/pull/960](github.com/microsoft/graspologic/pull/960)) -->
-
-<!-- ## graspologic -->
-<!-- 
-
- -->
+---
+# Mapping between behavior/response and connectivity
 
 ---
 # Open source tools
@@ -653,11 +533,6 @@ where $\mathcal{P}$ is the set of permutation matrices
 ![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 ## References
-
-<!-- <div class="columns">
-<div> -->
-
-<!-- ## Larva brain connectome -->
 
 [Winding, M. & Pedigo, B.D. et al. The connectome of an insect brain. Science (2023).](https://www.science.org/doi/10.1126/science.add9330)
 
@@ -773,26 +648,8 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 
 # Questions?
 
-
-<!-- #### Slides:  -->
-<!-- ![h:150](../../images/princeton-slides-qr.png) -->
-
-
-<!-- <span> </span> -->
-<!-- <span> </span> -->
-<!-- <span> </span> -->
-<!-- <span> </span> -->
-<!-- 
-<style scoped>
-section {
-    justify-content: center;
-    text-align: center;
-}
-h1 {
-  justify-content: left;
-  text-align: left;
-}
-</style> -->
+<div class="columns">
+<div>
 
 ### Benjamin D. Pedigo
 ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png) [bpedigo@jhu.edu](mailto:bpedigo@jhu.edu)
@@ -800,8 +657,19 @@ h1 {
 ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png) [@bpedigod](https://twitter.com/bpedigod)
 ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/web.png) [bdpedigo.github.io](https://bdpedigo.github.io/)
 
+</div>
+<div>
+
+### These slides at:
+[bdpedigo.github.io/talks/si.html](https://bdpedigo.github.io/talks/si.html)
+
+</div>
+</div>
+
 
 ---
+
+# Extras
 
 ---
 
@@ -880,6 +748,180 @@ Almeida-Carvalho et al. J. Experimental Bio. (2017)
 
 </div>
 </div>
+
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_null_cdf.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/relative_power.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_power_matrix.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/null_distributions.svg)
+
+---
+
+![center h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_sim_composite.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/single_subgraph_power/power_heatmap_contours.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_density.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_methods.svg)
+
+
+---
+
+![center h:600](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/kc_minus/kc_minus_composite.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/sbm_pvalues.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/n_possible_by_block.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/empirical_power_by_block.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/matched_vs_unmatched_sims/er_power_comparison.svg)
+
+---
+
+![center h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/thresholding_methods.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_proportion_histogram.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_threshold_pvalues_legend.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues_legend.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/weight_notions.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_weight_histogram.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_uncorrected.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_methods_explain.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_simple_methods.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/fisher_sbm_pvalues.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/significant_p_comparison.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_scatter.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_composite.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/group_counts.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/adjusted_methods_explain.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/sbm_pvalues.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/adjusted_sbm_composite.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/sbm_pvalues_unlabeled.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/resampled_pvalues_distributions.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/resampled_pvalues_distribution.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/edge_removal_methods.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/two_sample_testing/2_sample_real_line_wide.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/two_sample_testing/2_sample_real_line.svg)
+
+
 
 
 ---
@@ -1301,47 +1343,3 @@ _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (
 
 ![center](./../../../results/figs/matched_vs_unmatched_sims_pn_lhn/er_power_comparison.svg)
 
-<!-- ---
-# Ensuring robustness to different alternatives
-
-![h:400 center](./../../../results/figs/revamp_sbm_methods_sim/tippett_power_matrix.svg) -->
-
-
---- 
-
-# Summary 
-<!-- 41 min -->
-
-- Characterized "feedforwardness" of this connectome
-- Estimated cell types by connectivity
-
-<div class="columns-br">
-<div>
-
-![](./../../../results/figs/draw_brain_comparisons/brain_approx_equals.png)
-
-</div>
-<div>
-
-- Model-based network comparison enables testing (and refining) hypotheses about connectomes
-
-</div>
-</div>
-
-<div class="columns-br">
-<div>
-
-![](./../../../results/figs/draw_brain_comparisons/brain_matching.png)
-
-</div>
-<div>
-
-- Graph matching can pair neurons across datasets
-
-</div>
-</div>
-
-
-**Aim to apply these (and other) tools to:**
-  **- Inform the design of future comparative experiments,**
-  **- Make inferences from connectome comparisons!**
