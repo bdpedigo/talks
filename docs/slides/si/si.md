@@ -140,7 +140,7 @@ Both hemispheres
 - Examined routes of hemisphere integration, sensory integration, and feedback
 - **Grouped neurons into "connectotypes"**
 
----
+<!-- ---
 
 # High-level cell types (mostly based on function) 
 
@@ -148,18 +148,33 @@ Both hemispheres
 
 ![h:200 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/io.png)
 
-<!-- _footer: Winding, Pedigo et al. bioRxiv (2022) -->
-
+_footer: Winding, Pedigo et al. Science (2023) -->
 
 ---
 
-# Neurons clustered by connectivity using recursive spectral clustering
+# Neurons clustered by connectivity 
 
 <!-- Where to stop splitting? -->
 
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/bar-dendrogram-wide.svg)
+<!-- ![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/bar-dendrogram-wide.svg) -->
 
-![center w:700](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/cell-type-labels-legend.png)
+<div class="columns">
+<div>
+
+![h:475](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dendrogram-adjacency.png)
+
+</div>
+<div>
+
+- Used a variation on spectral clustering
+- How many clusters to include?
+
+</div>
+</div>
+
+
+
+<!-- ![center w:700](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/cell-type-labels-legend.png) -->
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
@@ -170,14 +185,15 @@ Both hemispheres
 <div class="columns">
 <div>
 
-![h:400 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.png)
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.png)
 
 </div>
 <div>
 
-- Each node is assigned to a group
+- Each node $i$ is assigned to a group, $\tau_{i}$
 - $B$ is a matrix of connection probabilities between groups
-- Edges generated independently according to these probabilities
+- Edges generated independently according to these probabilities: 
+  - $A_{ij} \sim Bernoulli(B_{\tau_{i} \tau_{j}})$
 
 </div>
 </div>
@@ -193,6 +209,8 @@ Both hemispheres
 
 <!-- - Clustering nodes corresponds with inferring groups in a stochastic block model (DCSBM) -->
 - How well do these models generalize to the other side of the brain (let alone the next maggot)?
+
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cross-val-explain.png)
 
 </div>
 <div>
@@ -309,7 +327,7 @@ $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
 <div>
 
 
-![center w:700](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected.svg)
+![center w:700](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_clean.svg)
 
 </div>
 </div>
