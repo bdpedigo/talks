@@ -163,26 +163,6 @@ Both hemispheres
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
---- 
-
-<!-- ### Cluster morphology  -->
-
-![bg h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
-
-
---- 
-
-# Cluster morphology 
-
-![bg opacity:25% h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
-
-![h:300 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/intra-cluster-morpho.png)
-
-## Discriminability:
-$P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$ 
-
-<!-- _footer: Costa et al. Neuron (2016), Bridgeford et al. PLOS Comp. Bio. (2021)-->
-
 ---
 
 # Stochastic block model
@@ -1382,3 +1362,23 @@ _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (
 
 ![center](./../../../results/figs/matched_vs_unmatched_sims_pn_lhn/er_power_comparison.svg)
 
+
+--- 
+
+<!-- ### Cluster morphology  -->
+
+![bg h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
+
+
+--- 
+
+# Cluster morphology 
+
+![bg opacity:25% h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
+
+![h:300 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/intra-cluster-morpho.png)
+
+## Discriminability:
+$P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$ 
+
+<!-- _footer: Costa et al. Neuron (2016), Bridgeford et al. PLOS Comp. Bio. (2021)-->

@@ -383,10 +383,6 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-larval-brain-connecome">Analyzing the larval brain connecome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-cell-types-mostly-based-on-function">High-level cell types (mostly based on function)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity-using-recursive-spectral-clustering">Neurons clustered by connectivity using recursive spectral clustering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-morphology">Cluster morphology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminability">Discriminability:</a></li>
-</ul>
-</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-block-model">Stochastic block model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-models-to-evaluate-candidate-groupings">Using models to evaluate candidate groupings</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilateral-symmetry">Bilateral symmetry</a><ul class="visible nav section-nav flex-column">
@@ -492,6 +488,10 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hypothetical-difference-we-want-to-detect">A hypothetical difference we want to detect…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pairs-facilitate-more-powerful-tests">Pairs facilitate more powerful tests</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-morphology">Cluster morphology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminability">Discriminability:</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -645,20 +645,6 @@ Both hemispheres</p>
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/bar-dendrogram-wide.svg" /></p>
 <p><img alt="center w:700" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/cell-type-labels-legend.png" /></p>
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
-<hr class="docutils" />
-<!-- ### Cluster morphology  -->
-<p><img alt="bg h:750 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png" /></p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="cluster-morphology">
-<h1>Cluster morphology<a class="headerlink" href="#cluster-morphology" title="Permalink to this heading">#</a></h1>
-<p><img alt="bg opacity:25% h:750 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png" /></p>
-<p><img alt="h:300 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/intra-cluster-morpho.png" /></p>
-<section id="discriminability">
-<h2>Discriminability:<a class="headerlink" href="#discriminability" title="Permalink to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(P[\)</span> within cluster NBLAST sim. <span class="math notranslate nohighlight">\(&gt;\)</span> between cluster NBLAST sim. <span class="math notranslate nohighlight">\(] \approx 0.81\)</span></p>
-<!-- _footer: Costa et al. Neuron (2016), Bridgeford et al. PLOS Comp. Bio. (2021)-->
-</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="stochastic-block-model">
@@ -1618,6 +1604,20 @@ p {
 <section class="tex2jax_ignore mathjax_ignore" id="pairs-facilitate-more-powerful-tests">
 <h1>Pairs facilitate more powerful tests<a class="headerlink" href="#pairs-facilitate-more-powerful-tests" title="Permalink to this heading">#</a></h1>
 <p><img alt="center" src="../results/figs/matched_vs_unmatched_sims_pn_lhn/er_power_comparison.svg" /></p>
+<hr class="docutils" />
+<!-- ### Cluster morphology  -->
+<p><img alt="bg h:750 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png" /></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="cluster-morphology">
+<h1>Cluster morphology<a class="headerlink" href="#cluster-morphology" title="Permalink to this heading">#</a></h1>
+<p><img alt="bg opacity:25% h:750 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png" /></p>
+<p><img alt="h:300 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/intra-cluster-morpho.png" /></p>
+<section id="discriminability">
+<h2>Discriminability:<a class="headerlink" href="#discriminability" title="Permalink to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(P[\)</span> within cluster NBLAST sim. <span class="math notranslate nohighlight">\(&gt;\)</span> between cluster NBLAST sim. <span class="math notranslate nohighlight">\(] \approx 0.81\)</span></p>
+<!-- _footer: Costa et al. Neuron (2016), Bridgeford et al. PLOS Comp. Bio. (2021)-->
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1697,10 +1697,6 @@ p {
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-larval-brain-connecome">Analyzing the larval brain connecome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-cell-types-mostly-based-on-function">High-level cell types (mostly based on function)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity-using-recursive-spectral-clustering">Neurons clustered by connectivity using recursive spectral clustering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-morphology">Cluster morphology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminability">Discriminability:</a></li>
-</ul>
-</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-block-model">Stochastic block model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-models-to-evaluate-candidate-groupings">Using models to evaluate candidate groupings</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilateral-symmetry">Bilateral symmetry</a><ul class="visible nav section-nav flex-column">
@@ -1806,6 +1802,10 @@ p {
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hypothetical-difference-we-want-to-detect">A hypothetical difference we want to detect…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pairs-facilitate-more-powerful-tests">Pairs facilitate more powerful tests</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-morphology">Cluster morphology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminability">Discriminability:</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
