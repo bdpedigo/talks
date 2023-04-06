@@ -381,8 +381,7 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#larval-drosophila-brain-connectome">Larval <em>Drosophila</em> brain connectome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-larval-brain-connecome">Analyzing the larval brain connecome</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-cell-types-mostly-based-on-function">High-level cell types (mostly based on function)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity-using-recursive-spectral-clustering">Neurons clustered by connectivity using recursive spectral clustering</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity">Neurons clustered by connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-block-model">Stochastic block model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-models-to-evaluate-candidate-groupings">Using models to evaluate candidate groupings</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilateral-symmetry">Bilateral symmetry</a><ul class="visible nav section-nav flex-column">
@@ -630,20 +629,33 @@ Both hemispheres</p>
 <li><p>Examined routes of hemisphere integration, sensory integration, and feedback</p></li>
 <li><p><strong>Grouped neurons into “connectotypes”</strong></p></li>
 </ul>
+<!-- ---
+
+# High-level cell types (mostly based on function) 
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-cell-classes.png)
+
+![h:200 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/io.png)
+
+_footer: Winding, Pedigo et al. Science (2023) -->
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="high-level-cell-types-mostly-based-on-function">
-<h1>High-level cell types (mostly based on function)<a class="headerlink" href="#high-level-cell-types-mostly-based-on-function" title="Permalink to this heading">#</a></h1>
-<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-cell-classes.png" /></p>
-<p><img alt="h:200 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/io.png" /></p>
-<!-- _footer: Winding, Pedigo et al. bioRxiv (2022) -->
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="neurons-clustered-by-connectivity-using-recursive-spectral-clustering">
-<h1>Neurons clustered by connectivity using recursive spectral clustering<a class="headerlink" href="#neurons-clustered-by-connectivity-using-recursive-spectral-clustering" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="neurons-clustered-by-connectivity">
+<h1>Neurons clustered by connectivity<a class="headerlink" href="#neurons-clustered-by-connectivity" title="Permalink to this heading">#</a></h1>
 <!-- Where to stop splitting? -->
-<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/bar-dendrogram-wide.svg" /></p>
-<p><img alt="center w:700" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/cell-type-labels-legend.png" /></p>
+<!-- ![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/bar-dendrogram-wide.svg) -->
+<div class="columns">
+<div>
+<p><img alt="h:475" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dendrogram-adjacency.png" /></p>
+</div>
+<div>
+<ul class="simple">
+<li><p>Used a variation on spectral clustering</p></li>
+<li><p>How many clusters to include?</p></li>
+</ul>
+</div>
+</div>
+<!-- ![center w:700](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/cell-type-labels-legend.png) -->
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 </section>
 <hr class="docutils" />
@@ -651,13 +663,17 @@ Both hemispheres</p>
 <h1>Stochastic block model<a class="headerlink" href="#stochastic-block-model" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
-<p><img alt="h:400 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.png" /></p>
 </div>
 <div>
 <ul class="simple">
-<li><p>Each node is assigned to a group</p></li>
+<li><p>Each node <span class="math notranslate nohighlight">\(i\)</span> is assigned to a group, <span class="math notranslate nohighlight">\(\tau_{i}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(B\)</span> is a matrix of connection probabilities between groups</p></li>
-<li><p>Edges generated independently according to these probabilities</p></li>
+<li><p>Edges generated independently according to these probabilities:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(A_{ij} \sim Bernoulli(B_{\tau_{i} \tau_{j}})\)</span></p></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -673,6 +689,7 @@ Both hemispheres</p>
 <ul class="simple">
 <li><p>How well do these models generalize to the other side of the brain (let alone the next maggot)?</p></li>
 </ul>
+<p><img alt="" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cross-val-explain.png" /></p>
 </div>
 <div>
 <p><img alt="center h:550" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/dcsbm-swap-arrows.png" /></p>
@@ -780,7 +797,7 @@ vs.
 <p><img alt="center h:500" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-cell-classes-vertical.png" /></p>
 </div>
 <div>
-<p><img alt="center w:700" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected.svg" /></p>
+<p><img alt="center w:700" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_clean.svg" /></p>
 </div>
 </div>
 <!-- _footer: Winding, Pedigo et al. Science (2023), Pedigo et al. eLife (2023) -->
@@ -1695,8 +1712,7 @@ p {
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#larval-drosophila-brain-connectome">Larval <em>Drosophila</em> brain connectome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-larval-brain-connecome">Analyzing the larval brain connecome</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-cell-types-mostly-based-on-function">High-level cell types (mostly based on function)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity-using-recursive-spectral-clustering">Neurons clustered by connectivity using recursive spectral clustering</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity">Neurons clustered by connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-block-model">Stochastic block model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-models-to-evaluate-candidate-groupings">Using models to evaluate candidate groupings</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilateral-symmetry">Bilateral symmetry</a><ul class="visible nav section-nav flex-column">
