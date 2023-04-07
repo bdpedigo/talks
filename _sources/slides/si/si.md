@@ -566,6 +566,7 @@ excited to see how these methods could, with allen data, help understand how dif
 ---
 # Example: a structure-function relationship in the larva
 
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
 
 
 <!-- ---
