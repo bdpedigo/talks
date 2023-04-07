@@ -314,7 +314,7 @@ _footer: Winding, Pedigo et al. Science (2023) -->
 </div>
 <div>
 
-![center h:550](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/dcsbm-swap-arrows.png)
+![center h:550](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/sbm-swap-arrows.png)
 
 </div>
 </div>
@@ -710,6 +710,9 @@ Distance correlation: 0.067, p-value: 0.0087
 <!-- ---
 # Mapping between behavior/response and connectivity -->
 
+---
+
+# How does this relate to work at Allen?
 
 ---
 
