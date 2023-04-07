@@ -52,6 +52,8 @@ Johns Hopkins University - Biomedical Engineering
 
 <!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
 
+<!-- _footer: Images from brain-map.org, SciDraw -->
+
 ---
 
 # Goal: linking connectivity to other phenotypes
@@ -60,7 +62,7 @@ Johns Hopkins University - Biomedical Engineering
 
 <!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
 
-<!-- _footer: Images from brain-map.org, SciDraw (A. Bates, E. Tyler, L. Kravitz, E. Thompson, H. Robinson, V. Kumar) -->
+<!-- _footer: Images from brain-map.org, SciDraw -->
 
 --- 
 # Comparative connectomics as a solution
