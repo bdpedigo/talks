@@ -457,7 +457,7 @@ We believe a matching exists!
 <!-- _footer: Eschbach et al. eLife (2021) -->
 
 --- 
-# What is graph matching?
+# Graph matching?
 
 <div class="columns-bl">
 <div>
@@ -540,12 +540,28 @@ where $\mathcal{P}$ is the set of permutation matrices
 ---
 # Future work
 
-## Methods, e.g.
+---
+# How do wiring rules generalize across regions of cortex? To new species? Disease states?
+
+- Requires knowing *what* to compare...
+  - E.g. how to find the same cell type in non-human primate and mouse
+- And *how* to compare...
+  - E.g. addressing some of the limitations of current state of the art
+
+---
+i love comparative
+excited to see how these methods could, with allen data, help understand how differences in connectivity relate to 
+
+---
+# Techniques can be applied to light level data as well...
+
+
+<!-- ## Methods, e.g.
 - Improve methods for mapping between datasets
 - Improve methods for evaluating differences between datasets
 
 ## Applications, e.g. 
-- How do wiring rules generalize across regions of cortex
+- How do wiring rules generalize across regions of cortex -->
 
 ---
 # Example: a structure-function relationship in the larva
