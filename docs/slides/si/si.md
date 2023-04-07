@@ -123,8 +123,9 @@ Both hemispheres
 
 ---
 
-![]()
+![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/paper-big-overview.png)
 
+<!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
 --- 
 
@@ -137,13 +138,12 @@ Both hemispheres
 - ### Pairing neurons across connectomes via graph matching
 - ### Future work
 
-
----
+<!-- ---
 
 # Analyzing the larval brain connecome
 - Characterized flow of information (i.e. sorting neurons from sensory to descending)
 - Examined routes of hemisphere integration, sensory integration, and feedback
-- **Grouped neurons into "connectotypes"**
+- **Grouped neurons into "connectotypes"** -->
 
 <!-- ---
 
@@ -346,13 +346,19 @@ $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
 <div class="columns">
 <div>
 
-![center h:450](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg)
+<div class='center'>
+
+$H_0: \color{#66c2a5}B^{(L)}_{kl} \color{black} = \color{#fc8d62}B^{(R)}_{kl}$ 
+
+</div>
+
+![center h:425](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg)
 
 </div>
 <div>
 
 - 7 group-to-group connections are significantly different (after multiple comparisons correction)
-- Overall test (comparing all blocks):<br> p-value $<10^{-7}$
+- Overall test (comparing all blocks):<br>$H_0: \color{#66c2a5}B^{(L)} \color{black} = \color{#fc8d62}B^{(R)}$<br>p-value $<10^{-7}$
 
 </div>
 </div>
@@ -360,12 +366,12 @@ $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
 <!-- _footer: Pedigo et al. eLife (2023) -->
 
 ---
-# Should we be surprised?
+# An overall difference in density
 <div class="columns">
 <div>
 
-- For all significant comparisons, probabilities on the right hemisphere are higher
-- Even the overall densities are different (1-block/Erdos-Renyi model)
+- For significant comparisons, probabilities on right side are higher
+- Even network densities are different<br>(1-block/Erdos-Renyi model)
 - Maybe the right is just a "scaled up" version of the left?
    - $H_0: \color{#66c2a5}B^{(L)} \color{black}  = c \color{#fc8d62}B^{(R)}$  
   where $c$ is a density-adjusting constant, $\frac{\color{#66c2a5} p^{(L)}}{\color{#fc8d62} p^{(R)}}$
@@ -450,14 +456,15 @@ Depends on what you mean...
 - ### Larval connectome dataset
 - ### Connectome comparison via network hypothesis testing
 - ### **Pairing neurons across connectomes via graph matching**
-- ### Ongoing extensions/applications
+- ### Future work
+
 ---
 
 # Bilaterally homologous neuron pairs 
 
 We believe a matching exists!
 
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/mbon-expression.jpg)
+![center crop](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/mbon-expression-cropped.jpg)
 
 <!-- _footer: Eschbach et al. eLife (2021) -->
 
