@@ -86,21 +86,21 @@ Johns Hopkins University - Biomedical Engineering
 <!-- _footer: Images from brain-map.org, SciDraw -->
 
 --- 
-# Comparative connectomics as a solution
+# Comparative connectomics
 
 <div class="columns">
 <div>
 
-#### How does connectivity of neurons affect elicited responses?
+#### How does a neuron's connectivity affect responses?
 
-![h:300](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/behave-example.png)
+![center h:330](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/behave-example.png)
 
 </div>
 <div>
 
 #### How does connectivity change during development?
 
-![h:300](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dev-example.png)
+![center h:280](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dev-example.png)
 
 </div>
 </div>
@@ -760,28 +760,28 @@ p {
 
 <div>
 
-![person](./../../images/people/michael_winding.png)
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/michael_winding.png)
 Michael Winding
 
 </div>
 
 <div>
 
-![person](./../../images/people/mike-powell.jpg)
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/mike-powell.jpg)
 Mike Powell
 
 </div>
 
 <div>
 
-![person](./../../images/people/bridgeford.jpg)
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/bridgeford.jpg)
 Eric Bridgeford
 
 </div>
 
 <div>
 
-![person](./../../images/people/ali_saad_eldin.jpeg)
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/ali_saad_eldin.jpeg)
 Ali <br> Saad-Eldin
 
 </div>
@@ -789,36 +789,37 @@ Ali <br> Saad-Eldin
 
 <div>
 
-![person](./../../images/people/marta_zlatic.jpeg)
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/marta_zlatic.jpeg)
 Marta Zlatic
 
 </div>
 
 <div>
 
-![person](./../../images/people/albert_cardona.jpeg)
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/albert_cardona.jpeg)
 Albert Cardona
 
 </div>
 
 <div>
 
-![person](./../../images/people/priebe_carey.jpg)
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/priebe_carey.jpg)
 Carey Priebe
 
 </div>
 
 <div>
 
-![person](./../../images/people/vogelstein_joshua.jpg)
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/vogelstein_joshua.jpg)
 Joshua Vogelstein
 
 </div>
 
 </div>
 
-Tracers who contributed to larva connectome, Heather Patsolic, Youngser Park, NeuroData lab, Microsoft Research
-Figures from Scidraw + Noun Project (Alexander Bates, Xuan Ma, Gil Costa, Vivek Kumar, Leslie Coonrod)
+Tracers who contributed to larva connectome, Lalanti Venkatasubramanian, Chloé Barré, Jean-Baptiste Masson, Heather Patsolic, Youngser Park, NeuroData lab, Microsoft Research
+
+Figures from Scidraw (A. Bates, V. Kumar, E. Tyler, L. Kravitz, H. Robinson, E. Thompson), brain-map.org
 
 #### Funding
 NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroNex Award (J.T.V and C.E.P.), NIH BRAIN Initiative (J.T.V.)
