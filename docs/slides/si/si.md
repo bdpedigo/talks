@@ -462,9 +462,7 @@ Depends on what you mean...
 
 # Bilaterally homologous neuron pairs 
 
-We believe a matching exists!
-
-![center crop](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/mbon-expression-cropped.jpg)
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/mbon-expression-crop.jpg)
 
 <!-- _footer: Eschbach et al. eLife (2021) -->
 
