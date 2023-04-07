@@ -60,22 +60,24 @@ Johns Hopkins University - Biomedical Engineering
 
 <!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
 
+<!-- _footer: Images from brain-map.org, SciDraw (A. Bates, E. Tyler, L. Kravitz, E. Thompson, H. Robinson, V. Kumar) -->
+
 --- 
 # Comparative connectomics as a solution
 
 <div class="columns">
 <div>
 
-## Development
+#### How does connectivity of neurons affect elicited responses?
 
-![h:300](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dev-example.png)
+![h:300](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/behave-example.png)
 
 </div>
 <div>
 
-## Behavior after activation
+#### How does connectivity change during development?
 
-![h:300](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/behave-example.png)
+![h:300](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dev-example.png)
 
 </div>
 </div>
@@ -89,6 +91,75 @@ Johns Hopkins University - Biomedical Engineering
   - statistically valid 
   - scaleable / easy to use
   - neuroscientifically interesting...  -->
+
+---
+
+# Larval *Drosophila* as a model system
+
+<div class="columns">
+<div>
+
+## Genetics
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/eschbach-lines.png)
+
+</div>
+<div>
+
+## Activity
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/activity.png)
+
+</div>
+<div>
+
+## Behavior
+
+<div class="columns">
+<div>
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/behavior-quant.png)
+
+</div>
+<div>
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/behavior-traces.png)
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<style scoped>
+p {
+  font-size: 20px
+}
+</style>
+
+<div class="columns">
+<div>
+
+Eschbach et al. Nat. Neuro (2020)
+
+</div>
+<div>
+
+
+Eschbach & Zlatic Curr. Op. Neurobio. (2020)
+
+</div>
+<div>
+
+Klein et al. bioRxiv (2021)
+
+Almeida-Carvalho et al. J. Experimental Bio. (2017)
+
+</div>
+</div>
+
+
 
 ---
 
@@ -133,7 +204,7 @@ Both hemispheres
 
 # Outline
 
-- ### **Larval connectome dataset**
+- ### **Clustering the larval brain by connectivity**
 - ### Connectome comparison via network hypothesis testing
 - ### Pairing neurons across connectomes via graph matching
 - ### Future work
@@ -254,7 +325,7 @@ h2 {
 
 # Outline
 
-- ### Larval connectome dataset
+- ### Clustering the larval brain by connectivity
 - ### **Connectome comparison via network hypothesis testing**
 - ### Pairing neurons across connectomes via graph matching
 - ### Future work
@@ -453,7 +524,7 @@ Depends on what you mean...
 
 # Outline
 
-- ### Larval connectome dataset
+- ### Clustering the larval brain by connectivity
 - ### Connectome comparison via network hypothesis testing
 - ### **Pairing neurons across connectomes via graph matching**
 - ### Future work
@@ -502,8 +573,9 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 ![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/explain-bgm.svg)
 
+We generalized a state-of-the-art GM algorithm to solve BGM!
 
-<!-- _footer: Pedigo et al. Network Neuroscience (2022) -->
+<!-- _footer: Pedigo et al. Network Neuroscience (2022), Vogelstein et al. PLOS One (2015)-->
 
 --- 
 # Contralateral connections aid matching!
@@ -554,7 +626,7 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 # Outline
 
-- ### Larval connectome dataset
+- ### Clustering the larval brain by connectivity
 - ### Connectome comparison via network hypothesis testing
 - ### Pairing neurons across connectomes via graph matching
 - ### **Future work**
@@ -564,24 +636,25 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 - Develop and apply methods for comparing multimodal connectomics datasets, e.g.
   - Across cortical regions
-  - Across 
+  - Across disease states
 - Relate differences in connectivity to differences in function, e.g.
+  - What differences in wiring for a neuron are predictive of function?
 
----
+<!-- ---
 # How do wiring rules generalize across regions of cortex? To new species? Disease states?
 
 - Requires knowing *what* to compare...
   - E.g. how to find the same cell type in non-human primate and mouse
 - And *how* to compare...
-  - E.g. addressing some of the limitations of current state of the art
+  - E.g. addressing some of the limitations of current state of the art -->
 
----
+<!-- ---
 i love comparative
-excited to see how these methods could, with allen data, help understand how differences in connectivity relate to 
+excited to see how these methods could, with allen data, help understand how differences in connectivity relate to  -->
 
----
+<!-- ---
 # Techniques can be applied to light level data as well...
-
+ -->
 
 <!-- ## Methods, e.g.
 - Improve methods for mapping between datasets
@@ -767,74 +840,6 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 <!-- _footer: Winding, Pedigo et al. Science (2022), Ohyama et al. Nature (2015)-->
 
 ---
-
-# Larval *Drosophila* allows access to many properties, e.g.,
-
-<div class="columns">
-<div>
-
-## Genetics
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/eschbach-lines.png)
-
-
-</div>
-<div>
-
-## Activity
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/activity.png)
-
-
-</div>
-<div>
-
-## Behavior
-
-<div class="columns">
-<div>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/behavior-quant.png)
-
-
-</div>
-<div>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/behavior-traces.png)
-
-
-</div>
-</div>
-
-</div>
-</div>
-
-<style scoped>
-p {
-  font-size: 20px
-}
-</style>
-
-<div class="columns">
-<div>
-
-Eschbach et al. Nat. Neuro (2020)
-
-</div>
-<div>
-
-
-Eschbach & Zlatic Curr. Op. Neurobio. (2020)
-
-</div>
-<div>
-
-Klein et al. bioRxiv (2021)
-
-Almeida-Carvalho et al. J. Experimental Bio. (2017)
-
-</div>
-</div>
 
 
 
