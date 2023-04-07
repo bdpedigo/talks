@@ -90,18 +90,6 @@ Johns Hopkins University - Biomedical Engineering
   - scaleable / easy to use
   - neuroscientifically interesting...  -->
 
-
---- 
-
-![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
-
-# Outline
-
-- ### **Larval connectome dataset**
-- ### Connectome comparison via network hypothesis testing
-- ### Pairing neurons across connectomes via graph matching
-- ### Future work
-
 ---
 
 # Larval _Drosophila_ brain connectome 
@@ -132,6 +120,23 @@ Both hemispheres
 </div>
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
+
+---
+
+![]()
+
+
+--- 
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
+
+# Outline
+
+- ### **Larval connectome dataset**
+- ### Connectome comparison via network hypothesis testing
+- ### Pairing neurons across connectomes via graph matching
+- ### Future work
+
 
 ---
 
@@ -252,7 +257,7 @@ h2 {
 - ### Larval connectome dataset
 - ### **Connectome comparison via network hypothesis testing**
 - ### Pairing neurons across connectomes via graph matching
-- ### Ongoing extensions/applications
+- ### Future work
 
 ---
 # Testing for differences
@@ -540,6 +545,11 @@ where $\mathcal{P}$ is the set of permutation matrices
 ---
 # Future work
 
+- Develop and apply methods for comparing multimodal connectomics datasets, e.g.
+  - Across cortical regions
+  - Across 
+- Relate differences in connectivity to differences in function, e.g.
+
 ---
 # How do wiring rules generalize across regions of cortex? To new species? Disease states?
 
@@ -566,8 +576,14 @@ excited to see how these methods could, with allen data, help understand how dif
 ---
 # Example: a structure-function relationship in the larva
 
-![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
 
+### Behavior probabilities significantly related to projections to brain outputs
+
+RV coefficient: 0.12, p-value: 0.0044
+Distance correlation: 0.067, p-value: 0.0087
+
+<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
 
 <!-- ---
 # Mapping representations between modalities
