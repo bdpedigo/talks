@@ -380,7 +380,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future work</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-larval-brain-connecome">Analyzing the larval brain connecome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity">Neurons clustered by connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-block-model">Stochastic block model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-models-to-evaluate-candidate-groupings">Using models to evaluate candidate groupings</a></li>
@@ -403,7 +402,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-probabilities-between-groups">Connection probabilities between groups</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-differences-in-group-connection-probabilities">Detect differences in group connection probabilities</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#should-we-be-surprised">Should we be surprised?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overall-difference-in-density">An overall difference in density</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#after-adjusting-for-density-differences-are-in-kcs">After adjusting for density, differences are in KCs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-sum-up">To sum up…</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-kenyon-cells">With Kenyon cells</a></li>
@@ -414,7 +413,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Larval connectome dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Connectome comparison via network hypothesis testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>Pairing neurons across connectomes via graph matching</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ongoing-extensions-applications">Ongoing extensions/applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Future work</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilaterally-homologous-neuron-pairs">Bilaterally homologous neuron pairs</a></li>
@@ -426,14 +425,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-publications">Related publications</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Outline</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Larval connectome dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Connectome comparison via network hypothesis testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Pairing neurons across connectomes via graph matching</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>Future work</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Outline</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Larval connectome dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Connectome comparison via network hypothesis testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Pairing neurons across connectomes via graph matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Future work</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Future work</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-wiring-rules-generalize-across-regions-of-cortex-to-new-species-disease-states">How do wiring rules generalize across regions of cortex? To new species? Disease states?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#techniques-can-be-applied-to-light-level-data-as-well">Techniques can be applied to light level data as well…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-structure-function-relationship-in-the-larva">Example: a structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
@@ -448,8 +447,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Benjamin D. Pedigo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">These slides at:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">These slides at:</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extras">Extras</a></li>
@@ -597,7 +596,8 @@ Both hemispheres</p>
 </div>
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 <hr class="docutils" />
-<p><img alt="" src="../../_images/si" /></p>
+<p><img alt="center h:600" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/paper-big-overview.png" /></p>
+<!-- _footer: Winding, Pedigo et al. Science (2023) -->
 <hr class="docutils" />
 <p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
 </section>
@@ -621,15 +621,12 @@ Both hemispheres</p>
 <section id="future-work">
 <h2>Future work<a class="headerlink" href="#future-work" title="Permalink to this heading">#</a></h2>
 </section>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="analyzing-the-larval-brain-connecome">
-<h1>Analyzing the larval brain connecome<a class="headerlink" href="#analyzing-the-larval-brain-connecome" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Characterized flow of information (i.e. sorting neurons from sensory to descending)</p></li>
-<li><p>Examined routes of hemisphere integration, sensory integration, and feedback</p></li>
-<li><p><strong>Grouped neurons into “connectotypes”</strong></p></li>
-</ul>
+<!-- ---
+
+# Analyzing the larval brain connecome
+- Characterized flow of information (i.e. sorting neurons from sensory to descending)
+- Examined routes of hemisphere integration, sensory integration, and feedback
+- **Grouped neurons into "connectotypes"** -->
 <!-- ---
 
 # High-level cell types (mostly based on function) 
@@ -808,25 +805,28 @@ vs.
 <h1>Detect differences in group connection probabilities<a class="headerlink" href="#detect-differences-in-group-connection-probabilities" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
-<p><img alt="center h:450" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg" /></p>
+<div class='center'>
+<p><span class="math notranslate nohighlight">\(H_0: \color{#66c2a5}B^{(L)}_{kl} \color{black} = \color{#fc8d62}B^{(R)}_{kl}\)</span></p>
+</div>
+<p><img alt="center h:425" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg" /></p>
 </div>
 <div>
 <ul class="simple">
 <li><p>7 group-to-group connections are significantly different (after multiple comparisons correction)</p></li>
-<li><p>Overall test (comparing all blocks):<br> p-value <span class="math notranslate nohighlight">\(&lt;10^{-7}\)</span></p></li>
+<li><p>Overall test (comparing all blocks):<br><span class="math notranslate nohighlight">\(H_0: \color{#66c2a5}B^{(L)} \color{black} = \color{#fc8d62}B^{(R)}\)</span><br>p-value <span class="math notranslate nohighlight">\(&lt;10^{-7}\)</span></p></li>
 </ul>
 </div>
 </div>
 <!-- _footer: Pedigo et al. eLife (2023) -->
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="should-we-be-surprised">
-<h1>Should we be surprised?<a class="headerlink" href="#should-we-be-surprised" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="an-overall-difference-in-density">
+<h1>An overall difference in density<a class="headerlink" href="#an-overall-difference-in-density" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
 <ul class="simple">
-<li><p>For all significant comparisons, probabilities on the right hemisphere are higher</p></li>
-<li><p>Even the overall densities are different (1-block/Erdos-Renyi model)</p></li>
+<li><p>For significant comparisons, probabilities on right side are higher</p></li>
+<li><p>Even network densities are different<br>(1-block/Erdos-Renyi model)</p></li>
 <li><p>Maybe the right is just a “scaled up” version of the left?</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(H_0: \color{#66c2a5}B^{(L)} \color{black}  = c \color{#fc8d62}B^{(R)}\)</span><br />
@@ -945,15 +945,15 @@ p {
 <section id="id9">
 <h2><strong>Pairing neurons across connectomes via graph matching</strong><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="ongoing-extensions-applications">
-<h2>Ongoing extensions/applications<a class="headerlink" href="#ongoing-extensions-applications" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h2>Future work<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="bilaterally-homologous-neuron-pairs">
 <h1>Bilaterally homologous neuron pairs<a class="headerlink" href="#bilaterally-homologous-neuron-pairs" title="Permalink to this heading">#</a></h1>
 <p>We believe a matching exists!</p>
-<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/mbon-expression.jpg" /></p>
+<p><img alt="center crop" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/mbon-expression-cropped.jpg" /></p>
 <!-- _footer: Eschbach et al. eLife (2021) -->
 </section>
 <hr class="docutils" />
@@ -1008,30 +1008,30 @@ p {
 <p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id10">
-<h1>Outline<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1>Outline<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li></li>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<section id="id11">
-<h2>Larval connectome dataset<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
-</section>
 <section id="id12">
-<h2>Connectome comparison via network hypothesis testing<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<h2>Larval connectome dataset<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="id13">
-<h2>Pairing neurons across connectomes via graph matching<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<h2>Connectome comparison via network hypothesis testing<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="id14">
-<h2><strong>Future work</strong><a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2>Pairing neurons across connectomes via graph matching<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id15">
+<h2><strong>Future work</strong><a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id15">
-<h1>Future work<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id16">
+<h1>Future work<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Develop and apply methods for comparing multimodal connectomics datasets, e.g.</p>
 <ul>
@@ -1169,8 +1169,8 @@ Figures from Scidraw + Noun Project (Alexander Bates, Xuan Ma, Gil Costa, Vivek 
 <h1>Questions?<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
-<section id="id16">
-<h2>Benjamin D. Pedigo<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
+<section id="id17">
+<h2>Benjamin D. Pedigo<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
 <p><img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png" /> <a class="reference external" href="mailto:bpedigo&#37;&#52;&#48;jhu&#46;edu">bpedigo<span>&#64;</span>jhu<span>&#46;</span>edu</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/github.png" /> <a class="reference external" href="https://github.com/bdpedigo">&#64;bdpedigo</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png" /> <a class="reference external" href="https://twitter.com/bpedigod">&#64;bpedigod</a>
@@ -1178,8 +1178,8 @@ Figures from Scidraw + Noun Project (Alexander Bates, Xuan Ma, Gil Costa, Vivek 
 </div>
 <div>
 </section>
-<section id="id17">
-<h2>These slides at:<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<section id="id18">
+<h2>These slides at:<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://bdpedigo.github.io/talks/si.html">bdpedigo.github.io/talks/si.html</a></p>
 </div>
 </div>
@@ -1744,7 +1744,6 @@ p {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future work</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-the-larval-brain-connecome">Analyzing the larval brain connecome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neurons-clustered-by-connectivity">Neurons clustered by connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-block-model">Stochastic block model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-models-to-evaluate-candidate-groupings">Using models to evaluate candidate groupings</a></li>
@@ -1767,7 +1766,7 @@ p {
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-probabilities-between-groups">Connection probabilities between groups</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-differences-in-group-connection-probabilities">Detect differences in group connection probabilities</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#should-we-be-surprised">Should we be surprised?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overall-difference-in-density">An overall difference in density</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#after-adjusting-for-density-differences-are-in-kcs">After adjusting for density, differences are in KCs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-sum-up">To sum up…</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-kenyon-cells">With Kenyon cells</a></li>
@@ -1778,7 +1777,7 @@ p {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Larval connectome dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Connectome comparison via network hypothesis testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>Pairing neurons across connectomes via graph matching</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ongoing-extensions-applications">Ongoing extensions/applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Future work</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilaterally-homologous-neuron-pairs">Bilaterally homologous neuron pairs</a></li>
@@ -1790,14 +1789,14 @@ p {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-publications">Related publications</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Outline</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Larval connectome dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Connectome comparison via network hypothesis testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Pairing neurons across connectomes via graph matching</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>Future work</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Outline</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Larval connectome dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Connectome comparison via network hypothesis testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Pairing neurons across connectomes via graph matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Future work</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Future work</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-wiring-rules-generalize-across-regions-of-cortex-to-new-species-disease-states">How do wiring rules generalize across regions of cortex? To new species? Disease states?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#techniques-can-be-applied-to-light-level-data-as-well">Techniques can be applied to light level data as well…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-structure-function-relationship-in-the-larva">Example: a structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
@@ -1812,8 +1811,8 @@ p {
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Benjamin D. Pedigo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">These slides at:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">These slides at:</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extras">Extras</a></li>
