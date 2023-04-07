@@ -418,7 +418,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilaterally-homologous-neuron-pairs">Bilaterally homologous neuron pairs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-graph-matching">What is graph matching?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-matching">Graph matching?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#from-graph-matching-to-bisected-graph-matching">From graph matching to bisected graph matching</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contralateral-connections-aid-matching">Contralateral connections aid matching!</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-improvement-on-the-full-brain">Performance improvement on the full brain</a></li>
@@ -433,11 +433,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Future work</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-e-g">Methods, e.g.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-e-g">Applications, e.g.</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Future work</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-wiring-rules-generalize-across-regions-of-cortex-to-new-species-disease-states">How do wiring rules generalize across regions of cortex? To new species? Disease states?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#techniques-can-be-applied-to-light-level-data-as-well">Techniques can be applied to light level data as well…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-structure-function-relationship-in-the-larva">Example: a structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
@@ -956,8 +954,8 @@ p {
 <!-- _footer: Eschbach et al. eLife (2021) -->
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="what-is-graph-matching">
-<h1>What is graph matching?<a class="headerlink" href="#what-is-graph-matching" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="graph-matching">
+<h1>Graph matching?<a class="headerlink" href="#graph-matching" title="Permalink to this heading">#</a></h1>
 <div class="columns-bl">
 <div>
 <p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/network-matching-explanation.svg" /></p>
@@ -1031,19 +1029,35 @@ p {
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id15">
 <h1>Future work<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h1>
-<section id="methods-e-g">
-<h2>Methods, e.g.<a class="headerlink" href="#methods-e-g" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Improve methods for mapping between datasets</p></li>
-<li><p>Improve methods for evaluating differences between datasets</p></li>
-</ul>
 </section>
-<section id="applications-e-g">
-<h2>Applications, e.g.<a class="headerlink" href="#applications-e-g" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="how-do-wiring-rules-generalize-across-regions-of-cortex-to-new-species-disease-states">
+<h1>How do wiring rules generalize across regions of cortex? To new species? Disease states?<a class="headerlink" href="#how-do-wiring-rules-generalize-across-regions-of-cortex-to-new-species-disease-states" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>How do wiring rules generalize across regions of cortex</p></li>
+<li><p>Requires knowing <em>what</em> to compare…</p>
+<ul>
+<li><p>E.g. how to find the same cell type in non-human primate and mouse</p></li>
 </ul>
+</li>
+<li><p>And <em>how</em> to compare…</p>
+<ul>
+<li><p>E.g. addressing some of the limitations of current state of the art</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>i love comparative
+excited to see how these methods could, with allen data, help understand how differences in connectivity relate to</p>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="techniques-can-be-applied-to-light-level-data-as-well">
+<h1>Techniques can be applied to light level data as well…<a class="headerlink" href="#techniques-can-be-applied-to-light-level-data-as-well" title="Permalink to this heading">#</a></h1>
+<!-- ## Methods, e.g.
+- Improve methods for mapping between datasets
+- Improve methods for evaluating differences between datasets
+
+## Applications, e.g. 
+- How do wiring rules generalize across regions of cortex -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="example-a-structure-function-relationship-in-the-larva">
@@ -1749,7 +1763,7 @@ p {
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilaterally-homologous-neuron-pairs">Bilaterally homologous neuron pairs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-graph-matching">What is graph matching?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-matching">Graph matching?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#from-graph-matching-to-bisected-graph-matching">From graph matching to bisected graph matching</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contralateral-connections-aid-matching">Contralateral connections aid matching!</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-improvement-on-the-full-brain">Performance improvement on the full brain</a></li>
@@ -1764,11 +1778,9 @@ p {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Future work</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-e-g">Methods, e.g.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-e-g">Applications, e.g.</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Future work</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-wiring-rules-generalize-across-regions-of-cortex-to-new-species-disease-states">How do wiring rules generalize across regions of cortex? To new species? Disease states?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#techniques-can-be-applied-to-light-level-data-as-well">Techniques can be applied to light level data as well…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-structure-function-relationship-in-the-larva">Example: a structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
