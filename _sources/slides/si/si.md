@@ -462,12 +462,24 @@ Depends on what you mean...
 
 # Bilaterally homologous neuron pairs 
 
+<div class="columns-br">
+<div>
+
 ![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/mbon-expression-crop.jpg)
 
-<!-- _footer: Eschbach et al. eLife (2021) -->
+</div>
+<div>
+
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/bilateral-pairs.png)
+
+
+</div>
+</div>
+
+<!-- _footer: Eschbach et al. eLife (2021), Winding, Pedigo et al. Science (2023) -->
 
 --- 
-# Graph matching?
+# How can we pair on connectivity?
 
 <div class="columns-bl">
 <div>
