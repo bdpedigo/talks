@@ -50,8 +50,6 @@ Johns Hopkins University - Biomedical Engineering
 
 ![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-1.png)
 
-<!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
-
 <!-- _footer: Images from brain-map.org, SciDraw -->
 
 ---
@@ -60,7 +58,30 @@ Johns Hopkins University - Biomedical Engineering
 
 ![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png)
 
-<!-- ![center h:480](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/connect-diagram.png) -->
+<!-- _footer: Images from brain-map.org, SciDraw -->
+
+---
+
+# Goal: linking connectivity to other phenotypes
+
+![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-3.png)
+
+<!-- _footer: Images from brain-map.org, SciDraw -->
+
+
+---
+
+# Goal: linking connectivity to other phenotypes
+
+![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-4.png)
+
+<!-- _footer: Images from brain-map.org, SciDraw -->
+
+---
+
+# Goal: linking connectivity to other phenotypes
+
+![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png)
 
 <!-- _footer: Images from brain-map.org, SciDraw -->
 
