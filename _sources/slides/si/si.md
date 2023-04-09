@@ -910,247 +910,44 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 
 ---
 
+# Winding, Pedigo et al. Science (2023)
+
+---
+
 # Mapping a larval _Drosophila_ brain connectome 
 
 ![h:500 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/FigureS1-reconstruction.png)
 
-<!-- _footer: Winding, Pedigo et al. Science (2022), Ohyama et al. Nature (2015)-->
+<!-- _footer: Winding, Pedigo et al. Science (2023), Ohyama et al. Nature (2015)-->
 
 ---
 
-![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig1.png)
+![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig1.png)
 
 ---
 
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_null_cdf.svg)
-
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/relative_power.svg)
+![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig2.png)
 
 ---
 
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_power_matrix.svg)
+![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig3.png)
 
 ---
 
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/null_distributions.svg)
+![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig4.png)
 
 ---
 
-![center h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_sim_composite.svg)
-
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/single_subgraph_power/power_heatmap_contours.svg)
+![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig5.png)
 
 ---
 
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_density.svg)
+![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig6.png)
 
 ---
 
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_methods.svg)
+![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig7.png)
 
-
----
-
-![center h:600](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/kc_minus/kc_minus_composite.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/sbm_pvalues.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/n_possible_by_block.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/empirical_power_by_block.svg)
-
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/matched_vs_unmatched_sims/er_power_comparison.svg)
-
----
-
-![center h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/thresholding_methods.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_proportion_histogram.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_threshold_pvalues_legend.svg)
-
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues.svg)
-
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues_legend.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/weight_notions.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_weight_histogram.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_uncorrected.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_methods_explain.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_simple_methods.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/fisher_sbm_pvalues.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/significant_p_comparison.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_scatter.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_composite.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/group_counts.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/adjusted_methods_explain.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/sbm_pvalues.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/adjusted_sbm_composite.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/sbm_pvalues_unlabeled.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/resampled_pvalues_distributions.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/resampled_pvalues_distribution.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/adjusted_sbm_unmatched_test/edge_removal_methods.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/two_sample_testing/2_sample_real_line_wide.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/two_sample_testing/2_sample_real_line.svg)
-
-
-
-
----
-# Erdos-Renyi model
-<!-- Timing: ~10 -->
-
-- All edges are independent
-- All edges generated with the same probability, $p$
-
-![center](../../../results/figs/er_unmatched_test/er_explain.svg)
-
-
----
-# Detect a difference in density
-
-<div class="columns">
-<div>
-
-![center h:500](./../../../results/figs/er_unmatched_test/er_methods.svg)
-
-
-</div>
-<div>
-
-![center h:400](../../../results/figs/er_unmatched_test/er_density.svg)
-
-<style scoped>
-p {
-  justify-content: center;
-  text-align: center;
-}
-</style>
-
-p-value < $10^{-22}$
-
-
-</div>
-</div>
-
-<!-- _footer: Pedigo et al. eLife (2022) -->
-
---- 
-# Group connection test
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_methods_explain.svg)
-
-<!-- _footer: Pedigo et al. eLife (2023) -->
-
----
-skip
-
----
-
-# High level (mostly anatomical) cell types
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-cell-classes.png)
-
-![h:200 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/io.png)
-
-<!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
 ---
 
@@ -1231,89 +1028,177 @@ skip
 </div>
 </div>
 
----
-# Examining the effect of edge weights
+--- 
 
-<div class="columns">
-<div>
+<!-- ### Cluster morphology  -->
+
+![bg h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
+
+
+--- 
+
+# Cluster morphology 
+
+![bg opacity:25% h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
+
+![h:300 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/intra-cluster-morpho.png)
+
+## Discriminability:
+$P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$ 
+
+<!-- _footer: Costa et al. Neuron (2016), Bridgeford et al. PLOS Comp. Bio. (2021)-->
+
+
+---
+
+# Pedigo et al. eLife (2023)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_methods_explain.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_null_cdf.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/relative_power.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_power_matrix.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/null_distributions.svg)
+
+---
+
+![center h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_sim_composite.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/single_subgraph_power/power_heatmap_contours.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_density.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_methods.svg)
+
+
+---
+
+![center h:600](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/kc_minus/kc_minus_composite.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/sbm_pvalues.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/n_possible_by_block.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/empirical_power_by_block.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/matched_vs_unmatched_sims/er_power_comparison.svg)
+
+---
+
+![center h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/thresholding_methods.svg)
+
+
+---
 
 ![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/weight_notions.svg)
 
-</div>
-<div>
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/thresholding_methods.png)
-
-</div>
-</div>
-
-<!-- _footer: Pedigo et al. eLife (2023) -->
 
 ---
 
-# Even high synapse count networks show asymmetry
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_threshold_pvalues_legend.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues_legend.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_proportion_histogram.svg)
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_weight_histogram.svg)
+
+---
+
+![center h:600](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_uncorrected.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_simple_methods.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_scatter.svg)
+
+
+---
+
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/group_counts.svg)
+
+
+
+---
+# Erdos-Renyi model
+
+- All edges are independent
+- All edges generated with the same probability, $p$
+
+![center](../../../results/figs/er_unmatched_test/er_explain.svg)
+
+
+---
+# Detect a difference in density
 
 <div class="columns">
 <div>
 
-<span> </span>
-<span> </span>
-<span> </span>
+![center h:500](./../../../results/figs/er_unmatched_test/er_methods.svg)
 
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/synapse-count.png)
 
 </div>
 <div>
 
-![h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues_legend.svg)
+![center h:400](../../../results/figs/er_unmatched_test/er_density.svg)
+
+<style scoped>
+p {
+  justify-content: center;
+  text-align: center;
+}
+</style>
+
+p-value < $10^{-22}$
+
 
 </div>
 </div>
 
 <!-- _footer: Pedigo et al. eLife (2022) -->
 
----
-
-# High input percentage networks show no asymmetry
-
-<!-- <div class='columns'>
-<div>
-
-## Synapse count thresholding  -->
-
-<!-- ![center h:400](./../../../results/figs/thresholding_tests/synapse_threshold_pvalues.svg) -->
-
-<!-- </div>
-<div>
-
-## Input proportion thresholding -->
-<!-- 
-</div>
-</div> -->
-
-<div class="columns">
-<div>
-
-
-<span> </span>
-<span> </span>
-<span> </span>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/input-prop.png)
-
-</div>
-<div>
-
-![center h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/input_threshold_pvalues_legend.svg)
-
-</div>
-</div>
-
-<!-- _footer: Pedigo et al. eLife (2022) -->
-
-
-
-<!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
 <!-- ---
 
@@ -1376,27 +1261,10 @@ skip
 _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 
 
-
 ---
-# Many ways to try to improve on this...
 
-- Edge types allow for "multilayer" graph matching
-- Partial knowledge of the matching (seeds)
-- Morphology (e.g. NBLAST)
+# Pedigo et al. Network Neuroscience (2022)
 
-<!-- <style scoped>
-h1, h2 {
-    padding-top: 140px;
-    justify-content: center;
-    text-align: center;
-}
-</style> -->
-
-# Thus far, we've not used the contralateral connections
-
-## These are about 1/3 of the edges in the brain!
-
-<!-- _footer: Pantazis et al. Applied Network Science (2022), Fishkind et al. Pattern Recognition (2019) -->
 
 ---
 # How do we do graph matching?
@@ -1513,22 +1381,3 @@ _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (
 ![center](./../../../results/figs/matched_vs_unmatched_sims_pn_lhn/er_power_comparison.svg)
 
 
---- 
-
-<!-- ### Cluster morphology  -->
-
-![bg h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
-
-
---- 
-
-# Cluster morphology 
-
-![bg opacity:25% h:750 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/all-morpho-plot-clustering=dc_level_7_n_components=10_min_split=32-discrim=True-wide.png)
-
-![h:300 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/intra-cluster-morpho.png)
-
-## Discriminability:
-$P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$ 
-
-<!-- _footer: Costa et al. Neuron (2016), Bridgeford et al. PLOS Comp. Bio. (2021)-->
