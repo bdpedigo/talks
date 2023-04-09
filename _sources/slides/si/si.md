@@ -703,7 +703,9 @@ Distance correlation: 0.067, p-value: 0.0087
 - In larva story, could map between modalities (morphology as the "linker")
 - Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented with transfer learning?
 
-![]()
+![center h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/segclr.png)
+
+<!-- _footer: Dorkenwald, Li et al. bioRxiv (2022) -->
 
 ---
 # Evaluating hypotheses about connectiviy $\leftrightarrow$ function
