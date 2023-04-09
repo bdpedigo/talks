@@ -624,7 +624,21 @@ We generalized a state-of-the-art GM algorithm to solve BGM!
 ---
 
 # Performance improvement on the full brain
+
+<div class="columns-br">
+<div>
+
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connection-types.png)
+
+</div>
+<div>
+
 ![center](https://raw.githubusercontent.com/neurodata/bgm/main/docs/images/matching_accuracy_upset.svg)
+
+</div>
+</div>
+
+
 
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Pantazis et al. Applied Network Science (2022) -->
 
