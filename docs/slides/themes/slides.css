@@ -103,3 +103,8 @@ h6 {
     grid-template-columns: 2fr 1fr;
     gap: 1.5rem;
 }
+
+/* adds total slides to paginate */
+section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+}

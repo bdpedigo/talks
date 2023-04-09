@@ -3,7 +3,18 @@ marp: true
 theme: slides
 size: 16:9
 paginate: true
+
 ---
+
+<!-- cheese the total slide numbers here -->
+<!-- Global style -->
+<style>
+section::after {
+    content: attr(data-marpit-pagination) '/10';
+}
+</style>
+
+
 <!-- _paginate: false -->
 
 ![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
@@ -91,7 +102,7 @@ Johns Hopkins University - Biomedical Engineering
 <div class="columns">
 <div>
 
-#### How does a neuron's connectivity affect responses?
+#### How does a neuron's connectivity affect elicited behaviors?
 
 ![center h:330](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/behave-example.png)
 
@@ -314,7 +325,7 @@ _footer: Winding, Pedigo et al. Science (2023) -->
 </div>
 <div>
 
-![center h:550](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/sbm-swap-arrows.png)
+![center h:520](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/sbm-swap-arrows.png)
 
 </div>
 </div>
@@ -341,6 +352,9 @@ h2 {
 </style>
 
 ## Are the <span style="color: var(--left)"> left </span> and <span style="color: var(--right)"> right </span> sides of this connectome <p> </p> *different*?
+
+- Hints at how sterotyped wiring might be
+- Testbed for connectome comparison methods
 
 --- 
 
@@ -399,11 +413,11 @@ $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
 # Assumptions
 - Know the direction of synapses, so network is *directed*
 - Consider networks to be *unweighted*
-- Consider the <span style='color: var(--left)'> left $\rightarrow$ left </span> and <span style='color: var(--right)'> right $\rightarrow$ right </span> (*ipsilateral*) connections
-- Not going to assume any nodes are matched
+- Not assuming any nodes are matched:
 ![center h:200](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/unmatched_vs_matched/unmatched_vs_matched.svg)
 - If $F$ is again a stochastic block model, then...
 
+<!-- - Consider the <span style='color: var(--left)'> left $\rightarrow$ left </span> and <span style='color: var(--right)'> right $\rightarrow$ right </span> (*ipsilateral*) connections -->
 
 ---
 # Connection probabilities between groups
@@ -655,13 +669,49 @@ We generalized a state-of-the-art GM algorithm to solve BGM!
 - ### **Future work**
 
 ---
+![bg h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png)
+
+---
 # Future work
+
+<!-- ![bg opacity:15% h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png) -->
 
 - Develop and apply methods for comparing multimodal connectomics datasets, e.g.
   - Across cortical regions
   - Across disease states
 - Relate differences in connectivity to differences in function, e.g.
   - What differences in wiring for a neuron are predictive of function?
+
+---
+
+<!-- As I mentioned at the beginning of the talk, while much of my PhD work has focused 
+on connectivity,  -->
+
+**how do we evaluate hypotheses about which wiring properties are important for function**
+
+
+---
+
+requires knowing *what* to compare? 
+- e.g. which neuron types are analagous across {dataset, modality, species, region}? 
+  
+- interested in extensions to representation learning approaches such as SegCLR
+
+--- 
+
+issues with scaling the larval approach 
+
+- reconstruction was done manually
+  - may have to generalize some of these comparison methods to account for differences in proofreading status, classifiers, etc. 
+- high level of stereotypy lets you find an (often 1-to-1) mapping between modalities 
+
+---
+
+
+
+---
+
+
 
 <!-- ---
 # How do wiring rules generalize across regions of cortex? To new species? Disease states?
@@ -868,7 +918,7 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 
 ---
 
-
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig1.png)
 
 ---
 
