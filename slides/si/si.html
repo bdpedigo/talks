@@ -439,12 +439,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Future work</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-structure-function-relationship-in-the-larva">Example: a structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-this-relate-to-work-at-allen">How does this relate to work at Allen?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-between-datasets-modalities">Mapping between datasets/modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-hypotheses-about-connectiviy-leftrightarrow-function">Evaluating hypotheses about connectiviy <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> function</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 </ul>
@@ -455,8 +455,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Benjamin D. Pedigo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">These slides at:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">These slides at:</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extras">Extras</a></li>
@@ -477,7 +477,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-do-graph-matching">How do we do graph matching?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-by-connectivity-only-performs-fairly-well">Matching (by connectivity only) performs fairly well</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-edge-structure">Testing for “stereotypy” in edge structure</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Comparative connectomics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Comparative connectomics</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-comparative-connectomics-hard">Why is comparative connectomics hard?</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-know-whether-a-proposed-experiment-could-even-hope-to-answer-our-questions-how-powerful-is-comparative-connectomics">How do we know whether a proposed experiment could even <em>hope</em> to answer our questions? How <strong>powerful</strong> is comparative connectomics?</a></li>
 </ul>
@@ -500,7 +500,7 @@ document.write(`
 <!-- Global style -->
 <style>
 section::after {
-    content: attr(data-marpit-pagination) '/10';
+    content: attr(data-marpit-pagination) '/38';
 }
 </style>
 <!-- _paginate: false -->
@@ -896,14 +896,15 @@ vs.
 <h1>An overall difference in density<a class="headerlink" href="#an-overall-difference-in-density" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
-<ul class="simple">
+<ul>
 <li><p>For significant comparisons, probabilities on right side are higher</p></li>
 <li><p>Even network densities are different<br>(1-block/Erdos-Renyi model)</p></li>
 <li><p>Maybe the right is just a “scaled up” version of the left?</p>
-<ul>
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(H_0: \color{#66c2a5}B^{(L)} \color{black}  = c \color{#fc8d62}B^{(R)}\)</span><br />
-where <span class="math notranslate nohighlight">\(c\)</span> is a density-adjusting constant, <span class="math notranslate nohighlight">\(\frac{\color{#66c2a5} p^{(L)}}{\color{#fc8d62} p^{(R)}}\)</span></p></li>
+<span class="math notranslate nohighlight">\(c\)</span> is a density-adjusting constant</p></li>
 </ul>
+ <!-- $\frac{\color{#66c2a5} p^{(L)}}{\color{#fc8d62} p^{(R)}}$ -->
 </li>
 </ul>
 </div>
@@ -1057,7 +1058,7 @@ p {
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="contralateral-connections-aid-matching">
 <h1>Contralateral connections aid matching!<a class="headerlink" href="#contralateral-connections-aid-matching" title="Permalink to this heading">#</a></h1>
-<p><img alt="center h:550" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/match_accuracy_comparison.svg" /></p>
+<p><img alt="center h:520" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/match_accuracy_comparison.svg" /></p>
 <!-- _footer: Pedigo et al. Network Neuroscience (2022) -->
 </section>
 <hr class="docutils" />
@@ -1071,7 +1072,7 @@ p {
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bgm/main/docs/images/matching_accuracy_upset.svg" /></p>
 </div>
 </div>
-<!-- _footer: Pedigo et al. Network Neuroscience (2022), Pantazis et al. Applied Network Science (2022) -->
+<!-- _footer: Pedigo et al. Network Neuroscience (2022), Winding, Pedigo et al. Science (2023), Pantazis et al. Applied Network Science (2022) -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="open-source-tools">
@@ -1118,44 +1119,74 @@ p {
 <p><img alt="bg h:700" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png" /></p>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id19">
-<h1>Future work<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h1>
-<!-- ![bg opacity:15% h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png) -->
-<ul class="simple">
-<li><p>Develop and apply methods for comparing multimodal connectomics datasets, e.g.</p>
-<ul>
-<li><p>Across cortical regions</p></li>
-<li><p>Across disease states</p></li>
-</ul>
-</li>
-<li><p>Relate differences in connectivity to differences in function, e.g.</p>
-<ul>
-<li><p>What differences in wiring for a neuron are predictive of function?</p></li>
-</ul>
-</li>
-</ul>
+<section class="tex2jax_ignore mathjax_ignore" id="example-a-structure-function-relationship-in-the-larva">
+<h1>Example: a structure-function relationship in the larva<a class="headerlink" href="#example-a-structure-function-relationship-in-the-larva" title="Permalink to this heading">#</a></h1>
+<p><img alt="center" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png" /></p>
+<section id="behavior-probabilities-significantly-related-to-projections-to-brain-outputs">
+<h2>Behavior probabilities significantly related to projections to brain outputs<a class="headerlink" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs" title="Permalink to this heading">#</a></h2>
+<p>RV coefficient: 0.12, p-value: 0.0044
+Distance correlation: 0.067, p-value: 0.0087</p>
+<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
+</section>
+</section>
 <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="mapping-between-datasets-modalities">
+<h1>Mapping between datasets/modalities<a class="headerlink" href="#mapping-between-datasets-modalities" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>In larva story, could map between modalities (morphology as the “linker”)</p></li>
+<li><p>Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented with transfer learning?</p></li>
+</ul>
+<p><img alt="" src="../../_images/si" /></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="evaluating-hypotheses-about-connectiviy-leftrightarrow-function">
+<h1>Evaluating hypotheses about connectiviy <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> function<a class="headerlink" href="#evaluating-hypotheses-about-connectiviy-leftrightarrow-function" title="Permalink to this heading">#</a></h1>
+<!-- ---
+
+# Future work
+
+<div class="columns">
+<div>
+
+Key components to the story I just told: 
+- Had a hypothesis about a specific connectivity feature and how it might relate to behavior
+
+</div>
+<div>
+
+
+
+</div>
+</div> -->
+<!-- ---
+# Future work
+
+<!-- ![bg opacity:15% h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png) -->
+<!-- - Develop and apply methods for comparing multimodal connectomics datasets, e.g.
+  - Across cortical regions
+  - Across disease states
+- Relate differences in connectivity to differences in function, e.g.
+  - What differences in wiring for a neuron are predictive of function? -->
 <!-- As I mentioned at the beginning of the talk, while much of my PhD work has focused 
 on connectivity,  -->
-<p><strong>how do we evaluate hypotheses about which wiring properties are important for function</strong></p>
-<hr class="docutils" />
-<p>requires knowing <em>what</em> to compare?</p>
-<ul class="simple">
-<li><p>e.g. which neuron types are analagous across {dataset, modality, species, region}?</p></li>
-<li><p>interested in extensions to representation learning approaches such as SegCLR</p></li>
-</ul>
-<hr class="docutils" />
-<p>issues with scaling the larval approach</p>
-<ul class="simple">
-<li><p>reconstruction was done manually</p>
-<ul>
-<li><p>may have to generalize some of these comparison methods to account for differences in proofreading status, classifiers, etc.</p></li>
-</ul>
-</li>
-<li><p>high level of stereotypy lets you find an (often 1-to-1) mapping between modalities</p></li>
-</ul>
-<hr class="docutils" />
-<hr class="docutils" />
+<!-- **how do we evaluate hypotheses about which wiring properties are important for function** -->
+<!-- ---
+
+requires knowing *what* to compare? 
+- e.g. which neuron types are analagous across {dataset, modality, species, region}? 
+  
+- interested in extensions to representation learning approaches such as SegCLR
+
+--- 
+
+issues with scaling the larval approach 
+
+- reconstruction was done manually
+  - may have to generalize some of these comparison methods to account for differences in proofreading status, classifiers, etc. 
+- high level of stereotypy lets you find an (often 1-to-1) mapping between modalities 
+
+--- -->
+<!-- --- -->
 <!-- ---
 # How do wiring rules generalize across regions of cortex? To new species? Disease states?
 
@@ -1175,16 +1206,6 @@ excited to see how these methods could, with allen data, help understand how dif
 
 ## Applications, e.g. 
 - How do wiring rules generalize across regions of cortex -->
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="example-a-structure-function-relationship-in-the-larva">
-<h1>Example: a structure-function relationship in the larva<a class="headerlink" href="#example-a-structure-function-relationship-in-the-larva" title="Permalink to this heading">#</a></h1>
-<p><img alt="center" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png" /></p>
-<section id="behavior-probabilities-significantly-related-to-projections-to-brain-outputs">
-<h2>Behavior probabilities significantly related to projections to brain outputs<a class="headerlink" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs" title="Permalink to this heading">#</a></h2>
-<p>RV coefficient: 0.12, p-value: 0.0044
-Distance correlation: 0.067, p-value: 0.0087</p>
-<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
 <!-- ---
 # Mapping representations between modalities
 - Give SegCLR example, how well does it generalize -->
@@ -1194,11 +1215,6 @@ Distance correlation: 0.067, p-value: 0.0087</p>
 - In reality, likely issues with differences in samples that need to be accounted for -->
 <!-- ---
 # Mapping between behavior/response and connectivity -->
-</section>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="how-does-this-relate-to-work-at-allen">
-<h1>How does this relate to work at Allen?<a class="headerlink" href="#how-does-this-relate-to-work-at-allen" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
 <section id="references">
@@ -1278,8 +1294,8 @@ Joshua Vogelstein</p>
 <h1>Questions?<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
-<section id="id20">
-<h2>Benjamin D. Pedigo<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<section id="id19">
+<h2>Benjamin D. Pedigo<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
 <p><img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png" /> <a class="reference external" href="mailto:bpedigo&#37;&#52;&#48;jhu&#46;edu">bpedigo<span>&#64;</span>jhu<span>&#46;</span>edu</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/github.png" /> <a class="reference external" href="https://github.com/bdpedigo">&#64;bdpedigo</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png" /> <a class="reference external" href="https://twitter.com/bpedigod">&#64;bpedigod</a>
@@ -1287,8 +1303,8 @@ Joshua Vogelstein</p>
 </div>
 <div>
 </section>
-<section id="id21">
-<h2>These slides at:<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+<section id="id20">
+<h2>These slides at:<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://bdpedigo.github.io/talks/si.html">bdpedigo.github.io/talks/si.html</a></p>
 </div>
 </div>
@@ -1569,8 +1585,8 @@ p {
 <p>_footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021)</p>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id22">
-<h1>Comparative connectomics<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id21">
+<h1>Comparative connectomics<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h1>
 <p><img alt="center h:350" src="../../../bilateral/bilateral-connectome/docs/images/connect-diagram.png" /></p>
 <ul class="simple">
 <li><p>Map connectomes from related individuals/organisms which may differ in feature <span class="math notranslate nohighlight">\(X\)</span></p></li>
@@ -1759,12 +1775,12 @@ p {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Future work</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-structure-function-relationship-in-the-larva">Example: a structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-this-relate-to-work-at-allen">How does this relate to work at Allen?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-between-datasets-modalities">Mapping between datasets/modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-hypotheses-about-connectiviy-leftrightarrow-function">Evaluating hypotheses about connectiviy <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> function</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 </ul>
@@ -1775,8 +1791,8 @@ p {
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Benjamin D. Pedigo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">These slides at:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">These slides at:</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extras">Extras</a></li>
@@ -1797,7 +1813,7 @@ p {
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-do-graph-matching">How do we do graph matching?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-by-connectivity-only-performs-fairly-well">Matching (by connectivity only) performs fairly well</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-edge-structure">Testing for “stereotypy” in edge structure</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Comparative connectomics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Comparative connectomics</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-comparative-connectomics-hard">Why is comparative connectomics hard?</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-know-whether-a-proposed-experiment-could-even-hope-to-answer-our-questions-how-powerful-is-comparative-connectomics">How do we know whether a proposed experiment could even <em>hope</em> to answer our questions? How <strong>powerful</strong> is comparative connectomics?</a></li>
 </ul>
