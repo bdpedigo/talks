@@ -10,7 +10,7 @@ paginate: true
 <!-- Global style -->
 <style>
 section::after {
-    content: attr(data-marpit-pagination) '/10';
+    content: attr(data-marpit-pagination) '/38';
 }
 </style>
 
@@ -482,7 +482,9 @@ $H_0: \color{#66c2a5}B^{(L)}_{kl} \color{black} = \color{#fc8d62}B^{(R)}_{kl}$
 - Even network densities are different<br>(1-block/Erdos-Renyi model)
 - Maybe the right is just a "scaled up" version of the left?
    - $H_0: \color{#66c2a5}B^{(L)} \color{black}  = c \color{#fc8d62}B^{(R)}$  
-  where $c$ is a density-adjusting constant, $\frac{\color{#66c2a5} p^{(L)}}{\color{#fc8d62} p^{(R)}}$
+   $c$ is a density-adjusting constant
+  
+   <!-- $\frac{\color{#66c2a5} p^{(L)}}{\color{#fc8d62} p^{(R)}}$ -->
 
 </div>
 <div>
@@ -617,7 +619,7 @@ We generalized a state-of-the-art GM algorithm to solve BGM!
 --- 
 # Contralateral connections aid matching!
 
-![center h:550](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/match_accuracy_comparison.svg)
+![center h:520](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/match_accuracy_comparison.svg)
 
 <!-- _footer: Pedigo et al. Network Neuroscience (2022) -->
 
@@ -638,9 +640,7 @@ We generalized a state-of-the-art GM algorithm to solve BGM!
 </div>
 </div>
 
-
-
-<!-- _footer: Pedigo et al. Network Neuroscience (2022), Pantazis et al. Applied Network Science (2022) -->
+<!-- _footer: Pedigo et al. Network Neuroscience (2022), Winding, Pedigo et al. Science (2023), Pantazis et al. Applied Network Science (2022) -->
 
 ---
 # Open source tools
@@ -686,25 +686,72 @@ We generalized a state-of-the-art GM algorithm to solve BGM!
 ![bg h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png)
 
 ---
+# Example: a structure-function relationship in the larva
+
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
+
+### Behavior probabilities significantly related to projections to brain outputs
+
+RV coefficient: 0.12, p-value: 0.0044
+Distance correlation: 0.067, p-value: 0.0087
+
+<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
+
+---
+# Mapping between datasets/modalities
+
+- In larva story, could map between modalities (morphology as the "linker")
+- Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented with transfer learning?
+
+![]()
+
+---
+# Evaluating hypotheses about connectiviy $\leftrightarrow$ function
+
+
+
+
+<!-- ---
+
+# Future work
+
+<div class="columns">
+<div>
+
+Key components to the story I just told: 
+- Had a hypothesis about a specific connectivity feature and how it might relate to behavior
+
+</div>
+<div>
+
+
+
+</div>
+</div> -->
+
+
+
+
+
+<!-- ---
 # Future work
 
 <!-- ![bg opacity:15% h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png) -->
 
-- Develop and apply methods for comparing multimodal connectomics datasets, e.g.
+<!-- - Develop and apply methods for comparing multimodal connectomics datasets, e.g.
   - Across cortical regions
   - Across disease states
 - Relate differences in connectivity to differences in function, e.g.
-  - What differences in wiring for a neuron are predictive of function?
+  - What differences in wiring for a neuron are predictive of function? -->
 
----
+
 
 <!-- As I mentioned at the beginning of the talk, while much of my PhD work has focused 
 on connectivity,  -->
 
-**how do we evaluate hypotheses about which wiring properties are important for function**
+<!-- **how do we evaluate hypotheses about which wiring properties are important for function** -->
 
-
----
+<!-- ---
 
 requires knowing *what* to compare? 
 - e.g. which neuron types are analagous across {dataset, modality, species, region}? 
@@ -719,11 +766,11 @@ issues with scaling the larval approach
   - may have to generalize some of these comparison methods to account for differences in proofreading status, classifiers, etc. 
 - high level of stereotypy lets you find an (often 1-to-1) mapping between modalities 
 
----
+--- -->
 
 
 
----
+<!-- --- -->
 
 
 
@@ -750,17 +797,7 @@ excited to see how these methods could, with allen data, help understand how dif
 ## Applications, e.g. 
 - How do wiring rules generalize across regions of cortex -->
 
----
-# Example: a structure-function relationship in the larva
 
-![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
-
-### Behavior probabilities significantly related to projections to brain outputs
-
-RV coefficient: 0.12, p-value: 0.0044
-Distance correlation: 0.067, p-value: 0.0087
-
-<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
 
 <!-- ---
 # Mapping representations between modalities
@@ -774,9 +811,7 @@ Distance correlation: 0.067, p-value: 0.0087
 <!-- ---
 # Mapping between behavior/response and connectivity -->
 
----
 
-# How does this relate to work at Allen?
 
 ---
 
