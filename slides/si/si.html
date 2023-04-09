@@ -368,7 +368,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Goal: linking connectivity to other phenotypes</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Goal: linking connectivity to other phenotypes</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-connectomics">Comparative connectomics</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-neuron-s-connectivity-affect-responses">How does a neuron’s connectivity affect responses?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-neuron-s-connectivity-affect-elicited-behaviors">How does a neuron’s connectivity affect elicited behaviors?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-connectivity-change-during-development">How does connectivity change during development?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requires-methods-of-comparing-connectivity-within-and-between-connectomes">Requires methods of comparing connectivity within and between connectomes</a></li>
 </ul>
@@ -503,7 +503,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <!-- _paginate: false -->
+  <!-- cheese the total slide numbers here -->
+<!-- Global style -->
+<style>
+section::after {
+    content: attr(data-marpit-pagination) '/10';
+}
+</style>
+<!-- _paginate: false -->
 <p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
 <style scoped> 
 p {
@@ -570,8 +577,8 @@ Johns Hopkins University - Biomedical Engineering</p>
 <h1>Comparative connectomics<a class="headerlink" href="#comparative-connectomics" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
-<section id="how-does-a-neuron-s-connectivity-affect-responses">
-<h2>How does a neuron’s connectivity affect responses?<a class="headerlink" href="#how-does-a-neuron-s-connectivity-affect-responses" title="Permalink to this heading">#</a></h2>
+<section id="how-does-a-neuron-s-connectivity-affect-elicited-behaviors">
+<h2>How does a neuron’s connectivity affect elicited behaviors?<a class="headerlink" href="#how-does-a-neuron-s-connectivity-affect-elicited-behaviors" title="Permalink to this heading">#</a></h2>
 <p><img alt="center h:330" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/behave-example.png" /></p>
 </div>
 <div>
@@ -758,7 +765,7 @@ _footer: Winding, Pedigo et al. Science (2023) -->
 <p><img alt="" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cross-val-explain.png" /></p>
 </div>
 <div>
-<p><img alt="center h:550" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/sbm-swap-arrows.png" /></p>
+<p><img alt="center h:520" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/sbm-swap-arrows.png" /></p>
 </div>
 </div>
 <hr class="docutils" />
@@ -782,6 +789,10 @@ h2 {
 </style>
 <section id="are-the-span-style-color-var-left-left-span-and-span-style-color-var-right-right-span-sides-of-this-connectome-p-p-different">
 <h2>Are the <span style="color: var(--left)"> left </span> and <span style="color: var(--right)"> right </span> sides of this connectome <p> </p> <em>different</em>?<a class="headerlink" href="#are-the-span-style-color-var-left-left-span-and-span-style-color-var-right-right-span-sides-of-this-connectome-p-p-different" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Hints at how sterotyped wiring might be</p></li>
+<li><p>Testbed for connectome comparison methods</p></li>
+</ul>
 <hr class="docutils" />
 <p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
 </section>
@@ -842,11 +853,11 @@ vs.
 <ul class="simple">
 <li><p>Know the direction of synapses, so network is <em>directed</em></p></li>
 <li><p>Consider networks to be <em>unweighted</em></p></li>
-<li><p>Consider the <span style='color: var(--left)'> left <span class="math notranslate nohighlight">\(\rightarrow\)</span> left </span> and <span style='color: var(--right)'> right <span class="math notranslate nohighlight">\(\rightarrow\)</span> right </span> (<em>ipsilateral</em>) connections</p></li>
-<li><p>Not going to assume any nodes are matched
+<li><p>Not assuming any nodes are matched:
 <img alt="center h:200" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/unmatched_vs_matched/unmatched_vs_matched.svg" /></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(F\)</span> is again a stochastic block model, then…</p></li>
 </ul>
+<!-- - Consider the <span style='color: var(--left)'> left $\rightarrow$ left </span> and <span style='color: var(--right)'> right $\rightarrow$ right </span> (*ipsilateral*) connections -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="connection-probabilities-between-groups">
@@ -1103,10 +1114,13 @@ p {
 <section id="id18">
 <h2><strong>Future work</strong><a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
 </section>
+<hr class="docutils" />
+<p><img alt="bg h:700" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png" /></p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id19">
 <h1>Future work<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h1>
+<!-- ![bg opacity:15% h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png) -->
 <ul class="simple">
 <li><p>Develop and apply methods for comparing multimodal connectomics datasets, e.g.</p>
 <ul>
@@ -1120,6 +1134,28 @@ p {
 </ul>
 </li>
 </ul>
+<hr class="docutils" />
+<!-- As I mentioned at the beginning of the talk, while much of my PhD work has focused 
+on connectivity,  -->
+<p><strong>how do we evaluate hypotheses about which wiring properties are important for function</strong></p>
+<hr class="docutils" />
+<p>requires knowing <em>what</em> to compare?</p>
+<ul class="simple">
+<li><p>e.g. which neuron types are analagous across {dataset, modality, species, region}?</p></li>
+<li><p>interested in extensions to representation learning approaches such as SegCLR</p></li>
+</ul>
+<hr class="docutils" />
+<p>issues with scaling the larval approach</p>
+<ul class="simple">
+<li><p>reconstruction was done manually</p>
+<ul>
+<li><p>may have to generalize some of these comparison methods to account for differences in proofreading status, classifiers, etc.</p></li>
+</ul>
+</li>
+<li><p>high level of stereotypy lets you find an (often 1-to-1) mapping between modalities</p></li>
+</ul>
+<hr class="docutils" />
+<hr class="docutils" />
 <!-- ---
 # How do wiring rules generalize across regions of cortex? To new species? Disease states?
 
@@ -1268,6 +1304,7 @@ Joshua Vogelstein</p>
 <p><img alt="h:500 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/FigureS1-reconstruction.png" /></p>
 <!-- _footer: Winding, Pedigo et al. Science (2022), Ohyama et al. Nature (2015)-->
 <hr class="docutils" />
+<p><img alt="center" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/science-Fig1.png" /></p>
 <hr class="docutils" />
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_null_cdf.svg" /></p>
 <hr class="docutils" />
@@ -1758,7 +1795,7 @@ p {
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Goal: linking connectivity to other phenotypes</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Goal: linking connectivity to other phenotypes</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-connectomics">Comparative connectomics</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-neuron-s-connectivity-affect-responses">How does a neuron’s connectivity affect responses?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-neuron-s-connectivity-affect-elicited-behaviors">How does a neuron’s connectivity affect elicited behaviors?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-connectivity-change-during-development">How does connectivity change during development?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requires-methods-of-comparing-connectivity-within-and-between-connectomes">Requires methods of comparing connectivity within and between connectomes</a></li>
 </ul>
