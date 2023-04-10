@@ -35,6 +35,7 @@ p {
 
 ## Benjamin D. Pedigo
 (he/him)
+NSF Graduate Research Fellow
 [NeuroData lab](https://neurodata.io/)
 Johns Hopkins University - Biomedical Engineering
 
@@ -687,10 +688,10 @@ We generalized a state-of-the-art GM algorithm to solve BGM!
 ---
 ![bg h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png)
 
----
-# Example: do wiring rules generalize to different cortical regions, which may differ in function? 
+<!-- ---
+# How do we extract regularities and variations in neural wiring, and tell which relate to phenotype?
 
-
+ -->
 
 ---
 # A structure-function relationship in the larva
@@ -705,13 +706,40 @@ Distance correlation: 0.067, p-value: 0.0087
 <!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
 
 ---
-# Mapping between datasets/modalities
+# Example: do wiring rules generalize to different cortical regions?
 
 <div class="columns">
 <div>
 
+<!-- ![h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/microns-volume.png) -->
+
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-volume.png)
+
+</div>
+<div>
+
+
+
+</div>
+</div>
+
+<!-- _footer: MICrONS Consortium et al. bioRxiv (2021), Schneider-Mizell et al. bioRxiv (2023) -->
+
+---
+
+
+<!-- 1. Characterize variability in connectivity
+    - e.g. cell type connection rules 
+2. Relating to function
+    - e.g. visual response properties -->
+
+<!-- # Mapping between datasets/modalities -->
+
+<!-- <div class="columns">
+<div>
+
 - What objects to even compare?
-- Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented (e.g. transfer learning)?
+- Are recent self-supervised learning methods for morphology capable of generalizing to new {regions, datasets, modalities}, or do they need to be augmented (e.g. transfer learning)?
 
 </div>
 <div>
@@ -719,8 +747,11 @@ Distance correlation: 0.067, p-value: 0.0087
 ![center h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/segclr.png)
 
 </div>
-</div>
+</div> -->
 
+# Characterizing variability in connectivity
+
+- Requires knowing *what objects* to compare
 
 
 <!-- _footer: Dorkenwald, Li et al. bioRxiv (2022) -->
