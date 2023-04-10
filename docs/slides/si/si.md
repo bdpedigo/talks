@@ -715,6 +715,8 @@ Distance correlation: 0.067, p-value: 0.0087
 
 ![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-volume.png)
 
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-wiring-rules.png)
+
 </div>
 <div>
 
