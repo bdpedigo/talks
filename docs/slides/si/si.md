@@ -454,6 +454,13 @@ $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
 <div class="columns">
 <div>
 
+- Overall test (comparing all blocks):<br>$H_0: \color{#66c2a5}B^{(L)} \color{black} = \color{#fc8d62}B^{(R)}$<br>p-value $<10^{-7}$
+
+- 7 group-to-group connections are significantly different (after multiple comparisons correction)
+
+</div>
+<div>
+
 <div class='center'>
 
 $H_0: \color{#66c2a5}B^{(L)}_{kl} \color{black} = \color{#fc8d62}B^{(R)}_{kl}$ 
@@ -462,11 +469,6 @@ $H_0: \color{#66c2a5}B^{(L)}_{kl} \color{black} = \color{#fc8d62}B^{(R)}_{kl}$
 
 ![center h:425](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg)
 
-</div>
-<div>
-
-- 7 group-to-group connections are significantly different (after multiple comparisons correction)
-- Overall test (comparing all blocks):<br>$H_0: \color{#66c2a5}B^{(L)} \color{black} = \color{#fc8d62}B^{(R)}$<br>p-value $<10^{-7}$
 
 </div>
 </div>
@@ -683,10 +685,15 @@ We generalized a state-of-the-art GM algorithm to solve BGM!
 - ### **Future work**
 
 ---
-![bg h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png)
+![bg h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png)
 
 ---
-# Example: a structure-function relationship in the larva
+# Example: do wiring rules generalize to different cortical regions, which may differ in function? 
+
+
+
+---
+# A structure-function relationship in the larva
 
 ![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
 
@@ -700,16 +707,30 @@ Distance correlation: 0.067, p-value: 0.0087
 ---
 # Mapping between datasets/modalities
 
-- In larva story, could map between modalities (morphology as the "linker")
-- Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented with transfer learning?
+<div class="columns">
+<div>
+
+- What objects to even compare?
+- Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented (e.g. transfer learning)?
+
+</div>
+<div>
 
 ![center h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/segclr.png)
+
+</div>
+</div>
+
+
 
 <!-- _footer: Dorkenwald, Li et al. bioRxiv (2022) -->
 
 ---
 # Evaluating hypotheses about connectiviy $\leftrightarrow$ function
 
+- May require more elaborate 
+- 
+- notions which deal with things like compartment (e.g. axon/dendrite) or space
 
 
 
