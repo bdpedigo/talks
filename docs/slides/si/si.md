@@ -960,8 +960,8 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 </div>
 <div>
 
-![](../../../../../bilateral/bilateral-connectome/docs/images/ffwd-fdback.svg)
-![h:50](../../../../../bilateral/bilateral-connectome/docs/images/ffwd-legend.png)
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdback.svg)
+![h:50](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-legend.png)
 
 </div>
 </div>
@@ -973,12 +973,11 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 <div>
 
 - Spectral decomposition of the adjacency matrix (or Laplacian)
-- Clustering on this representation is a consistent estimator of block model labels
 
 </div>
 <div>
 
-![h:400 center](../../../../../bilateral/bilateral-connectome/docs/images/spec-clust.png)
+![h:400 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/spec-clust.png)
 
 </div>
 </div>
@@ -1014,19 +1013,6 @@ $P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$
 
 ---
 
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_null_cdf.svg)
-
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/relative_power.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_power_matrix.svg)
-
----
-
 ![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/null_distributions.svg)
 
 ---
@@ -1045,15 +1031,6 @@ $P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$
 ---
 
 ![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_methods.svg)
-
-
----
-
-![center h:600](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/kc_minus/kc_minus_composite.svg)
-
----
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/sbm_pvalues.svg)
 
 ---
 
@@ -1115,44 +1092,6 @@ $P[$ within cluster NBLAST sim. $>$ between cluster NBLAST sim. $] \approx 0.81$
 ![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/group_counts.svg)
 
 
-
----
-# Erdos-Renyi model
-
-- All edges are independent
-- All edges generated with the same probability, $p$
-
-![center](../../../results/figs/er_unmatched_test/er_explain.svg)
-
-
----
-# Detect a difference in density
-
-<div class="columns">
-<div>
-
-![center h:500](./../../../results/figs/er_unmatched_test/er_methods.svg)
-
-
-</div>
-<div>
-
-![center h:400](../../../results/figs/er_unmatched_test/er_density.svg)
-
-<style scoped>
-p {
-  justify-content: center;
-  text-align: center;
-}
-</style>
-
-p-value < $10^{-22}$
-
-
-</div>
-</div>
-
-<!-- _footer: Pedigo et al. eLife (2022) -->
 
 
 <!-- ---
@@ -1235,8 +1174,31 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 
 # Algorithm
 
-![]()
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/algo-bgm.png)
 
+---
+
+![h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_matched_test/edge_scatter_matched.png)
+
+Pearson's corr = 0.82
+
+---
+
+<div class="columns">
+<div>
+
+### Unpaired
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_matched_test/pvalue_heatmap_unpaired_matched.png)
+
+</div>
+<div>
+
+### Paired 
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_matched_test/pvalue_heatmap_paired_matched.png)
+
+</div>
+</div>
 
 ---
 # Testing for "stereotypy" in edge structure
@@ -1257,51 +1219,3 @@ Is matching stronger than expected under some model of independent networks?
 </div>
 
 <!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
-
-
----
-
-# Comparative connectomics
-
-<!-- ![center h:350](../../../../../bilateral/bilateral-connectome/docs/images/connect-diagram.png) -->
-
-- Map connectomes from related individuals/organisms which may differ in feature $X$
-- Compare connectomes
-- Understand how $X$ {affects, is affected by, is associated with} connectome structure
-
----
-
-<div class="columns">
-<div>
-
-![](../../../../../bilateral/bilateral-connectome/docs/images/behavior-cc.png)
-
-> Comparative connectomics across experience, sex and species is a key next step.
-
-</div>
-<div>
-
-![](../../../../../bilateral/bilateral-connectome/docs/images/evo-cc.png)
-
-> With comparative connectomics, the search for neural circuit architectures common across species or independently converged into an optimal layout is now possible.
-
-</div>
-</div>
-
-
----
-
-# Why is comparative connectomics hard?
-
-- Collecting the data is still a large effort...
-
-- But how do we even compare connectomes once we have them?
-
-## How do we know whether a proposed experiment could even *hope* to answer our questions? How **powerful** is comparative connectomics?
-
----
-# Pairs facilitate more powerful tests
-
-![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/matched_vs_unmatched_sims_pn_lhn/er_power_comparison.svg)
-
-
