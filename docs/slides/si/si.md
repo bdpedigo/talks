@@ -706,21 +706,21 @@ Distance correlation: 0.067, p-value: 0.0087
 <!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
 
 ---
-# Example: do wiring rules generalize to different cortical regions?
+# Example: do wiring rules generalize across region?
 
 <div class="columns">
 <div>
 
 <!-- ![h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/microns-volume.png) -->
 
-![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-volume.png)
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-volume.png)
 
-![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-wiring-rules.png)
+![center h:290](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-wiring-rules.png)
 
 </div>
 <div>
 
-
+- 
 
 </div>
 </div>
@@ -729,10 +729,16 @@ Distance correlation: 0.067, p-value: 0.0087
 
 ---
 
+# ...and does any variation relate to function? 
+
+![](./ding)
+
+<!-- _footer: Ding, Fahey, Papadououlos et al. bioRxiv (2023)  -->
+
 
 <!-- 1. Characterize variability in connectivity
     - e.g. cell type connection rules 
-2. Relating to function
+1. Relating to function
     - e.g. visual response properties -->
 
 <!-- # Mapping between datasets/modalities -->
@@ -751,12 +757,12 @@ Distance correlation: 0.067, p-value: 0.0087
 </div>
 </div> -->
 
-# Characterizing variability in connectivity
+<!-- # Characterizing variability in connectivity
 
 - Requires knowing *what objects* to compare
+ -->
 
-
-<!-- _footer: Dorkenwald, Li et al. bioRxiv (2022) -->
+<!-- Dorkenwald, Li et al. bioRxiv (2022) -->
 
 ---
 # Evaluating hypotheses about connectiviy $\leftrightarrow$ function
