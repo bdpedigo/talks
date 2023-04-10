@@ -439,7 +439,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-structure-function-relationship-in-the-larva">Example: a structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-do-wiring-rules-generalize-to-different-cortical-regions-which-may-differ-in-function">Example: do wiring rules generalize to different cortical regions, which may differ in function?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structure-function-relationship-in-the-larva">A structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
 </ul>
 </li>
@@ -877,16 +878,16 @@ vs.
 <h1>Detect differences in group connection probabilities<a class="headerlink" href="#detect-differences-in-group-connection-probabilities" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
+<ul class="simple">
+<li><p>Overall test (comparing all blocks):<br><span class="math notranslate nohighlight">\(H_0: \color{#66c2a5}B^{(L)} \color{black} = \color{#fc8d62}B^{(R)}\)</span><br>p-value <span class="math notranslate nohighlight">\(&lt;10^{-7}\)</span></p></li>
+<li><p>7 group-to-group connections are significantly different (after multiple comparisons correction)</p></li>
+</ul>
+</div>
+<div>
 <div class='center'>
 <p><span class="math notranslate nohighlight">\(H_0: \color{#66c2a5}B^{(L)}_{kl} \color{black} = \color{#fc8d62}B^{(R)}_{kl}\)</span></p>
 </div>
 <p><img alt="center h:425" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_uncorrected_pvalues_unlabeled.svg" /></p>
-</div>
-<div>
-<ul class="simple">
-<li><p>7 group-to-group connections are significantly different (after multiple comparisons correction)</p></li>
-<li><p>Overall test (comparing all blocks):<br><span class="math notranslate nohighlight">\(H_0: \color{#66c2a5}B^{(L)} \color{black} = \color{#fc8d62}B^{(R)}\)</span><br>p-value <span class="math notranslate nohighlight">\(&lt;10^{-7}\)</span></p></li>
-</ul>
 </div>
 </div>
 <!-- _footer: Pedigo et al. eLife (2023) -->
@@ -1116,11 +1117,15 @@ p {
 <h2><strong>Future work</strong><a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
 </section>
 <hr class="docutils" />
-<p><img alt="bg h:700" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-2.png" /></p>
+<p><img alt="bg h:700" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png" /></p>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="example-a-structure-function-relationship-in-the-larva">
-<h1>Example: a structure-function relationship in the larva<a class="headerlink" href="#example-a-structure-function-relationship-in-the-larva" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="example-do-wiring-rules-generalize-to-different-cortical-regions-which-may-differ-in-function">
+<h1>Example: do wiring rules generalize to different cortical regions, which may differ in function?<a class="headerlink" href="#example-do-wiring-rules-generalize-to-different-cortical-regions-which-may-differ-in-function" title="Permalink to this heading">#</a></h1>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="a-structure-function-relationship-in-the-larva">
+<h1>A structure-function relationship in the larva<a class="headerlink" href="#a-structure-function-relationship-in-the-larva" title="Permalink to this heading">#</a></h1>
 <p><img alt="center" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png" /></p>
 <section id="behavior-probabilities-significantly-related-to-projections-to-brain-outputs">
 <h2>Behavior probabilities significantly related to projections to brain outputs<a class="headerlink" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs" title="Permalink to this heading">#</a></h2>
@@ -1132,16 +1137,27 @@ Distance correlation: 0.067, p-value: 0.0087</p>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="mapping-between-datasets-modalities">
 <h1>Mapping between datasets/modalities<a class="headerlink" href="#mapping-between-datasets-modalities" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
 <ul class="simple">
-<li><p>In larva story, could map between modalities (morphology as the “linker”)</p></li>
-<li><p>Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented with transfer learning?</p></li>
+<li><p>What objects to even compare?</p></li>
+<li><p>Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented (e.g. transfer learning)?</p></li>
 </ul>
+</div>
+<div>
 <p><img alt="center h:350" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/segclr.png" /></p>
+</div>
+</div>
 <!-- _footer: Dorkenwald, Li et al. bioRxiv (2022) -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="evaluating-hypotheses-about-connectiviy-leftrightarrow-function">
 <h1>Evaluating hypotheses about connectiviy <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> function<a class="headerlink" href="#evaluating-hypotheses-about-connectiviy-leftrightarrow-function" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>May require more elaborate</p></li>
+<li></li>
+<li><p>notions which deal with things like compartment (e.g. axon/dendrite) or space</p></li>
+</ul>
 <!-- ---
 
 # Future work
@@ -1776,7 +1792,8 @@ p {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-structure-function-relationship-in-the-larva">Example: a structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-do-wiring-rules-generalize-to-different-cortical-regions-which-may-differ-in-function">Example: do wiring rules generalize to different cortical regions, which may differ in function?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structure-function-relationship-in-the-larva">A structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
 </ul>
 </li>
