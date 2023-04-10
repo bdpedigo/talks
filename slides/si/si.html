@@ -439,12 +439,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-do-wiring-rules-generalize-to-different-cortical-regions-which-may-differ-in-function">Example: do wiring rules generalize to different cortical regions, which may differ in function?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structure-function-relationship-in-the-larva">A structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-between-datasets-modalities">Mapping between datasets/modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-do-wiring-rules-generalize-to-different-cortical-regions">Example: do wiring rules generalize to different cortical regions?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#characterizing-variability-in-connectivity">Characterizing variability in connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-hypotheses-about-connectiviy-leftrightarrow-function">Evaluating hypotheses about connectiviy <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> function</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
@@ -519,6 +519,7 @@ p {
 <section id="benjamin-d-pedigo">
 <h2>Benjamin D. Pedigo<a class="headerlink" href="#benjamin-d-pedigo" title="Permalink to this heading">#</a></h2>
 <p>(he/him)
+NSF Graduate Research Fellow
 <a class="reference external" href="https://neurodata.io/">NeuroData lab</a>
 Johns Hopkins University - Biomedical Engineering</p>
 <p><img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png" /> <a class="reference external" href="mailto:bpedigo&#37;&#52;&#48;jhu&#46;edu">bpedigo<span>&#64;</span>jhu<span>&#46;</span>edu</a>
@@ -1118,10 +1119,10 @@ p {
 </section>
 <hr class="docutils" />
 <p><img alt="bg h:700" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png" /></p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="example-do-wiring-rules-generalize-to-different-cortical-regions-which-may-differ-in-function">
-<h1>Example: do wiring rules generalize to different cortical regions, which may differ in function?<a class="headerlink" href="#example-do-wiring-rules-generalize-to-different-cortical-regions-which-may-differ-in-function" title="Permalink to this heading">#</a></h1>
+<!-- ---
+# How do we extract regularities and variations in neural wiring, and tell which relate to phenotype?
+
+ -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="a-structure-function-relationship-in-the-larva">
@@ -1135,19 +1136,43 @@ Distance correlation: 0.067, p-value: 0.0087</p>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="mapping-between-datasets-modalities">
-<h1>Mapping between datasets/modalities<a class="headerlink" href="#mapping-between-datasets-modalities" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="example-do-wiring-rules-generalize-to-different-cortical-regions">
+<h1>Example: do wiring rules generalize to different cortical regions?<a class="headerlink" href="#example-do-wiring-rules-generalize-to-different-cortical-regions" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
-<ul class="simple">
-<li><p>What objects to even compare?</p></li>
-<li><p>Are recent self-supervised learning methods for morphology capable of generalizing to new {datasets, modalities}, or do they need to be augmented (e.g. transfer learning)?</p></li>
-</ul>
+<!-- ![h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/microns-volume.png) -->
+<p><img alt="" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-volume.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-wiring-rules.png" /></p>
 </div>
 <div>
-<p><img alt="center h:350" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/segclr.png" /></p>
 </div>
 </div>
+<!-- _footer: MICrONS Consortium et al. bioRxiv (2021), Schneider-Mizell et al. bioRxiv (2023) -->
+<hr class="docutils" />
+<!-- 1. Characterize variability in connectivity
+    - e.g. cell type connection rules 
+2. Relating to function
+    - e.g. visual response properties -->
+<!-- # Mapping between datasets/modalities -->
+<!-- <div class="columns">
+<div>
+
+- What objects to even compare?
+- Are recent self-supervised learning methods for morphology capable of generalizing to new {regions, datasets, modalities}, or do they need to be augmented (e.g. transfer learning)?
+
+</div>
+<div>
+
+![center h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/segclr.png)
+
+</div>
+</div> -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="characterizing-variability-in-connectivity">
+<h1>Characterizing variability in connectivity<a class="headerlink" href="#characterizing-variability-in-connectivity" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Requires knowing <em>what objects</em> to compare</p></li>
+</ul>
 <!-- _footer: Dorkenwald, Li et al. bioRxiv (2022) -->
 </section>
 <hr class="docutils" />
@@ -1792,12 +1817,12 @@ p {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-do-wiring-rules-generalize-to-different-cortical-regions-which-may-differ-in-function">Example: do wiring rules generalize to different cortical regions, which may differ in function?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structure-function-relationship-in-the-larva">A structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-between-datasets-modalities">Mapping between datasets/modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-do-wiring-rules-generalize-to-different-cortical-regions">Example: do wiring rules generalize to different cortical regions?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#characterizing-variability-in-connectivity">Characterizing variability in connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-hypotheses-about-connectiviy-leftrightarrow-function">Evaluating hypotheses about connectiviy <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> function</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
