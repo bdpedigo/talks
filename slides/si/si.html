@@ -471,18 +471,14 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pedigo-et-al-elife-2023">Pedigo et al. eLife (2023)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erdos-renyi-model">Erdos-Renyi model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-a-difference-in-density">Detect a difference in density</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pedigo-et-al-network-neuroscience-2022">Pedigo et al. Network Neuroscience (2022)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-do-graph-matching">How do we do graph matching?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">Algorithm</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-edge-structure">Testing for “stereotypy” in edge structure</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Comparative connectomics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-comparative-connectomics-hard">Why is comparative connectomics hard?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-know-whether-a-proposed-experiment-could-even-hope-to-answer-our-questions-how-powerful-is-comparative-connectomics">How do we know whether a proposed experiment could even <em>hope</em> to answer our questions? How <strong>powerful</strong> is comparative connectomics?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">Algorithm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpaired">Unpaired</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paired">Paired</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pairs-facilitate-more-powerful-tests">Pairs facilitate more powerful tests</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-edge-structure">Testing for “stereotypy” in edge structure</a></li>
 </ul>
 
             </nav>
@@ -1301,8 +1297,8 @@ Joshua Vogelstein</p>
 <!-- ![h:500 center](../../images/fig2a.png) -->
 </div>
 <div>
-<p><img alt="" src="../../../bilateral/bilateral-connectome/docs/images/ffwd-fdback.svg" />
-<img alt="h:50" src="../../../bilateral/bilateral-connectome/docs/images/ffwd-legend.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdback.svg" />
+<img alt="h:50" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-legend.png" /></p>
 </div>
 </div>
 </section>
@@ -1313,11 +1309,10 @@ Joshua Vogelstein</p>
 <div>
 <ul class="simple">
 <li><p>Spectral decomposition of the adjacency matrix (or Laplacian)</p></li>
-<li><p>Clustering on this representation is a consistent estimator of block model labels</p></li>
 </ul>
 </div>
 <div>
-<p><img alt="h:400 center" src="../../../bilateral/bilateral-connectome/docs/images/spec-clust.png" /></p>
+<p><img alt="h:400 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/spec-clust.png" /></p>
 </div>
 </div>
 <hr class="docutils" />
@@ -1341,12 +1336,6 @@ Joshua Vogelstein</p>
 <hr class="docutils" />
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_methods_explain.svg" /></p>
 <hr class="docutils" />
-<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_null_cdf.svg" /></p>
-<hr class="docutils" />
-<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/relative_power.svg" /></p>
-<hr class="docutils" />
-<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_power_matrix.svg" /></p>
-<hr class="docutils" />
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/null_distributions.svg" /></p>
 <hr class="docutils" />
 <p><img alt="center h:500" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/revamp_sbm_methods_sim/tippett_sim_composite.svg" /></p>
@@ -1356,10 +1345,6 @@ Joshua Vogelstein</p>
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_density.svg" /></p>
 <hr class="docutils" />
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/er_unmatched_test/er_methods.svg" /></p>
-<hr class="docutils" />
-<p><img alt="center h:600" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/kc_minus/kc_minus_composite.svg" /></p>
-<hr class="docutils" />
-<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/sbm_pvalues.svg" /></p>
 <hr class="docutils" />
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_block_power/n_possible_by_block.svg" /></p>
 <hr class="docutils" />
@@ -1386,35 +1371,6 @@ Joshua Vogelstein</p>
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/probs_scatter.svg" /></p>
 <hr class="docutils" />
 <p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/group_counts.svg" /></p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="erdos-renyi-model">
-<h1>Erdos-Renyi model<a class="headerlink" href="#erdos-renyi-model" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>All edges are independent</p></li>
-<li><p>All edges generated with the same probability, <span class="math notranslate nohighlight">\(p\)</span></p></li>
-</ul>
-<p><img alt="center" src="../results/figs/er_unmatched_test/er_explain.svg" /></p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="detect-a-difference-in-density">
-<h1>Detect a difference in density<a class="headerlink" href="#detect-a-difference-in-density" title="Permalink to this heading">#</a></h1>
-<div class="columns">
-<div>
-<p><img alt="center h:500" src="../results/figs/er_unmatched_test/er_methods.svg" /></p>
-</div>
-<div>
-<p><img alt="center h:400" src="../results/figs/er_unmatched_test/er_density.svg" /></p>
-<style scoped>
-p {
-  justify-content: center;
-  text-align: center;
-}
-</style>
-<p>p-value &lt; <span class="math notranslate nohighlight">\(10^{-22}\)</span></p>
-</div>
-</div>
-<!-- _footer: Pedigo et al. eLife (2022) -->
 <!-- ---
 
 # This split induces 4 graphs (or layers)
@@ -1487,7 +1443,25 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="algorithm">
 <h1>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading">#</a></h1>
-<p><img alt="" src="../../_images/si" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/algo-bgm.png" /></p>
+<hr class="docutils" />
+<p><img alt="h:500" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_matched_test/edge_scatter_matched.png" /></p>
+<p>Pearson’s corr = 0.82</p>
+<hr class="docutils" />
+<div class="columns">
+<div>
+<section id="unpaired">
+<h2>Unpaired<a class="headerlink" href="#unpaired" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_matched_test/pvalue_heatmap_unpaired_matched.png" /></p>
+</div>
+<div>
+</section>
+<section id="paired">
+<h2>Paired<a class="headerlink" href="#paired" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_matched_test/pvalue_heatmap_paired_matched.png" /></p>
+</div>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="testing-for-stereotypy-in-edge-structure">
@@ -1502,47 +1476,6 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 </div>
 </div>
 <!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id21">
-<h1>Comparative connectomics<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h1>
-<!-- ![center h:350](../../../../../bilateral/bilateral-connectome/docs/images/connect-diagram.png) -->
-<ul class="simple">
-<li><p>Map connectomes from related individuals/organisms which may differ in feature <span class="math notranslate nohighlight">\(X\)</span></p></li>
-<li><p>Compare connectomes</p></li>
-<li><p>Understand how <span class="math notranslate nohighlight">\(X\)</span> {affects, is affected by, is associated with} connectome structure</p></li>
-</ul>
-<hr class="docutils" />
-<div class="columns">
-<div>
-<p><img alt="" src="../../../bilateral/bilateral-connectome/docs/images/behavior-cc.png" /></p>
-<blockquote>
-<div><p>Comparative connectomics across experience, sex and species is a key next step.</p>
-</div></blockquote>
-</div>
-<div>
-<p><img alt="" src="../../../bilateral/bilateral-connectome/docs/images/evo-cc.png" /></p>
-<blockquote>
-<div><p>With comparative connectomics, the search for neural circuit architectures common across species or independently converged into an optimal layout is now possible.</p>
-</div></blockquote>
-</div>
-</div>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="why-is-comparative-connectomics-hard">
-<h1>Why is comparative connectomics hard?<a class="headerlink" href="#why-is-comparative-connectomics-hard" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Collecting the data is still a large effort…</p></li>
-<li><p>But how do we even compare connectomes once we have them?</p></li>
-</ul>
-<section id="how-do-we-know-whether-a-proposed-experiment-could-even-hope-to-answer-our-questions-how-powerful-is-comparative-connectomics">
-<h2>How do we know whether a proposed experiment could even <em>hope</em> to answer our questions? How <strong>powerful</strong> is comparative connectomics?<a class="headerlink" href="#how-do-we-know-whether-a-proposed-experiment-could-even-hope-to-answer-our-questions-how-powerful-is-comparative-connectomics" title="Permalink to this heading">#</a></h2>
-</section>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="pairs-facilitate-more-powerful-tests">
-<h1>Pairs facilitate more powerful tests<a class="headerlink" href="#pairs-facilitate-more-powerful-tests" title="Permalink to this heading">#</a></h1>
-<p><img alt="center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/matched_vs_unmatched_sims_pn_lhn/er_power_comparison.svg" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1710,18 +1643,14 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pedigo-et-al-elife-2023">Pedigo et al. eLife (2023)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erdos-renyi-model">Erdos-Renyi model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-a-difference-in-density">Detect a difference in density</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pedigo-et-al-network-neuroscience-2022">Pedigo et al. Network Neuroscience (2022)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-do-graph-matching">How do we do graph matching?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">Algorithm</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-edge-structure">Testing for “stereotypy” in edge structure</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Comparative connectomics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-comparative-connectomics-hard">Why is comparative connectomics hard?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-know-whether-a-proposed-experiment-could-even-hope-to-answer-our-questions-how-powerful-is-comparative-connectomics">How do we know whether a proposed experiment could even <em>hope</em> to answer our questions? How <strong>powerful</strong> is comparative connectomics?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">Algorithm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpaired">Unpaired</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paired">Paired</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pairs-facilitate-more-powerful-tests">Pairs facilitate more powerful tests</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-edge-structure">Testing for “stereotypy” in edge structure</a></li>
 </ul>
 
   </nav></div>
