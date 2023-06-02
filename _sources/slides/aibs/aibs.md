@@ -15,7 +15,7 @@ paginate: true
 
 <style>
 section::after {
-    content: attr(data-marpit-pagination) '/42';
+    content: attr(data-marpit-pagination) '/47';
 }
 </style>
 
@@ -63,13 +63,13 @@ Johns Hopkins University
 
 # Background
 - From Lake Forest Park, WA
-- Went to University of Washington (Bioengineering)
-  - Minor in Applied Math
+- Went to University of Washington (Bioengineering, Minor in Applied Math)
 - Interned here (w/ Nuno) in summer of 2017
 - PhD in Biomedical Engineering at Johns Hopkins University
   - Focus on analysis of connectome networks, in particular, *Drosophila* larva
 - Interned at Microsoft Research twice during PhD
-  - Focus on analysis of organizational communication networks, some general network analysis methods
+  - Focus on analysis of organizational communication networks, code for general network analysis methods
+- :bike: :bird: :hiking_boot: ![icon](https://upload.wikimedia.org/wikipedia/commons/d/dd/KEXP_logo_%28black_on_orange%29.svg)
 
 ---
 
@@ -670,6 +670,8 @@ where $\mathcal{P}$ is the set of permutation matrices
 
 We generalized a state-of-the-art GM algorithm to solve BGM!
 
+In simulations, this helps when contralaterals have sufficient edge correlation...
+
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Vogelstein et al. PLOS One (2015)-->
 
 --- 
@@ -697,6 +699,49 @@ We generalized a state-of-the-art GM algorithm to solve BGM!
 </div>
 
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Winding, Pedigo et al. Science (2023), Pantazis et al. Applied Network Science (2022) -->
+
+--- 
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
+
+# Outline
+
+- ### Clustering the larval brain by connectivity
+- ### Connectome comparison via network hypothesis testing
+- ### Pairing neurons across connectomes via graph matching
+- ### **Future work**
+
+---
+
+<!-- 
+As mentioned, interested in leveraging this work on how we can compare connectomes to find links to these various other phenotypes. 
+
+This is what makes the work being done at the Allen institute and UW so exciting to me; given that you all are not just measuring connectomes, but also many other modalities of data.
+
+I’d like to give an example of how I’m approaching this kind of question in the larva, and how I think with some development, these approaches would be relevant to apply to the allen institute data. 
+
+ -->
+
+![bg h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png)
+
+
+
+---
+<!-- 
+Evidence that characterizing variability in connectivity (in this case, specific projections to brain output neurons), can be related to differences in behavioral outputs
+ -->
+
+# A structure-function relationship in the larva
+
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
+
+### Behavior probabilities significantly related to projections to brain outputs
+
+RV coefficient: 0.12, p-value: 0.0044
+Distance correlation: 0.067, p-value: 0.0087
+
+<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
+
 
 ---
 # Open source tools
@@ -744,41 +789,11 @@ Application of these tools to larva brain $\Rightarrow$ [github.com/neurodata/gr
 
 ---
 
-<!-- 
-As mentioned, interested in leveraging this work on how we can compare connectomes to find links to these various other phenotypes. 
+<!-- As an example of how this kind of approach would be relevant at Allen, take for example your recent work on characterizing cell types and their connectivity in the MICrONS data, for in for instance in this recent paper investigating the structure of inhibition onto different excitatory cell types.
 
-This is what makes the work being done at the Allen institute and UW so exciting to me; given that you all are not just measuring connectomes, but also many other modalities of data.
+I am interested in using our network testing methods to see whether these rules hold, say, for other subvolumes in the same region of visual cortex, or whether they are different in another visual region or EM volume. This would be a natural application of my work on model-based comparison of neural wiring rules.
 
-I’d like to give an example of how I’m approaching this kind of question in the larva, and how I think with some development, these approaches would be relevant to apply to the allen institute data. 
-
- -->
-
-![bg h:700](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png)
-
----
-
-<!-- 
-Evidence that characterizing variability in connectivity (in this case, specific projections to brain output neurons), can be related to differences in behavioral outputs
- -->
-
-# A structure-function relationship in the larva
-
-![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
-
-### Behavior probabilities significantly related to projections to brain outputs
-
-RV coefficient: 0.12, p-value: 0.0044
-Distance correlation: 0.067, p-value: 0.0087
-
-<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
-
----
-
-<!-- As an example of how this kind of approach would be relevant at Allen, take for example the recent work from the microns consortium to map out connections in the visual cortex of a mouse. This dataset is already revealing principles of how cortical circuits are wired, for instance in this recent paper investigating the structure of inhibition onto 
-
-I am interested in using our network testing methods to see whether these rules hold, say, for other subvolumes in the same region of visual cortex, and in particular, whether they are different in another visual region. This would be a natural application of my work on model-based comparison of neural wiring rules.
-
-Methodologically, answering these questions would likely involve incorporating more biological detail into these model-based descriptions of connectivity, for instance incorporating wiring rules based on space and sub-cellular compartments. I’d be excited to work with both allen institute and UW researchers on these kinds of extensions. 
+Methodologically, answering these questions would likely involve incorporating more biological detail into these model-based descriptions of connectivity, for instance incorporating additional parameters into the model to account for sub-cellular compartments or spatial relationships space, and then figuring out how to create valid statistical tests with these added parameters. Further, I believe these comparisons might require developing quantitative models of the errors present in these reconstructions, to account for things like varying reconstruction rates
  -->
 
 # Do wiring rules generalize across region? Dataset? 
@@ -795,17 +810,16 @@ Methodologically, answering these questions would likely involve incorporating m
 </div>
 <div>
 
-- Application of model-based network comparison
-- Would likely require extensions of simple models to account for details of wiring in cortex
-
-![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-explain.png)
+- Application of model-based network comparison tools
+- Would likely require extensions: 
+  - Parameters to deal with subcellular wiring specificity ![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-explain.png)
+  - Modeling known errors (e.g. amount of orphan synapses)
 
 </div>
 </div>
 
 <!-- _footer: MICrONS Consortium et al. bioRxiv (2023), Schneider-Mizell et al. bioRxiv (2023) -->
 
----
 
 <!-- Finally, as I’ve mentioned, i think the reason to do all this careful study of wiring rules is ultimately to see how this impacts function, which is part of what makes me fascinated by the microns data, where neural activity was also characterized for many neurons. 
 
@@ -816,15 +830,18 @@ trying to connect any variation we see in neural wiring rules to variation in as
 
 using some of the tools i mentioned for high dimensional independence testing in our work on the larva. -->
 
-# ...and does any variation relate to function? 
+<!-- # ...and does any variation relate to function?  -->
 
-![h:300 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/ding-overview.png)
+<!-- ![h:300 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/ding-overview.png) -->
 
 
-<!-- _footer:  MICrONS Consortium et al. bioRxiv (2021), Ding, Fahey, Papadououlos et al. bioRxiv (2023)  -->
+<!-- MICrONS Consortium et al. bioRxiv (2021), Ding, Fahey, Papadououlos et al. bioRxiv (2023)  -->
 
 ---
-# Testing for stereotypy in edge structure
+
+<!-- I also want to add that while I talked about straightforward applications of graph matching for fairly isomorphic networks, I have seen graph matching problems come up a lot in surprising ways which might be relevant to cortex. For instance, we've looked at using graph matching tools to test for significant correlation in connectivity structure. In this example, I compared the wiring on the left and right hemispheres of the projection neuron to kenyon cell subgraph in the larva. This subgraph is believed to be "random," in the sense that it was expected that there should be no correlation of edge structure between these networks. When I compared a measure of "alignment strength" or edge correlation that we estimated by matching these left and right hemisphere subnetworks to what we got for 500 networks sampled from a random network model, we indeed found no significant correlation of edge structure. I think it would be interesting to apply these kinds of ideas to test whether subgraphs in cortex have any significant kind of edge correlation, beyond what one would expect from simple cell type connection probabilities. -->
+
+# Testing for stereotypy in subgraph edge structure
 
 Is matching stronger than expected under some model of independent networks?
 
@@ -845,21 +862,48 @@ Is matching stronger than expected under some model of independent networks?
 
 ---
 
+<!-- Another extension of these tools beyond simple graph matching is to include morphology in the optimization, by adding a term to encourage matched nodes to be similar in terms of their morpohology scores (here represented as a matrix of NBLAST scores).  -->
+
+<!-- Beyond simple systems like the larva, however, it is often thought that neurons are present not in one-to-one matches, but rather in populations. this is thought to be the case in the adult drosophila, for example. -->
+
+<!-- Another generalization of these ideas  -->
+
+# "Soft" matching (adult *Drosophila* anntenal lobe)
+
+<div class="columns">
+<div>
+
+### Morphology similarity
+
+![](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/nblast.png)
+
+</div>
+<div>
+
+### "Hard" matching
+
+![](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/lap_solution.png)
+
+</div>
+<div>
+
+### "Soft" assignment
+
+![](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/sinkhorn_solution.png)
+
+</div>
+</div>
+
+<!-- _footer: Cuturi NeurIPS (2013), Costa et al. Neuron (2016)  - Work with Philipp Schlegel, Greg Jefferis, unpublished -->
+
+---
+
 # Sorting a network
 
 ![h:400 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdback-improved-explain.png)
 
 <!-- _footer: Carmel et al. IEEE Vis. and Comp. Graphics (2004), Burkard et al. Assignment Problems (2009)  -->
 
----
-
-# "Feedback minimization" as graph matching
-
-$$\min_P \sum_{i=1}^n \sum_{j < i}^n (PAP^T)_{ij}^2$$
-
-- Minimand is the sum of squared elements in the lower triangle of reshuffled adjacency
-- Solving produces an ordering of the network under which connections are likely to go "forward" in this ordering
-- Equivalent to graph matching $A$ to an upper triangular matrix of all $1$s
 
 ---
 # Quantifying high-level "feedforward/feedback"
@@ -919,6 +963,17 @@ $$\min_P \sum_{i=1}^n \sum_{j < i}^n (PAP^T)_{ij}^2$$
 
 <!-- _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 
+---
+
+<!-- I was also asked to say a little about my interest in the Allen Institute and this team more specifically. As I hope is obvious from my talk, it seems like there is a lot of overlap of my interests in algorithmic ways of analyzing connectomics data, and your needs in terms of doing this kind of analysis on the large datasets you have been producing. I'm excited to hear more about what questions and challenges you all are interested in as I talk to more of you today. -->
+
+# My interest in Allen/the team
+
+- Enjoy translating neuroscience questions into something we can test with data science techniques
+- Connectomics presents unique challenges for the above, e.g.
+  - Dealing with network data
+  - Scale
+- Excited by team and open science perspectives
 
 ---
 
@@ -1114,6 +1169,16 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 <!-- _footer: Carmel et al. IEEE Vis. and Comp. Graphics (2004), Burkard et al. Assignment Problems (2009)  -->
 
 ---
+
+# "Feedback minimization" as graph matching
+
+$$\min_P \sum_{i=1}^n \sum_{j < i}^n (PAP^T)_{ij}^2$$
+
+- Minimand is the sum of squared elements in the lower triangle of reshuffled adjacency
+- Solving produces an ordering of the network under which connections are likely to go "forward" in this ordering
+- Equivalent to graph matching $A$ to an upper triangular matrix of all $1$s
+
+---
 # Quantifying high-level "feedforward/feedback"
 
 <div class="columns-br">
@@ -1146,6 +1211,7 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 </div>
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
+
 
 --- 
 
@@ -1375,7 +1441,7 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 
 # Algorithm
 
-![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/algo-bgm.png)
+![h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/algo-bgm.png)
 
 ---
 
@@ -1401,4 +1467,9 @@ Pearson's corr = 0.82
 </div>
 </div>
 
+---
+
+# Using predicted groups
+
+![h:500 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/predicted_groups/dendrogram_clusters_pvalues.svg)
 

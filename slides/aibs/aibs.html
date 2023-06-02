@@ -432,10 +432,6 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#from-graph-matching-to-bisected-graph-matching">From graph matching to bisected graph matching</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contralateral-connections-aid-matching">Contralateral connections aid matching!</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-improvement-on-the-full-brain">Performance improvement on the full brain</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-tools">Open source tools</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-publications">Related publications</a></li>
-</ul>
-</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Outline</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Clustering the larval brain by connectivity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Connectome comparison via network hypothesis testing</a></li>
@@ -447,13 +443,29 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-tools">Open source tools</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-publications">Related publications</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Outline</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Clustering the larval brain by connectivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Connectome comparison via network hypothesis testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Pairing neurons across connectomes via graph matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23"><strong>Future work</strong></a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#do-wiring-rules-generalize-across-region-dataset">Do wiring rules generalize across region? Dataset?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#and-does-any-variation-relate-to-function">…and does any variation relate to function?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-edge-structure">Testing for stereotypy in edge structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-subgraph-edge-structure">Testing for stereotypy in subgraph edge structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-matching-adult-drosophila-anntenal-lobe">“Soft” matching (adult <em>Drosophila</em> anntenal lobe)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-similarity">Morphology similarity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hard-matching">“Hard” matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-assignment">“Soft” assignment</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-network">Sorting a network</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-minimization-as-graph-matching">“Feedback minimization” as graph matching</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-high-level-feedforward-feedback">Quantifying high-level “feedforward/feedback”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-enables-splitting-axons-dendrites">Morphology enables splitting axons/dendrites</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-enables-splitting-axons-dendrites">Morphology enables splitting axons/dendrites</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#my-interest-in-allen-the-team">My interest in Allen/the team</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 </ul>
@@ -464,16 +476,17 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Benjamin D. Pedigo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">These slides at:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">These slides at:</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#winding-pedigo-et-al-science-2023">Winding, Pedigo et al. Science (2023)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-a-larval-drosophila-brain-connectome">Mapping a larval <em>Drosophila</em> brain connectome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-the-network">Sorting the network</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Quantifying high-level “feedforward/feedback”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Morphology enables splitting axons/dendrites</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-minimization-as-graph-matching">“Feedback minimization” as graph matching</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Quantifying high-level “feedforward/feedback”</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Morphology enables splitting axons/dendrites</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-embedding">Spectral embedding</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-morphology">Cluster morphology</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminability">Discriminability:</a></li>
@@ -487,6 +500,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paired">Paired</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predicted-groups">Using predicted groups</a></li>
 </ul>
 
             </nav>
@@ -508,7 +522,7 @@ document.write(`
 -->
 <style>
 section::after {
-    content: attr(data-marpit-pagination) '/42';
+    content: attr(data-marpit-pagination) '/47';
 }
 </style>
 <!-- _paginate: false -->
@@ -548,11 +562,7 @@ Johns Hopkins University</p>
 <h1>Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>From Lake Forest Park, WA</p></li>
-<li><p>Went to University of Washington (Bioengineering)</p>
-<ul>
-<li><p>Minor in Applied Math</p></li>
-</ul>
-</li>
+<li><p>Went to University of Washington (Bioengineering, Minor in Applied Math)</p></li>
 <li><p>Interned here (w/ Nuno) in summer of 2017</p></li>
 <li><p>PhD in Biomedical Engineering at Johns Hopkins University</p>
 <ul>
@@ -561,9 +571,10 @@ Johns Hopkins University</p>
 </li>
 <li><p>Interned at Microsoft Research twice during PhD</p>
 <ul>
-<li><p>Focus on analysis of organizational communication networks, some general network analysis methods</p></li>
+<li><p>Focus on analysis of organizational communication networks, code for general network analysis methods</p></li>
 </ul>
 </li>
+<li><p>:bike: :bird: :hiking_boot: <img alt="icon" src="https://upload.wikimedia.org/wikipedia/commons/d/dd/KEXP_logo_%28black_on_orange%29.svg" /></p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -1107,6 +1118,7 @@ p {
 <h1>From graph matching to bisected graph matching<a class="headerlink" href="#from-graph-matching-to-bisected-graph-matching" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/explain-bgm.svg" /></p>
 <p>We generalized a state-of-the-art GM algorithm to solve BGM!</p>
+<p>In simulations, this helps when contralaterals have sufficient edge correlation…</p>
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Vogelstein et al. PLOS One (2015)-->
 </section>
 <hr class="docutils" />
@@ -1127,29 +1139,8 @@ p {
 </div>
 </div>
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Winding, Pedigo et al. Science (2023), Pantazis et al. Applied Network Science (2022) -->
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="open-source-tools">
-<h1>Open source tools<a class="headerlink" href="#open-source-tools" title="Permalink to this heading">#</a></h1>
-<div class="columns">
-<div>
-<p><img alt="h:200" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/graspologic_svg.svg" /></p>
-<p><a class="reference external" href="https://pepy.tech/project/graspologic"><img alt="h:40" src="https://pepy.tech/badge/graspologic" /></a>  <a class="reference external" href="https://github.com/microsoft/graspologic"><img alt="h:40" src="https://img.shields.io/github/stars/microsoft/graspologic?style=social" /></a></p>
-<p><a class="reference external" href="https://github.com/microsoft/graspologic">github.com/microsoft/graspologic</a></p>
-</div>
-<div>
-<section id="related-publications">
-<h2>Related publications<a class="headerlink" href="#related-publications" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://jmlr.org/papers/v20/19-490.html">Chung, Pedigo et al. JMLR (2019)</a></p>
-<p><a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0959438818301430?via%3Dihub">Vogelstein et al. Curr. Opin. Neurobio. (2019)</a></p>
-<p><a class="reference external" href="https://www.annualreviews.org/doi/abs/10.1146/annurev-statistics-042720-023234">Chung et al. Annual Review of Stats and Its Application (2021)</a></p>
-</div>
-</div>
-<br>
-<p>Application of these tools to larva brain <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <a class="reference external" href="https://github.com/neurodata/graspologic-demo">github.com/neurodata/graspologic-demo</a></p>
 <hr class="docutils" />
 <p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
-</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id14">
 <h1>Outline<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h1>
@@ -1194,14 +1185,58 @@ Evidence that characterizing variability in connectivity (in this case, specific
 <p>RV coefficient: 0.12, p-value: 0.0044
 Distance correlation: 0.067, p-value: 0.0087</p>
 <!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
-<hr class="docutils" />
-<!-- As an example of how this kind of approach would be relevant at Allen, take for example the recent work from the microns consortium to map out connections in the visual cortex of a mouse. This dataset is already revealing principles of how cortical circuits are wired, for instance in this recent paper investigating the structure of inhibition onto 
-
-I am interested in using our network testing methods to see whether these rules hold, say, for other subvolumes in the same region of visual cortex, and in particular, whether they are different in another visual region. This would be a natural application of my work on model-based comparison of neural wiring rules.
-
-Methodologically, answering these questions would likely involve incorporating more biological detail into these model-based descriptions of connectivity, for instance incorporating wiring rules based on space and sub-cellular compartments. I’d be excited to work with both allen institute and UW researchers on these kinds of extensions. 
- -->
 </section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="open-source-tools">
+<h1>Open source tools<a class="headerlink" href="#open-source-tools" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<p><img alt="h:200" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/graspologic_svg.svg" /></p>
+<p><a class="reference external" href="https://pepy.tech/project/graspologic"><img alt="h:40" src="https://pepy.tech/badge/graspologic" /></a>  <a class="reference external" href="https://github.com/microsoft/graspologic"><img alt="h:40" src="https://img.shields.io/github/stars/microsoft/graspologic?style=social" /></a></p>
+<p><a class="reference external" href="https://github.com/microsoft/graspologic">github.com/microsoft/graspologic</a></p>
+</div>
+<div>
+<section id="related-publications">
+<h2>Related publications<a class="headerlink" href="#related-publications" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://jmlr.org/papers/v20/19-490.html">Chung, Pedigo et al. JMLR (2019)</a></p>
+<p><a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0959438818301430?via%3Dihub">Vogelstein et al. Curr. Opin. Neurobio. (2019)</a></p>
+<p><a class="reference external" href="https://www.annualreviews.org/doi/abs/10.1146/annurev-statistics-042720-023234">Chung et al. Annual Review of Stats and Its Application (2021)</a></p>
+</div>
+</div>
+<br>
+<p>Application of these tools to larva brain <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <a class="reference external" href="https://github.com/neurodata/graspologic-demo">github.com/neurodata/graspologic-demo</a></p>
+<hr class="docutils" />
+<p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id19">
+<h1>Outline<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<section id="id20">
+<h2>Clustering the larval brain by connectivity<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id21">
+<h2>Connectome comparison via network hypothesis testing<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id22">
+<h2>Pairing neurons across connectomes via graph matching<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id23">
+<h2><strong>Future work</strong><a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h2>
+</section>
+<hr class="docutils" />
+<!-- As an example of how this kind of approach would be relevant at Allen, take for example your recent work on characterizing cell types and their connectivity in the MICrONS data, for in for instance in this recent paper investigating the structure of inhibition onto different excitatory cell types.
+
+I am interested in using our network testing methods to see whether these rules hold, say, for other subvolumes in the same region of visual cortex, or whether they are different in another visual region or EM volume. This would be a natural application of my work on model-based comparison of neural wiring rules.
+
+Methodologically, answering these questions would likely involve incorporating more biological detail into these model-based descriptions of connectivity, for instance incorporating additional parameters into the model to account for sub-cellular compartments or spatial relationships space, and then figuring out how to create valid statistical tests with these added parameters. Further, I believe these comparisons might require developing quantitative models of the errors present in these reconstructions, to account for things like varying reconstruction rates
+ -->
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="do-wiring-rules-generalize-across-region-dataset">
 <h1>Do wiring rules generalize across region? Dataset?<a class="headerlink" href="#do-wiring-rules-generalize-across-region-dataset" title="Permalink to this heading">#</a></h1>
@@ -1213,14 +1248,17 @@ Methodologically, answering these questions would likely involve incorporating m
 </div>
 <div>
 <ul class="simple">
-<li><p>Application of model-based network comparison</p></li>
-<li><p>Would likely require extensions of simple models to account for details of wiring in cortex</p></li>
+<li><p>Application of model-based network comparison tools</p></li>
+<li><p>Would likely require extensions:</p>
+<ul>
+<li><p>Parameters to deal with subcellular wiring specificity <img alt="" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-explain.png" /></p></li>
+<li><p>Modeling known errors (e.g. amount of orphan synapses)</p></li>
 </ul>
-<p><img alt="" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-explain.png" /></p>
+</li>
+</ul>
 </div>
 </div>
 <!-- _footer: MICrONS Consortium et al. bioRxiv (2023), Schneider-Mizell et al. bioRxiv (2023) -->
-<hr class="docutils" />
 <!-- Finally, as I’ve mentioned, i think the reason to do all this careful study of wiring rules is ultimately to see how this impacts function, which is part of what makes me fascinated by the microns data, where neural activity was also characterized for many neurons. 
 
 
@@ -1229,15 +1267,14 @@ I’m interested in
 trying to connect any variation we see in neural wiring rules to variation in aspects of neural activity, 
 
 using some of the tools i mentioned for high dimensional independence testing in our work on the larva. -->
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="and-does-any-variation-relate-to-function">
-<h1>…and does any variation relate to function?<a class="headerlink" href="#and-does-any-variation-relate-to-function" title="Permalink to this heading">#</a></h1>
-<p><img alt="h:300 center" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/ding-overview.png" /></p>
-<!-- _footer:  MICrONS Consortium et al. bioRxiv (2021), Ding, Fahey, Papadououlos et al. bioRxiv (2023)  -->
-</section>
+<!-- # ...and does any variation relate to function?  -->
+<!-- ![h:300 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/ding-overview.png) -->
+<!-- MICrONS Consortium et al. bioRxiv (2021), Ding, Fahey, Papadououlos et al. bioRxiv (2023)  -->
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="testing-for-stereotypy-in-edge-structure">
-<h1>Testing for stereotypy in edge structure<a class="headerlink" href="#testing-for-stereotypy-in-edge-structure" title="Permalink to this heading">#</a></h1>
+<!-- I also want to add that while I talked about straightforward applications of graph matching for fairly isomorphic networks, I have seen graph matching problems come up a lot in surprising ways which might be relevant to cortex. For instance, we've looked at using graph matching tools to test for significant correlation in connectivity structure. In this example, I compared the wiring on the left and right hemispheres of the projection neuron to kenyon cell subgraph in the larva. This subgraph is believed to be "random," in the sense that it was expected that there should be no correlation of edge structure between these networks. When I compared a measure of "alignment strength" or edge correlation that we estimated by matching these left and right hemisphere subnetworks to what we got for 500 networks sampled from a random network model, we indeed found no significant correlation of edge structure. I think it would be interesting to apply these kinds of ideas to test whether subgraphs in cortex have any significant kind of edge correlation, beyond what one would expect from simple cell type connection probabilities. -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="testing-for-stereotypy-in-subgraph-edge-structure">
+<h1>Testing for stereotypy in subgraph edge structure<a class="headerlink" href="#testing-for-stereotypy-in-subgraph-edge-structure" title="Permalink to this heading">#</a></h1>
 <p>Is matching stronger than expected under some model of independent networks?</p>
 <div class="columns">
 <div>
@@ -1248,23 +1285,40 @@ using some of the tools i mentioned for high dimensional independence testing in
 </div>
 </div>
 <!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
+<hr class="docutils" />
+<!-- Another extension of these tools beyond simple graph matching is to include morphology in the optimization, by adding a term to encourage matched nodes to be similar in terms of their morpohology scores (here represented as a matrix of NBLAST scores).  -->
+<!-- Beyond simple systems like the larva, however, it is often thought that neurons are present not in one-to-one matches, but rather in populations. this is thought to be the case in the adult drosophila, for example. -->
+<!-- Another generalization of these ideas  -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="soft-matching-adult-drosophila-anntenal-lobe">
+<h1>“Soft” matching (adult <em>Drosophila</em> anntenal lobe)<a class="headerlink" href="#soft-matching-adult-drosophila-anntenal-lobe" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<section id="morphology-similarity">
+<h2>Morphology similarity<a class="headerlink" href="#morphology-similarity" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/nblast.png" /></p>
+</div>
+<div>
+</section>
+<section id="hard-matching">
+<h2>“Hard” matching<a class="headerlink" href="#hard-matching" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/lap_solution.png" /></p>
+</div>
+<div>
+</section>
+<section id="soft-assignment">
+<h2>“Soft” assignment<a class="headerlink" href="#soft-assignment" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/sinkhorn_solution.png" /></p>
+</div>
+</div>
+<!-- _footer: Cuturi NeurIPS (2013), Costa et al. Neuron (2016)  - Work with Philipp Schlegel, Greg Jefferis, unpublished -->
+</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="sorting-a-network">
 <h1>Sorting a network<a class="headerlink" href="#sorting-a-network" title="Permalink to this heading">#</a></h1>
 <p><img alt="h:400 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdback-improved-explain.png" /></p>
 <!-- _footer: Carmel et al. IEEE Vis. and Comp. Graphics (2004), Burkard et al. Assignment Problems (2009)  -->
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="feedback-minimization-as-graph-matching">
-<h1>“Feedback minimization” as graph matching<a class="headerlink" href="#feedback-minimization-as-graph-matching" title="Permalink to this heading">#</a></h1>
-<div class="math notranslate nohighlight">
-\[\min_P \sum_{i=1}^n \sum_{j &lt; i}^n (PAP^T)_{ij}^2\]</div>
-<ul class="simple">
-<li><p>Minimand is the sum of squared elements in the lower triangle of reshuffled adjacency</p></li>
-<li><p>Solving produces an ordering of the network under which connections are likely to go “forward” in this ordering</p></li>
-<li><p>Equivalent to graph matching <span class="math notranslate nohighlight">\(A\)</span> to an upper triangular matrix of all <span class="math notranslate nohighlight">\(1\)</span>s</p></li>
-</ul>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="quantifying-high-level-feedforward-feedback">
@@ -1302,6 +1356,21 @@ using some of the tools i mentioned for high dimensional independence testing in
 </div>
 </div>
 <!-- _footer: Winding, Pedigo et al. bioRxiv (2022) -->
+<hr class="docutils" />
+<!-- I was also asked to say a little about my interest in the Allen Institute and this team more specifically. As I hope is obvious from my talk, it seems like there is a lot of overlap of my interests in algorithmic ways of analyzing connectomics data, and your needs in terms of doing this kind of analysis on the large datasets you have been producing. I'm excited to hear more about what questions and challenges you all are interested in as I talk to more of you today. -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="my-interest-in-allen-the-team">
+<h1>My interest in Allen/the team<a class="headerlink" href="#my-interest-in-allen-the-team" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Enjoy translating neuroscience questions into something we can test with data science techniques</p></li>
+<li><p>Connectomics presents unique challenges for the above, e.g.</p>
+<ul>
+<li><p>Dealing with network data</p></li>
+<li><p>Scale</p></li>
+</ul>
+</li>
+<li><p>Excited by team and open science perspectives</p></li>
+</ul>
 <hr class="docutils" />
 <p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
 <section id="references">
@@ -1381,8 +1450,8 @@ Joshua Vogelstein</p>
 <h1>Questions?<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
-<section id="id19">
-<h2>Benjamin D. Pedigo<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<section id="id24">
+<h2>Benjamin D. Pedigo<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h2>
 <p><img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png" /> <a class="reference external" href="mailto:bpedigo&#37;&#52;&#48;jhu&#46;edu">bpedigo<span>&#64;</span>jhu<span>&#46;</span>edu</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/github.png" /> <a class="reference external" href="https://github.com/bdpedigo">&#64;bdpedigo</a>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png" /> <a class="reference external" href="https://twitter.com/bpedigod">&#64;bpedigod</a>
@@ -1390,8 +1459,8 @@ Joshua Vogelstein</p>
 </div>
 <div>
 </section>
-<section id="id20">
-<h2>These slides at:<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<section id="id25">
+<h2>These slides at:<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://bdpedigo.github.io/talks/aibs.html">bdpedigo.github.io/talks/aibs.html</a></p>
 </div>
 </div>
@@ -1432,8 +1501,19 @@ Joshua Vogelstein</p>
 <!-- _footer: Carmel et al. IEEE Vis. and Comp. Graphics (2004), Burkard et al. Assignment Problems (2009)  -->
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id21">
-<h1>Quantifying high-level “feedforward/feedback”<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="feedback-minimization-as-graph-matching">
+<h1>“Feedback minimization” as graph matching<a class="headerlink" href="#feedback-minimization-as-graph-matching" title="Permalink to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\min_P \sum_{i=1}^n \sum_{j &lt; i}^n (PAP^T)_{ij}^2\]</div>
+<ul class="simple">
+<li><p>Minimand is the sum of squared elements in the lower triangle of reshuffled adjacency</p></li>
+<li><p>Solving produces an ordering of the network under which connections are likely to go “forward” in this ordering</p></li>
+<li><p>Equivalent to graph matching <span class="math notranslate nohighlight">\(A\)</span> to an upper triangular matrix of all <span class="math notranslate nohighlight">\(1\)</span>s</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id26">
+<h1>Quantifying high-level “feedforward/feedback”<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h1>
 <div class="columns-br">
 <div>
 <p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdbk.png" /></p>
@@ -1454,8 +1534,8 @@ Joshua Vogelstein</p>
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id22">
-<h1>Morphology enables splitting axons/dendrites<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id27">
+<h1>Morphology enables splitting axons/dendrites<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h1>
 <div class="columns">
 <div>
 <p><img alt="h:500 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/fig2c-half.png" /></p>
@@ -1608,7 +1688,7 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="algorithm">
 <h1>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading">#</a></h1>
-<p><img alt="" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/algo-bgm.png" /></p>
+<p><img alt="h:500" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/algo-bgm.png" /></p>
 <hr class="docutils" />
 <p><img alt="h:500" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_matched_test/edge_scatter_matched.png" /></p>
 <p>Pearson’s corr = 0.82</p>
@@ -1627,6 +1707,11 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 </div>
 </div>
 </section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="using-predicted-groups">
+<h1>Using predicted groups<a class="headerlink" href="#using-predicted-groups" title="Permalink to this heading">#</a></h1>
+<p><img alt="h:500 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/predicted_groups/dendrogram_clusters_pvalues.svg" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1755,10 +1840,6 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#from-graph-matching-to-bisected-graph-matching">From graph matching to bisected graph matching</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contralateral-connections-aid-matching">Contralateral connections aid matching!</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-improvement-on-the-full-brain">Performance improvement on the full brain</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-tools">Open source tools</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-publications">Related publications</a></li>
-</ul>
-</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Outline</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Clustering the larval brain by connectivity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Connectome comparison via network hypothesis testing</a></li>
@@ -1770,13 +1851,29 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-tools">Open source tools</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-publications">Related publications</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Outline</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Clustering the larval brain by connectivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Connectome comparison via network hypothesis testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Pairing neurons across connectomes via graph matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23"><strong>Future work</strong></a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#do-wiring-rules-generalize-across-region-dataset">Do wiring rules generalize across region? Dataset?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#and-does-any-variation-relate-to-function">…and does any variation relate to function?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-edge-structure">Testing for stereotypy in edge structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-subgraph-edge-structure">Testing for stereotypy in subgraph edge structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-matching-adult-drosophila-anntenal-lobe">“Soft” matching (adult <em>Drosophila</em> anntenal lobe)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-similarity">Morphology similarity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hard-matching">“Hard” matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-assignment">“Soft” assignment</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-a-network">Sorting a network</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-minimization-as-graph-matching">“Feedback minimization” as graph matching</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-high-level-feedforward-feedback">Quantifying high-level “feedforward/feedback”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-enables-splitting-axons-dendrites">Morphology enables splitting axons/dendrites</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-enables-splitting-axons-dendrites">Morphology enables splitting axons/dendrites</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#my-interest-in-allen-the-team">My interest in Allen/the team</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 </ul>
@@ -1787,16 +1884,17 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Benjamin D. Pedigo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">These slides at:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Benjamin D. Pedigo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">These slides at:</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#winding-pedigo-et-al-science-2023">Winding, Pedigo et al. Science (2023)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-a-larval-drosophila-brain-connectome">Mapping a larval <em>Drosophila</em> brain connectome</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-the-network">Sorting the network</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Quantifying high-level “feedforward/feedback”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Morphology enables splitting axons/dendrites</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-minimization-as-graph-matching">“Feedback minimization” as graph matching</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Quantifying high-level “feedforward/feedback”</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Morphology enables splitting axons/dendrites</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-embedding">Spectral embedding</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-morphology">Cluster morphology</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminability">Discriminability:</a></li>
@@ -1810,6 +1908,7 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paired">Paired</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predicted-groups">Using predicted groups</a></li>
 </ul>
 
   </nav></div>
