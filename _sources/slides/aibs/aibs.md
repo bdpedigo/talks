@@ -59,17 +59,38 @@ Johns Hopkins University
 </div>
 </div>
 
+
 ---
 
 # Background
+
 - From Lake Forest Park, WA
-- Went to University of Washington (Bioengineering, Minor in Applied Math)
-- Interned here (w/ Nuno) in summer of 2017
+- University of Washington for Undergrad
+  (Bioengineering, Minor in Applied Math)
+- Research on spinal cord injury 
+  (Chet Moritz's lab)
+- Interned here w/ Nuno in summer of 2017
+- Organized Bird Club @ UW
+
+![bg right:40% vertical](https://bdpedigo.github.io/images/eastern_bluebird.jpg)
+
+![bg right:40%](https://bdpedigo.github.io/images/spotted_sandpiper.jpg)
+
+--- 
+
+# Background
+
 - PhD in Biomedical Engineering at Johns Hopkins University
-  - Focus on analysis of connectome networks, in particular, *Drosophila* larva
-- Interned at Microsoft Research twice during PhD
-  - Focus on analysis of organizational communication networks, code for general network analysis methods
-- :bike: :bird: :hiking_boot: ![icon](https://upload.wikimedia.org/wikipedia/commons/d/dd/KEXP_logo_%28black_on_orange%29.svg)
+  - Joshua Vogelstein + Carey Priebe
+  - Analysis of connectome networks
+- Interned at Microsoft Research twice
+  - Analysis of organizational communication networks, code for network methods
+- Bikes, Olympic marmots
+  
+![bg right:40% vertical](../../images/bike-white-fence.jpeg)
+
+![bg right:40%](../../images/marmot-rock.jpeg)
+
 
 ---
 
@@ -663,7 +684,7 @@ where $\mathcal{P}$ is the set of permutation matrices
 </div>
 
 ---
-# Matching (by connectivity only) performs fairly well
+# Simple matching performs fairly well
 
 ![center h:450](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/left-pair-predictions.svg)
 
