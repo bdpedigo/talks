@@ -665,7 +665,7 @@ where $\mathcal{P}$ is the set of permutation matrices
 ---
 # Matching (by connectivity only) performs fairly well
 
-![center h:450](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/_build/html/_images/left-pair-predictions.svg)
+![center h:450](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/left-pair-predictions.svg)
 
 <style scoped>
 p {
