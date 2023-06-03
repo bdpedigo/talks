@@ -662,6 +662,19 @@ where $\mathcal{P}$ is the set of permutation matrices
 </div>
 </div>
 
+---
+# Matching (by connectivity only) performs fairly well
+
+![center h:450](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/_build/html/_images/left-pair-predictions.svg)
+
+<style scoped>
+p {
+    justify-content: center;
+    text-align: center;
+}
+</style>
+
+With "vanilla" graph matching: ~80% correct (according to expert annotator)
 
 ---
 # From graph matching to bisected graph matching
@@ -682,8 +695,17 @@ In simulations, this helps when contralaterals have sufficient edge correlation.
 <!-- _footer: Pedigo et al. Network Neuroscience (2022) -->
 
 ---
+# Many other ways to try to improve on matching...
 
-# Performance improvement on the full brain
+- Partial knowledge of the matching (seeds)
+- Incorporate morphology (e.g. NBLAST)
+- **Edge types allow for "multilayer" graph matching**
+
+<!-- _footer: Pantazis et al. Applied Network Science (2022), Fishkind et al. Pattern Recognition (2019) -->
+
+---
+
+# Performance improvement from edge types
 
 <div class="columns-br">
 <div>
@@ -700,16 +722,7 @@ In simulations, this helps when contralaterals have sufficient edge correlation.
 
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Winding, Pedigo et al. Science (2023), Pantazis et al. Applied Network Science (2022) -->
 
---- 
 
-![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
-
-# Outline
-
-- ### Clustering the larval brain by connectivity
-- ### Connectome comparison via network hypothesis testing
-- ### Pairing neurons across connectomes via graph matching
-- ### **Future work**
 
 ---
 
@@ -778,6 +791,8 @@ Application of these tools to larva brain $\Rightarrow$ [github.com/neurodata/gr
 
 --- 
 
+<!-- Finally, I was also asked to say a little about my interest in the Allen institute and this team more specifically -->
+
 ![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 # Outline
@@ -789,12 +804,30 @@ Application of these tools to larva brain $\Rightarrow$ [github.com/neurodata/gr
 
 ---
 
-<!-- As an example of how this kind of approach would be relevant at Allen, take for example your recent work on characterizing cell types and their connectivity in the MICrONS data, for in for instance in this recent paper investigating the structure of inhibition onto different excitatory cell types.
+<!-- 
+I would say the main joy and challenge of my PhD, and what I want to continue doing, is figuring out how to translate neuroscience and connectomics questions into something that we can test with data science
+techniques. 
 
-I am interested in using our network testing methods to see whether these rules hold, say, for other subvolumes in the same region of visual cortex, or whether they are different in another visual region or EM volume. This would be a natural application of my work on model-based comparison of neural wiring rules.
+This is the kind of research I'd like to continue doing, but I'm excited about the prospect of scaling up these approaches to problems that are bigger  This of course goes along with working on a larger, more integrated team, and while ive worked on multidisciplinary teams in the past, I'd appreciate the chance to be working in the same building as people with skills ranging from software to neuroscience.
 
-Methodologically, answering these questions would likely involve incorporating more biological detail into these model-based descriptions of connectivity, for instance incorporating additional parameters into the model to account for sub-cellular compartments or spatial relationships space, and then figuring out how to create valid statistical tests with these added parameters. Further, I believe these comparisons might require developing quantitative models of the errors present in these reconstructions, to account for things like varying reconstruction rates
- -->
+Finally, As I just mentioned, I've made a large effort to make the tools I've worked on during my PhD available to others via open source code, and I'd appreciate the chance to keep doing that here by contributing to open tools and data.
+
+As I hope is obvious from my talk, it seems like there is a lot of overlap of my interests in algorithmic ways of analyzing connectomics data, and your needs in terms of doing this kind of analysis on the large datasets you have been producing. I'm excited to hear more about what questions and challenges you all are interested in as I talk to more of you today. -->
+
+# My interest in Allen/EM Connectomics team
+
+- Enjoy translating neuroscience/connectomics questions into something we can test with data science techniques
+- Scaling to larger problems, team science approach 
+- Open data and tools
+
+---
+
+<!-- As an example of how this kind of approach would be relevant to your team's work, take for example your recent characterization of cell types and their connectivity in the MICrONS data, for in for instance in this recent paper investigating the structure of inhibition onto different excitatory cell types.
+
+A natural next question is whether these quantitative rules hold, say, for other subvolumes in the same region of primary visual cortex, or whether they are different in another visual region or EM volume. This would be a natural application of my work on model-based comparison of neural wiring rules.
+
+Methodologically, answering these questions would likely involve incorporating more biological detail into these model-based descriptions of connectivity, for instance incorporating additional parameters into the model to account for sub-cellular compartments or spatial relationships, and then figuring out how to create valid statistical tests with these added parameters. Further, I believe these comparisons might require developing quantitative models of the errors present in these reconstructions, to account for things like varying reconstruction rates across samples or regions.
+-->
 
 # Do wiring rules generalize across region? Dataset? 
 
@@ -839,36 +872,10 @@ using some of the tools i mentioned for high dimensional independence testing in
 
 ---
 
-<!-- I also want to add that while I talked about straightforward applications of graph matching for fairly isomorphic networks, I have seen graph matching problems come up a lot in surprising ways which might be relevant to cortex. For instance, we've looked at using graph matching tools to test for significant correlation in connectivity structure. In this example, I compared the wiring on the left and right hemispheres of the projection neuron to kenyon cell subgraph in the larva. This subgraph is believed to be "random," in the sense that it was expected that there should be no correlation of edge structure between these networks. When I compared a measure of "alignment strength" or edge correlation that we estimated by matching these left and right hemisphere subnetworks to what we got for 500 networks sampled from a random network model, we indeed found no significant correlation of edge structure. I think it would be interesting to apply these kinds of ideas to test whether subgraphs in cortex have any significant kind of edge correlation, beyond what one would expect from simple cell type connection probabilities. -->
+<!-- Beyond simple systems like the larva, however, it is often thought that neurons are present not in one-to-one matches, but rather in populations. this is thought to be the case in the adult drosophila, for example. Here I am showing an example of a matching in the antennal lobe of the FlyWire adult drosophila dataset, in this case matching based on morphological similarity of left/right neurons. In the middle column you see the "hard" matching solution or permutation matrix, akin to what I've been talking about today, where a filled square indicates that a row neuron gets matched to an individual column neuron. Conversely, using tools from optimal transport, we're able to find a soft assignment, or in other words a potentially many-to-many match. This kind of approach might be really relevant to transferring some of these alignment ideas to cortex to potentially find correspondences across datasets or regions. -->
 
-# Testing for stereotypy in subgraph edge structure
 
-Is matching stronger than expected under some model of independent networks?
-
-<div class="columns">
-<div>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc-stereotypy-diagram.svg)
-
-</div>
-<div>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc_alignment_dist.svg)
-
-</div>
-</div>
-
-<!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
-
----
-
-<!-- Another extension of these tools beyond simple graph matching is to include morphology in the optimization, by adding a term to encourage matched nodes to be similar in terms of their morpohology scores (here represented as a matrix of NBLAST scores).  -->
-
-<!-- Beyond simple systems like the larva, however, it is often thought that neurons are present not in one-to-one matches, but rather in populations. this is thought to be the case in the adult drosophila, for example. -->
-
-<!-- Another generalization of these ideas  -->
-
-# "Soft" matching (adult *Drosophila* anntenal lobe)
+# Beyond 1-to-1 neuron matching
 
 <div class="columns">
 <div>
@@ -884,6 +891,8 @@ Is matching stronger than expected under some model of independent networks?
 
 ![](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/lap_solution.png)
 
+$$\min_P trace(SP^T)$$
+
 </div>
 <div>
 
@@ -891,89 +900,17 @@ Is matching stronger than expected under some model of independent networks?
 
 ![](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/sinkhorn_solution.png)
 
+$$\min_D trace(SD^T) + \lambda \Omega(D)$$
+
 </div>
 </div>
 
 <!-- _footer: Cuturi NeurIPS (2013), Costa et al. Neuron (2016)  - Work with Philipp Schlegel, Greg Jefferis, unpublished -->
 
 ---
-
-# Sorting a network
-
-![h:400 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdback-improved-explain.png)
-
-<!-- _footer: Carmel et al. IEEE Vis. and Comp. Graphics (2004), Burkard et al. Assignment Problems (2009)  -->
-
-
----
-# Quantifying high-level "feedforward/feedback"
-
-<div class="columns-br">
-<div>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdbk.png)
-
-</div>
-<div>
-
-<!-- ![h:300 center](./../../images/fig2f.png) -->
-
-
-
-<div class="columns">
-<div>
-
-
-![h:300 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdback-cropped.png) 
-![h:50 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-legend.png)
-
-</div>
-<div>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/rank-hist.svg)
-
-</div>
-</div>
-
-
-</div>
-</div>
-
-<!-- _footer: Winding, Pedigo et al. bioRxiv (2022) -->
-
---- 
-
-# Morphology enables splitting axons/dendrites 
-
-<div class="columns">
-<div>
-
-![h:500 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/fig2c-half.png)
-
-<!-- ![h:500 center](../../images/fig2a.png) -->
-
-</div>
-<div>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-fdback.svg)
-![h:50](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/ffwd-legend.png)
-
-</div>
-</div>
-
-<!-- _footer: Winding, Pedigo et al. bioRxiv (2022) -->
-
----
-
-<!-- I was also asked to say a little about my interest in the Allen Institute and this team more specifically. As I hope is obvious from my talk, it seems like there is a lot of overlap of my interests in algorithmic ways of analyzing connectomics data, and your needs in terms of doing this kind of analysis on the large datasets you have been producing. I'm excited to hear more about what questions and challenges you all are interested in as I talk to more of you today. -->
-
-# My interest in Allen/the team
-
-- Enjoy translating neuroscience questions into something we can test with data science techniques
-- Connectomics presents unique challenges for the above, e.g.
-  - Dealing with network data
-  - Scale
-- Excited by team and open science perspectives
+# Other ideas
+- Testing for significantly correlated subgraphs using graph matching + null models
+- 
 
 ---
 
@@ -1473,3 +1410,25 @@ Pearson's corr = 0.82
 
 ![h:500 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/predicted_groups/dendrogram_clusters_pvalues.svg)
 
+---
+
+<!-- I also want to add that while I talked about straightforward applications of graph matching for fairly isomorphic networks, I have seen graph matching problems come up a lot in surprising ways which might be relevant to cortex where things are less stereotyped. For instance, we've looked at using graph matching tools to test for significant correlation in connectivity structure. In this example, I compared the wiring on the left and right hemispheres of the projection neuron to kenyon cell subgraph in the larva. This subgraph is believed to be "random," in the sense that it was expected that there should be no correlation of edge structure between these networks. When I compared a measure of "alignment strength" or edge correlation that we estimated by matching these left and right hemisphere subnetworks to what we got for 500 networks sampled from a random network model, we indeed found no significant correlation of edge structure. I think it would be interesting to apply these kinds of ideas to test whether subgraphs in cortex have any significant kind of edge correlation, beyond what one would expect from simple cell type connection probabilities. -->
+
+# Testing for stereotypy in subgraph edge structure
+
+Is matching stronger than expected under some model of independent networks?
+
+<div class="columns">
+<div>
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc-stereotypy-diagram.svg)
+
+</div>
+<div>
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc_alignment_dist.svg)
+
+</div>
+</div>
+
+<!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
