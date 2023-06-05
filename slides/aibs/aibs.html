@@ -419,7 +419,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-effect-of-edge-weights">Examining the effect of edge weights</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#even-high-synapse-count-networks-show-asymmetry">Even high synapse count networks show asymmetry</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-input-percentage-networks-show-no-asymmetry">High input percentage networks show no asymmetry</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Outline</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Clustering the larval brain by connectivity</a></li>
@@ -435,8 +434,9 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contralateral-connections-aid-matching">Contralateral connections aid matching!</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#many-other-ways-to-try-to-improve-on-matching">Many other ways to try to improve on matching…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-improvement-from-edge-types">Performance improvement from edge types</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structure-function-relationship-in-the-larva">A structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-1-to-1-neuron-matching">Beyond 1-to-1 neuron matching</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-1-matching">1-to-1 matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-assignment">Soft assignment</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-tools">Open source tools</a><ul class="visible nav section-nav flex-column">
@@ -450,15 +450,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#my-interest-in-allen-em-connectomics-team">My interest in Allen/EM Connectomics team</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#do-wiring-rules-generalize-across-region-dataset">Do wiring rules generalize across region? Dataset?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-1-to-1-neuron-matching">Beyond 1-to-1 neuron matching</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-similarity">Morphology similarity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hard-matching">“Hard” matching</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-assignment">“Soft” assignment</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#other-ideas">Other ideas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stereotypy-beyond-connection-probabilities">Stereotypy beyond connection probabilities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#my-interest-in-allen-em-connectomics-team">My interest in Allen/EM Connectomics team</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 </ul>
@@ -494,7 +488,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predicted-groups">Using predicted groups</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-subgraph-edge-structure">Testing for stereotypy in subgraph edge structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structure-function-relationship-in-the-larva">A structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -516,7 +513,7 @@ document.write(`
 -->
 <style>
 section::after {
-    content: attr(data-marpit-pagination) '/47';
+    content: attr(data-marpit-pagination) '/44';
 }
 </style>
 <!-- _paginate: false -->
@@ -583,8 +580,8 @@ Johns Hopkins University</p>
 </li>
 <li><p>Bikes, Olympic marmots</p></li>
 </ul>
-<p><img alt="bg right:40% vertical" src="../../_images/bike-white-fence.jpeg" /></p>
-<p><img alt="bg right:40%" src="../../_images/marmot-rock.jpeg" /></p>
+<p><img alt="bg right:40% vertical" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/bike-white-fence.jpeg" /></p>
+<p><img alt="bg right:40%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/marmot-rock.jpeg" /></p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="connectomes-maps-of-neural-wiring">
@@ -698,9 +695,9 @@ p {
 </style> 
 <div class="columns">
 <div>
-<p><img alt="h:400 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-brain-render.png" /></p>
-<p>~3k neurons, ~550K synaptic sites
-Both hemispheres</p>
+<p><img alt="h:390 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/Figure1-brain-render.png" /></p>
+<p>~3k neurons
+Both hemispheres reconstructed</p>
 </div>
 <div>
 <p><img alt="h:450" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/show_data/adjacencies.png" /></p>
@@ -1028,22 +1025,27 @@ p {
 </div>
 </div>
 <!-- _footer: Pedigo et al. eLife (2023) -->
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="even-high-synapse-count-networks-show-asymmetry">
-<h1>Even high synapse count networks show asymmetry<a class="headerlink" href="#even-high-synapse-count-networks-show-asymmetry" title="Permalink to this heading">#</a></h1>
+<!-- ---
+
+# Even high synapse count networks show asymmetry
+
 <div class="columns">
 <div>
-<p><span> </span>
+
 <span> </span>
-<span> </span></p>
-<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/synapse-count.png" /></p>
+<span> </span>
+<span> </span>
+
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/synapse-count.png)
+
 </div>
 <div>
-<p><img alt="h:500" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues_legend.svg" /></p>
+
+![h:500](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/synapse_threshold_pvalues_legend.svg)
+
 </div>
-</div>
-<!-- _footer: Pedigo et al. eLife (2023) -->
+</div> -->
+<!-- __footer: Pedigo et al. eLife (2023) -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="high-input-percentage-networks-show-no-asymmetry">
@@ -1125,21 +1127,22 @@ p {
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="simple-matching-performs-fairly-well">
 <h1>Simple matching performs fairly well<a class="headerlink" href="#simple-matching-performs-fairly-well" title="Permalink to this heading">#</a></h1>
-<p><img alt="center h:450" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/left-pair-predictions.svg" /></p>
+<p><img alt="center h:400" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/left-pair-predictions.svg" /></p>
 <style scoped>
 p {
     justify-content: center;
     text-align: center;
 }
 </style>
-<p>With “vanilla” graph matching: ~80% correct (according to expert annotator)</p>
+<p>With “vanilla” graph matching: ~80% correct (according to expert annotator)…
+but ignores ~1/3 of synapses!</p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="from-graph-matching-to-bisected-graph-matching">
 <h1>From graph matching to bisected graph matching<a class="headerlink" href="#from-graph-matching-to-bisected-graph-matching" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/explain-bgm.svg" /></p>
 <p>We generalized a state-of-the-art GM algorithm to solve BGM!</p>
-<p>In simulations, this helps when contralaterals have sufficient edge correlation…</p>
+<p>In simulations, this helps when contralaterals have sufficient edge correlation</p>
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Vogelstein et al. PLOS One (2015)-->
 </section>
 <hr class="docutils" />
@@ -1171,28 +1174,34 @@ p {
 </div>
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Winding, Pedigo et al. Science (2023), Pantazis et al. Applied Network Science (2022) -->
 <hr class="docutils" />
-<!-- 
-As mentioned, interested in leveraging this work on how we can compare connectomes to find links to these various other phenotypes. 
+<!-- Beyond simple systems like the larva, however, it is often thought that neurons are present not in one-to-one matches, but rather in populations. this is thought to be the case in the adult drosophila, for example. Here I am showing an example of a matching in the antennal lobe of the FlyWire adult drosophila dataset, in this case matching based on morphological similarity of left/right neurons. In the middle column you see the "hard" matching solution or permutation matrix, akin to what I've been talking about today, where a filled square indicates that a row neuron gets matched to an individual column neuron. Conversely, using tools from optimal transport, we're able to find a soft assignment, or in other words a potentially many-to-many match. This kind of approach might be really relevant to transferring some of these alignment ideas to cortex to potentially find correspondences across datasets or regions. -->
+<!-- ### Morphology similarity
 
-This is what makes the work being done at the Allen institute and UW so exciting to me; given that you all are not just measuring connectomes, but also many other modalities of data.
+![](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/nblast.png)
 
-I’d like to give an example of how I’m approaching this kind of question in the larva, and how I think with some development, these approaches would be relevant to apply to the allen institute data. 
-
- -->
-<p><img alt="bg h:700" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png" /></p>
-<hr class="docutils" />
-<!-- 
-Evidence that characterizing variability in connectivity (in this case, specific projections to brain output neurons), can be related to differences in behavioral outputs
- -->
+</div>
+<div> -->
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="a-structure-function-relationship-in-the-larva">
-<h1>A structure-function relationship in the larva<a class="headerlink" href="#a-structure-function-relationship-in-the-larva" title="Permalink to this heading">#</a></h1>
-<p><img alt="center" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png" /></p>
-<section id="behavior-probabilities-significantly-related-to-projections-to-brain-outputs">
-<h2>Behavior probabilities significantly related to projections to brain outputs<a class="headerlink" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs" title="Permalink to this heading">#</a></h2>
-<p>RV coefficient: 0.12, p-value: 0.0044
-Distance correlation: 0.067, p-value: 0.0087</p>
-<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
+<section class="tex2jax_ignore mathjax_ignore" id="beyond-1-to-1-neuron-matching">
+<h1>Beyond 1-to-1 neuron matching<a class="headerlink" href="#beyond-1-to-1-neuron-matching" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<section id="to-1-matching">
+<h2>1-to-1 matching<a class="headerlink" href="#to-1-matching" title="Permalink to this heading">#</a></h2>
+<p><img alt="h:80 center" src="../../_images/cell-types-3.png" /></p>
+<p><img alt="h:325 center" src="https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/lap_solution.png" /></p>
+<!-- $$\min_P trace(SP^T)$$ -->
+</div>
+<div>
+</section>
+<section id="soft-assignment">
+<h2>Soft assignment<a class="headerlink" href="#soft-assignment" title="Permalink to this heading">#</a></h2>
+<p><img alt="h:80 center" src="../../_images/cell-types-5.png" /></p>
+<p><img alt="h:325 center" src="https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/sinkhorn_solution.png" /></p>
+<!-- $$\min_D trace(SD^T) + \lambda \Omega(D)$$ -->
+</div>
+</div>
+<!-- _footer: Cuturi NeurIPS (2013), Costa et al. Neuron (2016)  - Work with Philipp Schlegel, Greg Jefferis, unpublished -->
 </section>
 </section>
 <hr class="docutils" />
@@ -1238,25 +1247,10 @@ Distance correlation: 0.067, p-value: 0.0087</p>
 </section>
 <section id="id19">
 <h2><strong>Future work</strong><a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
-</section>
-<hr class="docutils" />
-<!-- 
-I would say the main joy and challenge of my PhD, and what I want to continue doing, is figuring out how to translate neuroscience and connectomics questions into something that we can test with data science
-techniques. 
-
-This is the kind of research I'd like to continue doing, but I'm excited about the prospect of scaling up these approaches to problems that are bigger  This of course goes along with working on a larger, more integrated team, and while ive worked on multidisciplinary teams in the past, I'd appreciate the chance to be working in the same building as people with skills ranging from software to neuroscience.
-
-Finally, As I just mentioned, I've made a large effort to make the tools I've worked on during my PhD available to others via open source code, and I'd appreciate the chance to keep doing that here by contributing to open tools and data.
-
-As I hope is obvious from my talk, it seems like there is a lot of overlap of my interests in algorithmic ways of analyzing connectomics data, and your needs in terms of doing this kind of analysis on the large datasets you have been producing. I'm excited to hear more about what questions and challenges you all are interested in as I talk to more of you today. -->
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="my-interest-in-allen-em-connectomics-team">
-<h1>My interest in Allen/EM Connectomics team<a class="headerlink" href="#my-interest-in-allen-em-connectomics-team" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Enjoy translating neuroscience/connectomics questions into something we can test with data science techniques</p></li>
-<li><p>Scaling to larger problems, team science approach</p></li>
-<li><p>Open data and tools</p></li>
+<li><p>Understanding stereotypy in cortical wiring diagrams</p></li>
 </ul>
+</section>
 <hr class="docutils" />
 <!-- As an example of how this kind of approach would be relevant to your team's work, take for example your recent characterization of cell types and their connectivity in the MICrONS data, for in for instance in this recent paper investigating the structure of inhibition onto different excitatory cell types.
 
@@ -1298,42 +1292,38 @@ using some of the tools i mentioned for high dimensional independence testing in
 <!-- ![h:300 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/ding-overview.png) -->
 <!-- MICrONS Consortium et al. bioRxiv (2021), Ding, Fahey, Papadououlos et al. bioRxiv (2023)  -->
 <hr class="docutils" />
-<!-- Beyond simple systems like the larva, however, it is often thought that neurons are present not in one-to-one matches, but rather in populations. this is thought to be the case in the adult drosophila, for example. Here I am showing an example of a matching in the antennal lobe of the FlyWire adult drosophila dataset, in this case matching based on morphological similarity of left/right neurons. In the middle column you see the "hard" matching solution or permutation matrix, akin to what I've been talking about today, where a filled square indicates that a row neuron gets matched to an individual column neuron. Conversely, using tools from optimal transport, we're able to find a soft assignment, or in other words a potentially many-to-many match. This kind of approach might be really relevant to transferring some of these alignment ideas to cortex to potentially find correspondences across datasets or regions. -->
+<!-- I also want to add that while I talked about straightforward applications of graph matching for fairly isomorphic networks, I have seen graph matching problems come up a lot in surprising ways which might be relevant to cortex where things are less stereotyped. For instance, we've looked at using graph matching tools to test for significant correlation in connectivity structure. In this example, I compared the wiring on the left and right hemispheres of the projection neuron to kenyon cell subgraph in the larva. This subgraph is believed to be "random," in the sense that it was expected that there should be no correlation of edge structure between these networks. When I compared a measure of "alignment strength" or edge correlation that we estimated by matching these left and right hemisphere subnetworks to what we got for 500 networks sampled from a random network model, we indeed found no significant correlation of edge structure. I think it would be interesting to apply these kinds of ideas to test whether subgraphs in cortex have any significant kind of edge correlation, beyond what one would expect from simple cell type connection probabilities. -->
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="beyond-1-to-1-neuron-matching">
-<h1>Beyond 1-to-1 neuron matching<a class="headerlink" href="#beyond-1-to-1-neuron-matching" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="stereotypy-beyond-connection-probabilities">
+<h1>Stereotypy beyond connection probabilities<a class="headerlink" href="#stereotypy-beyond-connection-probabilities" title="Permalink to this heading">#</a></h1>
+<p>Beyond cell type connection probabilities, are cortical subgraphs more correlated than expected by chance?</p>
 <div class="columns">
 <div>
-<section id="morphology-similarity">
-<h2>Morphology similarity<a class="headerlink" href="#morphology-similarity" title="Permalink to this heading">#</a></h2>
-<p><img alt="" src="https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/nblast.png" /></p>
+<p><img alt="h:400" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc-stereotypy-diagram.svg" /></p>
 </div>
 <div>
-</section>
-<section id="hard-matching">
-<h2>“Hard” matching<a class="headerlink" href="#hard-matching" title="Permalink to this heading">#</a></h2>
-<p><img alt="" src="https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/lap_solution.png" /></p>
-<div class="math notranslate nohighlight">
-\[\min_P trace(SP^T)\]</div>
-</div>
-<div>
-</section>
-<section id="soft-assignment">
-<h2>“Soft” assignment<a class="headerlink" href="#soft-assignment" title="Permalink to this heading">#</a></h2>
-<p><img alt="" src="https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/sinkhorn_solution.png" /></p>
-<div class="math notranslate nohighlight">
-\[\min_D trace(SD^T) + \lambda \Omega(D)\]</div>
+<p><img alt="h:400" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc_alignment_dist.svg" /></p>
 </div>
 </div>
-<!-- _footer: Cuturi NeurIPS (2013), Costa et al. Neuron (2016)  - Work with Philipp Schlegel, Greg Jefferis, unpublished -->
-</section>
-</section>
+<!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="other-ideas">
-<h1>Other ideas<a class="headerlink" href="#other-ideas" title="Permalink to this heading">#</a></h1>
+<!-- 
+I would say the main joy and challenge of my PhD is translating neuroscience and connectomics questions into something that we can test with data science techniques. 
+
+I'm excited about the prospect of continuing to do this kind of research with your team - and more specifically, scaling up approaches to problems that are bigger than what one grad student can tackle.
+
+This of course goes along with working on a larger, more integrated team, and while ive worked on multidisciplinary teams in the past, I'd appreciate the chance to be working in the same building as people with skills ranging from software to neuroscience.
+
+Finally, As I just mentioned, I've made a large effort to make the tools I've worked on during my PhD available to others via open source code, and I'd appreciate the chance to keep doing that here by contributing to open tools and data.
+
+As I hope is obvious from my talk, it seems like there is a lot of overlap of my interests in algorithmic ways of analyzing connectomics data, and your needs in terms of doing this kind of analysis on the large datasets you have been producing. I'm excited to hear more about what questions and challenges you all are interested in as I talk to more of you today. -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="my-interest-in-allen-em-connectomics-team">
+<h1>My interest in Allen/EM Connectomics team<a class="headerlink" href="#my-interest-in-allen-em-connectomics-team" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Testing for significantly correlated subgraphs using graph matching + null models</p></li>
-<li></li>
+<li><p>Interested in translating neuroscience/connectomics questions into something we can test with data science techniques</p></li>
+<li><p>Scaling to larger problems, team science approach</p></li>
+<li><p>Open data and tools</p></li>
 </ul>
 <hr class="docutils" />
 <p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
@@ -1677,20 +1667,29 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 <h1>Using predicted groups<a class="headerlink" href="#using-predicted-groups" title="Permalink to this heading">#</a></h1>
 <p><img alt="h:500 center" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/predicted_groups/dendrogram_clusters_pvalues.svg" /></p>
 <hr class="docutils" />
-<!-- I also want to add that while I talked about straightforward applications of graph matching for fairly isomorphic networks, I have seen graph matching problems come up a lot in surprising ways which might be relevant to cortex where things are less stereotyped. For instance, we've looked at using graph matching tools to test for significant correlation in connectivity structure. In this example, I compared the wiring on the left and right hemispheres of the projection neuron to kenyon cell subgraph in the larva. This subgraph is believed to be "random," in the sense that it was expected that there should be no correlation of edge structure between these networks. When I compared a measure of "alignment strength" or edge correlation that we estimated by matching these left and right hemisphere subnetworks to what we got for 500 networks sampled from a random network model, we indeed found no significant correlation of edge structure. I think it would be interesting to apply these kinds of ideas to test whether subgraphs in cortex have any significant kind of edge correlation, beyond what one would expect from simple cell type connection probabilities. -->
+<!-- 
+As mentioned, interested in leveraging this work on how we can compare connectomes to find links to these various other phenotypes. 
+
+This is what makes the work being done at the Allen institute and UW so exciting to me; given that you all are not just measuring connectomes, but also many other modalities of data.
+
+I’d like to give an example of how I’m approaching this kind of question in the larva, and how I think with some development, these approaches would be relevant to apply to the allen institute data. 
+
+ -->
+<p><img alt="bg h:700" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png" /></p>
+<hr class="docutils" />
+<!-- 
+Evidence that characterizing variability in connectivity (in this case, specific projections to brain output neurons), can be related to differences in behavioral outputs
+ -->
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="testing-for-stereotypy-in-subgraph-edge-structure">
-<h1>Testing for stereotypy in subgraph edge structure<a class="headerlink" href="#testing-for-stereotypy-in-subgraph-edge-structure" title="Permalink to this heading">#</a></h1>
-<p>Is matching stronger than expected under some model of independent networks?</p>
-<div class="columns">
-<div>
-<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc-stereotypy-diagram.svg" /></p>
-</div>
-<div>
-<p><img alt="" src="https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc_alignment_dist.svg" /></p>
-</div>
-</div>
-<!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
+<section class="tex2jax_ignore mathjax_ignore" id="a-structure-function-relationship-in-the-larva">
+<h1>A structure-function relationship in the larva<a class="headerlink" href="#a-structure-function-relationship-in-the-larva" title="Permalink to this heading">#</a></h1>
+<p><img alt="center" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png" /></p>
+<section id="behavior-probabilities-significantly-related-to-projections-to-brain-outputs">
+<h2>Behavior probabilities significantly related to projections to brain outputs<a class="headerlink" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs" title="Permalink to this heading">#</a></h2>
+<p>RV coefficient: 0.12, p-value: 0.0044
+Distance correlation: 0.067, p-value: 0.0087</p>
+<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1806,7 +1805,6 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-effect-of-edge-weights">Examining the effect of edge weights</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#even-high-synapse-count-networks-show-asymmetry">Even high synapse count networks show asymmetry</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#high-input-percentage-networks-show-no-asymmetry">High input percentage networks show no asymmetry</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Outline</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Clustering the larval brain by connectivity</a></li>
@@ -1822,8 +1820,9 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contralateral-connections-aid-matching">Contralateral connections aid matching!</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#many-other-ways-to-try-to-improve-on-matching">Many other ways to try to improve on matching…</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-improvement-from-edge-types">Performance improvement from edge types</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structure-function-relationship-in-the-larva">A structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-1-to-1-neuron-matching">Beyond 1-to-1 neuron matching</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-1-matching">1-to-1 matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-assignment">Soft assignment</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-tools">Open source tools</a><ul class="visible nav section-nav flex-column">
@@ -1837,15 +1836,9 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19"><strong>Future work</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#my-interest-in-allen-em-connectomics-team">My interest in Allen/EM Connectomics team</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#do-wiring-rules-generalize-across-region-dataset">Do wiring rules generalize across region? Dataset?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-1-to-1-neuron-matching">Beyond 1-to-1 neuron matching</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morphology-similarity">Morphology similarity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hard-matching">“Hard” matching</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-assignment">“Soft” assignment</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#other-ideas">Other ideas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stereotypy-beyond-connection-probabilities">Stereotypy beyond connection probabilities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#my-interest-in-allen-em-connectomics-team">My interest in Allen/EM Connectomics team</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 </ul>
@@ -1881,7 +1874,10 @@ _footer: Winding, Pedigo et al. bioRxiv (2022) -->
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predicted-groups">Using predicted groups</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stereotypy-in-subgraph-edge-structure">Testing for stereotypy in subgraph edge structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-structure-function-relationship-in-the-larva">A structure-function relationship in the larva</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-probabilities-significantly-related-to-projections-to-brain-outputs">Behavior probabilities significantly related to projections to brain outputs</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
