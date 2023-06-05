@@ -762,7 +762,7 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 ### 1-to-1 matching
 
-![h:80 center](./images/../../../images/cell-types-3.png)
+![h:80 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cell-types-3.png)
 
 ![h:325 center](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/lap_solution.png)
 
@@ -773,7 +773,7 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 ### Soft assignment
 
-![h:80 center](./images/../../../images/cell-types-5.png)
+![h:80 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cell-types-5.png)
 
 ![h:325 center](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/sinkhorn_solution.png)
 
