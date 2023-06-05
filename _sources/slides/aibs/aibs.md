@@ -888,7 +888,10 @@ using some of the tools i mentioned for high dimensional independence testing in
 
 # Stereotypy beyond connection probabilities
 
-Beyond cell type connection probabilities, are cortical subgraphs more correlated than expected by chance?
+<!-- Beyond cell type connection probabilities, are cortical subgraphs more correlated than expected by chance? -->
+
+Matching and null models can be combined to test for significant subgraph correlation in 
+edge structure
 
 <div class="columns">
 <div>
