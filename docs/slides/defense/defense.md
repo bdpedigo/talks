@@ -61,7 +61,7 @@ Johns Hopkins University
 
 ---
 
-![bg right:30% fit](../../images/neurodata-pizza.jpeg)
+<!-- First, I want to thank many current and former members of the neurodata lab and collaborators and hopkins. It has been a great honor to get to learn from you all on a daily basis, as well as unwinding by playing frisbee outside. -->
 
 <style scoped> 
 
@@ -72,8 +72,8 @@ p {
 .minipanels {
   display: grid;
   text-align: center;
-  grid-template-columns: repeat(10, 80px);
-  gap: 0.05rem;
+  grid-template-columns: repeat(9, 80px);
+  gap: 0.0rem;
   margin: 0px;
   border: 0px;
   pad: 0px;
@@ -82,54 +82,73 @@ p {
 
 </style>
 
+<div class="columns-bl">
+<div>
+
 
 <div class='minipanels'>
 <div>
 
 ![person](https://raw.githubusercontent.com/neurodata/neurodata.io/deploy/source/images/people/alex_loftus.jpg) 
-Alex Loftus
+Alex 
+
+<!-- Loftus -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/ali_saad.jpg?raw=true)
-Ali Saad-Eldin
+Ali
+
+<!-- Saad-Eldin -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/alice_wang.jpg?raw=true)
-Alice Wang
+Alice 
+
+<!-- Wang -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/ashwin_headshot.jpg?raw=true)
-Ashwin ...
+Ashwin 
+
+<!-- ... -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/bijan.jpg?raw=true)
-Bijan ...
+Bijan 
+
+<!-- ... -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/bridgeford.jpg?raw=true)
-Eric Bridgeford
+Eric
+
+<!-- Bridgeford -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/devin-crowley.jpg?raw=true)
-Devin Crowley
+Devin
+
+<!-- Crowley -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/diane_lee.png?raw=true)
-Diane Lee
+Diane
+
+<!-- Lee -->
 
 </div>
 <div>
@@ -141,7 +160,9 @@ Drishti
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/falk_ben.jpg?raw=true)
-Ben Falk
+Ben 
+
+<!-- Falk -->
 
 </div>
 <div>
@@ -153,49 +174,65 @@ Hao
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/hayden-helm.jpg?raw=true)
-Hayden Helm
+Hayden 
+
+<!-- Helm -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/jaewon.jpg?raw=true)
-Jaewon Chung
+Jaewon 
+
+<!-- Chung -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/javier_how.jpg?raw=true)
-Javier How
+Javier 
+
+<!-- How -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/jayanta.jpg?raw=true)
-Jayanta Dey
+Jayanta 
+
+<!-- Dey -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/jesus.jpg?raw=true)
-Jesus Arroyo
+Jesus 
+
+<!-- Arroyo -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/jong_shin.png?raw=true)
-Jong Shin
+Jong 
+
+<!-- Shin -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/kareef_ullah.jpg?raw=true)
-Kareef Ullah
+Kareef 
+
+<!-- Ullah -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/mike-powell.jpg?raw=true)
-Mike Powell
+Mike
+
+<!-- Powell -->
 
 
 
@@ -210,43 +247,57 @@ Noga
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/park_youngser.jpg?raw=true)
-Youngser Park
+Youngser 
+
+<!-- Park -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/patsolic_heather.jpg?raw=true)
-Heather Patsolic
+Heather 
+
+<!-- Patsolic -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/patsolic_jesse.jpg?raw=true)
-Jesse Patsolic
+Jesse 
+
+<!-- Patsolic -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/ronak_mehta.jpg?raw=true)
-Ronak Mehta
+Ronak 
+
+<!-- Mehta -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/ronan.jpg?raw=true)
-Ronan Perry
+Ronan 
+
+<!-- Perry -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/ross-lawrence.jpg?raw=true)
-Ross Lawrence
+Ross 
+
+<!-- Lawrence -->
 
 </div>
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/sambit-panda.jpg?raw=true)
-Sambit Panda
+Sambit 
+
+<!-- Panda -->
 
 </div>
 <div>
@@ -288,32 +339,43 @@ Vivek
 <div>
 
 ![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/yuxin.jpg?raw=true)
-Yuxin Bai
+Yuxin 
+
+<!-- Bai -->
 
 </div>
 </div>
 
 
+</div>
+<div>
 
+![](../../images/neurodata-pizza.jpeg)
+
+![](../../images/frisbee-lab.jpeg)
+
+
+</div>
+</div>
 
 
 ---
 
-# Committee 
+<!-- To my  -->
 
 ---
 
-# Friends
+<!--  -->
+
+![bg](./../../images/friends.png)
 
 ---
 
-# Family 
+![bg](./../../images/parents.png)
 
 --- 
 
-# Claire
-
-
+![bg](./../../images/claire.png)
 
 ---
 
@@ -325,7 +387,7 @@ Yuxin Bai
 
 ---
 
-# Neuro 101
+# Neuroscience 101
 
 <div class="columns">
 <div>
@@ -370,7 +432,7 @@ Networks are mathematical abstractions to represent *relational* data
 
 - **Nodes** are the set of objects (neurons)
 - **Edges** are the set of connections between those objects (synapses)
-  - Neuron $i$ connects to neuron $j$ with 5 synapses
+  - E.g. neuron $1$ connects to neuron $3$ with 2 synapses
 
 </div>
 <div>
@@ -391,7 +453,7 @@ Networks are mathematical abstractions to represent *relational* data
 
 ---
 
-# Goal: linking connectivity to other phenotypes
+# Linking connectivity to other phenotypes
 
 ![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-3.png)
 
@@ -400,7 +462,7 @@ Networks are mathematical abstractions to represent *relational* data
 
 ---
 
-# Goal: linking connectivity to other phenotypes
+# Linking connectivity to other phenotypes
 
 ![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-4.png)
 
@@ -408,7 +470,7 @@ Networks are mathematical abstractions to represent *relational* data
 
 ---
 
-# Goal: linking connectivity to other phenotypes
+# Linking connectivity to other phenotypes
 
 ![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-5.png)
 
@@ -435,6 +497,18 @@ Networks are mathematical abstractions to represent *relational* data
 </div>
 
 #### Requires methods of comparing connectivity within and between connectomes
+
+--- 
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
+
+# Outline
+
+- ### **The connectome of a *Drosophila* larva brain**
+- ### Connectome comparison via network hypothesis testing
+- ### Pairing neurons across connectomes via graph matching
+- ### Ongoing work
+
 
 ---
 
@@ -542,17 +616,6 @@ Both hemispheres reconstructed
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
---- 
-
-![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
-
-# Outline
-
-- ### **Clustering the larval brain by connectivity**
-- ### Connectome comparison via network hypothesis testing
-- ### Pairing neurons across connectomes via graph matching
-- ### Future work
-
 
 ---
 
@@ -642,7 +705,7 @@ h2 {
 
 # Outline
 
-- ### Clustering the larval brain by connectivity
+- ### The connectome of a *Drosophila* larva brain
 - ### **Connectome comparison via network hypothesis testing**
 - ### Pairing neurons across connectomes via graph matching
 - ### Future work
@@ -921,10 +984,10 @@ Depends on what you mean...
 
 # Outline
 
-- ### Clustering the larval brain by connectivity
+- ### The connectome of a *Drosophila* larva brain
 - ### Connectome comparison via network hypothesis testing
 - ### **Pairing neurons across connectomes via graph matching**
-- ### Future work
+- ### Ongoing work
 
 ---
 
@@ -1099,80 +1162,24 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 Application of these tools to larva brain $\Rightarrow$ [github.com/neurodata/graspologic-demo](https://github.com/neurodata/graspologic-demo)
 
---- 
-
-<!-- Finally, I was also asked to say a little about my interest in the Allen institute and this team more specifically -->
+---
 
 ![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 # Outline
 
-- ### Clustering the larval brain by connectivity
+- ### The connectome of a *Drosophila* larva brain
 - ### Connectome comparison via network hypothesis testing
 - ### Pairing neurons across connectomes via graph matching
-- ### **Future work**
-  - Understanding stereotypy in cortical wiring diagrams
+- ### **Ongoing work**
 
 ---
-
-<!-- As an example of how this kind of approach would be relevant to your team's work, take for example your recent characterization of cell types and their connectivity in the MICrONS data, for in for instance in this recent paper investigating the structure of inhibition onto different excitatory cell types.
-
-A natural next question is whether these quantitative rules hold, say, for other subvolumes in the same region of primary visual cortex, or whether they are different in another visual region or EM volume. This would be a natural application of my work on model-based comparison of neural wiring rules.
-
-Methodologically, answering these questions would likely involve incorporating more biological detail into these model-based descriptions of connectivity, for instance incorporating additional parameters into the model to account for sub-cellular compartments or spatial relationships, and then figuring out how to create valid statistical tests with these added parameters. Further, I believe these comparisons might require developing quantitative models of the errors present in these reconstructions, to account for things like varying reconstruction rates across samples or regions.
--->
-
-# Do wiring rules generalize across region? Dataset? 
-
-<div class="columns">
-<div>
-
-<!-- ![h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/microns-volume.png) -->
-
-![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-volume.png)
-
-![center h:290](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-wiring-rules.png)
-
-</div>
-<div>
-
-- Application of model-based network comparison tools
-- Would likely require extensions: 
-  - Parameters to deal with subcellular wiring specificity ![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-explain.png)
-  - Modeling known errors (e.g. amount of orphan synapses)
-
-</div>
-</div>
-
-<!-- _footer: MICrONS Consortium et al. bioRxiv (2023), Schneider-Mizell et al. bioRxiv (2023) -->
-
-
-<!-- Finally, as I’ve mentioned, i think the reason to do all this careful study of wiring rules is ultimately to see how this impacts function, which is part of what makes me fascinated by the microns data, where neural activity was also characterized for many neurons. 
-
-
-I’m interested in 
-
-trying to connect any variation we see in neural wiring rules to variation in aspects of neural activity, 
-
-using some of the tools i mentioned for high dimensional independence testing in our work on the larva. -->
-
-<!-- # ...and does any variation relate to function?  -->
-
-<!-- ![h:300 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/ding-overview.png) -->
-
-
-<!-- MICrONS Consortium et al. bioRxiv (2021), Ding, Fahey, Papadououlos et al. bioRxiv (2023)  -->
-
----
-
-<!-- I also want to add that while I talked about straightforward applications of graph matching for fairly isomorphic networks, I have seen graph matching problems come up a lot in surprising ways which might be relevant to cortex where things are less stereotyped. For instance, we've looked at using graph matching tools to test for significant correlation in connectivity structure. In this example, I compared the wiring on the left and right hemispheres of the projection neuron to kenyon cell subgraph in the larva. This subgraph is believed to be "random," in the sense that it was expected that there should be no correlation of edge structure between these networks. When I compared a measure of "alignment strength" or edge correlation that we estimated by matching these left and right hemisphere subnetworks to what we got for 500 networks sampled from a random network model, we indeed found no significant correlation of edge structure. I think it would be interesting to apply these kinds of ideas to test whether subgraphs in cortex have any significant kind of edge correlation, beyond what one would expect from simple cell type connection probabilities. -->
 
 # Stereotypy beyond connection probabilities
 
 <!-- Beyond cell type connection probabilities, are cortical subgraphs more correlated than expected by chance? -->
 
-Matching and null models can be combined to test for significant subgraph correlation in 
-edge structure
+Matching and null models can be combined to test for significant subgraph correlation in edge structure
 
 <div class="columns">
 <div>
@@ -1192,21 +1199,20 @@ edge structure
 ---
 
 <!-- 
-I would say the main joy and challenge of my PhD is translating neuroscience and connectomics questions into something that we can test with data science techniques. 
+Evidence that characterizing variability in connectivity (in this case, specific projections to brain output neurons), can be related to differences in behavioral outputs
+ -->
 
-I'm excited about the prospect of continuing to do this kind of research with your team - and more specifically, scaling up approaches to problems that are bigger than what one grad student can tackle.
+# A structure-function relationship in the larva
 
-This of course goes along with working on a larger, more integrated team, and while ive worked on multidisciplinary teams in the past, I'd appreciate the chance to be working in the same building as people with skills ranging from software to neuroscience.
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
 
-Finally, As I just mentioned, I've made a large effort to make the tools I've worked on during my PhD available to others via open source code, and I'd appreciate the chance to keep doing that here by contributing to open tools and data.
+### Behavior probabilities significantly related to projections to brain outputs
 
-As I hope is obvious from my talk, it seems like there is a lot of overlap of my interests in algorithmic ways of analyzing connectomics data, and your needs in terms of doing this kind of analysis on the large datasets you have been producing. I'm excited to hear more about what questions and challenges you all are interested in as I talk to more of you today. -->
+RV coefficient: 0.12, p-value: 0.0044
+Distance correlation: 0.067, p-value: 0.0087
 
-# My interest in Allen/EM Connectomics team
+<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
 
-- Interested in translating neuroscience/connectomics questions into something we can test with data science techniques
-- Scaling to larger problems, team science approach 
-- Open data and tools
 
 ---
 
@@ -1351,6 +1357,33 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 ---
 
 # Appendix
+
+---
+
+# Do wiring rules generalize across region? Dataset? 
+
+<div class="columns">
+<div>
+
+<!-- ![h:350](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/microns-volume.png) -->
+
+![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-volume.png)
+
+![center h:290](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-wiring-rules.png)
+
+</div>
+<div>
+
+- Application of model-based network comparison tools
+- Would likely require extensions: 
+  - Parameters to deal with subcellular wiring specificity ![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/casey-paper-explain.png)
+  - Modeling known errors (e.g. amount of orphan synapses)
+
+</div>
+</div>
+
+<!-- _footer: MICrONS Consortium et al. bioRxiv (2023), Schneider-Mizell et al. bioRxiv (2023) -->
+
 
 ---
 
@@ -1722,18 +1755,3 @@ I’d like to give an example of how I’m approaching this kind of question in 
 
 
 
----
-<!-- 
-Evidence that characterizing variability in connectivity (in this case, specific projections to brain output neurons), can be related to differences in behavioral outputs
- -->
-
-# A structure-function relationship in the larva
-
-![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/draft-maggot-multiomics.png)
-
-### Behavior probabilities significantly related to projections to brain outputs
-
-RV coefficient: 0.12, p-value: 0.0044
-Distance correlation: 0.067, p-value: 0.0087
-
-<!-- _footer: Work w/ L. Venkatasubramanian, C. Barré, JB Masson, C. Priebe, M. Zlatic -->
