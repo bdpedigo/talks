@@ -59,6 +59,8 @@ Johns Hopkins University
 
 # Acknowledgements
 
+<!-- before i get into the bulk of the talk, i want to steal a page from Mike Powell who was a graduate student in our lab, and start my defense with the acknowledgements. That way if you glaze over or fall asleep later in the talk, I hope you'll remember the important part, which is my graditute to the people which I should probably express more often. -->
+
 ---
 
 <!-- First, I want to thank many current and former members of the neurodata lab and collaborators and hopkins. It has been a great honor to get to learn from you all on a daily basis, as well as unwinding by playing frisbee outside. -->
@@ -361,19 +363,24 @@ Yuxin
 
 ---
 
-<!-- To my  -->
+<!-- To my advisors, my committe, and close collaborators at Cambridge. I will be forever humbled that you all trusted a rather fresh PhD student to work on data and problems that you all have spent so much time and energy on. I'm grateful for that opportunity and for all I've learned from you over the years, and I'm confident that we'll keep working together for a long while... -->
+
 
 ---
 
-<!--  -->
+<!-- To my friends, many of whom I met here in grad school - i feel very lucky to have met some of the most smart, driven people i know, but who somehow still come up with the idea to fry balls of pie in tempura batter. I honestly don't know how I would have done this without you all, and i look forward -->
 
 ![bg](./../../images/friends.png)
 
 ---
 
+<!-- To my parents - I obviously owe them everything that got me to this point. I just want to highlight that I think my parents instilled in me a sense of wonder and fascination with the natural world, and without that I never would have gotten into science or thought I should pursue a PhD.  -->
+
 ![bg](./../../images/parents.png)
 
 --- 
+
+<!-- To my partner Claire. For a bit of background in case anyone doesn't know. This figure (panel A) the you see on the top left was taken at our graduation almost exactly 5 years ago, and that's also about the last time we lived in the same city. Despite that, Claire has been incredibly supportful, and heard me blabber more about the ups and downs of my PhD than anyone deserves to. Im so grateful for that support and that we've made it through this chapter stronger and with so many great memories, and i cant wait to see what the future holds for us in seattle. -->
 
 ![bg](./../../images/claire.png)
 
