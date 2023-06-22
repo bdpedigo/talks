@@ -52,6 +52,8 @@ Johns Hopkins University
 
 [bdpedigo.github.io/talks/defense.html](https://bdpedigo.github.io/talks/defense.html)
 
+![center h:200](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/defense-qr.png)
+
 </div>
 </div>
 
@@ -450,6 +452,9 @@ Lalanti
 
 ![bg](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/claire.png)
 
+---
+
+# Connectometrics: developing and applying statistical network science towards understanding nanoscale connectomes
 
 ---
 
@@ -579,17 +584,6 @@ Networks are mathematical abstractions to represent *relational* data
 
 #### Requires methods of comparing connectivity within and between connectomes
 
---- 
-
-![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
-
-# Outline
-
-- ### **The connectome of a *Drosophila* larva brain**
-- ### Connectome comparison via network hypothesis testing
-- ### Pairing neurons across connectomes via graph matching
-- ### Ongoing work
-
 
 ---
 
@@ -614,7 +608,7 @@ Networks are mathematical abstractions to represent *relational* data
 
 ## Behavior
 
-<div class="columns">
+<!-- <div class="columns">
 <div>
 
 ![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/behavior-quant.png)
@@ -624,40 +618,17 @@ Networks are mathematical abstractions to represent *relational* data
 
 ![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/behavior-traces.png)
 
+</div>
+</div> -->
+
+
+![center](../../images/maggot-crawl.gif)
 
 </div>
 </div>
 
-</div>
-</div>
 
-<style scoped>
-p {
-  font-size: 20px
-}
-</style>
-
-<div class="columns">
-<div>
-
-Eschbach et al. Nat. Neuro (2020)
-
-</div>
-<div>
-
-
-Eschbach & Zlatic Curr. Op. Neurobio. (2020)
-
-</div>
-<div>
-
-Klein et al. bioRxiv (2021)
-
-Almeida-Carvalho et al. J. Experimental Bio. (2017)
-
-</div>
-</div>
-
+<!-- _footer: Eschbach et al. Nat. Neuro (2020), Eschbach & Zlatic Curr. Op. Neurobio. (2020), Tastekin et al. eLife (2018) -->
 
 
 ---
@@ -691,12 +662,24 @@ Both hemispheres reconstructed
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
+
 ---
 
 ![center h:600](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/paper-big-overview.png)
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
+--- 
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
+
+# Outline
+
+- ### **Clustering neurons by connectivity**
+- ### Connectome comparison via network hypothesis testing
+- ### Pairing neurons across connectomes via graph matching
+- ### Open-source software
+- ### Ongoing work
 
 ---
 
@@ -786,9 +769,10 @@ h2 {
 
 # Outline
 
-- ### The connectome of a *Drosophila* larva brain
+- ### Clustering neurons by connectivity
 - ### **Connectome comparison via network hypothesis testing**
 - ### Pairing neurons across connectomes via graph matching
+- ### Open-source software
 - ### Future work
 
 ---
@@ -977,7 +961,7 @@ Depends on what you mean...
 
 <!-- _footer: Pedigo et al. eLife (2023) -->
 
----
+<!-- ---
 # Examining the effect of edge weights
 
 <div class="columns">
@@ -991,9 +975,9 @@ Depends on what you mean...
 ![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/thresholding_methods.png)
 
 </div>
-</div>
+</div> -->
 
-<!-- _footer: Pedigo et al. eLife (2023) -->
+<!-- __footer: Pedigo et al. eLife (2023) -->
 
 <!-- ---
 
@@ -1040,12 +1024,9 @@ Depends on what you mean...
 <div class="columns">
 <div>
 
+<!-- ![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/input-prop.png) -->
 
-<span> </span>
-<span> </span>
-<span> </span>
-
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/input-prop.png)
+![center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/thresholding_tests/thresholding_methods.png)
 
 </div>
 <div>
@@ -1065,9 +1046,10 @@ Depends on what you mean...
 
 # Outline
 
-- ### The connectome of a *Drosophila* larva brain
+- ### Clustering neurons by connectivity
 - ### Connectome comparison via network hypothesis testing
 - ### **Pairing neurons across connectomes via graph matching**
+- ### Open-source software
 - ### Ongoing work
 
 ---
@@ -1122,6 +1104,8 @@ p {
 
 With "vanilla" graph matching: ~80% correct (according to expert annotator)...
 but ignores ~1/3 of synapses!
+
+<!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
 ---
 # From graph matching to bisected graph matching
@@ -1209,9 +1193,21 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 <!-- _footer: Cuturi NeurIPS (2013), Costa et al. Neuron (2016)  - Work with Philipp Schlegel, Greg Jefferis, unpublished -->
 
+--- 
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
+
+
+# Outline
+
+- ### Clustering neurons by connectivity
+- ### Connectome comparison via network hypothesis testing
+- ### Pairing neurons across connectomes via graph matching
+- ### **Open-source software**
+- ### Ongoing work
 
 ---
-# Open source tools
+# Open-source software for network analysis
 
 <div class="columns">
 <div>
@@ -1247,33 +1243,12 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 # Outline
 
-- ### The connectome of a *Drosophila* larva brain
+- ### Clustering neurons by connectivity
 - ### Connectome comparison via network hypothesis testing
 - ### Pairing neurons across connectomes via graph matching
+- ### Open-source software
 - ### **Ongoing work**
 
----
-
-# Stereotypy beyond connection probabilities
-
-<!-- Beyond cell type connection probabilities, are cortical subgraphs more correlated than expected by chance? -->
-
-Matching and null models can be combined to test for significant subgraph correlation in edge structure
-
-<div class="columns">
-<div>
-
-![h:400](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc-stereotypy-diagram.svg)
-
-</div>
-<div>
-
-![h:400](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc_alignment_dist.svg)
-
-</div>
-</div>
-
-<!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
 
 ---
 
@@ -1404,7 +1379,7 @@ Tracers who contributed to larva connectome, Lalanti Venkatasubramanian, Chloé 
 Figures from Scidraw (A. Bates, V. Kumar, E. Tyler, L. Kravitz, H. Robinson, E. Thompson, J. Matelsky), brain-map.org
 
 #### Funding
-NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroNex Award (J.T.V and C.E.P.), NIH BRAIN Initiative (J.T.V.)
+NSF GRFP (B.D.P.), NSF CAREER (J.T.V.), NSF NeuroNex (J.T.V/C.E.P.), NIH BRAIN Initiative (J.T.V.)
 
 ---
 
@@ -1429,6 +1404,8 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 ### These slides at:
 [bdpedigo.github.io/talks/defense.html](https://bdpedigo.github.io/talks/defense.html)
 
+![center h:200](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/defense-qr.png)
+
 </div>
 </div>
 
@@ -1436,6 +1413,29 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 ---
 
 # Appendix
+
+---
+
+# Stereotypy beyond connection probabilities
+
+<!-- Beyond cell type connection probabilities, are cortical subgraphs more correlated than expected by chance? -->
+
+Matching and null models can be combined to test for significant subgraph correlation in edge structure
+
+<div class="columns">
+<div>
+
+![h:400](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc-stereotypy-diagram.svg)
+
+</div>
+<div>
+
+![h:400](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/kc_alignment_dist.svg)
+
+</div>
+</div>
+
+<!-- _footer: Eichler et al. Nature (2017), Fishkind et al. Applied Network Science (2021) -->
 
 ---
 
