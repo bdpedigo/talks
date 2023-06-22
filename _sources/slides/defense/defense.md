@@ -352,9 +352,9 @@ Yuxin
 </div>
 <div>
 
-![](../../images/neurodata-pizza.jpeg)
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/neurodata-pizza.jpeg)
 
-![](../../images/frisbee-lab.jpeg)
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/frisbee-lab.jpeg)
 
 
 </div>
@@ -436,19 +436,19 @@ Lalanti
 
 <!-- To my friends, many of whom I met here in grad school - i feel very lucky to have met some of the most smart, driven people i know, but who somehow still come up with the idea to fry balls of pie in tempura batter. I honestly don't know how I would have done this without you all, and i look forward -->
 
-![bg](./../../images/friends.png)
+![bg](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/friends.png)
 
 ---
 
 <!-- To my parents - I obviously owe them everything that got me to this point. I just want to highlight that I think my parents instilled in me a sense of wonder and fascination with the natural world, and without that I never would have gotten into science or thought I should pursue a PhD.  -->
 
-![bg](./../../images/parents.png)
+![bg](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/parents.png)
 
 --- 
 
 <!-- To my partner Claire. For a bit of background in case anyone doesn't know. This figure (panel A) the you see on the top left was taken at our graduation almost exactly 5 years ago, and that's also about the last time we lived in the same city. Despite that, Claire has been incredibly supportful, and heard me blabber more about the ups and downs of my PhD than anyone deserves to. Im so grateful for that support and that we've made it through this chapter stronger and with so many great memories, and i cant wait to see what the future holds for us in seattle. -->
 
-![bg](./../../images/claire.png)
+![bg](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/claire.png)
 
 
 ---
@@ -466,7 +466,7 @@ Lalanti
 </div>
 <div>
 
-![h:500](./../../images/neuron-synapse.png)
+![h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/neuron-synapse.png)
 
 </div>
 </div>
@@ -477,9 +477,15 @@ Lalanti
 
 # How do we measure this structure?
 
-![](./../../images/zheng-connectome-pipeline.png)
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/zheng-connectome-pipeline.png)
 
 <!-- _footer: Zheng et al. Cell (2018) -->
+
+---
+
+![bg](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/whole-brain-reconstruction.gif)
+
+<!-- _footer: Michael Winding -->
 
 ---
 
@@ -488,12 +494,6 @@ Lalanti
 ![h:500 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/FigureS1-reconstruction.png)
 
 <!-- _footer: Winding, Pedigo et al. Science (2023), Ohyama, Schneider-Mizell et al. Nature (2015)-->
-
----
-
-![bg](./../../images/whole-brain-reconstruction.gif)
-
-<!-- _footer: Michael Winding -->
 
 ---
 
@@ -511,7 +511,7 @@ Networks are mathematical abstractions to represent *relational* data
 </div>
 <div>
 
-![h:500 center](./../../images/network-adjacency-explain.png)
+![h:500 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/network-adjacency-explain.png)
 
 </div>
 </div>
@@ -1233,9 +1233,9 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 [github.com/neurodata/graspologic-demo](https://github.com/neurodata/graspologic-demo)
 
-![](./../../images/graspologic-test.png)
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/graspologic-test.png)
 
-![](../../images/graspologic-match.png)
+![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/graspologic-match.png)
 
 </div>
 </div>
@@ -1401,7 +1401,7 @@ Joshua Vogelstein
 
 Tracers who contributed to larva connectome, Lalanti Venkatasubramanian, Chloé Barré, Jean-Baptiste Masson, Heather Patsolic, Youngser Park, NeuroData lab, Microsoft Research
 
-Figures from Scidraw (A. Bates, V. Kumar, E. Tyler, L. Kravitz, H. Robinson, E. Thompson), brain-map.org
+Figures from Scidraw (A. Bates, V. Kumar, E. Tyler, L. Kravitz, H. Robinson, E. Thompson, J. Matelsky), brain-map.org
 
 #### Funding
 NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroNex Award (J.T.V and C.E.P.), NIH BRAIN Initiative (J.T.V.)
@@ -1427,7 +1427,7 @@ NSF Graduate Research Fellowship (B.D.P.), NSF CAREER Award (J.T.V.), NSF NeuroN
 <div>
 
 ### These slides at:
-[bdpedigo.github.io/talks/aibs.html](https://bdpedigo.github.io/talks/aibs.html)
+[bdpedigo.github.io/talks/defense.html](https://bdpedigo.github.io/talks/defense.html)
 
 </div>
 </div>
