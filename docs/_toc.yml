@@ -3,5 +3,9 @@ root: slides
 parts:
   - caption: Slides
     chapters:
+    - url: https://bdpedigo.github.io/talks/aibs.html
+      title: Allen
+    - url: https://bdpedigo.github.io/talks/defense.html
+      title: PhD Thesis Defense
     - url: https://bdpedigo.github.io/talks/si.html
       title: SI
