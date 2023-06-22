@@ -363,7 +363,73 @@ Yuxin
 
 ---
 
-<!-- To my advisors, my committe, and close collaborators at Cambridge. I will be forever humbled that you all trusted a rather fresh PhD student to work on data and problems that you all have spent so much time and energy on. I'm grateful for that opportunity and for all I've learned from you over the years, and I'm confident that we'll keep working together for a long while... -->
+<!-- To my advisors, my committee, and close collaborators at Cambridge. I will be forever humbled that you all trusted a rather fresh PhD student to work on data and problems that you all have spent so much time and energy on. I'm grateful for that opportunity and for all I've learned from you over the years, and I'm confident that we'll keep working together for a long while... -->
+
+<style scoped> 
+
+p {
+    font-size: 20px;
+}
+</style>
+
+
+## Committee 
+
+<div class='minipanels'>
+<div>
+
+![person](https://github.com/neurodata/neurodata.io/blob/deploy/source/images/people/vogelstein_joshua_v2.jpg?raw=true)
+Joshua 
+Vogelstein
+
+</div>
+<div>
+
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/priebe_carey.jpg)
+Carey 
+Priebe
+
+</div>
+<div>
+
+![person](https://www.bme.jhu.edu/wp-content/uploads/2020/08/Justus-Kebschull-2.jpg)
+Justus 
+Kebschull
+
+</div>
+</div>
+
+## Collaborators @ Cambridge
+
+<div class='minipanels'>
+<div>
+
+![person](https://mwinding.github.io/images/profile.png)
+Michael 
+Winding
+
+</div>
+<div>
+
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/marta_zlatic.jpeg)
+Marta 
+Zlatic
+
+</div>
+<div>
+
+![person](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/people/albert_cardona.jpeg)
+Albert Cardona
+
+</div>
+<div>
+
+![person](https://www.zoo.cam.ac.uk/sites/www.zoo.cam.ac.uk/files/styles/inline/public/images/profile/untitled.jpg?itok=yO_1hVJN)
+Lalanti 
+<span style="font-size: 61%"> Venkatasubramanian </span>
+
+</div>
+</div>
 
 
 ---
@@ -384,23 +450,18 @@ Yuxin
 
 ![bg](./../../images/claire.png)
 
+
 ---
 
 # Connectomes: maps of neural wiring
 
-![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-1.png)
-
-<!-- _footer: Images from brain-map.org, SciDraw -->
-
----
-
-# Neuroscience 101
-
 <div class="columns">
 <div>
 
-- Brains contain **neurons**, one of the main neural cell types
-- Neurons connect to each other with **synapses**, connections which convey information
+- Brains contain **neurons**, which carry information via electrical signals
+- Neurons connect to each other with **synapses**, allowing neurons to "talk" to each other
+- **Connectome** is a map of the structure of neurons and the synapses between them
+  - Shaped by evolution, experience, influences neural activity, behavior
 
 </div>
 <div>
@@ -430,6 +491,12 @@ Yuxin
 
 ---
 
+![bg](./../../images/whole-brain-reconstruction.gif)
+
+<!-- _footer: Michael Winding -->
+
+---
+
 # Representing connectomes as networks
 
 <div class="columns">
@@ -449,6 +516,13 @@ Networks are mathematical abstractions to represent *relational* data
 </div>
 </div>
 
+---
+
+# Connectomes: maps of neural wiring
+
+![center h:500](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connect-diagram-1.png)
+
+<!-- _footer: Images from brain-map.org, SciDraw -->
 
 ---
 
@@ -1150,24 +1224,22 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 [github.com/microsoft/graspologic](https://github.com/microsoft/graspologic)
 
+[Chung, Pedigo et al. JMLR (2019)](https://jmlr.org/papers/v20/19-490.html)
+
 </div>
 <div>
 
-## Related publications
+## Application to larva brain
 
-[Chung, Pedigo et al. JMLR (2019)](https://jmlr.org/papers/v20/19-490.html)
+[github.com/neurodata/graspologic-demo](https://github.com/neurodata/graspologic-demo)
 
-[Vogelstein et al. Curr. Opin. Neurobio. (2019)](https://www.sciencedirect.com/science/article/abs/pii/S0959438818301430?via%3Dihub)
+![](./../../images/graspologic-test.png)
 
-[Chung et al. Annual Review of Stats and Its Application (2021)](https://www.annualreviews.org/doi/abs/10.1146/annurev-statistics-042720-023234)
-
+![](../../images/graspologic-match.png)
 
 </div>
 </div>
 
-<br>
-
-Application of these tools to larva brain $\Rightarrow$ [github.com/neurodata/graspologic-demo](https://github.com/neurodata/graspologic-demo)
 
 ---
 
