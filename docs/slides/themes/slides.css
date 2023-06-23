@@ -47,7 +47,8 @@ img[alt~="person"] {
 
 h1 {
     top: 0px;
-    margin-top: auto;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
 .columns {
@@ -92,6 +93,13 @@ h6 {
     margin-bottom: 0.2em;
 }
 
+h1 {
+    top: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+
 .center {
     margin: auto;
     width: 50%;
@@ -101,6 +109,12 @@ h6 {
 .columns2-bl {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+.columns3-sm {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
     gap: 1.5rem;
 }
 

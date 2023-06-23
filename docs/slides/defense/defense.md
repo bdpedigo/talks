@@ -11,7 +11,7 @@ style: |
 
 <style>
 section::after {
-    content: attr(data-marpit-pagination) '/44';
+    content: attr(data-marpit-pagination) '/50';
 }
 </style>
 
@@ -65,7 +65,7 @@ Johns Hopkins University
 
 ---
 
-<!-- First, I want to thank many current and former members of the neurodata lab and collaborators and hopkins. It has been a great honor to get to learn from you all on a daily basis, as well as unwinding by playing frisbee outside. -->
+<!-- First, I want to thank many current and former members of the neurodata lab and collaborators and hopkins. It has been a great honor to get to learn from you all on a daily basis, and not just about machine learning or neuroscience or statistics, but also frisbee -->
 
 <style scoped> 
 
@@ -434,11 +434,24 @@ Lalanti
 </div>
 
 
+![bg right:50% h:400](https://github.com/neurodata/bilateral-connectome/blob/main/docs/images/background.png?raw=true)
+
 ---
 
 <!-- To my friends, many of whom I met here in grad school - i feel very lucky to have met some of the most smart, driven people i know, but who somehow still come up with the idea to fry balls of pie in tempura batter. I honestly don't know how I would have done this without you all, and i look forward -->
 
 ![bg](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/friends.png)
+
+<!-- ---
+
+
+![bg opacity:85% blur:0.5px](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/friends.png)
+
+<br>
+<br>
+
+
+![center h:350](./../../images/pie-balls.jpeg) -->
 
 ---
 
@@ -486,17 +499,12 @@ Lalanti
 
 <!-- _footer: Zheng et al. Cell (2018) -->
 
----
-
-![bg](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/whole-brain-reconstruction.gif)
-
-<!-- _footer: Michael Winding -->
 
 ---
 
-# Connectomes from electron microscopy volumes
+<!-- # Connectomes from electron microscopy volumes -->
 
-![h:500 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/FigureS1-reconstruction.png)
+![bg h:85%](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/FigureS1-reconstruction.png)
 
 <!-- _footer: Winding, Pedigo et al. Science (2023), Ohyama, Schneider-Mizell et al. Nature (2015)-->
 
@@ -507,7 +515,7 @@ Lalanti
 <div class="columns">
 <div>
 
-Networks are mathematical abstractions to represent *relational* data
+Networks (or graphs) are mathematical abstractions to represent *relational* data
 
 - **Nodes** are the set of objects (neurons)
 - **Edges** are the set of connections between those objects (synapses)
@@ -520,6 +528,7 @@ Networks are mathematical abstractions to represent *relational* data
 
 </div>
 </div>
+
 
 ---
 
@@ -568,14 +577,16 @@ Networks are mathematical abstractions to represent *relational* data
 <div class="columns">
 <div>
 
-#### How does a neuron's connectivity affect elicited behaviors?
+#### Compare neuron's connectivities, 
+#### relate to elicited behaviors
 
 ![center h:330](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/behave-example.png)
 
 </div>
 <div>
 
-#### How does connectivity change during development?
+#### Compare connectivity 
+#### across development
 
 ![center h:280](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dev-example.png)
 
@@ -585,28 +596,63 @@ Networks are mathematical abstractions to represent *relational* data
 #### Requires methods of comparing connectivity within and between connectomes
 
 
+--- 
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
+
+# Outline
+
+- ### **The connectome of an insect brain**
+- ### Connectome comparison via network hypothesis testing
+- ### Pairing neurons across connectomes via graph matching
+- ### Open-source software
+- ### Ongoing work
+
 ---
 
 # Larval *Drosophila* as a model system
 
+<style scoped> 
+
+p {
+    text-align: center;
+}
+</style>
+
+
 <div class="columns">
 <div>
 
-## Genetics
 
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/eschbach-lines.png)
+<div class="columns">
+<div>
+
+**Genetics**
+![h:200 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/eschbach-lines.png)
+
+<!-- </div>
+<div>
+
+
+</div>
+</div> -->
+
+**Activity**
+![h:200 center](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/activity.png)
 
 </div>
 <div>
 
-## Activity
+<!-- ![h:450](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/maggot-crawl.gif) -->
 
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/docs/images/activity.png)
+**Behavior**
+<img
+  src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/maggot-crawl.gif"
+  style="width: 600px; height: 450px; object-fit: none; object-position: 50% 50%;"
+/>
 
 </div>
-<div>
-
-## Behavior
+</div>
 
 <!-- <div class="columns">
 <div>
@@ -622,14 +668,14 @@ Networks are mathematical abstractions to represent *relational* data
 </div> -->
 
 
-![center](../../images/maggot-crawl.gif)
-
-</div>
-</div>
-
 
 <!-- _footer: Eschbach et al. Nat. Neuro (2020), Eschbach & Zlatic Curr. Op. Neurobio. (2020), Tastekin et al. eLife (2018) -->
 
+---
+
+![bg](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/whole-brain-reconstruction.gif)
+
+<!-- _footer: Michael Winding -->
 
 ---
 
@@ -669,56 +715,63 @@ Both hemispheres reconstructed
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
---- 
-
-![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
-
-# Outline
-
-- ### **Clustering neurons by connectivity**
-- ### Connectome comparison via network hypothesis testing
-- ### Pairing neurons across connectomes via graph matching
-- ### Open-source software
-- ### Ongoing work
 
 ---
 
 # Neurons clustered by connectivity 
-
-
-<div class="columns">
+<div class="columns3-sm">
 <div>
 
-![h:475](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dendrogram-adjacency.png)
+![center](./../../images/adjacency-matrix-unsorted.png)
 
 </div>
 <div>
 
-- Used a variation on spectral clustering
-- How many clusters to include?
+<br>
+<br>
+<br> 
+
+Hierarchical 
+spectral clustering $\Rightarrow$ 
+
+</div>
+<div>
+
+![](./../../images/adjacency-matrix-sorted.png)
+
+<!-- ![h:400](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/dendrogram-adjacency.png) -->
 
 </div>
 </div>
+
+### How many clusters/what depth is a good description of connectivity?
+
+<!-- - Used a 
+- How many clusters to include? -->
 
 
 <!-- _footer: Winding, Pedigo et al. Science (2023) -->
 
 ---
 
-# Stochastic block model
+# Stochastic block model (SBM)
 
 <div class="columns">
 <div>
 
-![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.png)
+- Statistical model for a network
+  - Can sample data from the model
+  - Can ask how well the model describes a dataset
+- Assigns each node to a group (e.g. green or pink or yellow)
+- Characterizes connection probabilities between groups ($B$)
+
+<!-- - $B$ is a matrix of connection probabilities between groups
+- Edges generated independently according to these probabilities:  -->
 
 </div>
 <div>
 
-- Each node $i$ is assigned to a group, $\tau_{i}$
-- $B$ is a matrix of connection probabilities between groups
-- Edges generated independently according to these probabilities: 
-  - $A_{ij} \sim Bernoulli(B_{\tau_{i} \tau_{j}})$
+![](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/sbm_unmatched_test/sbm_explain.png)
 
 </div>
 </div>
@@ -729,8 +782,7 @@ Both hemispheres reconstructed
 <div class="columns">
 <div>
 
-
-- How well do these models generalize to the other side of the brain (let alone the next maggot)?
+How well do these models/clusterings generalize to the other side of the brain (let alone the next maggot)?
 
 ![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cross-val-explain.png)
 
@@ -741,7 +793,6 @@ Both hemispheres reconstructed
 
 </div>
 </div>
-
 
 ---
 
@@ -769,7 +820,7 @@ h2 {
 
 # Outline
 
-- ### Clustering neurons by connectivity
+- ### The connectome of an insect brain
 - ### **Connectome comparison via network hypothesis testing**
 - ### Pairing neurons across connectomes via graph matching
 - ### Open-source software
@@ -816,13 +867,13 @@ $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
 </div>
 </div>
 
----
+<!-- ---
 # Assumptions
 - Know the direction of synapses, so network is *directed*
 - Consider networks to be *unweighted*
 - Not assuming any nodes are matched:
 ![center h:200](https://raw.githubusercontent.com/neurodata/bilateral-connectome/main/results/figs/unmatched_vs_matched/unmatched_vs_matched.svg)
-- If $F$ is again a stochastic block model, then...
+- If $F$ is again a stochastic block model, then... -->
 
 ---
 # Connection probabilities between groups
@@ -859,8 +910,8 @@ $H_A: \color{#66c2a5} F^{(L)} \color{black} \neq  \color{#fc8d62} F^{(R)}$
 <div class="columns">
 <div>
 
-- Overall test (comparing all blocks):<br>$H_0: \color{#66c2a5}B^{(L)} \color{black} = \color{#fc8d62}B^{(R)}$<br>p-value $<10^{-7}$
-
+- p-value: "If the left and right came from the same SBM, what is the probability they would look this different?"
+- Comparing all blocks:<br>$H_0: \color{#66c2a5}B^{(L)} \color{black} = \color{#fc8d62}B^{(R)}$<br>p-value $<10^{-7}$
 - 7 group-to-group connections are significantly different (after multiple comparisons correction)
 
 </div>
@@ -886,7 +937,7 @@ $H_0: \color{#66c2a5}B^{(L)}_{kl} \color{black} = \color{#fc8d62}B^{(R)}_{kl}$
 <div>
 
 - For significant comparisons, probabilities on right side are higher
-- Even network densities are different<br>(1-block/Erdos-Renyi model)
+- Turns out, left hemisphere has significantly fewer edges overall
 - Maybe the right is just a "scaled up" version of the left?
    - $H_0: \color{#66c2a5}B^{(L)} \color{black}  = c \color{#fc8d62}B^{(R)}$  
    $c$ is a density-adjusting constant
@@ -1046,7 +1097,7 @@ Depends on what you mean...
 
 # Outline
 
-- ### Clustering neurons by connectivity
+- ### The connectome of an insect brain
 - ### Connectome comparison via network hypothesis testing
 - ### **Pairing neurons across connectomes via graph matching**
 - ### Open-source software
@@ -1054,23 +1105,26 @@ Depends on what you mean...
 
 ---
 
-# Bilaterally homologous neuron pairs 
+# Bilaterally homologous neuron pairs
 
-<div class="columns-br">
+![h:500 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/bilateral-pairs.png)
+
+
+<!-- <div class="columns-br">
 <div>
 
-![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/mbon-expression-crop.jpg)
+<!-- ![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/mbon-expression-crop.jpg) -->
 
-</div>
+<!-- </div>
 <div>
 
-![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/bilateral-pairs.png)
 
 
 </div>
-</div>
+</div>  -->
+<!-- Eschbach et al. eLife (2021), -->
 
-<!-- _footer: Eschbach et al. eLife (2021), Winding, Pedigo et al. Science (2023) -->
+<!-- _footer:  Winding, Pedigo et al. Science (2023) -->
 
 --- 
 # How can we pair on connectivity?
@@ -1105,7 +1159,7 @@ p {
 With "vanilla" graph matching: ~80% correct (according to expert annotator)...
 but ignores ~1/3 of synapses!
 
-<!-- _footer: Winding, Pedigo et al. Science (2023) -->
+<!-- _footer: Winding, Pedigo et al. Science (2023), Vogelstein et al. PLOS One (2015) -->
 
 ---
 # From graph matching to bisected graph matching
@@ -1125,23 +1179,24 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 <!-- _footer: Pedigo et al. Network Neuroscience (2022) -->
 
+<!-- --- -->
+
+
+
+<!-- __footer: Pantazis et al. Applied Network Science (2022), Fishkind et al. Pattern Recognition (2019) -->
+
 ---
-# Many other ways to try to improve on matching...
+
+# Many other ways to improve on matching...
+
+<div class="columns-br">
+<div>
 
 - Partial knowledge of the matching (seeds)
 - Incorporate morphology (e.g. NBLAST)
 - **Edge types allow for "multilayer" graph matching**
 
-<!-- _footer: Pantazis et al. Applied Network Science (2022), Fishkind et al. Pattern Recognition (2019) -->
-
----
-
-# Performance improvement from edge types
-
-<div class="columns-br">
-<div>
-
-![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connection-types.png)
+<!-- ![center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/connection-types.png) -->
 
 </div>
 <div>
@@ -1153,45 +1208,6 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 <!-- _footer: Pedigo et al. Network Neuroscience (2022), Winding, Pedigo et al. Science (2023), Pantazis et al. Applied Network Science (2022) -->
 
----
-
-<!-- Beyond simple systems like the larva, however, it is often thought that neurons are present not in one-to-one matches, but rather in populations. this is thought to be the case in the adult drosophila, for example. Here I am showing an example of a matching in the antennal lobe of the FlyWire adult drosophila dataset, in this case matching based on morphological similarity of left/right neurons. In the middle column you see the "hard" matching solution or permutation matrix, akin to what I've been talking about today, where a filled square indicates that a row neuron gets matched to an individual column neuron. Conversely, using tools from optimal transport, we're able to find a soft assignment, or in other words a potentially many-to-many match. This kind of approach might be really relevant to transferring some of these alignment ideas to cortex to potentially find correspondences across datasets or regions. -->
-
-<!-- ### Morphology similarity
-
-![](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/nblast.png)
-
-</div>
-<div> -->
-
-# Beyond 1-to-1 neuron matching
-
-<div class="columns">
-<div>
-
-### 1-to-1 matching
-
-![h:80 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cell-types-3.png)
-
-![h:325 center](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/lap_solution.png)
-
-<!-- $$\min_P trace(SP^T)$$ -->
-
-</div>
-<div>
-
-### Soft assignment
-
-![h:80 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cell-types-5.png)
-
-![h:325 center](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/sinkhorn_solution.png)
-
-<!-- $$\min_D trace(SD^T) + \lambda \Omega(D)$$ -->
-
-</div>
-</div>
-
-<!-- _footer: Cuturi NeurIPS (2013), Costa et al. Neuron (2016)  - Work with Philipp Schlegel, Greg Jefferis, unpublished -->
 
 --- 
 
@@ -1200,7 +1216,7 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 # Outline
 
-- ### Clustering neurons by connectivity
+- ### The connectome of an insect brain
 - ### Connectome comparison via network hypothesis testing
 - ### Pairing neurons across connectomes via graph matching
 - ### **Open-source software**
@@ -1243,11 +1259,53 @@ In simulations, this helps when contralaterals have sufficient edge correlation
 
 # Outline
 
-- ### Clustering neurons by connectivity
+- ### The connectome of an insect brain
 - ### Connectome comparison via network hypothesis testing
 - ### Pairing neurons across connectomes via graph matching
 - ### Open-source software
 - ### **Ongoing work**
+
+---
+
+<!-- Beyond simple systems like the larva, however, it is often thought that neurons are present not in one-to-one matches, but rather in populations. this is thought to be the case in the adult drosophila, for example. Here I am showing an example of a matching in the antennal lobe of the FlyWire adult drosophila dataset, in this case matching based on morphological similarity of left/right neurons. In the middle column you see the "hard" matching solution or permutation matrix, akin to what I've been talking about today, where a filled square indicates that a row neuron gets matched to an individual column neuron. Conversely, using tools from optimal transport, we're able to find a soft assignment, or in other words a potentially many-to-many match. This kind of approach might be really relevant to transferring some of these alignment ideas to cortex to potentially find correspondences across datasets or regions. -->
+
+<!-- ### Morphology similarity
+
+![](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/nblast.png)
+
+</div>
+<div> -->
+
+# Scaling beyond 1-to-1 neuron matching
+
+Hoping to match male/female adult fly brains with ~120,000 neurons each
+
+<div class="columns">
+<div>
+
+### 1-to-1 matching
+
+![h:80 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cell-types-3.png)
+
+![h:300 center](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/lap_solution.png)
+
+<!-- $$\min_P trace(SP^T)$$ -->
+
+</div>
+<div>
+
+### Soft assignment
+
+![h:80 center](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cell-types-5.png)
+
+![h:300 center](https://raw.githubusercontent.com/neurodata/pcc/main/results/figs/transport/sinkhorn_solution.png)
+
+<!-- $$\min_D trace(SD^T) + \lambda \Omega(D)$$ -->
+
+</div>
+</div>
+
+<!-- _footer: Cuturi NeurIPS (2013), Costa et al. Neuron (2016), Saad-Eldin et al. arXiv (2020) - Work with Philipp Schlegel, Greg Jefferis, unpublished -->
 
 
 ---
