@@ -782,7 +782,7 @@ spectral clustering $\Rightarrow$
 <div class="columns">
 <div>
 
-How well do these models/clusterings generalize to the other side of the brain (let alone the next maggot)?
+How well do these models/clusterings generalize to the other side of the brain?
 
 ![](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/cross-val-explain.png)
 
@@ -811,8 +811,9 @@ h2 {
 
 ## Are the <span style="color: var(--left)"> left </span> and <span style="color: var(--right)"> right </span> sides of this connectome <p> </p> *different*?
 
-- Hints at how sterotyped wiring might be
-- Testbed for connectome comparison methods
+<!-- - Hints at how sterotyped wiring might be -->
+
+*Testbed for connectome comparison methods*
 
 --- 
 
