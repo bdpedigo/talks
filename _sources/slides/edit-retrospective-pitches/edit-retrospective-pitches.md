@@ -3,6 +3,7 @@ marp: true
 theme: slides
 size: 16:9
 paginate: true
+math: true
 ---
 
 <!-- _paginate: false -->
@@ -50,7 +51,7 @@ Allen Institute for Brain Science
 
 ---
 
-# Big picture
+# Categorizing these ideas
 
 ## Examples
 
@@ -58,16 +59,6 @@ Allen Institute for Brain Science
 | ------------ | ---------------------------------------- | --------------------------------- |
 | Morphology   | Classifiers perform well on unproofread? | Classifiers robust to seg. errors |
 | Connectivity | Motifs hold w/o proofreading?            | Target proofreading by question   |
-
----
-
-# Ideas (big picture)
-
-- Sensitivity analysis
-  - Connectivity motifs / classification
-  - Morphological classifiers or clustering
-- Data augmentation
-- Prediction
 
 ---
 
@@ -84,6 +75,15 @@ Allen Institute for Brain Science
 - How does performance of morphological classifiers change as a function of proofreading level?
   - Should we trust certain classifications more than others?
 - What are the key points to edit which matter in terms of morphological classification?
+- If we know the cell type (e.g. from somatic features alone) can we model how proofread a given neuron is?
+
+---
+
+# < insert example figure >
+
+---
+
+# Work to be done
 
 ---
 
@@ -92,6 +92,9 @@ Allen Institute for Brain Science
 - Are any connectivity patters stable without proofreading?
   - E.g. how much proofreading needs to happen to be able to identify a cell as belonging to a particular connectivity class?
   - E.g. how much would we expect conclusions about connectivity to change if we expanded analysis outside of the column, to include unproofread stuff?
+- How does the chance of finding a connection depend on distance between partners?
+- How much of the uncertainty in connectivity estimands (e.g. $P(\text{type 1} \rightarrow \text{type 2})$) comes from proofreading?
+- Can we make a quantitative case for expanding analysis to the rest of the column?
 
 ---
 
@@ -99,17 +102,39 @@ Allen Institute for Brain Science
 
 ---
 
+---
+
 # Sensitivity - morphology
 
 ---
 
-# Random uncategorized (many from Forrest)
+# Random uncategorized
+
+<style scoped>
+
+ul {
+    font-size: 20px;
+}
+
+</style>
 
 - How would we find cell-type connectivity pattern that we haven't seen, in the sea of
   un-proofread stuff?
   - There are tons of just disconnected axons, adding those back on would be a huge
     benefit
-- how much would conclusions change if the connectivity analysis was expanded to the
-  entire column?
-- model of which neurons are close to / far from cell type specific connectivity pattern
-  that we know
+- Model of which neurons are close to / far from cell type specific connectivity pattern that we know
+- Prediction of where edits might need to occur on a neuron, e.g. make a list of points to check w/ in neuroglancer
+- How sensitive are morphological classifiers to proofreading errors? Can we make them more robust?
+- Can we make a quantitative/statistical argument for expanding the analysis to the column for specific questions?
+  - How does connectivity estimand depend on proofreading?
+  - How much do we need to shink variance to say anything?
+  - Prediction powered inference idea
+- Data augmentation/resampling method for machine learning on skeletons
+  - Understand how classifiers are affected by proofreading
+    - Paths through feature space as a neuron is proofread
+  - Develop more robust classifiers
+- Predicting completeness level for a given neuron
+  - Algorithm that eats a neuron in current state, predicts its level of proofreading
+    - Not sure what the feature space is for this to make it useful
+  - Unclear to me whether one could expect this to work for arbitrary neurons
+    - Perhaps if we can predict cell type just from somatic features, or NNs from somatic features, can look at distribution of other features.

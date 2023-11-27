@@ -64,6 +64,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'slides/edit-retrospective-pitches/edit-retrospective-pitches';</script>
     <link rel="shortcut icon" href="../../_static/nd_logo_small.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -374,17 +376,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture">Big picture</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Big picture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#categorizing-these-ideas">Categorizing these ideas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-big-picture">Ideas (big picture)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-morphology-proofreading">Understand morphology : proofreading</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-connectivity-proofreading">Understand connectivity : proofreading</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-example-figure">&lt; insert example figure &gt;</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#work-to-be-done">Work to be done</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-connectivity-proofreading">Understand connectivity : proofreading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">&lt; insert example figure &gt;</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-morphology">Sensitivity - morphology</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-uncategorized-many-from-forrest">Random uncategorized (many from Forrest)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-uncategorized">Random uncategorized</a></li>
 </ul>
 
             </nav>
@@ -434,8 +437,8 @@ Allen Institute for Brain Science</p>
 </ul>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Big picture<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="categorizing-these-ideas">
+<h1>Categorizing these ideas<a class="headerlink" href="#categorizing-these-ideas" title="Permalink to this heading">#</a></h1>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
 <table class="table">
@@ -459,20 +462,6 @@ Allen Institute for Brain Science</p>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="ideas-big-picture">
-<h1>Ideas (big picture)<a class="headerlink" href="#ideas-big-picture" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Sensitivity analysis</p>
-<ul>
-<li><p>Connectivity motifs / classification</p></li>
-<li><p>Morphological classifiers or clustering</p></li>
-</ul>
-</li>
-<li><p>Data augmentation</p></li>
-<li><p>Prediction</p></li>
-</ul>
-</section>
-<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
@@ -491,7 +480,16 @@ Allen Institute for Brain Science</p>
 </ul>
 </li>
 <li><p>What are the key points to edit which matter in terms of morphological classification?</p></li>
+<li><p>If we know the cell type (e.g. from somatic features alone) can we model how proofread a given neuron is?</p></li>
 </ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="insert-example-figure">
+<h1>&lt; insert example figure &gt;<a class="headerlink" href="#insert-example-figure" title="Permalink to this heading">#</a></h1>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="work-to-be-done">
+<h1>Work to be done<a class="headerlink" href="#work-to-be-done" title="Permalink to this heading">#</a></h1>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="understand-connectivity-proofreading">
@@ -503,19 +501,30 @@ Allen Institute for Brain Science</p>
 <li><p>E.g. how much would we expect conclusions about connectivity to change if we expanded analysis outside of the column, to include unproofread stuff?</p></li>
 </ul>
 </li>
+<li><p>How does the chance of finding a connection depend on distance between partners?</p></li>
+<li><p>How much of the uncertainty in connectivity estimands (e.g. <span class="math notranslate nohighlight">\(P(\text{type 1} \rightarrow \text{type 2})\)</span>) comes from proofreading?</p></li>
+<li><p>Can we make a quantitative case for expanding analysis to the rest of the column?</p></li>
 </ul>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="insert-example-figure">
-<h1>&lt; insert example figure &gt;<a class="headerlink" href="#insert-example-figure" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>&lt; insert example figure &gt;<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="sensitivity-morphology">
 <h1>Sensitivity - morphology<a class="headerlink" href="#sensitivity-morphology" title="Permalink to this heading">#</a></h1>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="random-uncategorized-many-from-forrest">
-<h1>Random uncategorized (many from Forrest)<a class="headerlink" href="#random-uncategorized-many-from-forrest" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="random-uncategorized">
+<h1>Random uncategorized<a class="headerlink" href="#random-uncategorized" title="Permalink to this heading">#</a></h1>
+<style scoped>
+
+ul {
+    font-size: 20px;
+}
+
+</style>
 <ul class="simple">
 <li><p>How would we find cell-type connectivity pattern that we haven’t seen, in the sea of
 un-proofread stuff?</p>
@@ -524,10 +533,40 @@ un-proofread stuff?</p>
 benefit</p></li>
 </ul>
 </li>
-<li><p>how much would conclusions change if the connectivity analysis was expanded to the
-entire column?</p></li>
-<li><p>model of which neurons are close to / far from cell type specific connectivity pattern
-that we know</p></li>
+<li><p>Model of which neurons are close to / far from cell type specific connectivity pattern that we know</p></li>
+<li><p>Prediction of where edits might need to occur on a neuron, e.g. make a list of points to check w/ in neuroglancer</p></li>
+<li><p>How sensitive are morphological classifiers to proofreading errors? Can we make them more robust?</p></li>
+<li><p>Can we make a quantitative/statistical argument for expanding the analysis to the column for specific questions?</p>
+<ul>
+<li><p>How does connectivity estimand depend on proofreading?</p></li>
+<li><p>How much do we need to shink variance to say anything?</p></li>
+<li><p>Prediction powered inference idea</p></li>
+</ul>
+</li>
+<li><p>Data augmentation/resampling method for machine learning on skeletons</p>
+<ul>
+<li><p>Understand how classifiers are affected by proofreading</p>
+<ul>
+<li><p>Paths through feature space as a neuron is proofread</p></li>
+</ul>
+</li>
+<li><p>Develop more robust classifiers</p></li>
+</ul>
+</li>
+<li><p>Predicting completeness level for a given neuron</p>
+<ul>
+<li><p>Algorithm that eats a neuron in current state, predicts its level of proofreading</p>
+<ul>
+<li><p>Not sure what the feature space is for this to make it useful</p></li>
+</ul>
+</li>
+<li><p>Unclear to me whether one could expect this to work for arbitrary neurons</p>
+<ul>
+<li><p>Perhaps if we can predict cell type just from somatic features, or NNs from somatic features, can look at distribution of other features.</p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </section>
 
@@ -581,17 +620,18 @@ that we know</p></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture">Big picture</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Big picture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#categorizing-these-ideas">Categorizing these ideas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-big-picture">Ideas (big picture)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-morphology-proofreading">Understand morphology : proofreading</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-connectivity-proofreading">Understand connectivity : proofreading</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-example-figure">&lt; insert example figure &gt;</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#work-to-be-done">Work to be done</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-connectivity-proofreading">Understand connectivity : proofreading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">&lt; insert example figure &gt;</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-morphology">Sensitivity - morphology</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-uncategorized-many-from-forrest">Random uncategorized (many from Forrest)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-uncategorized">Random uncategorized</a></li>
 </ul>
 
   </nav></div>
