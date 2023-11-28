@@ -46,95 +46,127 @@ Allen Institute for Brain Science
 
 # Big picture
 
-- We have many edits which have been performed, especially in Minnie. Opportunity to learn from these edits and see what they can teach us going forward
+- We have a record of many edits, especially in Minnie
+  - Opportunity to learn from these edits, see what they can teach us going forward
 - Still some work required in terms of code/tooling to do things like data augmentation, as well as science
-
----
-
-# Categorizing these ideas
-
-## Examples
-
-|              | Understand                               | Improve                           |
-| ------------ | ---------------------------------------- | --------------------------------- |
-| Morphology   | Classifiers perform well on unproofread? | Classifiers robust to seg. errors |
-| Connectivity | Motifs hold w/o proofreading?            | Target proofreading by question   |
 
 ---
 
 # Overview
 
 - What I mean by each of these ideas
-- Brief example / vignette
-- Constraints / effort / interest
+- Brief example / vignette (if I have one)
+- Interest / Feasibility / Significance
 
 ---
 
-# Understand morphology : proofreading
+# Sensitivity to proofreading: connectivity
 
-- How does performance of morphological classifiers change as a function of proofreading level?
-  - Should we trust certain classifications more than others?
-- What are the key points to edit which matter in terms of morphological classification?
-- If we know the cell type (e.g. from somatic features alone) can we model how proofread a given neuron is?
-
----
-
-# < insert example figure >
+- Understand {how, which} connectivity features change with proofreading (+ possibly other features, like distance)
+  - How much proofreading needs to happen to be able to identify a cell as belonging to a particular connectivity class?
+- Motivate extending analyses to volumes which include unproofread material
+  - Argue that particular features don't change, or
+  - Developing a convincing corrective models of the bias corrected by proofreading
 
 ---
 
-# Work to be done
+# Stable neuron
+
+![h:400 center](images/exc_group_connectivity_root=864691135865971164.png)
 
 ---
 
-# Understand connectivity : proofreading
+# Unstable neurons
 
-- Are any connectivity patters stable without proofreading?
-  - E.g. how much proofreading needs to happen to be able to identify a cell as belonging to a particular connectivity class?
-  - E.g. how much would we expect conclusions about connectivity to change if we expanded analysis outside of the column, to include unproofread stuff?
-- How does the chance of finding a connection depend on distance between partners?
-- How much of the uncertainty in connectivity estimands (e.g. $P(\text{type 1} \rightarrow \text{type 2})$) comes from proofreading?
-- Can we make a quantitative case for expanding analysis to the rest of the column?
+<div class="columns">
+<div>
 
----
+![center](images/exc_group_connectivity_root=864691136578765076.png)
 
-# < insert example figure >
+</div>
+<div>
 
----
+![center](images/exc_group_connectivity_root=864691135992790209.png)
 
----
+</div>
+</div>
 
-# Sensitivity - morphology
+\* super high variance comes from axon/soma merger, I think
 
 ---
 
-# Random uncategorized
+# Approach
 
-<style scoped>
+- Examine affect of proofreading on connectivity estimands,
+  - e.g. cell type $\rightarrow$ cell type connectivity, cell type x compartment $\rightarrow$ cell type x compartment, etc.
+- Develop quantitative model of this relationship
+  - e.g. predict # of missing synapses in original segmentation, w/ unproofread -> proofread in the column as training data
+- Apply model to unproofread data, assess variance in estimand, decide if proofreading is worthwhile
 
-ul {
-    font-size: 20px;
-}
+---
 
-</style>
+# Analogies from "prediction powered inference"
 
-- How would we find cell-type connectivity pattern that we haven't seen, in the sea of
-  un-proofread stuff?
-  - There are tons of just disconnected axons, adding those back on would be a huge
-    benefit
-- Model of which neurons are close to / far from cell type specific connectivity pattern that we know
-- Prediction of where edits might need to occur on a neuron, e.g. make a list of points to check w/ in neuroglancer
-- How sensitive are morphological classifiers to proofreading errors? Can we make them more robust?
-- Can we make a quantitative/statistical argument for expanding the analysis to the column for specific questions?
-  - How does connectivity estimand depend on proofreading?
-  - How much do we need to shink variance to say anything?
-  - Prediction powered inference idea
-- Data augmentation/resampling method for machine learning on skeletons
-  - Understand how classifiers are affected by proofreading
-    - Paths through feature space as a neuron is proofread
-  - Develop more robust classifiers
-- Predicting completeness level for a given neuron
-  - Algorithm that eats a neuron in current state, predicts its level of proofreading
-    - Not sure what the feature space is for this to make it useful
-  - Unclear to me whether one could expect this to work for arbitrary neurons
-    - Perhaps if we can predict cell type just from somatic features, or NNs from somatic features, can look at distribution of other features.
+![center h:500](images/prediction-powered-summary.png)
+
+<!-- _footer: Angelopoulos et al. arXiv (2023) -->
+
+---
+
+# Challenges
+
+- Does not require running much classification code that hasn't already been run, since just operating on the unproofread bulk of Minnie, say
+- Unsure what the feature set is as input for the model on proofreading errors
+
+---
+
+# Resampling skeletons
+
+- Understand {whether, how} skeleton features are affected by proofreading
+- Develop classifiers/clustering methods which are robust to such differences
+
+---
+
+# Example frankeneurons
+
+<iframe height=500 frameborder=0 src="images/skeleton_samples_root_id=864691135915450982_use_cc=True.html">
+</iframe>
+
+---
+
+# Frankeneuron </br> features
+
+![bg right:65% center h:600](images/feature_samples_root_id=864691135915450982_use_cc=True.png)
+
+---
+
+# Challenges
+
+- Need to decide how to "play back" edits in a plausible way
+  - E.g. make proximal edits more likely?
+- Running skeletonizaiton/featurization code on $O(100,000)$ neurons $\times$ $O(1,000)$
+  - May be possible to run some code on the "final" skeleton, map those features (e.g. axon/dendrite labels) onto the rest
+- Open-ended in terms of the deliverable... 
+  - What models would we be interested in training with this kind of augmented data?
+
+---
+
+<!-- Null space of the idea above -->
+
+# Machine-guided or hypothesis-driven proofreading
+
+- Algorithm that eats a neuron and predicts completeness
+- Algorithm that eats a segmentation and predicts sites for edits
+  - Better version: eats a segmentation and a _statistic_, predicts _impactful_ edits
+
+---
+
+\*"Neuron" could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, ...}
+
+---
+
+# Challenges
+
+- Not sure what the feature set is here
+  - For instance, is it even possible to predict completeness from a cell you know nothing else about? What if you know something about its cell type, say from PSS features?
+- Feasibility: not sure if it's possible to pluck out a random neuron and predict where its primary axon is, say

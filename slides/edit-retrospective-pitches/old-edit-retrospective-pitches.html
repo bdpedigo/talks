@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'slides/edit-retrospective-pitches/edit-retrospective-pitches';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'slides/edit-retrospective-pitches/old-edit-retrospective-pitches';</script>
     <link rel="shortcut icon" href="../../_static/nd_logo_small.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -247,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/bdpedigo/talks/issues/new?title=Issue%20on%20page%20%2Fslides/edit-retrospective-pitches/edit-retrospective-pitches.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/bdpedigo/talks/issues/new?title=Issue%20on%20page%20%2Fslides/edit-retrospective-pitches/old-edit-retrospective-pitches.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/slides/edit-retrospective-pitches/edit-retrospective-pitches.md" target="_blank"
+      <li><a href="../../_sources/slides/edit-retrospective-pitches/old-edit-retrospective-pitches.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -376,19 +376,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture">Big picture</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#categorizing-these-ideas">Categorizing these ideas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-proofreading-connectivity">Sensitivity to proofreading: connectivity</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-neuron">Stable neuron</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unstable-neurons">Unstable neurons</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#approach">Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analogies-from-prediction-powered-inference">Analogies from “prediction powered inference”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resampling-skeletons">Resampling skeletons</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-frankeneurons">Example frankeneurons</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frankeneuron-br-features">Frankeneuron  features</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Challenges</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-guided-or-hypothesis-driven-proofreading">Machine-guided or hypothesis-driven proofreading</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Challenges</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-morphology-proofreading">Understand morphology : proofreading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-example-figure">&lt; insert example figure &gt;</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#work-to-be-done">Work to be done</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-connectivity-proofreading">Understand connectivity : proofreading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">&lt; insert example figure &gt;</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-morphology">Sensitivity - morphology</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-uncategorized">Random uncategorized</a></li>
 </ul>
 
             </nav>
@@ -433,154 +432,138 @@ Allen Institute for Brain Science</p>
 <section class="tex2jax_ignore mathjax_ignore" id="big-picture">
 <h1>Big picture<a class="headerlink" href="#big-picture" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>We have a record of many edits, especially in Minnie</p>
-<ul>
-<li><p>Opportunity to learn from these edits, see what they can teach us going forward</p></li>
-</ul>
-</li>
+<li><p>We have many edits which have been performed, especially in Minnie. Opportunity to learn from these edits and see what they can teach us going forward</p></li>
 <li><p>Still some work required in terms of code/tooling to do things like data augmentation, as well as science</p></li>
 </ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="categorizing-these-ideas">
+<h1>Categorizing these ideas<a class="headerlink" href="#categorizing-these-ideas" title="Permalink to this heading">#</a></h1>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Understand</p></th>
+<th class="head"><p>Improve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Morphology</p></td>
+<td><p>Classifiers perform well on unproofread?</p></td>
+<td><p>Classifiers robust to seg. errors</p></td>
+</tr>
+<tr class="row-odd"><td><p>Connectivity</p></td>
+<td><p>Motifs hold w/o proofreading?</p></td>
+<td><p>Target proofreading by question</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>What I mean by each of these ideas</p></li>
-<li><p>Brief example / vignette (if I have one)</p></li>
-<li><p>Interest / Feasibility / Significance</p></li>
+<li><p>Brief example / vignette</p></li>
+<li><p>Constraints / effort / interest</p></li>
 </ul>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="sensitivity-to-proofreading-connectivity">
-<h1>Sensitivity to proofreading: connectivity<a class="headerlink" href="#sensitivity-to-proofreading-connectivity" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="understand-morphology-proofreading">
+<h1>Understand morphology : proofreading<a class="headerlink" href="#understand-morphology-proofreading" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Understand {how, which} connectivity features change with proofreading (+ possibly other features, like distance)</p>
+<li><p>How does performance of morphological classifiers change as a function of proofreading level?</p>
 <ul>
-<li><p>How much proofreading needs to happen to be able to identify a cell as belonging to a particular connectivity class?</p></li>
+<li><p>Should we trust certain classifications more than others?</p></li>
 </ul>
 </li>
-<li><p>Motivate extending analyses to volumes which include unproofread material</p>
+<li><p>What are the key points to edit which matter in terms of morphological classification?</p></li>
+<li><p>If we know the cell type (e.g. from somatic features alone) can we model how proofread a given neuron is?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="insert-example-figure">
+<h1>&lt; insert example figure &gt;<a class="headerlink" href="#insert-example-figure" title="Permalink to this heading">#</a></h1>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="work-to-be-done">
+<h1>Work to be done<a class="headerlink" href="#work-to-be-done" title="Permalink to this heading">#</a></h1>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="understand-connectivity-proofreading">
+<h1>Understand connectivity : proofreading<a class="headerlink" href="#understand-connectivity-proofreading" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Are any connectivity patters stable without proofreading?</p>
 <ul>
-<li><p>Argue that particular features don’t change, or</p></li>
-<li><p>Developing a convincing corrective models of the bias corrected by proofreading</p></li>
+<li><p>E.g. how much proofreading needs to happen to be able to identify a cell as belonging to a particular connectivity class?</p></li>
+<li><p>E.g. how much would we expect conclusions about connectivity to change if we expanded analysis outside of the column, to include unproofread stuff?</p></li>
 </ul>
 </li>
+<li><p>How does the chance of finding a connection depend on distance between partners?</p></li>
+<li><p>How much of the uncertainty in connectivity estimands (e.g. <span class="math notranslate nohighlight">\(P(\text{type 1} \rightarrow \text{type 2})\)</span>) comes from proofreading?</p></li>
+<li><p>Can we make a quantitative case for expanding analysis to the rest of the column?</p></li>
 </ul>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="stable-neuron">
-<h1>Stable neuron<a class="headerlink" href="#stable-neuron" title="Permalink to this heading">#</a></h1>
-<p><img alt="h:400 center" src="../../_images/exc_group_connectivity_root=864691135865971164.png" /></p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="unstable-neurons">
-<h1>Unstable neurons<a class="headerlink" href="#unstable-neurons" title="Permalink to this heading">#</a></h1>
-<div class="columns">
-<div>
-<p><img alt="center" src="../../_images/exc_group_connectivity_root=864691136578765076.png" /></p>
-</div>
-<div>
-<p><img alt="center" src="../../_images/exc_group_connectivity_root=864691135992790209.png" /></p>
-</div>
-</div>
-<p>* super high variance comes from axon/soma merger, I think</p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="approach">
-<h1>Approach<a class="headerlink" href="#approach" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Examine affect of proofreading on connectivity estimands,</p>
-<ul>
-<li><p>e.g. cell type <span class="math notranslate nohighlight">\(\rightarrow\)</span> cell type connectivity, cell type x compartment <span class="math notranslate nohighlight">\(\rightarrow\)</span> cell type x compartment, etc.</p></li>
-</ul>
-</li>
-<li><p>Develop quantitative model of this relationship</p>
-<ul>
-<li><p>e.g. predict # of missing synapses in original segmentation, w/ unproofread -&gt; proofread in the column as training data</p></li>
-</ul>
-</li>
-<li><p>Apply model to unproofread data, assess variance in estimand, decide if proofreading is worthwhile</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="analogies-from-prediction-powered-inference">
-<h1>Analogies from “prediction powered inference”<a class="headerlink" href="#analogies-from-prediction-powered-inference" title="Permalink to this heading">#</a></h1>
-<p><img alt="center h:500" src="../../_images/prediction-powered-summary.png" /></p>
-<!-- _footer: Angelopoulos et al. arXiv (2023) -->
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="challenges">
-<h1>Challenges<a class="headerlink" href="#challenges" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Does not require running much classification code that hasn’t already been run, since just operating on the unproofread bulk of Minnie, say</p></li>
-<li><p>Unsure what the feature set is as input for the model on proofreading errors</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="resampling-skeletons">
-<h1>Resampling skeletons<a class="headerlink" href="#resampling-skeletons" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Understand {whether, how} skeleton features are affected by proofreading</p></li>
-<li><p>Develop classifiers/clustering methods which are robust to such differences</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="example-frankeneurons">
-<h1>Example frankeneurons<a class="headerlink" href="#example-frankeneurons" title="Permalink to this heading">#</a></h1>
-<iframe height=500 frameborder=0 src="images/skeleton_samples_root_id=864691135915450982_use_cc=True.html">
-</iframe>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="frankeneuron-br-features">
-<h1>Frankeneuron </br> features<a class="headerlink" href="#frankeneuron-br-features" title="Permalink to this heading">#</a></h1>
-<p><img alt="bg right:65% center h:600" src="../../_images/feature_samples_root_id=864691135915450982_use_cc=True.png" /></p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Challenges<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Need to decide how to “play back” edits in a plausible way</p>
-<ul>
-<li><p>E.g. make proximal edits more likely?</p></li>
-</ul>
-</li>
-<li><p>Running skeletonizaiton/featurization code on <span class="math notranslate nohighlight">\(O(100,000)\)</span> neurons <span class="math notranslate nohighlight">\(\times\)</span> <span class="math notranslate nohighlight">\(O(1,000)\)</span></p>
-<ul>
-<li><p>May be possible to run some code on the “final” skeleton, map those features (e.g. axon/dendrite labels) onto the rest</p></li>
-</ul>
-</li>
-<li><p>Open-ended in terms of the deliverable…</p>
-<ul>
-<li><p>What models would we be interested in training with this kind of augmented data?</p></li>
-</ul>
-</li>
-</ul>
+<h1>&lt; insert example figure &gt;<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
-<!-- Null space of the idea above -->
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="machine-guided-or-hypothesis-driven-proofreading">
-<h1>Machine-guided or hypothesis-driven proofreading<a class="headerlink" href="#machine-guided-or-hypothesis-driven-proofreading" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Algorithm that eats a neuron and predicts completeness</p></li>
-<li><p>Algorithm that eats a segmentation and predicts sites for edits</p>
-<ul>
-<li><p>Better version: eats a segmentation and a <em>statistic</em>, predicts <em>impactful</em> edits</p></li>
-</ul>
-</li>
-</ul>
-<hr class="docutils" />
-<p>*”Neuron” could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, …}</p>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id2">
-<h1>Challenges<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="sensitivity-morphology">
+<h1>Sensitivity - morphology<a class="headerlink" href="#sensitivity-morphology" title="Permalink to this heading">#</a></h1>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="random-uncategorized">
+<h1>Random uncategorized<a class="headerlink" href="#random-uncategorized" title="Permalink to this heading">#</a></h1>
+<style scoped>
+
+ul {
+    font-size: 20px;
+}
+
+</style>
 <ul class="simple">
-<li><p>Not sure what the feature set is here</p>
+<li><p>[ ] How would we find cell-type connectivity pattern that we haven’t seen, in the sea of
+un-proofread stuff?</p></li>
+<li><p>[ ] <strong>Robustness to proofreading connectivity</strong></p>
 <ul>
-<li><p>For instance, is it even possible to predict completeness from a cell you know nothing else about? What if you know something about its cell type, say from PSS features?</p></li>
+<li><p>Can we make a quantitative/statistical argument for expanding the analysis to the column for specific questions?</p></li>
+<li><p>How does connectivity estimand depend on proofreading?</p></li>
+<li><p>How much do we need to shrink variance to say anything?</p></li>
+<li><p>Prediction powered inference idea</p></li>
 </ul>
 </li>
-<li><p>Feasibility: not sure if it’s possible to pluck out a random neuron and predict where its primary axon is, say</p></li>
+<li><p>[ ] <strong>Robustness to proofreading, morphologies</strong></p>
+<ul>
+<li><p>[ ] Data augmentation/resampling method for machine learning on skeletons</p></li>
+<li><p>[ ] Understand how classifiers are affected by proofreading</p>
+<ul>
+<li><p>Paths through feature space as a neuron is proofread</p></li>
+</ul>
+</li>
+<li><p>[ ] Develop more robust classifiers</p></li>
+</ul>
+</li>
+<li><p>[ ] <strong>Completeness level as the object of interest</strong></p>
+<ul>
+<li><p>Algorithm that eats a neuron in current state, predicts its level of proofreading</p>
+<ul>
+<li><p>Not sure what the feature space is for this to make it useful</p></li>
+</ul>
+</li>
+<li><p>[ ] Prediction of where edits might need to occur on a neuron, e.g. make a list of points to check w/ in neuroglancer</p></li>
+<li><p>Unclear to me whether one could expect this to work for arbitrary neurons</p>
+<ul>
+<li><p>Perhaps if we can predict cell type just from somatic features, or NNs from somatic features, can look at distribution of other features.</p></li>
+</ul>
+</li>
+<li><p>There are tons of just disconnected axons, adding those back on would be a huge benefit</p></li>
+<li><p>[ ] Model of which neurons are close to / far from cell type specific connectivity pattern that we know</p></li>
+</ul>
+</li>
 </ul>
 </section>
 
@@ -634,19 +617,18 @@ Allen Institute for Brain Science</p>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture">Big picture</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#categorizing-these-ideas">Categorizing these ideas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-proofreading-connectivity">Sensitivity to proofreading: connectivity</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-neuron">Stable neuron</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unstable-neurons">Unstable neurons</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#approach">Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analogies-from-prediction-powered-inference">Analogies from “prediction powered inference”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resampling-skeletons">Resampling skeletons</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-frankeneurons">Example frankeneurons</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frankeneuron-br-features">Frankeneuron  features</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Challenges</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-guided-or-hypothesis-driven-proofreading">Machine-guided or hypothesis-driven proofreading</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Challenges</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-morphology-proofreading">Understand morphology : proofreading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-example-figure">&lt; insert example figure &gt;</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#work-to-be-done">Work to be done</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-connectivity-proofreading">Understand connectivity : proofreading</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">&lt; insert example figure &gt;</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-morphology">Sensitivity - morphology</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-uncategorized">Random uncategorized</a></li>
 </ul>
 
   </nav></div>
