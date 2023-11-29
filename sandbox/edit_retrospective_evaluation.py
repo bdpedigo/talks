@@ -1,4 +1,4 @@
-# %%
+# %%d
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
@@ -15,8 +15,8 @@ rows.append(
         "name": "Connectivity\nsensitivity",
         "Enthusiasm": 5,
         "Enthusiasm variance": 0.5,
-        "Significance": 3.5,
-        "Significance variance": 0.75,
+        "Significance": 3,
+        "Significance variance": 1,
         "Feasibility": 4,
         "Feasibility variance": 1,
     }
@@ -25,10 +25,10 @@ rows.append(
 rows.append(
     {
         "name": "Morphology\nresampling",
-        "Enthusiasm": 3,
-        "Enthusiasm variance": 0.25,
+        "Enthusiasm": 2,
+        "Enthusiasm variance": 0.5,
         "Significance": 2,
-        "Significance variance": 1,
+        "Significance variance": 0.5,
         "Feasibility": 4.5,
         "Feasibility variance": 0.25,
     }
@@ -56,7 +56,7 @@ fig, ax = plt.subplots(1, 3, figsize=(10, 5), constrained_layout=True)
 
 colors = sns.color_palette("deep", 3)
 
-for i, axis in enumerate(["Enthusiasm", "Significance", "Feasibility"]):
+for i, axis in enumerate(["Significance", "Feasibility", "Enthusiasm"]):
     for j, row in df.iterrows():
         ax[i].errorbar(
             row["name"],
@@ -83,4 +83,3 @@ fig.savefig(
 )
 
 # %%
-

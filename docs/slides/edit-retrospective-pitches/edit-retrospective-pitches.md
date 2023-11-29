@@ -114,6 +114,10 @@ Replaying some proportion of merges onto a neuron, evaluating connectivity
   - e.g. $P(\text{type } i \rightarrow \text{type } j)$, $P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}$, etc.
 - For proofread neurons/volume, examine how estimand changes w/ proofreading
   - Likely need a "proofreading model" for replaying edits in a plausible way
+
+<div class="horizontalLine">
+</div>
+
 - Develop quantitative model of this relationship
   - e.g. predict mean and variance of # of synapses from an $i$ to a $j$ neuron
 - Apply model to unproofread data, assess how much proofreading would change estimand
@@ -215,10 +219,10 @@ Now that we have these connectome volumes, how should we spend our time?
 
 - Develop feature set, ideally reusing relevant tested models (PSS, SegCLR, ...)
   - Features could involve anything in power set of {image, segmentation, skeleton, skeleton attributes}
-- Using training set of available edits, train {NN, RFC, ...}
+- Train {NN, RFC, ...} using training set of available edits to predict {edit locations, completeness level, ...}
 - Validate on held out neurons or subvolume
 - Deployment is a tricker question
-  - Initial pass could just run predictions on a fixed materialization prior to a bout of proofreading
+  - V$0$ Could run predictions on a fixed materialization prior to bout of proofreading
 - More elaborate version: predict (edit location, importance)
   - E.g. find me edits likely to add many synapses
 
