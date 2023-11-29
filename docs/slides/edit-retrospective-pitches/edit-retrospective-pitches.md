@@ -18,10 +18,12 @@ p {
 
 # Proofreading retrospective
 
+## Project ideas and discussion
+
 <div class="columns">
 <div>
 
-## Ben Pedigo
+##### Ben Pedigo
 
 (he/him)
 Scientist I
@@ -52,11 +54,16 @@ Allen Institute for Brain Science
 
 ---
 
+# < insert mind map here >
+
+---
+
 # Overview
 
 - What I mean by each of these ideas
-- Brief example / vignette (if I have one)
-- Interest / Feasibility / Significance
+- Approach
+- Brief proof-of-concepts
+- Interest / Significance / Feasibility
 
 ---
 
@@ -98,16 +105,36 @@ Allen Institute for Brain Science
 # Approach
 
 - Examine affect of proofreading on connectivity estimands,
-  - e.g. cell type $\rightarrow$ cell type connectivity, cell type x compartment $\rightarrow$ cell type x compartment, etc.
+  - e.g. $P(\text{type } i \rightarrow \text{type } j)$, $P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}$, etc.
 - Develop quantitative model of this relationship
-  - e.g. predict # of missing synapses in original segmentation, w/ unproofread -> proofread in the column as training data
+  - e.g. predict # of missing synapses in original segmentation, using column as the training data
 - Apply model to unproofread data, assess variance in estimand, decide if proofreading is worthwhile
 
 ---
 
-# Analogies from "prediction powered inference"
+# Prior work on quality-quantity tradeoff
+
+## Would you rather have bit of highly-curated data, or lots of messy data?
+
+![h:150 center](images/quantity-quality-tradeoff.png)
+
+Depends on the question, but there exist theoretical cases where you want the latter
+
+## Would you rather have a bit of highly-curated data or lots of ~~messy~~ _unproofread, biased_ data?
+
+---
+
+# Analogy to "prediction powered inference"
 
 ![center h:500](images/prediction-powered-summary.png)
+
+<!-- _footer: Angelopoulos et al. arXiv (2023) -->
+
+---
+
+# Analogy from "prediction powered inference"
+
+![center h:500](images/prediction-powered-examples.png)
 
 <!-- _footer: Angelopoulos et al. arXiv (2023) -->
 
@@ -146,7 +173,7 @@ Allen Institute for Brain Science
   - E.g. make proximal edits more likely?
 - Running skeletonizaiton/featurization code on $O(100,000)$ neurons $\times$ $O(1,000)$
   - May be possible to run some code on the "final" skeleton, map those features (e.g. axon/dendrite labels) onto the rest
-- Open-ended in terms of the deliverable... 
+- Open-ended in terms of the deliverable...
   - What models would we be interested in training with this kind of augmented data?
 
 ---
@@ -155,18 +182,41 @@ Allen Institute for Brain Science
 
 # Machine-guided or hypothesis-driven proofreading
 
+Now that we have these connectome volumes, how should we spend our time?
+
 - Algorithm that eats a neuron and predicts completeness
 - Algorithm that eats a segmentation and predicts sites for edits
   - Better version: eats a segmentation and a _statistic_, predicts _impactful_ edits
 
 ---
 
-\*"Neuron" could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, ...}
+# Approach
+
+- Develop a local feature set, ideally reusing any relevant tested models
+  - Features could involve anything in power set of {image, segmentation, skeleton, skeleton attributes}
+- Develop training set from available edits
+- Train black box model
+- Validate on held out neurons or subvolume
+- Deployment is a tricker question
+  - Initial pass could just run predictions on a fixed materialization prior to a bout of proofreading
 
 ---
 
 # Challenges
 
 - Not sure what the feature set is here
+  - \*"Neuron" could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, ...}
+- Unclear if it's possible to pluck out a random neuron and predict where its primary axon is, say
   - For instance, is it even possible to predict completeness from a cell you know nothing else about? What if you know something about its cell type, say from PSS features?
-- Feasibility: not sure if it's possible to pluck out a random neuron and predict where its primary axon is, say
+- Dynamics: to be useful, would this be running on neurons all the time as they are edited, like the L2cache?
+- Overlap with other work on auto-proofreading?
+
+---
+
+# Summary
+
+![h:500](./../../../results/figs/edit_retrospective_evaluation/retrospective_evaluation.png)
+
+---
+
+# Thoughts?
