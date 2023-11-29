@@ -438,8 +438,7 @@ Allen Institute for Brain Science</p>
 <img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/web.png" /> <a class="reference external" href="https://bdpedigo.github.io/">bdpedigo.github.io</a></p>
 </div>
 <div>
-<!-- ### These slides at:  -->
-<!-- [bdpedigo.github.io/talks/aibs.html](https://bdpedigo.github.io/talks/aibs.html) -->
+<!-- Nodes on slide one -->
 </div>
 </div>
 </section>
@@ -523,6 +522,10 @@ Allen Institute for Brain Science</p>
 <li><p>Likely need a “proofreading model” for replaying edits in a plausible way</p></li>
 </ul>
 </li>
+</ul>
+<div class="horizontalLine">
+</div>
+<ul class="simple">
 <li><p>Develop quantitative model of this relationship</p>
 <ul>
 <li><p>e.g. predict mean and variance of # of synapses from an <span class="math notranslate nohighlight">\(i\)</span> to a <span class="math notranslate nohighlight">\(j\)</span> neuron</p></li>
@@ -653,11 +656,11 @@ Allen Institute for Brain Science</p>
 <li><p>Features could involve anything in power set of {image, segmentation, skeleton, skeleton attributes}</p></li>
 </ul>
 </li>
-<li><p>Using training set of available edits, train {NN, RFC, …}</p></li>
+<li><p>Train {NN, RFC, …} using training set of available edits to predict {edit locations, completeness level, …}</p></li>
 <li><p>Validate on held out neurons or subvolume</p></li>
 <li><p>Deployment is a tricker question</p>
 <ul>
-<li><p>Initial pass could just run predictions on a fixed materialization prior to a bout of proofreading</p></li>
+<li><p>V<span class="math notranslate nohighlight">\(0\)</span> Could run predictions on a fixed materialization prior to bout of proofreading</p></li>
 </ul>
 </li>
 <li><p>More elaborate version: predict (edit location, importance)</p>
@@ -704,6 +707,32 @@ Allen Institute for Brain Science</p>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="thoughts">
 <h1>Thoughts?<a class="headerlink" href="#thoughts" title="Permalink to this heading">#</a></h1>
+<p>Paper on how proofreading affects connectivity estimand</p>
+<ul class="simple">
+<li><p>Have a specific analysis goal, but message could be a general perspective on how to do analysis in light of noisy proofreading</p></li>
+<li><p>Side output: defining specific notions of connectivity estimands we care about super clearly</p>
+<ul>
+<li><p>Connection probability: <span class="math notranslate nohighlight">\(P(i \rightarrow j | i,j)\)</span></p></li>
+<li><p>What we often plot: how cells distribute outputs over output classes: <span class="math notranslate nohighlight">\(P(i \rightarrow j \in K)\)</span>, <span class="math notranslate nohighlight">\(P(i \rightarrow j \in K | d_{ij})\)</span></p></li>
+</ul>
+</li>
+<li><p>Have something that we do expect to fail if there is little proofreading</p></li>
+<li><p>Maybe worth keeping this simple…</p></li>
+<li><p>Relationship between segmentation error and neuroanatomy</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>System for identifying</p></li>
+<li><p>Models already exist</p>
+<ul>
+<li><p>neurd</p></li>
+<li><p>amazon</p></li>
+<li><p>humans</p></li>
+</ul>
+</li>
+<li><p>How do i make something that could be agnostic to the model</p></li>
+<li></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">

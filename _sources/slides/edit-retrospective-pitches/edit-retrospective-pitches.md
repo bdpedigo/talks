@@ -37,9 +37,7 @@ Allen Institute for Brain Science
 </div>
 <div>
 
-<!-- ### These slides at:  -->
-
-<!-- [bdpedigo.github.io/talks/aibs.html](https://bdpedigo.github.io/talks/aibs.html) -->
+<!-- Nodes on slide one -->
 
 </div>
 </div>
@@ -114,6 +112,10 @@ Replaying some proportion of merges onto a neuron, evaluating connectivity
   - e.g. $P(\text{type } i \rightarrow \text{type } j)$, $P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}$, etc.
 - For proofread neurons/volume, examine how estimand changes w/ proofreading
   - Likely need a "proofreading model" for replaying edits in a plausible way
+
+<div class="horizontalLine">
+</div>
+
 - Develop quantitative model of this relationship
   - e.g. predict mean and variance of # of synapses from an $i$ to a $j$ neuron
 - Apply model to unproofread data, assess how much proofreading would change estimand
@@ -215,10 +217,10 @@ Now that we have these connectome volumes, how should we spend our time?
 
 - Develop feature set, ideally reusing relevant tested models (PSS, SegCLR, ...)
   - Features could involve anything in power set of {image, segmentation, skeleton, skeleton attributes}
-- Using training set of available edits, train {NN, RFC, ...}
+- Train {NN, RFC, ...} using training set of available edits to predict {edit locations, completeness level, ...}
 - Validate on held out neurons or subvolume
 - Deployment is a tricker question
-  - Initial pass could just run predictions on a fixed materialization prior to a bout of proofreading
+  - V$0$ Could run predictions on a fixed materialization prior to bout of proofreading
 - More elaborate version: predict (edit location, importance)
   - E.g. find me edits likely to add many synapses
 
@@ -262,3 +264,23 @@ Merge dependency graphs for two neurons, size of node = # of dependent synapses
 ---
 
 # Thoughts?
+
+Paper on how proofreading affects connectivity estimand
+
+- Have a specific analysis goal, but message could be a general perspective on how to do analysis in light of noisy proofreading
+- Side output: defining specific notions of connectivity estimands we care about super clearly
+  - Connection probability: $P(i \rightarrow j | i,j)$
+  - What we often plot: how cells distribute outputs over output classes: $P(i \rightarrow j \in K)$, $P(i \rightarrow j \in K | d_{ij})$
+- Have something that we do expect to fail if there is little proofreading
+- Maybe worth keeping this simple...
+- Relationship between segmentation error and neuroanatomy
+
+---
+
+- System for identifying
+- Models already exist
+  - neurd
+  - amazon
+  - humans
+- How do i make something that could be agnostic to the model
+- 
