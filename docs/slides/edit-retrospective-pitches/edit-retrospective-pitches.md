@@ -37,9 +37,7 @@ Allen Institute for Brain Science
 </div>
 <div>
 
-<!-- ### These slides at:  -->
-
-<!-- [bdpedigo.github.io/talks/aibs.html](https://bdpedigo.github.io/talks/aibs.html) -->
+<!-- Nodes on slide one -->
 
 </div>
 </div>
@@ -266,3 +264,23 @@ Merge dependency graphs for two neurons, size of node = # of dependent synapses
 ---
 
 # Thoughts?
+
+Paper on how proofreading affects connectivity estimand
+
+- Have a specific analysis goal, but message could be a general perspective on how to do analysis in light of noisy proofreading
+- Side output: defining specific notions of connectivity estimands we care about super clearly
+  - Connection probability: $P(i \rightarrow j | i,j)$
+  - What we often plot: how cells distribute outputs over output classes: $P(i \rightarrow j \in K)$, $P(i \rightarrow j \in K | d_{ij})$
+- Have something that we do expect to fail if there is little proofreading
+- Maybe worth keeping this simple...
+- Relationship between segmentation error and neuroanatomy
+
+---
+
+- System for identifying
+- Models already exist
+  - neurd
+  - amazon
+  - humans
+- How do i make something that could be agnostic to the model
+- 
