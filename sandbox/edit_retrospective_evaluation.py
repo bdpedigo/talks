@@ -77,7 +77,7 @@ for i, axis in enumerate(["Enthusiasm", "Significance", "Feasibility"]):
     ax[i].set_yticks([1, 2, 3, 4, 5])
     ax[i].set_xlim([-0.5, 2.5])
 
-fig.suptitle("Qualitative evaluation of project ideas")
+fig.suptitle("Evaluation of current ideas")
 fig.savefig(
     "results/figs/edit_retrospective_evaluation/retrospective_evaluation.png", dpi=300
 )
