@@ -379,7 +379,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture">Big picture</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-mind-map-here">&lt; insert mind map here &gt;</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-proofreading-connectivity">Sensitivity to proofreading: connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-neuron">Stable neuron</a></li>
@@ -399,7 +398,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-guided-or-hypothesis-driven-proofreading">Machine-guided or hypothesis-driven proofreading</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-differential-importance">Example differential “importance”</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-differential-edit-importance">Example differential edit importance</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thoughts">Thoughts?</a></li>
@@ -450,25 +449,24 @@ Allen Institute for Brain Science</p>
 <section class="tex2jax_ignore mathjax_ignore" id="big-picture">
 <h1>Big picture<a class="headerlink" href="#big-picture" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>We have a record of many edits, especially in Minnie</p>
-<ul>
+<li><p>We have a record of many edits, especially in Minnie</p></li>
 <li><p>Opportunity to learn from these edits, see what they can teach us going forward</p></li>
+<li><p>Still some work required in terms of code/tooling, would like to focus that effort</p></li>
 </ul>
-</li>
-<li><p>Still some work required in terms of code/tooling to do things like data augmentation, as well as science</p></li>
-</ul>
-</section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="insert-mind-map-here">
-<h1>&lt; insert mind map here &gt;<a class="headerlink" href="#insert-mind-map-here" title="Permalink to this heading">#</a></h1>
+<p><img alt="bg w:1200" src="../../_images/mind-map.png" /></p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>What I mean by each of these ideas</p></li>
+<li><p>For each:</p>
+<ul>
+<li><p>What I mean by these ideas</p></li>
 <li><p>Approach</p></li>
 <li><p>Brief proof-of-concepts</p></li>
+</ul>
+</li>
 <li><p>Interest / Significance / Feasibility</p></li>
 </ul>
 </section>
@@ -476,9 +474,12 @@ Allen Institute for Brain Science</p>
 <section class="tex2jax_ignore mathjax_ignore" id="sensitivity-to-proofreading-connectivity">
 <h1>Sensitivity to proofreading: connectivity<a class="headerlink" href="#sensitivity-to-proofreading-connectivity" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Understand {how, which} connectivity features change with proofreading (+ possibly other features, like distance)</p>
+<li><p>Understand {how, which} connectivity features change with proofreading</p>
 <ul>
+<li><p>Are cell type connection probabilities stable?</p></li>
 <li><p>How much proofreading needs to happen to be able to identify a cell as belonging to a particular connectivity class?</p></li>
+<li><p>How much more proofreading is needed to find long-range vs. short-range connections?</p></li>
+<li><p>What is the technical variability associated w/ proofreading?</p></li>
 </ul>
 </li>
 <li><p>Motivate extending analyses to volumes which include unproofread material</p>
@@ -492,6 +493,7 @@ Allen Institute for Brain Science</p>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="stable-neuron">
 <h1>Stable neuron<a class="headerlink" href="#stable-neuron" title="Permalink to this heading">#</a></h1>
+<p>Replaying some proportion of merges onto a neuron, evaluating connectivity</p>
 <p><img alt="h:400 center" src="../../_images/exc_group_connectivity_root=864691135865971164.png" /></p>
 </section>
 <hr class="docutils" />
@@ -511,18 +513,22 @@ Allen Institute for Brain Science</p>
 <section class="tex2jax_ignore mathjax_ignore" id="approach">
 <h1>Approach<a class="headerlink" href="#approach" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Examine affect of proofreading on connectivity estimands,</p>
+<li><p>Choose connectivity estimands,</p>
 <ul>
 <li><p>e.g. <span class="math notranslate nohighlight">\(P(\text{type } i \rightarrow \text{type } j)\)</span>, <span class="math notranslate nohighlight">\(P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}\)</span>, etc.</p></li>
 </ul>
 </li>
-<li><p>Develop quantitative model of this relationship</p>
+<li><p>For proofread neurons/volume, examine how estimand changes w/ proofreading</p>
 <ul>
-<li><p>e.g. predict # of missing synapses in original segmentation, using column as the training data</p></li>
+<li><p>Likely need a “proofreading model” for replaying edits in a plausible way</p></li>
 </ul>
 </li>
-<li><p>Possible goal 1:</p></li>
-<li><p>Possible goal 2: Apply model to unproofread data, assess variance in estimand, decide if proofreading is worthwhile</p></li>
+<li><p>Develop quantitative model of this relationship</p>
+<ul>
+<li><p>e.g. predict mean and variance of # of synapses from an <span class="math notranslate nohighlight">\(i\)</span> to a <span class="math notranslate nohighlight">\(j\)</span> neuron</p></li>
+</ul>
+</li>
+<li><p>Apply model to unproofread data, assess how much proofreading would change estimand</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -555,13 +561,19 @@ Allen Institute for Brain Science</p>
 <!--
 - Does not require running much classification code that hasn't already been run, since just operating on the unproofread bulk of Minnie, say -->
 <ul class="simple">
-<li><p>Unsure what the feature set is as input for a model on how proofreading errors affect connectivity</p></li>
-<li><p>Answer is likely very question specific; unclear to what extent any lessons will generalize</p></li>
-<li><p>Likely need to assume some kind of homogeneity across the volume for this to work</p>
+<li><p>Information already accessible in CAVE, have code for mapping synapses onto their dependant edits</p>
+<ul>
+<li><p>May need some new API features to make it scalable</p></li>
+</ul>
+</li>
+<li><p>More specific the question, the smaller our sample size for this kind of approach</p></li>
+<li><p>Need to assume some kind of homogeneity across the volume for this to work</p>
 <ul>
 <li><p>May not be palatable to the community</p></li>
 </ul>
 </li>
+<li><p>Feature set for a model on how proofreading errors affect connectivity?</p></li>
+<li><p>Results are likely question-specific; unclear to what extent any lessons will generalize</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -569,7 +581,11 @@ Allen Institute for Brain Science</p>
 <h1>Resampling skeletons<a class="headerlink" href="#resampling-skeletons" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Understand {whether, how} skeleton features are affected by proofreading</p></li>
-<li><p>Develop classifiers/clustering methods which are robust to such differences</p></li>
+<li><p>Develop classifiers/clustering methods which are robust to such differences</p>
+<ul>
+<li><p>E.g. train classifiers on many “messy” neurons</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -587,6 +603,7 @@ Allen Institute for Brain Science</p>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Challenges<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
+<li><p>Have the basic tooling for this already; some parts are naive and may not scale well</p></li>
 <li><p>Need to decide how to “play back” edits in a plausible way</p>
 <ul>
 <li><p>E.g. make proximal edits more likely?</p></li>
@@ -599,7 +616,11 @@ Allen Institute for Brain Science</p>
 </li>
 <li><p>Open-ended in terms of the deliverable/impact…</p>
 <ul>
-<li><p>What models would we be interested in training with this kind of augmented data?</p></li>
+<li><p>What models would we be interested in training with this kind of data?</p>
+<ul>
+<li><p>PSS already tells a lot about cell type for minimally proofread neurons!</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -627,7 +648,7 @@ Allen Institute for Brain Science</p>
 <section class="tex2jax_ignore mathjax_ignore" id="id2">
 <h1>Approach<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Develop local feature set, ideally reusing relevant tested models (PSS, SegCLR, …)</p>
+<li><p>Develop feature set, ideally reusing relevant tested models (PSS, SegCLR, …)</p>
 <ul>
 <li><p>Features could involve anything in power set of {image, segmentation, skeleton, skeleton attributes}</p></li>
 </ul>
@@ -647,8 +668,8 @@ Allen Institute for Brain Science</p>
 </ul>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="example-differential-importance">
-<h1>Example differential “importance”<a class="headerlink" href="#example-differential-importance" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="example-differential-edit-importance">
+<h1>Example differential edit importance<a class="headerlink" href="#example-differential-edit-importance" title="Permalink to this heading">#</a></h1>
 <p>Merge dependency graphs for two neurons, size of node = # of dependent synapses</p>
 <div class="columns">
 <div>
@@ -663,29 +684,22 @@ Allen Institute for Brain Science</p>
 <section class="tex2jax_ignore mathjax_ignore" id="id3">
 <h1>Challenges<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Feature set?</p>
-<ul>
-<li><p>“Neuron” could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, …}</p></li>
-</ul>
-</li>
 <li><p>Little proof-of-concept for feasibility (as far as I know)</p>
 <ul>
 <li><p>For a random neuron, can we predict where its primary axon might be?</p></li>
-<li><p>Is it possible to predict completeness from a cell you know nothing else about?</p>
-<ul>
 <li><p>What if you know something about its cell type, say from PSS features?</p></li>
-</ul>
-</li>
+<li><p>Ditto for predicting completeness from a cell you know nothing else about</p></li>
 </ul>
 </li>
 <li><p>Dynamics: to be useful, would this be running on neurons all the time as they are edited, like the L2cache?</p></li>
+<li><p>How would a proofreader interact with such a system?</p></li>
 <li><p>Overlap with other work on auto-proofreading?</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
-<p><img alt="h:500" src="../results/figs/edit_retrospective_evaluation/retrospective_evaluation.png" /></p>
+<p><img alt="h:500 center" src="../results/figs/edit_retrospective_evaluation/retrospective_evaluation.png" /></p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="thoughts">
@@ -745,7 +759,6 @@ Allen Institute for Brain Science</p>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture">Big picture</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-mind-map-here">&lt; insert mind map here &gt;</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-proofreading-connectivity">Sensitivity to proofreading: connectivity</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-neuron">Stable neuron</a></li>
@@ -765,7 +778,7 @@ Allen Institute for Brain Science</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-guided-or-hypothesis-driven-proofreading">Machine-guided or hypothesis-driven proofreading</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-differential-importance">Example differential “importance”</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-differential-edit-importance">Example differential edit importance</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thoughts">Thoughts?</a></li>
