@@ -399,6 +399,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-guided-or-hypothesis-driven-proofreading">Machine-guided or hypothesis-driven proofreading</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Approach</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-differential-importance">Example differential “importance”</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thoughts">Thoughts?</a></li>
@@ -520,7 +521,8 @@ Allen Institute for Brain Science</p>
 <li><p>e.g. predict # of missing synapses in original segmentation, using column as the training data</p></li>
 </ul>
 </li>
-<li><p>Apply model to unproofread data, assess variance in estimand, decide if proofreading is worthwhile</p></li>
+<li><p>Possible goal 1:</p></li>
+<li><p>Possible goal 2: Apply model to unproofread data, assess variance in estimand, decide if proofreading is worthwhile</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -550,9 +552,16 @@ Allen Institute for Brain Science</p>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="challenges">
 <h1>Challenges<a class="headerlink" href="#challenges" title="Permalink to this heading">#</a></h1>
+<!--
+- Does not require running much classification code that hasn't already been run, since just operating on the unproofread bulk of Minnie, say -->
 <ul class="simple">
-<li><p>Does not require running much classification code that hasn’t already been run, since just operating on the unproofread bulk of Minnie, say</p></li>
-<li><p>Unsure what the feature set is as input for the model on proofreading errors</p></li>
+<li><p>Unsure what the feature set is as input for a model on how proofreading errors affect connectivity</p></li>
+<li><p>Answer is likely very question specific; unclear to what extent any lessons will generalize</p></li>
+<li><p>Likely need to assume some kind of homogeneity across the volume for this to work</p>
+<ul>
+<li><p>May not be palatable to the community</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -588,7 +597,7 @@ Allen Institute for Brain Science</p>
 <li><p>May be possible to run some code on the “final” skeleton, map those features (e.g. axon/dendrite labels) onto the rest</p></li>
 </ul>
 </li>
-<li><p>Open-ended in terms of the deliverable…</p>
+<li><p>Open-ended in terms of the deliverable/impact…</p>
 <ul>
 <li><p>What models would we be interested in training with this kind of augmented data?</p></li>
 </ul>
@@ -604,7 +613,12 @@ Allen Institute for Brain Science</p>
 <li><p>Algorithm that eats a neuron and predicts completeness</p></li>
 <li><p>Algorithm that eats a segmentation and predicts sites for edits</p>
 <ul>
-<li><p>Better version: eats a segmentation and a <em>statistic</em>, predicts <em>impactful</em> edits</p></li>
+<li><p>Better version: eats a segmentation and a <em>statistic</em>, predicts <em>impactful</em> edits</p>
+<ul>
+<li><p>Find neurons where we need information to assign C-type</p></li>
+<li><p>Find edits likely to attach many synapses</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -613,33 +627,55 @@ Allen Institute for Brain Science</p>
 <section class="tex2jax_ignore mathjax_ignore" id="id2">
 <h1>Approach<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Develop a local feature set, ideally reusing any relevant tested models</p>
+<li><p>Develop local feature set, ideally reusing relevant tested models (PSS, SegCLR, …)</p>
 <ul>
 <li><p>Features could involve anything in power set of {image, segmentation, skeleton, skeleton attributes}</p></li>
 </ul>
 </li>
-<li><p>Develop training set from available edits</p></li>
-<li><p>Train black box model</p></li>
+<li><p>Using training set of available edits, train {NN, RFC, …}</p></li>
 <li><p>Validate on held out neurons or subvolume</p></li>
 <li><p>Deployment is a tricker question</p>
 <ul>
 <li><p>Initial pass could just run predictions on a fixed materialization prior to a bout of proofreading</p></li>
 </ul>
 </li>
+<li><p>More elaborate version: predict (edit location, importance)</p>
+<ul>
+<li><p>E.g. find me edits likely to add many synapses</p></li>
 </ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="example-differential-importance">
+<h1>Example differential “importance”<a class="headerlink" href="#example-differential-importance" title="Permalink to this heading">#</a></h1>
+<p>Merge dependency graphs for two neurons, size of node = # of dependent synapses</p>
+<div class="columns">
+<div>
+<p><img alt="h:520 center" src="../../_images/merge_dependency_tree_root=864691135995711402.png" /></p>
+</div>
+<div>
+<p><img alt="h:520 center" src="../../_images/merge_dependency_tree_root=864691135013445270.png" /></p>
+</div>
+</div>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="id3">
 <h1>Challenges<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Not sure what the feature set is here</p>
+<li><p>Feature set?</p>
 <ul>
-<li><p>*”Neuron” could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, …}</p></li>
+<li><p>“Neuron” could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, …}</p></li>
 </ul>
 </li>
-<li><p>Unclear if it’s possible to pluck out a random neuron and predict where its primary axon is, say</p>
+<li><p>Little proof-of-concept for feasibility (as far as I know)</p>
 <ul>
-<li><p>For instance, is it even possible to predict completeness from a cell you know nothing else about? What if you know something about its cell type, say from PSS features?</p></li>
+<li><p>For a random neuron, can we predict where its primary axon might be?</p></li>
+<li><p>Is it possible to predict completeness from a cell you know nothing else about?</p>
+<ul>
+<li><p>What if you know something about its cell type, say from PSS features?</p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>Dynamics: to be useful, would this be running on neurons all the time as they are edited, like the L2cache?</p></li>
@@ -729,6 +765,7 @@ Allen Institute for Brain Science</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-guided-or-hypothesis-driven-proofreading">Machine-guided or hypothesis-driven proofreading</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Approach</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-differential-importance">Example differential “importance”</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thoughts">Thoughts?</a></li>

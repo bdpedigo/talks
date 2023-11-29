@@ -108,7 +108,8 @@ Allen Institute for Brain Science
   - e.g. $P(\text{type } i \rightarrow \text{type } j)$, $P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}$, etc.
 - Develop quantitative model of this relationship
   - e.g. predict # of missing synapses in original segmentation, using column as the training data
-- Apply model to unproofread data, assess variance in estimand, decide if proofreading is worthwhile
+- Possible goal 1:
+- Possible goal 2: Apply model to unproofread data, assess variance in estimand, decide if proofreading is worthwhile
 
 ---
 
@@ -142,8 +143,13 @@ Depends on the question, but there exist theoretical cases where you want the la
 
 # Challenges
 
-- Does not require running much classification code that hasn't already been run, since just operating on the unproofread bulk of Minnie, say
-- Unsure what the feature set is as input for the model on proofreading errors
+<!--
+- Does not require running much classification code that hasn't already been run, since just operating on the unproofread bulk of Minnie, say -->
+
+- Unsure what the feature set is as input for a model on how proofreading errors affect connectivity
+- Answer is likely very question specific; unclear to what extent any lessons will generalize
+- Likely need to assume some kind of homogeneity across the volume for this to work
+  - May not be palatable to the community
 
 ---
 
@@ -173,7 +179,7 @@ Depends on the question, but there exist theoretical cases where you want the la
   - E.g. make proximal edits more likely?
 - Running skeletonizaiton/featurization code on $O(100,000)$ neurons $\times$ $O(1,000)$
   - May be possible to run some code on the "final" skeleton, map those features (e.g. axon/dendrite labels) onto the rest
-- Open-ended in terms of the deliverable...
+- Open-ended in terms of the deliverable/impact...
   - What models would we be interested in training with this kind of augmented data?
 
 ---
@@ -187,27 +193,51 @@ Now that we have these connectome volumes, how should we spend our time?
 - Algorithm that eats a neuron and predicts completeness
 - Algorithm that eats a segmentation and predicts sites for edits
   - Better version: eats a segmentation and a _statistic_, predicts _impactful_ edits
+    - Find neurons where we need information to assign C-type
+    - Find edits likely to attach many synapses
 
 ---
 
 # Approach
 
-- Develop a local feature set, ideally reusing any relevant tested models
+- Develop local feature set, ideally reusing relevant tested models (PSS, SegCLR, ...)
   - Features could involve anything in power set of {image, segmentation, skeleton, skeleton attributes}
-- Develop training set from available edits
-- Train black box model
+- Using training set of available edits, train {NN, RFC, ...}
 - Validate on held out neurons or subvolume
 - Deployment is a tricker question
   - Initial pass could just run predictions on a fixed materialization prior to a bout of proofreading
+- More elaborate version: predict (edit location, importance)
+  - E.g. find me edits likely to add many synapses
+
+---
+
+# Example differential "importance"
+
+Merge dependency graphs for two neurons, size of node = # of dependent synapses
+
+<div class="columns">
+<div>
+
+![h:520 center](images/merge_dependency_tree_root=864691135995711402.png)
+
+</div>
+<div>
+
+![h:520 center](images/merge_dependency_tree_root=864691135013445270.png)
+
+</div>
+</div>
 
 ---
 
 # Challenges
 
-- Not sure what the feature set is here
-  - \*"Neuron" could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, ...}
-- Unclear if it's possible to pluck out a random neuron and predict where its primary axon is, say
-  - For instance, is it even possible to predict completeness from a cell you know nothing else about? What if you know something about its cell type, say from PSS features?
+- Feature set?
+  - "Neuron" could be anything in power set of {skeleton, compartment labels, synapse locations, connectivity profile, ...}
+- Little proof-of-concept for feasibility (as far as I know)
+  - For a random neuron, can we predict where its primary axon might be?
+  - Is it possible to predict completeness from a cell you know nothing else about?
+    - What if you know something about its cell type, say from PSS features?
 - Dynamics: to be useful, would this be running on neurons all the time as they are edited, like the L2cache?
 - Overlap with other work on auto-proofreading?
 
