@@ -284,3 +284,7 @@ Paper on how proofreading affects connectivity estimand
   - humans
 - How do i make something that could be agnostic to the model
 - 
+
+# Introduction
+
+In the effort to understand the brain and its function, connectomics (the mapping of neural wiring diagrams in precise detail, often via electron microscopy) has proven a useful tool. Connectomes are now available for entire larval {cite:p}`oxa:1SSYRaUlAaaZhRxjpZ1l/b81AYsedzDagvuUo4vD6.1` and adult fly brains {cite:p}`oxa:1SSYRaUlAaaZhRxjpZ1l/eaonJxgci6gCZDttFpPN.1; oxa:1SSYRaUlAaaZhRxjpZ1l/qk9No6egtyGvsHnIRmeE.1` large regions of mouse visual cortex, human cortex, and many others. These reconstructions now contain on the order of 100,000s of neurons, and 100s of millions of synapses. This dramatic scaling in accurate connnectome reconstruction has been enabled by a strategy of scalable automatic segmentation of neurons and detection of synapses, followed by laborious human proofreading of 

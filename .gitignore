@@ -158,3 +158,5 @@ results/outputs/*
 
 sandbox/light_speed.py
 docs/images/neurodata.io
+
+.DS_Store
