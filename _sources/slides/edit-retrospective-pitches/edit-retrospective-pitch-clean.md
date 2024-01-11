@@ -119,17 +119,33 @@ Allen Institute for Brain Science
 
 # Aim 1: sensitivity to proofreading
 
-- Understand {how, which} connectivity features change with proofreading, e.g.:
+- Understand how connectivity features change with proofreading, e.g.:
   - Probability cell $i$ connects to cell $j$
   - Proportion of cell $i$'s outputs onto cell type $k$
   - Proportion of cell $i$'s outputs onto cell type $k$ in compartment $c$
-- How much proofreading needs to happen to be able to identify a cell as belonging to a particular connectivity class?
-- How much more proofreading is needed to find long-range vs. short-range connections?
+  <!-- TODO: these were clunkier -->
+- More nuanced questions: 
+  - How much proofreading to identify a cell's connectivity type?
+  - How much proofreading to find long-range vs. short-range connections?
 
-## Why do it?
+<!-- ## Why do it?
 
 - Understand what quantitative claims we can make based on this variance
-- Motivate extending analyses to volumes which include unproofread or less proofread cells
+- Motivate extending analyses to volumes which include unproofread or less proofread cells -->
+
+---
+
+# Approach
+
+![center h:400](./images/approach-partial.png)
+
+---
+
+# Approach
+
+![center h:400](./images/approach-full.png)
+
+#### Allows us to examine connectivity for various "what if" proofreading scenarios
 
 <!-- ---
 
@@ -137,26 +153,19 @@ Allen Institute for Brain Science
 
 <!-- make these examples more concrete/less mathy -->
 <!-- maybe use this more specific language earlier -->
-<!--
-- Choose connectivity estimands,
+
+<!-- - Apply a set of edits to a neuron
+
+  - E.g., 50% of edits at random, all edges within $d$ distance to soma, etc.
+
+- For proofread neurons/volume, examine how connectivity features change w/ proofreading
+  <!-- - Likely need a "proofreading model" for replaying edits in a plausible way -->
+
+<!-- - Choose connectivity estimands,
   - e.g. $P(\text{type } i \rightarrow \text{type } j)$
-  - $P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}$, etc.
-- For proofread neurons/volume, examine how estimand changes w/ proofreading
-  - Likely need a "proofreading model" for replaying edits in a plausible way
+  - $P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}$, etc. -->
 
-TODO: create diagram for this -->
-
----
-
-# Approach
-
-![center h:500](./images/schematic/Slide1.png)
-
----
-
-# Approach
-
-![center h:500](./images/schematic/Slide2.png)
+<!-- TODO: create diagram for this -->
 
 ---
 
@@ -205,21 +214,36 @@ TODO: create diagram for this -->
 
 # Differential edit importance
 
-Distal edits often depend on more proximal merge edits
+Distal edits depend on proximal merges
 
 <div class="columns">
 <div>
 
-**Neuron arbor**
+![bg right:68%](images/neuron_tree_root=864691135865971164.png)
 
-![h:400](images/neuron_tree_root=864691135865971164.png)
+<!-- **Dependency graph of merges** -->
+
+<!-- ![h:400](images/merge_dependency_tree_root=864691135865971164.png) -->
+
+<!-- ![h:450](images/neuron_tree_root=864691135992790209.png) -->
+
+---
+
+# Comparing edit dependencies
+
+<div class="columns">
+<div>
+
+## Stable neuron
+
+![h:400](images/n_dependencies_hist-root=864691135865971164.png)
 
 </div>
 <div>
 
-**Dependency graph of merges**
+## Unstable neuron
 
-![h:400](images/merge_dependency_tree_root=864691135865971164.png)
+![h:400](images/n_dependencies_hist-root=864691135992790209.png)
 
 <!-- ![h:450](images/neuron_tree_root=864691135992790209.png) -->
 
@@ -231,8 +255,9 @@ Distal edits often depend on more proximal merge edits
 # Aim 2
 
 - Develop a system for deploying predictions of _impactful_ edits to prioritize for human or automated proofreading
+  - Likely specific to the question at hand
 
-## Why do it? (Aim 2)
+## Why do it?
 
 - Maximize utility of future proofreading efforts given limited resources
 
@@ -240,13 +265,14 @@ Distal edits often depend on more proximal merge edits
 
 # Approach
 
-- Use what was learned in Aim 1 to quantify impact of edits (with respect to some question)
-- Relate morphological features (e.g. curvature/tortuosity) to likelihood of impactful edits
-- Test this system by deploying as a method for ranking edit locations to check for manual proofreading
+- Use Aim 1 to quantify impact of edits
+- Relate morphological features to this impact score
 
----
+![h:300 center](images/neurd-features.png)
 
-# Acknowledgements
+- Test by deploying high-priority edits to proofreaders
+
+<!-- _footer: Celii et al. bioRxiv 2023 -->
 
 ---
 
