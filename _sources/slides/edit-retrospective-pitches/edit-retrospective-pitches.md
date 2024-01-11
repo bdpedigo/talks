@@ -6,6 +6,12 @@ paginate: true
 math: true
 ---
 
+<style>
+section::after {
+    content: attr(data-marpit-pagination) '/15';
+}
+</style>
+
 <!-- _paginate: false -->
 
 ![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
@@ -16,12 +22,12 @@ p {
 }
 </style>
 
-# Proofreading retrospective
-
-## Project ideas and discussion
+# On proofreading and connectome inference
 
 <div class="columns">
 <div>
+
+<br>
 
 ##### Ben Pedigo
 
@@ -44,81 +50,260 @@ Allen Institute for Brain Science
 
 ---
 
-# Big picture
+# Background
 
-- We have a record of many edits, especially in Minnie
-- Opportunity to learn from these edits, see what they can teach us going forward
-- Still some work required in terms of code/tooling, would like to focus that effort
+<!-- - EM connectomics is done by automated segmentation, followed by human proofreading
+- This process is labor intensive, takes a while, and costly -->
 
----
-
-![bg w:1200](images/mind-map.png)
-
----
-
-# Overview
-
-- For each:
-  - What I mean by these ideas
-  - Approach
-  - Brief proof-of-concepts
-- Interest / Significance / Feasibility
-
----
-
-# Sensitivity to proofreading: connectivity
-
-- Understand {how, which} connectivity features change with proofreading
-  - Are cell type connection probabilities stable?
-  - How much proofreading needs to happen to be able to identify a cell as belonging to a particular connectivity class?
-  - How much more proofreading is needed to find long-range vs. short-range connections?
-  - What is the technical variability associated w/ proofreading?
-- Motivate extending analyses to volumes which include unproofread material
-  - Argue that particular features don't change, or
-  - Developing a convincing corrective models of the bias corrected by proofreading
-
----
-
-# Stable neuron
-
-Replaying some proportion of merges onto a neuron, evaluating connectivity
-
-![h:400 center](images/exc_group_connectivity_root=864691135865971164.png)
-
----
-
-# Unstable neurons
-
-<div class="columns">
+<div class="columns-bl">
 <div>
 
-![center](images/exc_group_connectivity_root=864691136578765076.png)
+![](images/em-pipeline.png)
 
 </div>
 <div>
 
-![center](images/exc_group_connectivity_root=864691135992790209.png)
+</div>
+</div>
+
+<!-- _footer: MICrONS Consortium et al. (2023) -->
+
+---
+
+# Background
+
+<!-- - EM connectomics is done by automated segmentation, followed by human proofreading
+- This process is labor intensive, takes a while, and costly -->
+
+<div class="columns-bl">
+<div>
+
+![](images/em-pipeline-focus.png)
+
+</div>
+<div>
+
+![center](images/editing.png)
+
+- Labor-intensive
+- Costly
+- Takes time
 
 </div>
 </div>
 
-\* super high variance comes from axon/soma merger, I think
+<!-- _footer: MICrONS Consortium et al. *bioRxiv* (2023), Dorkenwald et al. *bioRxiv* (2023) -->
+
+---
+
+<!-- TODO: better title -->
+
+# Proofreading edits
+
+- We have a record of many edits now, across several datasets
+  - **>800K in Minnie, ~2.5 million in V1dd**
+    ![h:300](./images/cumulative_edits.svg)
+- How much do they matter for downstream conclusions?
+- Can we predict which edits are most impactful?
+
+---
+
+# Aims
+
+- Aim 1 (paper): develop a quantitative understanding of how proofreading affects connectivity
+  - Characterize which connectivity measures are stable/unstable
+  - Characterize which edits are impactful
+- Aim 2 (system/paper): develop a system for deploying predictions of _impactful_ edits to prioritize for human or automated proofreading
+
+---
+
+# Aim 1: sensitivity to proofreading
+
+- Understand how connectivity features change with proofreading, e.g.:
+  - Probability cell $i$ connects to cell $j$
+  - Proportion of cell $i$'s outputs onto cell type $k$
+  - Proportion of cell $i$'s outputs onto cell type $k$ in compartment $c$
+  <!-- TODO: these were clunkier -->
+
+## Why do it?
+
+- Know when we should trust connectivity analyses
+  - How much proofreading to identify a cell's connectivity type?
+  - How much proofreading to find long-range vs. short-range connections?
+- Know how much proofreading is needed to answer a question
+
+<!-- ## Why do it?
+
+- Understand what quantitative claims we can make based on this variance
+- Motivate extending analyses to volumes which include unproofread or less proofread cells -->
 
 ---
 
 # Approach
 
-- Choose connectivity estimands,
-  - e.g. $P(\text{type } i \rightarrow \text{type } j)$, $P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}$, etc.
-- For proofread neurons/volume, examine how estimand changes w/ proofreading
-  - Likely need a "proofreading model" for replaying edits in a plausible way
+![center h:400](./images/approach-partial.png)
 
-<div class="horizontalLine">
+---
+
+# Approach
+
+![center h:400](./images/approach-full.png)
+
+#### Allows us to examine connectivity for various "what if" proofreading scenarios
+
+<!-- ---
+
+# Approach
+
+<!-- make these examples more concrete/less mathy -->
+<!-- maybe use this more specific language earlier -->
+
+<!-- - Apply a set of edits to a neuron
+
+  - E.g., 50% of edits at random, all edges within $d$ distance to soma, etc.
+
+- For proofread neurons/volume, examine how connectivity features change w/ proofreading
+  <!-- - Likely need a "proofreading model" for replaying edits in a plausible way -->
+
+<!-- - Choose connectivity estimands,
+  - e.g. $P(\text{type } i \rightarrow \text{type } j)$
+  - $P(\text{type } i \rightarrow \text{type } j) \circledast \text{compartment}$, etc. -->
+
+<!-- TODO: create diagram for this -->
+
+---
+
+# Examples: stable neuron
+
+<!-- Replaying some proportion of merges onto a neuron, evaluating connectivity -->
+
+<!-- ![h:400 center](images/exc_group_connectivity_root=864691135865971164.png)
+ -->
+
+<div class="columns">
+<div>
+
+![center h:400](images/exc_group_connectivity_root_n=864691135865971164.png)
+
+</div>
+<div>
+
+![center h:400](images/exc_group_connectivity_root_p=864691135865971164.png)
+
+</div>
 </div>
 
-- Develop quantitative model of this relationship
-  - e.g. predict mean and variance of # of synapses from an $i$ to a $j$ neuron
-- Apply model to unproofread data, assess how much proofreading would change estimand
+![h:100 center](images/cell-type-legend.png)
+
+<!-- _footer: Neurons from Schneider-Mizell et al *bioRxiv* (2023) -->
+
+---
+
+# Examples: unstable neuron
+
+<div class="columns">
+<div>
+
+![center h:400](images/exc_group_connectivity_root_n=864691135992790209.png)
+
+</div>
+<div>
+
+![center h:400](images/exc_group_connectivity_root_p=864691135992790209.png)
+
+</div>
+</div>
+
+![h:100 center](images/cell-type-legend.png)
+
+<!-- _footer: Neurons from Schneider-Mizell et al *bioRxiv* (2023) -->
+
+---
+
+# Differential edit importance
+
+Distal edits and synapses depend on more proximal merges
+
+<div class="columns">
+<div>
+
+![bg right:68%](images/neuron_tree_root=864691135865971164.png)
+
+<!-- **Dependency graph of merges** -->
+
+<!-- ![h:400](images/merge_dependency_tree_root=864691135865971164.png) -->
+
+<!-- ![h:450](images/neuron_tree_root=864691135992790209.png) -->
+
+---
+
+# Comparing edit dependencies
+
+<div class="columns">
+<div>
+
+## Stable neuron
+
+![h:300 center](images/n_dependencies_hist-root=864691135865971164.png)
+
+</div>
+<div>
+
+## Unstable neuron
+
+![h:300 center](images/n_dependencies_hist-root=864691135992790209.png)
+
+<!-- ![h:450](images/neuron_tree_root=864691135992790209.png) -->
+
+</div>
+</div>
+
+<!-- **Proximal edits with many dependents are more important** -->
+
+---
+
+# Aim 2
+
+<div class="columns">
+<div>
+
+- Develop a system for predicting edit _impact_ to prioritize for proofreading
+  - May be specific to the question at hand
+
+## Why do it?
+
+- Maximize utility of future proofreading efforts given limited resources
+
+</div>
+<div>
+
+![center](./images/dependency_hist=864691135992790209.png)
+
+</div>
+</div>
+
+---
+
+# Approach
+
+- Use Aim 1 to quantify impact of edits
+- Relate morphological features to this impact score
+
+![h:300 center](images/neurd-features.png)
+
+- Test by deploying high-priority edits to proofreaders
+
+<!-- _footer: Celii et al. bioRxiv 2023 -->
+
+---
+
+<!-- try to think i could give it uninterrupted in 12-13 mins -->
+
+# Questions/comments?
+
+---
+
+# Appendix
 
 ---
 
@@ -150,21 +335,6 @@ Depends on the question, but there exist theoretical cases where you want the la
 
 ---
 
-# Challenges
-
-<!--
-- Does not require running much classification code that hasn't already been run, since just operating on the unproofread bulk of Minnie, say -->
-
-- Information already accessible in CAVE, have code for mapping synapses onto their dependant edits
-  - May need some new API features to make it scalable
-- More specific the question, the smaller our sample size for this kind of approach
-- Need to assume some kind of homogeneity across the volume for this to work
-  - May not be palatable to the community
-- Feature set for a model on how proofreading errors affect connectivity?
-- Results are likely question-specific; unclear to what extent any lessons will generalize
-
----
-
 # Resampling skeletons
 
 - Understand {whether, how} skeleton features are affected by proofreading
@@ -188,14 +358,16 @@ Depends on the question, but there exist theoretical cases where you want the la
 
 # Challenges
 
-- Have the basic tooling for this already; some parts are naive and may not scale well
-- Need to decide how to "play back" edits in a plausible way
-  - E.g. make proximal edits more likely?
-- Running skeletonizaiton/featurization code on $O(100,000)$ neurons $\times$ $O(1,000)$
-  - May be possible to run some code on the "final" skeleton, map those features (e.g. axon/dendrite labels) onto the rest
-- Open-ended in terms of the deliverable/impact...
-  - What models would we be interested in training with this kind of data?
-    - PSS already tells a lot about cell type for minimally proofread neurons!
+<!--
+- Does not require running much classification code that hasn't already been run, since just operating on the unproofread bulk of Minnie, say -->
+
+- Information already accessible in CAVE, have code for mapping synapses onto their dependant edits
+  - May need some new API features to make it scalable
+- More specific the question, the smaller our sample size for this kind of approach
+- Need to assume some kind of homogeneity across the volume for this to work
+  - May not be palatable to the community
+- Feature set for a model on how proofreading errors affect connectivity?
+- Results are likely question-specific; unclear to what extent any lessons will generalize
 
 ---
 
@@ -226,25 +398,6 @@ Now that we have these connectome volumes, how should we spend our time?
 
 ---
 
-# Example differential edit importance
-
-Merge dependency graphs for two neurons, size of node = # of dependent synapses
-
-<div class="columns">
-<div>
-
-![h:520 center](images/merge_dependency_tree_root=864691135995711402.png)
-
-</div>
-<div>
-
-![h:520 center](images/merge_dependency_tree_root=864691135013445270.png)
-
-</div>
-</div>
-
----
-
 # Challenges
 
 - Little proof-of-concept for feasibility (as far as I know)
@@ -254,12 +407,6 @@ Merge dependency graphs for two neurons, size of node = # of dependent synapses
 - Dynamics: to be useful, would this be running on neurons all the time as they are edited, like the L2cache?
 - How would a proofreader interact with such a system?
 - Overlap with other work on auto-proofreading?
-
----
-
-# Summary
-
-![h:500 center](./../../../results/figs/edit_retrospective_evaluation/retrospective_evaluation.png)
 
 ---
 
@@ -277,14 +424,22 @@ Paper on how proofreading affects connectivity estimand
 
 ---
 
-- System for identifying
-- Models already exist
-  - neurd
-  - amazon
-  - humans
-- How do i make something that could be agnostic to the model
-- 
+<!-- explain this better, makes sense in context of aim 2 -->
+<!-- make a diagram that can describe this post hoc importance idea -->
 
-# Introduction
+# Example differential edit importance
 
-In the effort to understand the brain and its function, connectomics (the mapping of neural wiring diagrams in precise detail, often via electron microscopy) has proven a useful tool. Connectomes are now available for entire larval {cite:p}`oxa:1SSYRaUlAaaZhRxjpZ1l/b81AYsedzDagvuUo4vD6.1` and adult fly brains {cite:p}`oxa:1SSYRaUlAaaZhRxjpZ1l/eaonJxgci6gCZDttFpPN.1; oxa:1SSYRaUlAaaZhRxjpZ1l/qk9No6egtyGvsHnIRmeE.1` large regions of mouse visual cortex, human cortex, and many others. These reconstructions now contain on the order of 100,000s of neurons, and 100s of millions of synapses. This dramatic scaling in accurate connnectome reconstruction has been enabled by a strategy of scalable automatic segmentation of neurons and detection of synapses, followed by laborious human proofreading of 
+Merge dependency graphs for two neurons, size of node = # of dependent synapses
+
+<div class="columns">
+<div>
+
+![h:520 center](images/merge_dependency_tree_root=864691135995711402.png)
+
+</div>
+<div>
+
+![h:520 center](images/merge_dependency_tree_root=864691135013445270.png)
+
+</div>
+</div>
