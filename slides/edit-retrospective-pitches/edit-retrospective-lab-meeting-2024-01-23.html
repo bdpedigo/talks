@@ -378,12 +378,13 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Background</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proofreading-edits">Proofreading edits</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aims">Aims</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-1-sensitivity-to-proofreading">Aim 1: sensitivity to proofreading</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-it">Why do it?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proofreading-edits">Proofreading edits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-and-how-much-do-these-edits-matter-for-downstream-conclusions">How (and how much) do these edits matter for downstream conclusions?</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-investigate-the-effect-of-proofreading">Why investigate the effect of proofreading?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aims">Aims</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-1-sensitivity-to-proofreading">Aim 1: sensitivity to proofreading</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#approach">Approach</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Approach</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#allows-us-to-examine-connectivity-for-various-what-if-proofreading-scenarios">Allows us to examine connectivity for various “what if” proofreading scenarios</a></li>
@@ -398,10 +399,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-2">Aim 2</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Why do it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-it">Why do it?</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Approach</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Approach</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-comments">Questions/comments?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-work-on-quality-quantity-tradeoff">Prior work on quality-quantity tradeoff</a><ul class="visible nav section-nav flex-column">
@@ -416,8 +417,8 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frankeneuron-br-features">Frankeneuron  features</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-guided-or-hypothesis-driven-proofreading">Machine-guided or hypothesis-driven proofreading</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Challenges</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Approach</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thoughts">Thoughts?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-differential-edit-importance">Example differential edit importance</a></li>
 </ul>
@@ -510,9 +511,41 @@ Allen Institute for Brain Science</p>
 <img alt="h:300" src="../../_images/cumulative_edits.svg" /></p></li>
 </ul>
 </li>
-<li><p>How much do they matter for downstream conclusions?</p></li>
-<li><p>Can we predict which edits are most impactful?</p></li>
 </ul>
+<style scoped>
+h3 {
+  justify-content: center;
+  text-align: center;
+}
+</style>
+<section id="how-and-how-much-do-these-edits-matter-for-downstream-conclusions">
+<h2>How (and how much) do these edits matter for downstream conclusions?<a class="headerlink" href="#how-and-how-much-do-these-edits-matter-for-downstream-conclusions" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="why-investigate-the-effect-of-proofreading">
+<h1>Why investigate the effect of proofreading?<a class="headerlink" href="#why-investigate-the-effect-of-proofreading" title="Permalink to this heading">#</a></h1>
+<div class="columns-bl">
+<div>
+<ul class="simple">
+<li><p>Learn how much proofreading is needed to answer a question</p>
+<ul>
+<li><p>E.g. how much proofreading to identify connectivity type?</p></li>
+</ul>
+</li>
+<li><p>Understand what quantitative claims we can make given proofreading-induced variability</p>
+<ul>
+<li><p>E.g. how to compare  short-range vs. long-range connections?</p></li>
+</ul>
+</li>
+<li><p>Learn what future proofreading strategies could be most effective</p></li>
+</ul>
+</div>
+<div>
+<p><img alt="" src="../../_images/philipp-variability.png" /></p>
+</div>
+</div>
+<!-- _footer: Schlegel et al. bioRxiv (2023) -->
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="aims">
@@ -540,22 +573,6 @@ Allen Institute for Brain Science</p>
 <!-- TODO: these were clunkier -->
 </li>
 </ul>
-<section id="why-do-it">
-<h2>Why do it?<a class="headerlink" href="#why-do-it" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Know when we should trust connectivity analyses</p>
-<ul>
-<li><p>How much proofreading to identify a cell’s connectivity type?</p></li>
-<li><p>How much proofreading to find long-range vs. short-range connections?</p></li>
-</ul>
-</li>
-<li><p>Know how much proofreading is needed to answer a question</p></li>
-</ul>
-<!-- ## Why do it?
-
-- Understand what quantitative claims we can make based on this variance
-- Motivate extending analyses to volumes which include unproofread or less proofread cells -->
-</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="approach">
@@ -660,8 +677,8 @@ Allen Institute for Brain Science</p>
 </ul>
 </li>
 </ul>
-<section id="id3">
-<h2>Why do it?<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="why-do-it">
+<h2>Why do it?<a class="headerlink" href="#why-do-it" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Maximize utility of future proofreading efforts given limited resources</p></li>
 </ul>
@@ -673,8 +690,8 @@ Allen Institute for Brain Science</p>
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id4">
-<h1>Approach<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>Approach<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Use Aim 1 to quantify impact of edits</p></li>
 <li><p>Relate morphological features to this impact score</p></li>
@@ -782,8 +799,8 @@ Allen Institute for Brain Science</p>
 </ul>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id5">
-<h1>Approach<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>Approach<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Develop feature set, ideally reusing relevant tested models (PSS, SegCLR, …)</p>
 <ul>
@@ -805,8 +822,8 @@ Allen Institute for Brain Science</p>
 </ul>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id6">
-<h1>Challenges<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>Challenges<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Little proof-of-concept for feasibility (as far as I know)</p>
 <ul>
@@ -904,12 +921,13 @@ Allen Institute for Brain Science</p>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Background</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proofreading-edits">Proofreading edits</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aims">Aims</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-1-sensitivity-to-proofreading">Aim 1: sensitivity to proofreading</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-it">Why do it?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proofreading-edits">Proofreading edits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-and-how-much-do-these-edits-matter-for-downstream-conclusions">How (and how much) do these edits matter for downstream conclusions?</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-investigate-the-effect-of-proofreading">Why investigate the effect of proofreading?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aims">Aims</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-1-sensitivity-to-proofreading">Aim 1: sensitivity to proofreading</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#approach">Approach</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Approach</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#allows-us-to-examine-connectivity-for-various-what-if-proofreading-scenarios">Allows us to examine connectivity for various “what if” proofreading scenarios</a></li>
@@ -924,10 +942,10 @@ Allen Institute for Brain Science</p>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-2">Aim 2</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Why do it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-it">Why do it?</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Approach</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Approach</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-comments">Questions/comments?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-work-on-quality-quantity-tradeoff">Prior work on quality-quantity tradeoff</a><ul class="visible nav section-nav flex-column">
@@ -942,8 +960,8 @@ Allen Institute for Brain Science</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frankeneuron-br-features">Frankeneuron  features</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-guided-or-hypothesis-driven-proofreading">Machine-guided or hypothesis-driven proofreading</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Challenges</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Approach</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Challenges</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thoughts">Thoughts?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-differential-edit-importance">Example differential edit importance</a></li>
 </ul>

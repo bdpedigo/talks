@@ -103,8 +103,39 @@ Allen Institute for Brain Science
 - We have a record of many edits now, across several datasets
   - **>800K in Minnie, ~2.5 million in V1dd**
     ![h:300](./images/cumulative_edits.svg)
-- How much do they matter for downstream conclusions?
-- Can we predict which edits are most impactful?
+
+
+<style scoped>
+h3 {
+  justify-content: center;
+  text-align: center;
+}
+</style>
+
+### How (and how much) do these edits matter for downstream conclusions?
+
+---
+
+# Why investigate the effect of proofreading?
+
+<div class="columns-bl">
+<div>
+
+- Learn how much proofreading is needed to answer a question
+  - E.g. how much proofreading to identify connectivity type? 
+- Understand what quantitative claims we can make given proofreading-induced variability
+  - E.g. how to compare  short-range vs. long-range connections?
+- Learn what future proofreading strategies could be most effective
+
+</div>
+<div>
+
+![](./images/philipp-variability.png)
+
+</div>
+</div>
+
+<!-- _footer: Schlegel et al. bioRxiv (2023) -->
 
 ---
 
@@ -124,18 +155,6 @@ Allen Institute for Brain Science
   - Proportion of cell $i$'s outputs onto cell type $k$
   - Proportion of cell $i$'s outputs onto cell type $k$ in compartment $c$
   <!-- TODO: these were clunkier -->
-
-## Why do it?
-
-- Know when we should trust connectivity analyses
-  - How much proofreading to identify a cell's connectivity type?
-  - How much proofreading to find long-range vs. short-range connections?
-- Know how much proofreading is needed to answer a question
-
-<!-- ## Why do it?
-
-- Understand what quantitative claims we can make based on this variance
-- Motivate extending analyses to volumes which include unproofread or less proofread cells -->
 
 ---
 
