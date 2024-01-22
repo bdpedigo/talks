@@ -104,7 +104,6 @@ Allen Institute for Brain Science
   - **>800K in Minnie, ~2.5 million in V1dd**
     ![h:300](./images/cumulative_edits.svg)
 
-
 <style scoped>
 h3 {
   justify-content: center;
@@ -122,9 +121,9 @@ h3 {
 <div>
 
 - Learn how much proofreading is needed to answer a question
-  - E.g. how much proofreading to identify connectivity type? 
+  - E.g. how much proofreading to identify connectivity type?
 - Understand what quantitative claims we can make given proofreading-induced variability
-  - E.g. how to compare  short-range vs. long-range connections?
+  - E.g. how to compare short-range vs. long-range connections?
 - Learn what future proofreading strategies could be most effective
 
 </div>
@@ -150,11 +149,22 @@ h3 {
 
 # Aim 1: sensitivity to proofreading
 
-- Understand how connectivity features change with proofreading, e.g.:
-  - Probability cell $i$ connects to cell $j$
-  - Proportion of cell $i$'s outputs onto cell type $k$
-  - Proportion of cell $i$'s outputs onto cell type $k$ in compartment $c$
-  <!-- TODO: these were clunkier -->
+<div class="columns">
+<div>
+
+Map how connectivity features change with proofreading, e.g.:
+
+- Probability cell $i$ connects to cell $j$
+- Proportion of cell $i$'s outputs onto cell type $k$
+- Proportion of cell $i$'s outputs onto cell type $k$ in compartment $c$
+
+</div>
+<div>
+
+![center](images/axes-diagram.png)
+
+</div>
+</div>
 
 ---
 
@@ -281,6 +291,19 @@ Distal edits and synapses depend on more proximal merges
 
 ---
 
+# Where I'm at
+
+Have the code to can replay arbitrary subsets of edits onto a neuron, and then map these hypothetical neurons onto synaptic connectivity
+
+# Now...
+
+- What's a reasonable way to replay edits?
+  - Time ordering is "spikey" and somewhat arbitrary
+  - Develop a statistical model of how proofreaders have approached a neuron...
+    - Whole can of worms
+
+---
+
 # Aim 2
 
 <div class="columns">
@@ -313,6 +336,14 @@ Distal edits and synapses depend on more proximal merges
 - Test by deploying high-priority edits to proofreaders
 
 <!-- _footer: Celii et al. bioRxiv 2023 -->
+
+---
+
+# Finally...
+
+There's a tension between using connectomics datasets as an "atlas" and directed proofreading aimed at a particular question
+
+...Thanks for coming to my TED talk
 
 ---
 
