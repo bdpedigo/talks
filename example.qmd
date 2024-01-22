@@ -1,0 +1,10 @@
+---
+title: "On proofreading and connectome inference"
+author: Ben Pedigo
+format: 
+  revealjs:
+    incremental: true
+    theme: [simple, custom.scss]
+revealjs-plugins:
+  - pointer
+---
