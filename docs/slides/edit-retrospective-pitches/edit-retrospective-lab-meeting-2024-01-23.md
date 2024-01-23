@@ -8,7 +8,7 @@ math: true
 
 <style>
 section::after {
-    content: attr(data-marpit-pagination) '/15';
+    content: attr(data-marpit-pagination) '/22';
 }
 </style>
 
@@ -22,7 +22,7 @@ p {
 }
 </style>
 
-# On proofreading and connectome inference
+# Connectome inference in light of proofreading
 
 <div class="columns">
 <div>
@@ -224,7 +224,7 @@ Map how connectivity features change with proofreading, e.g.:
 
 ![h:100 center](images/cell-type-legend.png)
 
-<!-- _footer: Neurons from Schneider-Mizell et al *bioRxiv* (2023) -->
+<!-- _footer: Neurons/colors from Schneider-Mizell et al *bioRxiv* (2023) -->
 
 ---
 
@@ -245,41 +245,7 @@ Map how connectivity features change with proofreading, e.g.:
 
 ![h:100 center](images/cell-type-legend.png)
 
-<!-- _footer: Neurons from Schneider-Mizell et al *bioRxiv* (2023) -->
-
----
-
-# Ordered by time
-
-<div class="columns">
-<div>
-
-![h:500 center](./images/prob_vs_time_by_post_mtype-root_id=864691135697251738.png)
-
-</div>
-<div>
-
-![h:500 center](./images/prob_vs_time_by_post_mtype-root_id=864691135992790209.png)
-
-</div>
-</div>
-
----
-
-# Ordered by distance from soma
-
-<div class="columns">
-<div>
-
-![h:500 center](./images/prob_vs_centroid_distance_to_nuc_um_by_post_mtype-root_id=864691135697251738.png)
-
-</div>
-<div>
-
-![h:500 center](./images/prob_vs_centroid_distance_to_nuc_um_by_post_mtype-root_id=864691135992790209.png)
-
-</div>
-</div>
+<!-- _footer: Neurons/colors from Schneider-Mizell et al *bioRxiv* (2023) -->
 
 ---
 
@@ -321,7 +287,45 @@ Distal edits and synapses depend on more proximal merges
 </div>
 </div>
 
-<!-- **Proximal edits with many dependents are more important** -->
+## <!-- **Proximal edits with many dependents are more important** -->
+
+---
+
+# Ordered by time
+
+<div class="columns">
+<div>
+
+![h:500 center](./images/prob_vs_time_by_post_mtype-root_id=864691135697251738.png)
+
+</div>
+<div>
+
+![h:500 center](./images/prob_vs_time_by_post_mtype-root_id=864691135992790209.png)
+
+</div>
+</div>
+
+<!-- _footer: Neurons/colors from Schneider-Mizell et al *bioRxiv* (2023) -->
+
+---
+
+# Ordered by distance from soma
+
+<div class="columns">
+<div>
+
+![h:500 center](./images/prob_vs_centroid_distance_to_nuc_um_by_post_mtype-root_id=864691135697251738.png)
+
+</div>
+<div>
+
+![h:500 center](./images/prob_vs_centroid_distance_to_nuc_um_by_post_mtype-root_id=864691135992790209.png)
+
+</div>
+</div>
+
+<!-- _footer: Neurons/colors from Schneider-Mizell et al *bioRxiv* (2023) -->
 
 ---
 
@@ -339,14 +343,12 @@ Distal edits and synapses depend on more proximal merges
 
 # How to replay edits
 
-
-- What's a reasonable way to replay edits?
-  - Time ordering is "spikey" and somewhat arbitrary
-  - Selecting random edits doesn't reflect reality
-  - Could develop a statistical model of proofreading itself...
-    - Deep rabbit hole? :sweat_smile:
-  - Or, could view this as allowing us to examine alternative proofreading strategies
-    - E.g. if we strictly proofread radially from the soma
+- Time ordering is "spikey" and somewhat arbitrary
+- Selecting random edits doesn't reflect reality, high variance since there are likely to be a few key edits
+- Could develop a statistical model of proofreading itself...
+  - Deep rabbit hole? :sweat_smile:
+- Could view this as allowing us to examine alternative proofreading strategies
+  - E.g. if we strictly proofread radially from the soma, did a depth-first search from the soma, etc.
 
 ---
 
@@ -385,11 +387,22 @@ Distal edits and synapses depend on more proximal merges
 
 ---
 
-# Finally...
+<!-- set the text color to white -->
 
-There's a tension between using connectomics datasets as an "atlas" and directed proofreading aimed at a particular question
+<style scoped>
+h1 {
+  color: white;
+}
+footer {
+  color: lightgray;
+}
+</style>
 
-...Thanks for coming to my TED talk
+# Targeted questions embedded in a survey
+
+![center bg](images/webb-example.jpg)
+
+<!--  _footer: NASA, ESA, CSA, STScI, D. Milisavljevic (Purdue University), T. Temim (Princeton University), I. De Looze (Ghent University) -->
 
 ---
 
