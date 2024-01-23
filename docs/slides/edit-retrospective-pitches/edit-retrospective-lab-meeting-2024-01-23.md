@@ -249,6 +249,40 @@ Map how connectivity features change with proofreading, e.g.:
 
 ---
 
+# Ordered by time
+
+<div class="columns">
+<div>
+
+![h:500 center](./images/prob_vs_time_by_post_mtype-root_id=864691135697251738.png)
+
+</div>
+<div>
+
+![h:500 center](./images/prob_vs_time_by_post_mtype-root_id=864691135992790209.png)
+
+</div>
+</div>
+
+---
+
+# Ordered by distance from soma
+
+<div class="columns">
+<div>
+
+![h:500 center](./images/prob_vs_centroid_distance_to_nuc_um_by_post_mtype-root_id=864691135697251738.png)
+
+</div>
+<div>
+
+![h:500 center](./images/prob_vs_centroid_distance_to_nuc_um_by_post_mtype-root_id=864691135992790209.png)
+
+</div>
+</div>
+
+---
+
 # Differential edit importance
 
 Distal edits and synapses depend on more proximal merges
@@ -291,16 +325,28 @@ Distal edits and synapses depend on more proximal merges
 
 ---
 
-# Where I'm at
+# To summarize
 
-Have the code to can replay arbitrary subsets of edits onto a neuron, and then map these hypothetical neurons onto synaptic connectivity
+- Have the tooling to replay arbitrary sets of edits onto a neuron and examine the effect on connectivity
+- Clear there is heterogeneity...
+  - In the importance of individual edits
+  - In spatial patterns of edit importance
+  - In temporal patterns of edit history
+- **Need to decide on some useful ways of replaying edits, depending on the question**
+  - Feels like we want an x-axis which represents "amount of effort"
 
-# Now...
+---
+
+# How to replay edits
+
 
 - What's a reasonable way to replay edits?
   - Time ordering is "spikey" and somewhat arbitrary
-  - Develop a statistical model of how proofreaders have approached a neuron...
-    - Whole can of worms
+  - Selecting random edits doesn't reflect reality
+  - Could develop a statistical model of proofreading itself...
+    - Deep rabbit hole? :sweat_smile:
+  - Or, could view this as allowing us to examine alternative proofreading strategies
+    - E.g. if we strictly proofread radially from the soma
 
 ---
 
@@ -349,11 +395,41 @@ There's a tension between using connectomics datasets as an "atlas" and directed
 
 <!-- try to think i could give it uninterrupted in 12-13 mins -->
 
+![bg](images/acknowledgements.png)
+
+<style scoped>
+h2 {
+  justify-content: center;
+  text-align: center;
+}
+</style>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Proofreaders!
+
+---
+
 # Questions/comments?
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 ---
 
 # Appendix
+
+![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg)
 
 ---
 
