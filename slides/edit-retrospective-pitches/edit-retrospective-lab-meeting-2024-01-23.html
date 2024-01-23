@@ -392,20 +392,25 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-stable-neuron">Examples: stable neuron</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-unstable-neuron">Examples: unstable neuron</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ordered-by-time">Ordered by time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ordered-by-distance-from-soma">Ordered by distance from soma</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-edit-importance">Differential edit importance</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-edit-dependencies">Comparing edit dependencies</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-neuron">Stable neuron</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unstable-neuron">Unstable neuron</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#where-i-m-at">Where I’m at</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#now">Now…</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-summarize">To summarize</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-replay-edits">How to replay edits</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-2">Aim 2</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-it">Why do it?</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finally">Finally…</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finally">Finally…</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proofreaders">Proofreaders!</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-comments">Questions/comments?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-work-on-quality-quantity-tradeoff">Prior work on quality-quantity tradeoff</a><ul class="visible nav section-nav flex-column">
@@ -641,6 +646,30 @@ h3 {
 <!-- _footer: Neurons from Schneider-Mizell et al *bioRxiv* (2023) -->
 </section>
 <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="ordered-by-time">
+<h1>Ordered by time<a class="headerlink" href="#ordered-by-time" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<p><img alt="h:500 center" src="../../_images/prob_vs_time_by_post_mtype-root_id=864691135697251738.png" /></p>
+</div>
+<div>
+<p><img alt="h:500 center" src="../../_images/prob_vs_time_by_post_mtype-root_id=864691135992790209.png" /></p>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="ordered-by-distance-from-soma">
+<h1>Ordered by distance from soma<a class="headerlink" href="#ordered-by-distance-from-soma" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<p><img alt="h:500 center" src="../../_images/prob_vs_centroid_distance_to_nuc_um_by_post_mtype-root_id=864691135697251738.png" /></p>
+</div>
+<div>
+<p><img alt="h:500 center" src="../../_images/prob_vs_centroid_distance_to_nuc_um_by_post_mtype-root_id=864691135992790209.png" /></p>
+</div>
+</div>
+</section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="differential-edit-importance">
 <h1>Differential edit importance<a class="headerlink" href="#differential-edit-importance" title="Permalink to this heading">#</a></h1>
 <p>Distal edits and synapses depend on more proximal merges</p>
@@ -672,19 +701,40 @@ h3 {
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="where-i-m-at">
-<h1>Where I’m at<a class="headerlink" href="#where-i-m-at" title="Permalink to this heading">#</a></h1>
-<p>Have the code to can replay arbitrary subsets of edits onto a neuron, and then map these hypothetical neurons onto synaptic connectivity</p>
+<section class="tex2jax_ignore mathjax_ignore" id="to-summarize">
+<h1>To summarize<a class="headerlink" href="#to-summarize" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Have the tooling to replay arbitrary sets of edits onto a neuron and examine the effect on connectivity</p></li>
+<li><p>Clear there is heterogeneity…</p>
+<ul>
+<li><p>In the importance of individual edits</p></li>
+<li><p>In spatial patterns of edit importance</p></li>
+<li><p>In temporal patterns of edit history</p></li>
+</ul>
+</li>
+<li><p><strong>Need to decide on some useful ways of replaying edits, depending on the question</strong></p>
+<ul>
+<li><p>Feels like we want an x-axis which represents “amount of effort”</p></li>
+</ul>
+</li>
+</ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="now">
-<h1>Now…<a class="headerlink" href="#now" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="how-to-replay-edits">
+<h1>How to replay edits<a class="headerlink" href="#how-to-replay-edits" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>What’s a reasonable way to replay edits?</p>
 <ul>
 <li><p>Time ordering is “spikey” and somewhat arbitrary</p></li>
-<li><p>Develop a statistical model of how proofreaders have approached a neuron…</p>
+<li><p>Selecting random edits doesn’t reflect reality</p></li>
+<li><p>Could develop a statistical model of proofreading itself…</p>
 <ul>
-<li><p>Whole can of worms</p></li>
+<li><p>Deep rabbit hole? :sweat_smile:</p></li>
+</ul>
+</li>
+<li><p>Or, could view this as allowing us to examine alternative proofreading strategies</p>
+<ul>
+<li><p>E.g. if we strictly proofread radially from the soma</p></li>
 </ul>
 </li>
 </ul>
@@ -735,13 +785,38 @@ h3 {
 <p>…Thanks for coming to my TED talk</p>
 <hr class="docutils" />
 <!-- try to think i could give it uninterrupted in 12-13 mins -->
+<p><img alt="bg" src="../../_images/acknowledgements.png" /></p>
+<style scoped>
+h2 {
+  justify-content: center;
+  text-align: center;
+}
+</style>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section id="proofreaders">
+<h2>Proofreaders!<a class="headerlink" href="#proofreaders" title="Permalink to this heading">#</a></h2>
 </section>
+</section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="questions-comments">
 <h1>Questions/comments?<a class="headerlink" href="#questions-comments" title="Permalink to this heading">#</a></h1>
+<p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="appendix">
 <h1>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h1>
+<p><img alt="bg center blur:3px opacity:20%" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg" /></p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="prior-work-on-quality-quantity-tradeoff">
@@ -967,20 +1042,25 @@ h3 {
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-stable-neuron">Examples: stable neuron</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-unstable-neuron">Examples: unstable neuron</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ordered-by-time">Ordered by time</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ordered-by-distance-from-soma">Ordered by distance from soma</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-edit-importance">Differential edit importance</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-edit-dependencies">Comparing edit dependencies</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-neuron">Stable neuron</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unstable-neuron">Unstable neuron</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#where-i-m-at">Where I’m at</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#now">Now…</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-summarize">To summarize</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-replay-edits">How to replay edits</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-2">Aim 2</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-it">Why do it?</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finally">Finally…</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finally">Finally…</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proofreaders">Proofreaders!</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-comments">Questions/comments?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-work-on-quality-quantity-tradeoff">Prior work on quality-quantity tradeoff</a><ul class="visible nav section-nav flex-column">
