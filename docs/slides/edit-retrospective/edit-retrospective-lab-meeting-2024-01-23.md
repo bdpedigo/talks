@@ -35,7 +35,7 @@ p {
 Scientist I
 Allen Institute for Brain Science
 
-![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png) [ben.pedigo@alleninstute.org](mailto:ben.pedigo@alleninstitute.org)
+![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png) [ben.pedigo@alleninstitute.org](mailto:ben.pedigo@alleninstitute.org)
 ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/github.png) [@bdpedigo (Github)](https://github.com/bdpedigo)
 ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png) [@bpedigod (Twitter)](https://twitter.com/bpedigod)
 ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/web.png) [bdpedigo.github.io](https://bdpedigo.github.io/)
@@ -349,6 +349,8 @@ Distal edits and synapses depend on more proximal merges
   - Deep rabbit hole? :sweat_smile:
 - Could view this as allowing us to examine alternative proofreading strategies
   - E.g. if we strictly proofread radially from the soma, did a depth-first search from the soma, etc.
+
+<!-- https://neuroglancer.neuvue.io/?json_url=https://global.daf-apis.com/nglstate/api/v1/5754695438041088 -->
 
 ---
 
