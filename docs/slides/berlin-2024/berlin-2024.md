@@ -53,6 +53,18 @@ Allen Institute for Brain Science
 
 ---
 
+# Measurement quality in connectomics
+
+![h:200 center](images/optimizing-title.png)
+
+- Would you rather have more, noisier data or less, higher-quality data?
+- There exists regimes where you'd prefer either, depending on the question
+- **Given finite resources, worth considering how to proofread with specific scientific goals in mind**
+
+<!-- _footer: Priebe et al. *Communications in Statistics* (2013) -->
+
+---
+
 # Connectome proofreading
 
 <!-- ![bg](../themes/aibs-backgrounds/Slide4.png) -->
@@ -77,7 +89,7 @@ Dorkenwald, Schneider-Mizell et al. _bioRxiv_ (2023)
 </div>
 </div>
 
-### How and how much do these edits matter for downstream conclusions?
+### How do these edits affect downstream conclusions?
 
 <!-- _footer: MICrONS Consortium et al. *bioRxiv* (2023), Schneider-Mizell et al. *bioRxiv* (2023),  Schneider-Mizell et al. *bioRxiv* (2023) -->
 
@@ -85,7 +97,21 @@ Dorkenwald, Schneider-Mizell et al. _bioRxiv_ (2023)
 
 # Inhibition in mouse visual cortex
 
-![](images/inhibition-census-gallery.png)
+<div class="columns">
+<div>
+
+![](images/inhibitory-gallery.png)
+
+</div>
+<div>
+
+- 163 inhibitory neurons were heavily proofread
+- Characterized how inhibitory neurons distribute their outputs:
+
+{diagram of proportion of outputs metric}
+
+</div>
+</div>
 
 <!--
 # CAVE allows us to extract the complete edit history
@@ -98,13 +124,15 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 ---
 
-# Quantifying proofreading impact
+# Connectivity during proofreading
 
-![h:500 center](./images/all_edits_by_time_with_plots-target_id=271886.gif)
+<!-- _backgroundColor: white -->
+
+![h:600](./images/all_edits_by_time_with_plots-target_id=271886.gif)
 
 ![h:50 center](images/cell-type-legend.png)
 
-<!-- _footer: Neurons/colors from Schneider-Mizell et al *bioRxiv* (2023) -->
+<!-- Neurons/colors from Schneider-Mizell et al *bioRxiv* (2023) -->
 
 ---
 
@@ -113,7 +141,7 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 <div class="columns">
 <div>
 
-{ describe distances idea }
+{ distances idea diagram }
 
 </div>
 <div>
@@ -135,6 +163,7 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 - So far, have looked at how neurons changed over the course of proofreading in actuality, but this is a somewhat arbitrary historical ordering
 - Can replay edits (or not) according to alternative schemes
+- E.g. what if we only had half the proofreading resources - how should we allocate them?
 
 ---
 
@@ -142,22 +171,26 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 ![](images/half_edit_heatmaps.png)
 
----
+<!-- ---
 
 # (2) what if I omit individual edits? (importance)
 
-![h:500 center](images/edit_dropout_importance_root_id=864691135213953920.png)
+![h:500 center](images/edit_dropout_importance_root_id=864691135213953920.png) -->
 
----
+<!-- ---
 
 # (3) which neurons are "good enough"?
 
-![h:500 center](images/closeness-by-n_outputs.png)
+![h:500 center](images/closeness-by-n_outputs.png) -->
 
 ---
 
 # Summary
 
 - Monitoring proofreading with specific analyses or metrics in mind ...
-- Counterfactual replay of various edit schemes can help understand how ...
-- Analyses could be applied to other datasets (especially CAVE-backed) or even to analyze automated proofreading systems
+- Counterfactual replay of various edit schemes can help understand how alternative proofreading strategies might affect downstream analyses
+- Analyses could be applied to other datasets or even to analyze how design of automated proofreading systems affects conclusions
+
+---
+
+# Acknowledgements
