@@ -39,7 +39,7 @@ Allen Institute for Pastry Science
 
 - 18 bakeries
 - 16 weeks
-- 165 croissants ranked
+- 180 croissants ranked
 
 ---
 
@@ -149,6 +149,12 @@ Cameron's bestie is Rachael (agreement 0.80)
 Xiaoyu's bestie is Marc (agreement 0.88)
 Rachael's bestie is Marc (agreement 0.86)
 Derrick's bestie is Ben (agreement 0.83)
+
+---
+
+# Croissant preference space
+
+![center h:550](./images/mds.svg)
 
 ---
 

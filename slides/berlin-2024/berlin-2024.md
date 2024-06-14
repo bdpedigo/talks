@@ -53,19 +53,36 @@ Allen Institute for Brain Science
 
 ---
 
-# Measurement quality in connectomics
+# Measurement design in connectomics
 
-![h:200 center](images/optimizing-title.png)
+<br>
 
-- Would you rather have more, noisier data or less, higher-quality data?
-- There exists regimes where you'd prefer either, depending on the question
-- **Given finite resources, worth considering how to proofread with specific scientific goals in mind**
+<div class="columns">
+<div>
+
+![h:250 center](images/optimizing-title.png)
+
+</div>
+<div>
+
+> Would you rather have lots of noisy connectivity measurements or a little bit of high-quality data?
+
+There exists regimes where you'd prefer either, _depending on the question_
+
+</div>
+</div>
+
+<br>
+
+### Given finite resources, worth reflecting on how to proofread with specific scientific goals in mind
 
 <!-- _footer: Priebe et al. *Communications in Statistics* (2013) -->
 
 ---
 
-# Connectome proofreading
+# Measurements in modern connectomics
+
+### Automated segmentation + proofreading
 
 <!-- ![bg](../themes/aibs-backgrounds/Slide4.png) -->
 
@@ -84,12 +101,12 @@ Dorkenwald, Schneider-Mizell et al. _bioRxiv_ (2023)
 </div>
 <div>
 
-![](./images/all_edits_by_time-target_id=271886.gif)
+![h:500 center](./images/all_edits_by_time-target_id=271886.gif)
 
 </div>
 </div>
 
-### How do these edits affect downstream conclusions?
+<!-- ### How do these edits affect downstream conclusions? -->
 
 <!-- _footer: MICrONS Consortium et al. *bioRxiv* (2023), Schneider-Mizell et al. *bioRxiv* (2023),  Schneider-Mizell et al. *bioRxiv* (2023) -->
 
@@ -124,38 +141,63 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 ---
 
-# Connectivity during proofreading
+<!-- # Connectivity during proofreading -->
 
-<!-- _backgroundColor: white -->
+![bg center fit](./images/all_edits_by_time_with_plots-target_id=271886.gif)
 
-![h:600](./images/all_edits_by_time_with_plots-target_id=271886.gif)
+<div style="position: absolute; top: 50px; right: 50px;">
 
-![h:50 center](images/cell-type-legend.png)
-
-<!-- Neurons/colors from Schneider-Mizell et al *bioRxiv* (2023) -->
-
----
-
-# Measuring distance from the fully proofread neuron
-
-<div class="columns">
-<div>
-
-{ distances idea diagram }
+![h:50](images/cell-type-legend.png)
 
 </div>
-<div>
 
-![right h:400](./images/historical-ordering-props_by_mtype-distance-root_id=864691135213953920.png)
+<div style="position: absolute; bottom: 20px; right: 60px;">
 
-</div>
+![h:280](images/white.png)
+
 </div>
 
 ---
 
-# Most neurons "converged" fairly quickly
+<!-- # Connectivity during proofreading -->
 
-![h:500 center](./images/multi-metrics.png)
+<!-- _backgroundImage: None -->
+
+![bg center fit blur:5px opacity:40%](./images/all_edits_by_time_with_plots-target_id=271886.gif)
+
+<div style="position: absolute; top: 50px; right: 50px;">
+
+![h:50](images/cell-type-legend.png)
+
+</div>
+
+<!-- <div style="position: absolute; bottom: 20px; right: 60px;">
+
+![h:280](images/white.png)
+
+</div> -->
+
+![center h:600](images/distance-transparent.png)
+
+---
+
+![bg center fit](./images/all_edits_by_time_with_plots-target_id=271886.gif)
+
+<div style="position: absolute; top: 50px; right: 50px;">
+
+![h:50](images/cell-type-legend.png)
+
+</div>
+
+---
+
+# Cell-type specific connectivity converged quickly
+
+![h:500 center](./images/line-stack.gif)
+
+---
+
+
 
 ---
 
@@ -167,9 +209,22 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 ---
 
-# (1) "sloppy" proofreading?
+# How would clustering change with different proofreading schemes?
 
-![](images/half_edit_heatmaps.png)
+![center ](images/ari-vs-merges.png)
+
+---
+
+# Impactful edits are more often near the soma
+
+![center](images/distance_vs_impact.png)
+
+
+---
+
+<!-- # (1) "sloppy" proofreading?
+
+![](images/half_edit_heatmaps.png) -->
 
 <!-- ---
 
@@ -187,10 +242,178 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 # Summary
 
-- Monitoring proofreading with specific analyses or metrics in mind ...
-- Counterfactual replay of various edit schemes can help understand how alternative proofreading strategies might affect downstream analyses
-- Analyses could be applied to other datasets or even to analyze how design of automated proofreading systems affects conclusions
+<!-- - Worth understanding whether most neurons look like they have converged -->
+
+- Monitoring proofreading with specific analyses/metrics in mind could help us decide how to allocate resources
+<!-- - Counterfactual replay of various edit schemes can help understand how alternative proofreading strategies might affect downstream analyses -->
+<!-- - Analyses could be applied to other datasets or even to analyze how design of automated proofreading systems affects conclusions -->
 
 ---
 
 # Acknowledgements
+
+<style scoped> 
+p {
+    font-size: 10px;
+}
+</style>
+
+<div class="columns">
+<div>
+
+**Network Anatomy**
+Clay Reid
+Agnes Bodor
+Adam Bleckert
+JoAnn Buchanan
+Casey M. Schneider-Mizell
+Dan Bumbarger
+Derrick Brittain
+Forrest Collman
+Steven Cook
+Nuno da Costa
+Bethanny Danskin
+Sven Dorkenwald
+Leila Elabbady
+Emily Joyce
+Dan Kapner
+Sam Kinn
+Cheryl Lea
+Gayathri Mahalingam
+Ben Pedigo
+Sharmi Seshamani
+Jenna Schardt
+Marc Takeno
+Russel Torres
+Wenjing Yin
+Chi Zhang
+
+**PM**
+Lynne Becker
+Florence D'Orazi
+Sarah Naylor
+Shelby Suckow
+David Vumbaco
+Susan Sunkin
+
+</div>
+<div>
+
+**Morphology and 3D Reconstruction**
+Rachel Dalley
+Clare Gamlin
+Staci Sorensen
+Grace Williams
+
+**Modeling & Simulation**
+Ani Nandi
+Tom Chartrand
+Anatoly Buchin
+Yina Wei
+Soo Yeun Lee
+Costas Anastassiou
+
+**Technology**
+Tim Fliss
+Rob Young
+And others
+
+**IT**
+Brian Youngstrom
+Stuart Kendrick
+Scott Harrison
+Nathaniel Middleton
+And others
+
+**MPE**
+Jay Borseth
+Collin Farrell
+And others
+
+</div>
+<div>
+
+**MindScope**
+Reza Abbasi-Asi
+Anton Arkhipov
+Michael Buice
+Daniel Denman
+Brian Hu
+Josh Larkin
+Stefan Mihalas
+Daniel Millmann
+Gabe Ocker
+Naveen Ouellette
+Kevin Takasaki
+Saskia de Vries
+Jun Zhuang
+
+**Alen Institute for Brain Sciences**
+Tanya Daigle
+Shenqin Yao
+Nikolas Jorstad
+Trygve Bakken
+Rebecca Hodge
+Nathan Gouwens
+Bosiljka Tasic
+Ed Lein
+Hongkui Zeng
+And many others
+
+</div>
+<div>
+
+**Princeton**
+Sven Dorkenwald
+Tommy Macrina
+Sebastian Seung
+Nick Turner
+And team
+
+**Baylor**
+Jake Riemer
+Andreas Tolias
+And team
+
+**Harvard Medical School**
+Brett Graham
+Wei-Chung Lee
+And team
+
+**Janelia**
+Khaled Khairy
+Stephan Saalfeld
+Carolyn Ott
+Jennifer Lippincott-Schwartz
+And others
+
+**JHU**
+Jenna Glatzer
+Dwight Bergles
+
+**APL**
+Brock Wester
+And team
+
+</div>
+<div>
+
+**Neuro Surgery and Behavior**
+**Lab Animal Services**
+**Transgenic Colony Management**
+**Finance**
+**Legal**
+
+**Computing Resources**
+BBP5 Supercomputing Resources
+National Energy Research Computing Center
+AI HPC
+Google Cloud
+
+**Funding**
+IARPA - MICRONS
+NSF - NeuroNex
+NIH – BICCN
+
+</div>
+</div>
