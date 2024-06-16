@@ -26,7 +26,7 @@ Connectivity properties in light of proofreading
 
 <!-- <br> -->
 
-# Connectivity properties in light of proofreading
+# Quantifying proofreading effects on connectivity
 
 <div class="columns">
 <div>
@@ -65,9 +65,9 @@ Allen Institute for Brain Science
 </div>
 <div>
 
-> Would you rather have lots of noisy connectivity measurements or a little bit of high-quality data?
+> Would you rather have many noisy connectivity measurements, or a few high-quality ones?
 
-There exists regimes where you'd prefer either, _depending on the question_
+> There exists cases where you'd actually prefer the "sloppy" version
 
 </div>
 </div>
@@ -108,9 +108,25 @@ Dorkenwald, Schneider-Mizell et al. _bioRxiv_ (2023)
 
 <!-- ### How do these edits affect downstream conclusions? -->
 
-<!-- _footer: MICrONS Consortium et al. *bioRxiv* (2023), Schneider-Mizell et al. *bioRxiv* (2023),  Schneider-Mizell et al. *bioRxiv* (2023) -->
+<!-- _footer: MICrONS Consortium et al. *bioRxiv* (2023), Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 ---
+
+# Inhibition in mouse visual cortex
+
+![h:160 center](images/inhibition-census-wide.png)
+
+![center h:300](images/casey-heatmap.png)
+
+<div style="position: absolute; bottom: 30px; right: 140px;">
+
+![h:60](images/casey-legend.png)
+
+</div>
+
+<!-- _footer: Schneider-Mizell et al. *bioRxiv* (2023) -->
+
+<!-- ---
 
 # Inhibition in mouse visual cortex
 
@@ -137,8 +153,6 @@ Dorkenwald, Schneider-Mizell et al. _bioRxiv_ (2023)
 
 _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
-<!-- _footer: Schneider-Mizell et al. *bioRxiv* (2023) -->
-
 ---
 
 <!-- # Connectivity during proofreading -->
@@ -163,13 +177,7 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 <!-- _backgroundImage: None -->
 
-![bg center fit blur:5px opacity:40%](./images/all_edits_by_time_with_plots-target_id=271886.gif)
-
-<div style="position: absolute; top: 50px; right: 50px;">
-
-![h:50](images/cell-type-legend.png)
-
-</div>
+![bg blur:5px opacity:40%](./images/paused.png)
 
 <!-- <div style="position: absolute; bottom: 20px; right: 60px;">
 
@@ -181,7 +189,7 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 ---
 
-![bg center fit](./images/all_edits_by_time_with_plots-target_id=271886.gif)
+![bg center fit](./images/all_edits_by_time_with_plots-target_id=271886-copy.gif)
 
 <div style="position: absolute; top: 50px; right: 50px;">
 
@@ -193,50 +201,42 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 # Cell-type specific connectivity converged quickly
 
-![h:500 center](./images/line-stack.gif)
+![h:500 center](./images/distance-lines-animation.gif)
 
 ---
 
+# Counterfactual proofreading
 
+Replay specific edits and not others, reconstruct what the network would look like
 
----
+<div class="columns">
+<div>
 
-# Counterfactual games
+### What if I'd proofread each neuron to 50% extension?
 
-- So far, have looked at how neurons changed over the course of proofreading in actuality, but this is a somewhat arbitrary historical ordering
+![](images/clustering-target_p=0.5.png)
+
+</div>
+<div>
+
+### Full proofreading
+
+<br>
+
+![](images/clustering-target_p=1.png)
+
+</div>
+</div>
+
+<span style="text-align: center;">
+
+NMI(50% proofreading, full proofreading) = 0.82
+
+</span>
+
+<!-- - So far, have looked at how neurons changed over the course of proofreading in actuality, but this is a somewhat arbitrary historical ordering
 - Can replay edits (or not) according to alternative schemes
-- E.g. what if we only had half the proofreading resources - how should we allocate them?
-
----
-
-# How would clustering change with different proofreading schemes?
-
-![center ](images/ari-vs-merges.png)
-
----
-
-# Impactful edits are more often near the soma
-
-![center](images/distance_vs_impact.png)
-
-
----
-
-<!-- # (1) "sloppy" proofreading?
-
-![](images/half_edit_heatmaps.png) -->
-
-<!-- ---
-
-# (2) what if I omit individual edits? (importance)
-
-![h:500 center](images/edit_dropout_importance_root_id=864691135213953920.png) -->
-
-<!-- ---
-
-# (3) which neurons are "good enough"?
-
-![h:500 center](images/closeness-by-n_outputs.png) -->
+- E.g. what if we only had half the proofreading resources - how should we allocate them? -->
 
 ---
 
@@ -244,7 +244,15 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 <!-- - Worth understanding whether most neurons look like they have converged -->
 
-- Monitoring proofreading with specific analyses/metrics in mind could help us decide how to allocate resources
+- NOT saying we need less proofreading...
+- Monitoring proofreading with specific analyses/metrics in mind could help us decide how much proofreading is needed for a specific question
+- Counterfactual replay of edits can help understand how alternative proofreading strategies would affect downstream analyses
+
+# Ongoing work
+
+- Prediction of edit impact with respect to a feature of interest
+- Prediction of whether a neuron is proofread enough for a specific analysis
+
 <!-- - Counterfactual replay of various edit schemes can help understand how alternative proofreading strategies might affect downstream analyses -->
 <!-- - Analyses could be applied to other datasets or even to analyze how design of automated proofreading systems affects conclusions -->
 
@@ -252,9 +260,9 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 # Acknowledgements
 
-<style scoped> 
+<style scoped>
 p {
-    font-size: 10px;
+    font-size: 11px;
 }
 </style>
 
@@ -288,6 +296,9 @@ Russel Torres
 Wenjing Yin
 Chi Zhang
 
+</div>
+<div>
+
 **PM**
 Lynne Becker
 Florence D'Orazi
@@ -295,9 +306,6 @@ Sarah Naylor
 Shelby Suckow
 David Vumbaco
 Susan Sunkin
-
-</div>
-<div>
 
 **Morphology and 3D Reconstruction**
 Rachel Dalley
@@ -325,13 +333,13 @@ Scott Harrison
 Nathaniel Middleton
 And others
 
+</div>
+<div>
+
 **MPE**
 Jay Borseth
 Collin Farrell
 And others
-
-</div>
-<div>
 
 **MindScope**
 Reza Abbasi-Asi
@@ -417,3 +425,43 @@ NIH – BICCN
 
 </div>
 </div>
+
+<!-- ---
+
+# How would clustering change with different proofreading schemes?
+
+![center ](images/ari-vs-merges.png)
+
+--- -->
+<!--
+# Impactful edits are more often near the soma
+
+![center](images/distance_vs_impact.png)
+
+--- -->
+<!--
+# Space of simple edit allocation schemes
+
+![center](images/iso-edit-contours.png) -->
+
+<!-- # (1) "sloppy" proofreading?
+
+![](images/half_edit_heatmaps.png) -->
+
+<!-- ---
+
+# (2) what if I omit individual edits? (importance)
+
+![h:500 center](images/edit_dropout_importance_root_id=864691135213953920.png) -->
+
+<!-- ---
+
+# (3) which neurons are "good enough"?
+
+![h:500 center](images/closeness-by-n_outputs.png) -->
+
+## <!--
+
+# Estimating reciprocal ratios
+
+![center](images/reciprocal-ratio.png) -->
