@@ -251,7 +251,7 @@ NMI(50% proofreading, full proofreading) = 0.82
 # Ongoing work
 
 - Prediction of edit impact with respect to a feature of interest
-- Prediction of whether a neuron is proofread enough for a specific analysis
+<!-- - Prediction of whether a neuron is proofread enough for a specific analysis -->
 
 <!-- - Counterfactual replay of various edit schemes can help understand how alternative proofreading strategies might affect downstream analyses -->
 <!-- - Analyses could be applied to other datasets or even to analyze how design of automated proofreading systems affects conclusions -->
@@ -460,8 +460,8 @@ NIH – BICCN
 
 ![h:500 center](images/closeness-by-n_outputs.png) -->
 
-## <!--
 
-# Estimating reciprocal ratios
+
+<!-- # Estimating reciprocal ratios
 
 ![center](images/reciprocal-ratio.png) -->
