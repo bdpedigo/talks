@@ -60,7 +60,7 @@ Allen Institute for Brain Science
 <div class="columns">
 <div>
 
-![h:250 center](images/optimizing-title.png)
+![h:250 center](../berlin-2024/images/optimizing-title.png)
 
 </div>
 <div>
@@ -89,7 +89,7 @@ Allen Institute for Brain Science
 <div class="columns-br">
 <div>
 
-![](images/editing.png)
+![](../berlin-2024/imagesimages/editing.png)
 
 <div class="p" style="font-size: 0.55em; text-align: center;">
 
@@ -101,7 +101,7 @@ Dorkenwald, Schneider-Mizell et al. _bioRxiv_ (2023)
 </div>
 <div>
 
-![h:500 center](./images/all_edits_by_time-target_id=271886.gif)
+![h:500 center](../berlin-2024/images/all_edits_by_time-target_id=271886.gif)
 
 </div>
 </div>
@@ -114,13 +114,13 @@ Dorkenwald, Schneider-Mizell et al. _bioRxiv_ (2023)
 
 # Inhibition in mouse visual cortex
 
-![h:160 center](images/inhibition-census-wide.png)
+![h:160 center](../berlin-2024/images/inhibition-census-wide.png)
 
-![center h:300](images/casey-heatmap.png)
+![center h:300](../berlin-2024/images/casey-heatmap.png)
 
 <div style="position: absolute; bottom: 30px; right: 140px;">
 
-![h:60](images/casey-legend.png)
+![h:60](../berlin-2024/images/casey-legend.png)
 
 </div>
 
@@ -157,17 +157,17 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 <!-- # Connectivity during proofreading -->
 
-![bg center fit](./images/all_edits_by_time_with_plots-target_id=271886.gif)
+![bg center fit](../berlin-2024/images/all_edits_by_time_with_plots-target_id=271886.gif)
 
 <div style="position: absolute; top: 50px; right: 50px;">
 
-![h:50](images/cell-type-legend.png)
+![h:50](../berlin-2024/images/cell-type-legend.png)
 
 </div>
 
 <div style="position: absolute; bottom: 20px; right: 60px;">
 
-![h:280](images/white.png)
+![h:280](../berlin-2024/images/white.png)
 
 </div>
 
@@ -177,7 +177,7 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 <!-- _backgroundImage: None -->
 
-![bg blur:5px opacity:40%](./images/paused.png)
+![bg blur:5px opacity:40%](../berlin-2024/images/paused.png)
 
 <!-- <div style="position: absolute; bottom: 20px; right: 60px;">
 
@@ -185,15 +185,15 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 </div> -->
 
-![center h:600](images/distance-transparent.png)
+![center h:600](../berlin-2024/images/distance-transparent.png)
 
 ---
 
-![bg center fit](./images/all_edits_by_time_with_plots-target_id=271886-copy.gif)
+![bg center fit](../berlin-2024/images/all_edits_by_time_with_plots-target_id=271886-copy.gif)
 
 <div style="position: absolute; top: 50px; right: 50px;">
 
-![h:50](images/cell-type-legend.png)
+![h:50](../berlin-2024/images/cell-type-legend.png)
 
 </div>
 
@@ -201,7 +201,7 @@ _footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
 
 # Cell-type specific connectivity converged quickly
 
-![h:500 center](./images/distance-lines-animation.gif)
+![h:500 center](../berlin-2024/images/distance-lines-animation.gif)
 
 ---
 
@@ -214,7 +214,7 @@ Replay specific edits and not others, reconstruct what the network would look li
 
 ### What if I'd proofread each neuron to 50% extension?
 
-![](images/clustering-target_p=0.5.png)
+![](../berlin-2024/images/clustering-target_p=0.5.png)
 
 </div>
 <div>
@@ -223,11 +223,9 @@ Replay specific edits and not others, reconstruct what the network would look li
 
 <br>
 
-![](images/clustering-target_p=1.png)
+![](../berlin-2024/images/clustering-target_p=1.png)
 
-</div>$$
-
-$$
+</div>
 </div>
 
 <span style="text-align: center;">
@@ -257,6 +255,164 @@ NMI(50% proofreading, full proofreading) = 0.82
 
 <!-- - Counterfactual replay of various edit schemes can help understand how alternative proofreading strategies might affect downstream analyses -->
 <!-- - Analyses could be applied to other datasets or even to analyze how design of automated proofreading systems affects conclusions -->
+
+---
+
+# Can we find heuristics for deciding how "done" neurons are?
+
+![center](images/doneness.jpg)
+
+---
+
+# Features for our heuristic/classifier
+
+<div class="columns">
+<div>
+
+![center h:300](images/distance-transparent-cut.png)
+
+![center h:150](images/legend-euc-dist.png)
+
+</div>
+<div>
+
+![center h:550](images/proofreading_feature_pairplot.png)
+
+</div>
+</div>
+
+---
+
+# LDA on proofreading features
+
+- Log-transformed features
+- Ran linear discriminant analysis (LDA)
+- One version fit separately for each cell type (ITC, PTC, STC, DTC)
+- One version fit for all cell types, pooled
+
+---
+
+# Cell-type specific and pooled LDA performed well
+
+<div class="columns">
+<div>
+
+![center h:450](images/pooled-vs-split-f1.png)
+
+</div>
+<div>
+
+![center h:450](images/pooled-vs-split-acc.png)
+
+</div>
+</div>
+
+*Interpreting precision/recall/accuracy is a bit tough here; computed over neuron-states
+
+<!-- ---
+
+# Split by cell type
+
+```
+By cell type accuracy:
+DTC: 0.9596586501163693
+ITC: 0.9136459062281316
+PTC: 0.9762838957188944
+STC: 0.9459313327926466
+```
+
+```
+By cell type scores:
+              precision    recall  f1-score   support
+
+       False       0.95      0.84      0.89      8518
+        True       0.96      0.99      0.97     29263
+
+    accuracy                           0.95     37781
+   macro avg       0.95      0.91      0.93     37781
+weighted avg       0.95      0.95      0.95     37781
+```
+
+---
+
+# Pooled
+
+```
+Pooled scores:
+              precision    recall  f1-score   support
+
+       False       0.94      0.83      0.88      8518
+        True       0.95      0.99      0.97     29263
+
+    accuracy                           0.95     37781
+   macro avg       0.95      0.91      0.93     37781
+weighted avg       0.95      0.95      0.95     37781
+``` -->
+
+---
+
+# Feature sets comparison
+
+![center h:500](./images/feature_set_f1_scores.png)
+
+---
+
+# LDA posterior ratios
+
+<div class="columns">
+<div>
+
+$$log \left( \frac{P[y=1 | x]}{P[y=0 | x]} \right)$$
+
+$+$ = more likely to be "good enough"
+
+</div>
+<div>
+
+![center h:500](./images/lda_decision_function.png)
+
+</div>
+</div>
+
+---
+
+# Precision-recall curve
+
+![center h:500](./images/precision_recall_curve.png)
+
+---
+
+# Looking at 'em
+
+The (putative) good:
+
+https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5316585968369664
+
+The (putative) bad:
+https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4998335736840192
+
+---
+
+# Rating all inhibitory cells
+
+<div class="columns">
+<div>
+
+![center h:500](./images/new_log_posterior_ratio.png)
+
+</div>
+<div>
+
+![center h:500](./images/proofread_log_posterior_ratio.png)
+
+</div>
+</div>
+
+--- 
+
+# Cells are well spread out
+
+![center h:500](./images/spatial-locs.png)
 
 ---
 
@@ -461,8 +617,6 @@ NIH – BICCN
 # (3) which neurons are "good enough"?
 
 ![h:500 center](images/closeness-by-n_outputs.png) -->
-
-
 
 <!-- # Estimating reciprocal ratios
 

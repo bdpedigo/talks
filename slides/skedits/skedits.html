@@ -1,0 +1,1040 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Quantifying proofreading effects on connectivity &#8212; talks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'slides/skedits/skedits';</script>
+    <link rel="shortcut icon" href="../../_static/nd_logo_small.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../slides.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/nd_logo.png" class="logo__image only-light" alt="talks - Home"/>
+    <script>document.write(`<img src="../../_static/nd_logo.png" class="logo__image only-dark" alt="talks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../slides.html">
+                    Slides
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Slides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://bdpedigo.github.io/talks/slides/edit-retrospective/edit-retrospective-lab-meeting-2024-01-23.html">Edit Retrospective</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://bdpedigo.github.io/talks/aibs.html">Allen</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://bdpedigo.github.io/talks/defense.html">PhD Thesis Defense</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://bdpedigo.github.io/talks/si.html">SI</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/bdpedigo/talks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/bdpedigo/talks/issues/new?title=Issue%20on%20page%20%2Fslides/skedits/skedits.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/slides/skedits/skedits.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quantifying proofreading effects on connectivity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Quantifying proofreading effects on connectivity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-design-in-connectomics">Measurement design in connectomics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#given-finite-resources-worth-reflecting-on-how-to-proofread-with-specific-scientific-goals-in-mind">Given finite resources, worth reflecting on how to proofread with specific scientific goals in mind</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-in-modern-connectomics">Measurements in modern connectomics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-segmentation-proofreading">Automated segmentation + proofreading</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inhibition-in-mouse-visual-cortex">Inhibition in mouse visual cortex</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-type-specific-connectivity-converged-quickly">Cell-type specific connectivity converged quickly</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-proofreading">Counterfactual proofreading</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-d-proofread-each-neuron-to-50-extension">What if I’d proofread each neuron to 50% extension?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-proofreading">Full proofreading</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ongoing-work">Ongoing work</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-find-heuristics-for-deciding-how-done-neurons-are">Can we find heuristics for deciding how “done” neurons are?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#features-for-our-heuristic-classifier">Features for our heuristic/classifier</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-on-proofreading-features">LDA on proofreading features</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-type-specific-and-pooled-lda-performed-well">Cell-type specific and pooled LDA performed well</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-sets-comparison">Feature sets comparison</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-posterior-ratios">LDA posterior ratios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-recall curve</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-em">Looking at ‘em</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rating-all-inhibitory-cells">Rating all inhibitory cells</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cells-are-well-spread-out">Cells are well spread out</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <!-- <style>
+section::after {
+    content: attr(data-marpit-pagination) '/24';
+}
+</style> -->
+<!-- _paginate: false -->
+<!-- _class: title-slide -->
+<p><img alt="bg" src="../../_images/title.png" /></p>
+<!-- ![bg center blur:3px opacity:20%](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/background.svg) -->
+<!-- <h1 style="margin-top: 200px;">
+Connectivity properties in light of proofreading
+</h1> -->
+<!-- <br> -->
+<section class="tex2jax_ignore mathjax_ignore" id="quantifying-proofreading-effects-on-connectivity">
+<h1>Quantifying proofreading effects on connectivity<a class="headerlink" href="#quantifying-proofreading-effects-on-connectivity" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<p>Ben Pedigo
+(he/him)
+Scientist I
+Allen Institute for Brain Science</p>
+<div style='' >
+<p><img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/email.png" /> <a class="reference external" href="mailto:ben&#46;pedigo&#37;&#52;&#48;alleninstitute&#46;org">ben<span>&#46;</span>pedigo<span>&#64;</span>alleninstitute<span>&#46;</span>org</a>
+<img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/github.png" /> <a class="reference external" href="https://github.com/bdpedigo">&#64;bdpedigo (Github)</a>
+<img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png" /> <a class="reference external" href="https://twitter.com/bpedigod">&#64;bpedigod (Twitter)</a>
+<img alt="icon" src="https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/web.png" /> <a class="reference external" href="https://bdpedigo.github.io/">bdpedigo.github.io</a></p>
+</div>
+</div>
+<div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="measurement-design-in-connectomics">
+<h1>Measurement design in connectomics<a class="headerlink" href="#measurement-design-in-connectomics" title="Permalink to this heading">#</a></h1>
+<br>
+<div class="columns">
+<div>
+<p><img alt="h:250 center" src="../../_images/optimizing-title.png" /></p>
+</div>
+<div>
+<blockquote>
+<div><p>Would you rather have many noisy connectivity measurements, or a few high-quality ones?</p>
+</div></blockquote>
+<blockquote>
+<div><p>There exists cases where you’d actually prefer the “sloppy” version</p>
+</div></blockquote>
+</div>
+</div>
+<br>
+<section id="given-finite-resources-worth-reflecting-on-how-to-proofread-with-specific-scientific-goals-in-mind">
+<h2>Given finite resources, worth reflecting on how to proofread with specific scientific goals in mind<a class="headerlink" href="#given-finite-resources-worth-reflecting-on-how-to-proofread-with-specific-scientific-goals-in-mind" title="Permalink to this heading">#</a></h2>
+<!-- _footer: Priebe et al. *Communications in Statistics* (2013) -->
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="measurements-in-modern-connectomics">
+<h1>Measurements in modern connectomics<a class="headerlink" href="#measurements-in-modern-connectomics" title="Permalink to this heading">#</a></h1>
+<section id="automated-segmentation-proofreading">
+<h2>Automated segmentation + proofreading<a class="headerlink" href="#automated-segmentation-proofreading" title="Permalink to this heading">#</a></h2>
+<!-- ![bg](../themes/aibs-backgrounds/Slide4.png) -->
+<div class="columns-br">
+<div>
+<p><img alt="" src="slides/berlin-2024/imagesimages/editing.png" /></p>
+<div class="p" style="font-size: 0.55em; text-align: center;">
+<p>CAVE: Connectome Annotation Versioning Engine
+Dorkenwald, Schneider-Mizell et al. <em>bioRxiv</em> (2023)</p>
+</div>
+</div>
+<div>
+<p><img alt="h:500 center" src="../../_images/all_edits_by_time-target_id=271886.gif" /></p>
+</div>
+</div>
+<!-- ### How do these edits affect downstream conclusions? -->
+<!-- _footer: MICrONS Consortium et al. *bioRxiv* (2023), Schneider-Mizell et al. *bioRxiv* (2023) -->
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="inhibition-in-mouse-visual-cortex">
+<h1>Inhibition in mouse visual cortex<a class="headerlink" href="#inhibition-in-mouse-visual-cortex" title="Permalink to this heading">#</a></h1>
+<p><img alt="h:160 center" src="../../_images/inhibition-census-wide.png" /></p>
+<p><img alt="center h:300" src="../../_images/casey-heatmap.png" /></p>
+<div style="position: absolute; bottom: 30px; right: 140px;">
+<p><img alt="h:60" src="../../_images/casey-legend.png" /></p>
+</div>
+<!-- _footer: Schneider-Mizell et al. *bioRxiv* (2023) -->
+<!-- ---
+
+# Inhibition in mouse visual cortex
+
+<div class="columns">
+<div>
+
+![](images/inhibitory-gallery.png)
+
+</div>
+<div>
+
+- 163 inhibitory neurons were heavily proofread
+- Characterized how inhibitory neurons distribute their outputs:
+
+{diagram of proportion of outputs metric}
+
+</div>
+</div>
+
+<!--
+# CAVE allows us to extract the complete edit history
+
+![h:500 center](./images/all_edits_by_time-root_id=864691135213953920.gif)
+
+_footer: Dorkenwald, Schneider-Mizell et al. *bioRxiv* (2023) -->
+<hr class="docutils" />
+<!-- # Connectivity during proofreading -->
+<p><img alt="bg center fit" src="../../_images/all_edits_by_time_with_plots-target_id=271886.gif" /></p>
+<div style="position: absolute; top: 50px; right: 50px;">
+<p><img alt="h:50" src="../../_images/cell-type-legend.png" /></p>
+</div>
+<div style="position: absolute; bottom: 20px; right: 60px;">
+<p><img alt="h:280" src="../../_images/white.png" /></p>
+</div>
+<hr class="docutils" />
+<!-- # Connectivity during proofreading -->
+<!-- _backgroundImage: None -->
+<p><img alt="bg blur:5px opacity:40%" src="../../_images/paused.png" /></p>
+<!-- <div style="position: absolute; bottom: 20px; right: 60px;">
+
+![h:280](images/white.png)
+
+</div> -->
+<p><img alt="center h:600" src="../../_images/distance-transparent.png" /></p>
+<hr class="docutils" />
+<p><img alt="bg center fit" src="../../_images/all_edits_by_time_with_plots-target_id=271886-copy.gif" /></p>
+<div style="position: absolute; top: 50px; right: 50px;">
+<p><img alt="h:50" src="../../_images/cell-type-legend.png" /></p>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="cell-type-specific-connectivity-converged-quickly">
+<h1>Cell-type specific connectivity converged quickly<a class="headerlink" href="#cell-type-specific-connectivity-converged-quickly" title="Permalink to this heading">#</a></h1>
+<p><img alt="h:500 center" src="../../_images/distance-lines-animation.gif" /></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="counterfactual-proofreading">
+<h1>Counterfactual proofreading<a class="headerlink" href="#counterfactual-proofreading" title="Permalink to this heading">#</a></h1>
+<p>Replay specific edits and not others, reconstruct what the network would look like</p>
+<div class="columns">
+<div>
+<section id="what-if-i-d-proofread-each-neuron-to-50-extension">
+<h2>What if I’d proofread each neuron to 50% extension?<a class="headerlink" href="#what-if-i-d-proofread-each-neuron-to-50-extension" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="../../_images/clustering-target_p=0.5.png" /></p>
+</div>
+<div>
+</section>
+<section id="full-proofreading">
+<h2>Full proofreading<a class="headerlink" href="#full-proofreading" title="Permalink to this heading">#</a></h2>
+<br>
+<p><img alt="" src="../../_images/clustering-target_p=1.png" /></p>
+</div>
+</div>
+<span style="text-align: center;">
+<p>NMI(50% proofreading, full proofreading) = 0.82</p>
+</span>
+<!-- - So far, have looked at how neurons changed over the course of proofreading in actuality, but this is a somewhat arbitrary historical ordering
+- Can replay edits (or not) according to alternative schemes
+- E.g. what if we only had half the proofreading resources - how should we allocate them? -->
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<!-- - Worth understanding whether most neurons look like they have converged -->
+<ul class="simple">
+<li><p>NOT saying we need less proofreading…</p></li>
+<li><p>Monitoring proofreading with specific analyses/metrics in mind could help us decide how much proofreading is needed for a specific question</p></li>
+<li><p>Counterfactual replay of edits can help understand how alternative proofreading strategies would affect downstream analyses</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ongoing-work">
+<h1>Ongoing work<a class="headerlink" href="#ongoing-work" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Prediction of edit impact with respect to a feature of interest</p></li>
+</ul>
+<!-- - Prediction of whether a neuron is proofread enough for a specific analysis -->
+<!-- - Counterfactual replay of various edit schemes can help understand how alternative proofreading strategies might affect downstream analyses -->
+<!-- - Analyses could be applied to other datasets or even to analyze how design of automated proofreading systems affects conclusions -->
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="can-we-find-heuristics-for-deciding-how-done-neurons-are">
+<h1>Can we find heuristics for deciding how “done” neurons are?<a class="headerlink" href="#can-we-find-heuristics-for-deciding-how-done-neurons-are" title="Permalink to this heading">#</a></h1>
+<p><img alt="center" src="../../_images/doneness.jpg" /></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="features-for-our-heuristic-classifier">
+<h1>Features for our heuristic/classifier<a class="headerlink" href="#features-for-our-heuristic-classifier" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<p><img alt="center h:300" src="../../_images/distance-transparent-cut.png" /></p>
+<p><img alt="center h:150" src="../../_images/legend-euc-dist.png" /></p>
+</div>
+<div>
+<p><img alt="center h:550" src="../../_images/proofreading_feature_pairplot.png" /></p>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="lda-on-proofreading-features">
+<h1>LDA on proofreading features<a class="headerlink" href="#lda-on-proofreading-features" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Log-transformed features</p></li>
+<li><p>Ran linear discriminant analysis (LDA)</p></li>
+<li><p>One version fit separately for each cell type (ITC, PTC, STC, DTC)</p></li>
+<li><p>One version fit for all cell types, pooled</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="cell-type-specific-and-pooled-lda-performed-well">
+<h1>Cell-type specific and pooled LDA performed well<a class="headerlink" href="#cell-type-specific-and-pooled-lda-performed-well" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<p><img alt="center h:450" src="../../_images/pooled-vs-split-f1.png" /></p>
+</div>
+<div>
+<p><img alt="center h:450" src="../../_images/pooled-vs-split-acc.png" /></p>
+</div>
+</div>
+<p>*Interpreting precision/recall/accuracy is a bit tough here; computed over neuron-states</p>
+<!-- ---
+
+# Split by cell type
+
+```
+By cell type accuracy:
+DTC: 0.9596586501163693
+ITC: 0.9136459062281316
+PTC: 0.9762838957188944
+STC: 0.9459313327926466
+```
+
+```
+By cell type scores:
+              precision    recall  f1-score   support
+
+       False       0.95      0.84      0.89      8518
+        True       0.96      0.99      0.97     29263
+
+    accuracy                           0.95     37781
+   macro avg       0.95      0.91      0.93     37781
+weighted avg       0.95      0.95      0.95     37781
+```
+
+---
+
+# Pooled
+
+```
+Pooled scores:
+              precision    recall  f1-score   support
+
+       False       0.94      0.83      0.88      8518
+        True       0.95      0.99      0.97     29263
+
+    accuracy                           0.95     37781
+   macro avg       0.95      0.91      0.93     37781
+weighted avg       0.95      0.95      0.95     37781
+``` -->
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="feature-sets-comparison">
+<h1>Feature sets comparison<a class="headerlink" href="#feature-sets-comparison" title="Permalink to this heading">#</a></h1>
+<p><img alt="center h:500" src="../../_images/feature_set_f1_scores.png" /></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="lda-posterior-ratios">
+<h1>LDA posterior ratios<a class="headerlink" href="#lda-posterior-ratios" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<div class="math notranslate nohighlight">
+\[log \left( \frac{P[y=1 | x]}{P[y=0 | x]} \right)\]</div>
+<p><span class="math notranslate nohighlight">\(+\)</span> = more likely to be “good enough”</p>
+</div>
+<div>
+<p><img alt="center h:500" src="../../_images/lda_decision_function.png" /></p>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="precision-recall-curve">
+<h1>Precision-recall curve<a class="headerlink" href="#precision-recall-curve" title="Permalink to this heading">#</a></h1>
+<p><img alt="center h:500" src="../../_images/precision_recall_curve.png" /></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="looking-at-em">
+<h1>Looking at ‘em<a class="headerlink" href="#looking-at-em" title="Permalink to this heading">#</a></h1>
+<p>The (putative) good:</p>
+<p><a class="reference external" href="https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5316585968369664">https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5316585968369664</a></p>
+<p>The (putative) bad:
+<a class="reference external" href="https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4998335736840192">https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4998335736840192</a></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="rating-all-inhibitory-cells">
+<h1>Rating all inhibitory cells<a class="headerlink" href="#rating-all-inhibitory-cells" title="Permalink to this heading">#</a></h1>
+<div class="columns">
+<div>
+<p><img alt="center h:500" src="../../_images/new_log_posterior_ratio.png" /></p>
+</div>
+<div>
+<p><img alt="center h:500" src="../../_images/proofread_log_posterior_ratio.png" /></p>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="cells-are-well-spread-out">
+<h1>Cells are well spread out<a class="headerlink" href="#cells-are-well-spread-out" title="Permalink to this heading">#</a></h1>
+<p><img alt="center h:500" src="../../_images/spatial-locs.png" /></p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="acknowledgements">
+<h1>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h1>
+<style scoped>
+p {
+    font-size: 11px;
+}
+</style>
+<div class="columns">
+<div>
+<p><strong>Network Anatomy</strong>
+Clay Reid
+Agnes Bodor
+Adam Bleckert
+JoAnn Buchanan
+Casey M. Schneider-Mizell
+Dan Bumbarger
+Derrick Brittain
+Forrest Collman
+Steven Cook
+Nuno da Costa
+Bethanny Danskin
+Sven Dorkenwald
+Leila Elabbady
+Emily Joyce
+Dan Kapner
+Sam Kinn
+Cheryl Lea
+Gayathri Mahalingam
+Ben Pedigo
+Sharmi Seshamani
+Jenna Schardt
+Marc Takeno
+Russel Torres
+Wenjing Yin
+Chi Zhang</p>
+</div>
+<div>
+<p><strong>PM</strong>
+Lynne Becker
+Florence D’Orazi
+Sarah Naylor
+Shelby Suckow
+David Vumbaco
+Susan Sunkin</p>
+<p><strong>Morphology and 3D Reconstruction</strong>
+Rachel Dalley
+Clare Gamlin
+Staci Sorensen
+Grace Williams</p>
+<p><strong>Modeling &amp; Simulation</strong>
+Ani Nandi
+Tom Chartrand
+Anatoly Buchin
+Yina Wei
+Soo Yeun Lee
+Costas Anastassiou</p>
+<p><strong>Technology</strong>
+Tim Fliss
+Rob Young
+And others</p>
+<p><strong>IT</strong>
+Brian Youngstrom
+Stuart Kendrick
+Scott Harrison
+Nathaniel Middleton
+And others</p>
+</div>
+<div>
+<p><strong>MPE</strong>
+Jay Borseth
+Collin Farrell
+And others</p>
+<p><strong>MindScope</strong>
+Reza Abbasi-Asi
+Anton Arkhipov
+Michael Buice
+Daniel Denman
+Brian Hu
+Josh Larkin
+Stefan Mihalas
+Daniel Millmann
+Gabe Ocker
+Naveen Ouellette
+Kevin Takasaki
+Saskia de Vries
+Jun Zhuang</p>
+<p><strong>Alen Institute for Brain Sciences</strong>
+Tanya Daigle
+Shenqin Yao
+Nikolas Jorstad
+Trygve Bakken
+Rebecca Hodge
+Nathan Gouwens
+Bosiljka Tasic
+Ed Lein
+Hongkui Zeng
+And many others</p>
+</div>
+<div>
+<p><strong>Princeton</strong>
+Sven Dorkenwald
+Tommy Macrina
+Sebastian Seung
+Nick Turner
+And team</p>
+<p><strong>Baylor</strong>
+Jake Riemer
+Andreas Tolias
+And team</p>
+<p><strong>Harvard Medical School</strong>
+Brett Graham
+Wei-Chung Lee
+And team</p>
+<p><strong>Janelia</strong>
+Khaled Khairy
+Stephan Saalfeld
+Carolyn Ott
+Jennifer Lippincott-Schwartz
+And others</p>
+<p><strong>JHU</strong>
+Jenna Glatzer
+Dwight Bergles</p>
+<p><strong>APL</strong>
+Brock Wester
+And team</p>
+</div>
+<div>
+<p><strong>Neuro Surgery and Behavior</strong>
+<strong>Lab Animal Services</strong>
+<strong>Transgenic Colony Management</strong>
+<strong>Finance</strong>
+<strong>Legal</strong></p>
+<p><strong>Computing Resources</strong>
+BBP5 Supercomputing Resources
+National Energy Research Computing Center
+AI HPC
+Google Cloud</p>
+<p><strong>Funding</strong>
+IARPA - MICRONS
+NSF - NeuroNex
+NIH – BICCN</p>
+</div>
+</div>
+<!-- ---
+
+# How would clustering change with different proofreading schemes?
+
+![center ](images/ari-vs-merges.png)
+
+--- -->
+<!--
+# Impactful edits are more often near the soma
+
+![center](images/distance_vs_impact.png)
+
+--- -->
+<!--
+# Space of simple edit allocation schemes
+
+![center](images/iso-edit-contours.png) -->
+<!-- # (1) "sloppy" proofreading?
+
+![](images/half_edit_heatmaps.png) -->
+<!-- ---
+
+# (2) what if I omit individual edits? (importance)
+
+![h:500 center](images/edit_dropout_importance_root_id=864691135213953920.png) -->
+<!-- ---
+
+# (3) which neurons are "good enough"?
+
+![h:500 center](images/closeness-by-n_outputs.png) -->
+<!-- # Estimating reciprocal ratios
+
+![center](images/reciprocal-ratio.png) -->
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./slides/skedits"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Quantifying proofreading effects on connectivity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-design-in-connectomics">Measurement design in connectomics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#given-finite-resources-worth-reflecting-on-how-to-proofread-with-specific-scientific-goals-in-mind">Given finite resources, worth reflecting on how to proofread with specific scientific goals in mind</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-in-modern-connectomics">Measurements in modern connectomics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-segmentation-proofreading">Automated segmentation + proofreading</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inhibition-in-mouse-visual-cortex">Inhibition in mouse visual cortex</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-type-specific-connectivity-converged-quickly">Cell-type specific connectivity converged quickly</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-proofreading">Counterfactual proofreading</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-d-proofread-each-neuron-to-50-extension">What if I’d proofread each neuron to 50% extension?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-proofreading">Full proofreading</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ongoing-work">Ongoing work</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-find-heuristics-for-deciding-how-done-neurons-are">Can we find heuristics for deciding how “done” neurons are?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#features-for-our-heuristic-classifier">Features for our heuristic/classifier</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-on-proofreading-features">LDA on proofreading features</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-type-specific-and-pooled-lda-performed-well">Cell-type specific and pooled LDA performed well</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-sets-comparison">Feature sets comparison</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-posterior-ratios">LDA posterior ratios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-recall curve</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-em">Looking at ‘em</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rating-all-inhibitory-cells">Rating all inhibitory cells</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cells-are-well-spread-out">Cells are well spread out</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Benjamin D. Pedigo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
