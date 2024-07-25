@@ -264,6 +264,28 @@ NMI(50% proofreading, full proofreading) = 0.82
 
 ---
 
+# Setup
+
+- We have 163 sequences of neuron-states for neurons which were proofread in the column for Casey's paper.
+- Retrospectively, for each neuron, we can compute how far a given feature is from the final state. So each state has an associated scalar distance.
+  - Here the connectivity feature is proportion of outputs onto each M-type.
+- I create labels for each neuron state as "good enough" or "not good enough", where "good enough" just means the distance to final state is < 0.2 Euclidean distance from final
+  - This threshold is a parameter, of course. Could also not threshold at all and just do regression.
+
+---
+
+# Setup (cont.)
+
+- Now, we associate each neuron-state with some simple features:
+  - Number of output synapses
+  - Number of input synapses
+  - Number of level2 nodes (proxy for size)
+  - Path length (proxy for size)
+  - Number of edits (only using "filtered" edits)
+- Using the proofreading history, the Goal is to use these features to predict the label described on the last slide, is a cell "good enough" in its current state?
+
+---
+
 # Features for our heuristic/classifier
 
 <div class="columns">
@@ -292,71 +314,6 @@ NMI(50% proofreading, full proofreading) = 0.82
 
 ---
 
-# Cell-type specific and pooled LDA performed well
-
-<div class="columns">
-<div>
-
-![center h:450](images/pooled-vs-split-f1.png)
-
-</div>
-<div>
-
-![center h:450](images/pooled-vs-split-acc.png)
-
-</div>
-</div>
-
-*Interpreting precision/recall/accuracy is a bit tough here; computed over neuron-states
-
-<!-- ---
-
-# Split by cell type
-
-```
-By cell type accuracy:
-DTC: 0.9596586501163693
-ITC: 0.9136459062281316
-PTC: 0.9762838957188944
-STC: 0.9459313327926466
-```
-
-```
-By cell type scores:
-              precision    recall  f1-score   support
-
-       False       0.95      0.84      0.89      8518
-        True       0.96      0.99      0.97     29263
-
-    accuracy                           0.95     37781
-   macro avg       0.95      0.91      0.93     37781
-weighted avg       0.95      0.95      0.95     37781
-```
-
----
-
-# Pooled
-
-```
-Pooled scores:
-              precision    recall  f1-score   support
-
-       False       0.94      0.83      0.88      8518
-        True       0.95      0.99      0.97     29263
-
-    accuracy                           0.95     37781
-   macro avg       0.95      0.91      0.93     37781
-weighted avg       0.95      0.95      0.95     37781
-``` -->
-
----
-
-# Feature sets comparison
-
-![center h:500](./images/feature_set_f1_scores.png)
-
----
-
 # LDA posterior ratios
 
 <div class="columns">
@@ -364,7 +321,7 @@ weighted avg       0.95      0.95      0.95     37781
 
 $$log \left( \frac{P[y=1 | x]}{P[y=0 | x]} \right)$$
 
-$+$ = more likely to be "good enough"
+Higher number = more likely to be "good enough"
 
 </div>
 <div>
@@ -376,9 +333,152 @@ $+$ = more likely to be "good enough"
 
 ---
 
-# Precision-recall curve
+# Precision-recall
 
-![center h:500](./images/precision_recall_curve.png)
+<div class="columns">
+<div>
+
+![center h:470](./images/precision_recall_curve.png)
+
+</div>
+<div>
+
+![center h:470](./images/precision_recall_overlay.png)
+
+</div>
+</div>
+
+\*classification metrics here use a sample weight so that all neurons are equally weighted
+
+---
+
+# Now, I computed the same features and ran this classifier for all neurons with putative inhibitory labels
+
+---
+
+# Rating all inhibitory cells
+
+Posterior ratio for ~8,000 putative inhibitory cells (`aibs_metamodel_mtypes_v661_v2`)
+
+![center h:480](./images/new_log_posterior_ratio.png)
+
+---
+
+# Posteriors by class
+
+<div class="columns">
+<div>
+
+Count
+
+![h:450 center](./images/log_posterior_ratio_count_by_mtype.png)
+
+</div>
+<div>
+
+Density
+
+![h:450 center](./images/log_posterior_ratio_density_by_mtype.png)
+
+</div>
+</div>
+
+---
+
+# Posterior for proofread cells
+
+Cells with putative inhibitory label and entry in `proofreading_status_public_release`
+
+![center h:480](./images/proofread_log_posterior_ratio.png)
+
+---
+
+# Ratings are well spread out
+
+![center h:500](./images/spatial-locs.png)
+
+---
+
+# How many cells do we have?
+
+...for varying thresholds for the classifier.
+
+Note that precision-recall here are obviously just estimates since they came from the column training set
+
+![h:500 bg right](./images/log_posterior_ratio_survival_precision_recall.png)
+
+---
+
+<div class="columns">
+<div>
+
+![](./images/log_posterior_ratio_survival.png)
+
+</div>
+<div>
+
+![](./images/posterior_ratio_quantile_survival.png)
+
+</div>
+</div>
+
+--- 
+
+# For various thresholds on the posterior...
+
+- Select the neurons that pass that threshold
+- Cluster on neuron output proportions
+- Using k=40
+  - Likely an oversplitting, but I found this easier to look at for trying to map onto Casey's clustering
+- Just using Ward's for clustering
+
+---
+
+# Threshold = 0.2
+
+![alt text](images/excitatory_inhibitory_clustermap_sorted-threshold=0.2-k=40-metric=euclidean-method=ward.png)
+
+---
+
+# Threshold = 0.4
+
+![alt text](images/excitatory_inhibitory_clustermap_sorted-threshold=0.4-k=40-metric=euclidean-method=ward.png)
+
+---
+
+# Threshold = 0.6
+
+![alt text](images/excitatory_inhibitory_clustermap_sorted-threshold=0.6-k=40-metric=euclidean-method=ward.png)
+
+---
+
+# Threshold = 0.8
+
+![alt text](images/excitatory_inhibitory_clustermap_sorted-threshold=0.8-k=40-metric=euclidean-method=ward.png)
+
+---
+
+# Threshold = 0.2
+
+![alt text](images/excitatory_inhibitory_clustermap_w_tree-threshold=0.2-k=40-metric=euclidean-method=ward.png)
+
+---
+
+# Threshold = 0.4
+
+![alt text](images/excitatory_inhibitory_clustermap_w_tree-threshold=0.4-k=40-metric=euclidean-method=ward.png)
+
+---
+
+# Threshold = 0.6
+
+![alt text](images/excitatory_inhibitory_clustermap_w_tree-threshold=0.6-k=40-metric=euclidean-method=ward.png)
+
+---
+
+# Threshold = 0.8
+
+![alt text](images/excitatory_inhibitory_clustermap_w_tree-threshold=0.8-k=40-metric=euclidean-method=ward.png)
 
 ---
 
@@ -390,29 +490,6 @@ https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/
 
 The (putative) bad:
 https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4998335736840192
-
----
-
-# Rating all inhibitory cells
-
-<div class="columns">
-<div>
-
-![center h:500](./images/new_log_posterior_ratio.png)
-
-</div>
-<div>
-
-![center h:500](./images/proofread_log_posterior_ratio.png)
-
-</div>
-</div>
-
---- 
-
-# Cells are well spread out
-
-![center h:500](./images/spatial-locs.png)
 
 ---
 
@@ -621,3 +698,73 @@ NIH – BICCN
 <!-- # Estimating reciprocal ratios
 
 ![center](images/reciprocal-ratio.png) -->
+
+--- 
+
+# Supplement
+
+
+---
+
+# Cell-type specific pooled LDA performed the same
+
+<div class="columns">
+<div>
+
+![center h:450](images/pooled-vs-split-f1.png)
+
+</div>
+<div>
+
+![center h:450](images/pooled-vs-split-acc.png)
+
+</div>
+</div>
+
+\*Interpreting precision/recall/accuracy is a bit tough here; computed over neuron-states
+
+<!-- ---
+
+# Split by cell type
+
+```
+By cell type accuracy:
+DTC: 0.9596586501163693
+ITC: 0.9136459062281316
+PTC: 0.9762838957188944
+STC: 0.9459313327926466
+```
+
+```
+By cell type scores:
+              precision    recall  f1-score   support
+
+       False       0.95      0.84      0.89      8518
+        True       0.96      0.99      0.97     29263
+
+    accuracy                           0.95     37781
+   macro avg       0.95      0.91      0.93     37781
+weighted avg       0.95      0.95      0.95     37781
+```
+
+---
+
+# Pooled
+
+```
+Pooled scores:
+              precision    recall  f1-score   support
+
+       False       0.94      0.83      0.88      8518
+        True       0.95      0.99      0.97     29263
+
+    accuracy                           0.95     37781
+   macro avg       0.95      0.91      0.93     37781
+weighted avg       0.95      0.95      0.95     37781
+``` -->
+
+---
+
+# Feature sets comparison
+
+![center h:500](./images/feature_set_f1_scores.png)
