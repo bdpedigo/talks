@@ -291,14 +291,18 @@ NMI(50% proofreading, full proofreading) = 0.82
 <div class="columns">
 <div>
 
-![center h:300](images/distance-transparent-cut.png)
+![center h:250](images/distance-transparent-cut.png)
 
-![center h:150](images/legend-euc-dist.png)
+![center h:100](images/legend-euc-dist.png)
+
+<br>
+
+\*stuff is on a log scale here $\rightarrow$
 
 </div>
 <div>
 
-![center h:550](images/proofreading_feature_pairplot.png)
+![center h:500](./images/state_prediction_heuristics/proofreading_feature_pairplot.png)
 
 </div>
 </div>
@@ -327,7 +331,7 @@ Higher number = more likely to be "good enough"
 </div>
 <div>
 
-![center h:500](./images/lda_decision_function.png)
+![center h:500](./images/state_prediction_heuristics/lda_decision_function.png)
 
 </div>
 </div>
@@ -339,12 +343,12 @@ Higher number = more likely to be "good enough"
 <div class="columns">
 <div>
 
-![center h:470](./images/precision_recall_curve.png)
+![center h:470](./images/state_prediction_heuristics/precision_recall_curve.png)
 
 </div>
 <div>
 
-![center h:470](./images/precision_recall_overlay.png)
+![center h:470](./images/state_prediction_heuristics/precision_recall_overlay.png)
 
 </div>
 </div>
@@ -361,7 +365,7 @@ Higher number = more likely to be "good enough"
 
 Posterior ratio for ~8,000 putative inhibitory cells (`aibs_metamodel_mtypes_v661_v2`)
 
-![center h:480](./images/new_log_posterior_ratio.png)
+![center h:480](./images/state_prediction_heuristics/new_log_posterior_ratio.png)
 
 ---
 
@@ -372,14 +376,14 @@ Posterior ratio for ~8,000 putative inhibitory cells (`aibs_metamodel_mtypes_v66
 
 Count
 
-![h:450 center](./images/log_posterior_ratio_count_by_mtype.png)
+![h:450 center](./images/state_prediction_heuristics/log_posterior_ratio_count_by_mtype.png)
 
 </div>
 <div>
 
 Density
 
-![h:450 center](./images/log_posterior_ratio_density_by_mtype.png)
+![h:450 center](./images/state_prediction_heuristics/log_posterior_ratio_density_by_mtype.png)
 
 </div>
 </div>
@@ -390,7 +394,7 @@ Density
 
 Cells with putative inhibitory label and entry in `proofreading_status_public_release`
 
-![center h:480](./images/proofread_log_posterior_ratio.png)
+![center h:480](./images/state_prediction_heuristics/proofread_log_posterior_ratio.png)
 
 ---
 
@@ -406,19 +410,19 @@ Cells with putative inhibitory label and entry in `proofreading_status_public_re
 
 Note that precision-recall here are obviously just estimates since they came from the column training set
 
-![h:500 bg right](./images/log_posterior_ratio_survival_precision_recall.png)
+![h:500 bg right](./images/state_prediction_heuristics/log_posterior_ratio_survival_precision_recall.png)
 
 ---
 
 <div class="columns">
 <div>
 
-![](./images/log_posterior_ratio_survival.png)
+![](./images/state_prediction_heuristics/log_posterior_ratio_survival.png)
 
 </div>
 <div>
 
-![](./images/posterior_ratio_quantile_survival.png)
+![](./images/state_prediction_heuristics/posterior_ratio_quantile_survival.png)
 
 </div>
 </div>
