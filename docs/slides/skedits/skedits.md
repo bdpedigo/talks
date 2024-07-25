@@ -422,7 +422,17 @@ Note that precision-recall here are obviously just estimates since they came fro
 </div>
 </div>
 
---- 
+---
+
+# Example cells
+
+The (putative) good:
+https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4953793234993152
+
+The (putative) bad:
+https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5885470224416768
+
+---
 
 # For various thresholds on the posterior...
 
@@ -434,62 +444,97 @@ Note that precision-recall here are obviously just estimates since they came fro
 
 ---
 
-# Threshold = 0.2
-
-![alt text](images/excitatory_inhibitory_clustermap_sorted-threshold=0.2-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=0-k=40-metric=euclidean-method=ward.png)
 
 ---
 
-# Threshold = 0.4
-
-![alt text](images/excitatory_inhibitory_clustermap_sorted-threshold=0.4-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=1-k=40-metric=euclidean-method=ward.png)
 
 ---
 
-# Threshold = 0.6
-
-![alt text](images/excitatory_inhibitory_clustermap_sorted-threshold=0.6-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=2-k=40-metric=euclidean-method=ward.png)
 
 ---
 
-# Threshold = 0.8
-
-![alt text](images/excitatory_inhibitory_clustermap_sorted-threshold=0.8-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=3-k=40-metric=euclidean-method=ward.png)
 
 ---
 
-# Threshold = 0.2
-
-![alt text](images/excitatory_inhibitory_clustermap_w_tree-threshold=0.2-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=4-k=40-metric=euclidean-method=ward.png)
 
 ---
 
-# Threshold = 0.4
-
-![alt text](images/excitatory_inhibitory_clustermap_w_tree-threshold=0.4-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=5-k=40-metric=euclidean-method=ward.png)
 
 ---
 
-# Threshold = 0.6
-
-![alt text](images/excitatory_inhibitory_clustermap_w_tree-threshold=0.6-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=6-k=40-metric=euclidean-method=ward.png)
 
 ---
 
-# Threshold = 0.8
-
-![alt text](images/excitatory_inhibitory_clustermap_w_tree-threshold=0.8-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=7-k=40-metric=euclidean-method=ward.png)
 
 ---
 
-# Looking at 'em
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=8-k=40-metric=euclidean-method=ward.png)
 
-The (putative) good:
+---
 
-https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5316585968369664
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=9-k=40-metric=euclidean-method=ward.png)
 
-The (putative) bad:
-https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4998335736840192
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=10-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=0-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=1-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=2-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=3-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=4-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=5-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=6-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=7-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=8-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=9-k=40-metric=euclidean-method=ward.png)
+
+---
+
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=10-k=40-metric=euclidean-method=ward.png)
+
+---
+
+# Looking at clusters
+
+[Link to neuroglancer view with clustering at all levels as tags](<https://ngl.cave-explorer.org/#!%7B%22showSlices%22:false,%22layout%22:%22xy-3d%22,%22crossSectionScale%22:1e-08,%22projectionScale%22:0.001,%22layers%22:%5B%7B%22type%22:%22image%22,%22source%22:%5B%7B%22url%22:%22precomputed://https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/em%22%7D%5D,%22name%22:%22img%22%7D,%7B%22type%22:%22segmentation%22,%22source%22:%5B%7B%22url%22:%22graphene://middleauth+https://minnie.microns-daf.com/segmentation/table/minnie3_v1%22%7D,%7B%22url%22:%22precomputed://middleauth+https://global.daf-apis.com/nglstate/api/v1/property/6038514572460032%22%7D,%7B%22url%22:%22precomputed://middleauth+https://minnie.microns-daf.com/skeletoncache/api/v1/minnie65_phase3_v1/precomputed/skeleton%22%7D%5D,%22skeletonRendering%22:%7B%22shader%22:%22void%20main()%20%7B%5Cn%20%20emitDefault();%5Cn%7D%5Cn%22%7D,%22selectedAlpha%22:0.3,%22objectAlpha%22:1.0,%22notSelectedAlpha%22:0.0,%22name%22:%22seg%22%7D%5D%7D>)
 
 ---
 
@@ -699,10 +744,9 @@ NIH – BICCN
 
 ![center](images/reciprocal-ratio.png) -->
 
---- 
+---
 
 # Supplement
-
 
 ---
 
