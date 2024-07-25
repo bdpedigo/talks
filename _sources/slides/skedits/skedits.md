@@ -493,6 +493,10 @@ https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/
 
 ---
 
+# Same data, now attempted to sort by depth
+
+---
+
 ![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=0-k=40-metric=euclidean-method=ward.png)
 
 ---
