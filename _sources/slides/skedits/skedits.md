@@ -311,6 +311,7 @@ NMI(50% proofreading, full proofreading) = 0.82
 - Ran linear discriminant analysis (LDA)
 - One version fit separately for each cell type (ITC, PTC, STC, DTC)
 - One version fit for all cell types, pooled
+- The pooled version did just as well, so sticking with that for now since it's simpler (see supplementd)
 
 ---
 
