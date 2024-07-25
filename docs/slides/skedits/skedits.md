@@ -469,7 +469,7 @@ https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/
 
 ---
 
-![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=6-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=6-k=40-metric=euclidean-method=ward.png)
 
 ---
 
@@ -513,7 +513,7 @@ https://ngl.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/
 
 ---
 
-![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_w_tree-threshold=6-k=40-metric=euclidean-method=ward.png)
+![](./images/state_prediction_heuristics/excitatory_inhibitory_clustermap_sorted-threshold=6-k=40-metric=euclidean-method=ward.png)
 
 ---
 
