@@ -196,3 +196,8 @@ section.title-slide a {
     color: var(--lightblue);
 }
 
+section.blank-slide {
+    background-image: "../themes/aibs-backgrounds/blank.png";
+    background-color: var(--white);
+    /* margin-left: 40px; */
+}

@@ -141,18 +141,18 @@ cython_debug/
 docs/_build
 pkg/pkg/pymaid/pymaid_credentials.json
 
-# not storing the data for now 
+# not storing the data for now
 data/*
 
 # not storing figures, outputs etc
 results/*
 !results/.gitkeep
 
-!results/figs 
+!results/figs
 results/figs/*
 !results/figs/.gitkeep
 
-!results/outputs 
+!results/outputs
 results/outputs/*
 !results/outputs/.gitkeep
 
@@ -160,3 +160,6 @@ sandbox/light_speed.py
 docs/images/neurodata.io
 
 .DS_Store
+
+docs/slides/strategy-sep-2024
+docs/slides/mesh-signatures/images/model0/neuron_posterior_best.html
