@@ -44,14 +44,15 @@ img {
 
 <br>
 
-# Mesh signatures
+# Heat kernel signatures
+
+# (and how to compute them)
+
+# (and one way to use them)
 
 <div class="columns">
 <div>
 
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -87,8 +88,6 @@ Allen Institute for Brain Science
 - Application to spine prediction
 - Extensions
 
----
-
 <!-- ---
 
 # Morphological featurization of neuron morphology
@@ -112,10 +111,6 @@ Allen Institute for Brain Science
 
 ---
 
-# Fine-scale morphological features
-
----
-
 # NEURD classifies many spines as shaft
 
 _Bethanny Danskin, Erika Neace, Rachael Swanstrom_
@@ -132,6 +127,8 @@ Coverage: 66% of VORTEX compartment labels are in the NEURD table
 
 </div>
 </div>
+
+<!-- Celii et al. _bioRxiv_ (2024) -->
 
 ---
 
@@ -218,6 +215,23 @@ Coverage: 66% of VORTEX compartment labels are in the NEURD table
 
 ---
 
+# Morphological feature learning
+
+**Resolution:**
+
+Segmentation/imagery $>$ Mesh $>$ Skeleton
+
+**Speed:**
+
+Skeleton $>$ Mesh $>$ Segmentation/imagery
+
+<br>
+<br>
+
+#### How to people do learning on meshes?
+
+---
+
 # Outline
 
 - Motivation
@@ -225,6 +239,8 @@ Coverage: 66% of VORTEX compartment labels are in the NEURD table
 - Computing heat kernel signatures
 - Application to spine prediction
 - Extensions
+
+![center h:300](./images/sun-et-al.png)
 
 ---
 
@@ -238,9 +254,17 @@ Imagine placing a unit of heat at a point on a surface, watching how that heat d
 
 ---
 
-![bg fit](./images/heat_diffusion_example.svg)
+<div style="font-size:16px">
+<span style="color: var(--soma);"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
 
-<!-- _backgroundImage: -->
+![h:540 center](./images/show_heat_diffusion/heat_diffusion_gallery.svg)
+
+<!-- <img src="./images/show_heat_diffusion/heat_diffusion_gallery.svg" height="540px"></img> -->
+<div style="font-size:30px; text-align: center">
+
+Increasing time $\rightarrow$
+
+</div>
 
 ---
 
@@ -249,12 +273,12 @@ Imagine placing a unit of heat at a point on a surface, watching how that heat d
 <div class="columns">
 <div>
 
-![](./images/heat_diffusion_example.svg)
+![](./images/show_heat_diffusion/heat_diffusion_gallery.svg)
 
 </div>
 <div>
 
-![](./images/heat_diffusion_curves.svg)
+![](./images/show_heat_diffusion/heat_diffusion_curves.svg)
 
 </div>
 </div>
@@ -263,36 +287,48 @@ Imagine placing a unit of heat at a point on a surface, watching how that heat d
 
 # Defining the heat kernel signature (HKS)
 
-Let $k_{\tau}(x, y)$ be the amount of heat that diffuses from point $x$ to point $y$ after time $\tau$.
+$k_{t}(x, y)$: the amount of heat that diffuses from point $x$ to point $y$ after time $t$.
 
-The authors then consider $k_{\tau}(x, x)$; in other words, how much heat is left at $x$ after some amount of time $\tau$.
+Consider $k_{t}(x, x)$: how much heat is left at $x$ after some amount of time $t$.
 
-Then, for some set of timescales $T = \{\tau_1, \tau_2, ... \tau_d\}$, the HKS for a node $x$ is
+For timescales $T = \{t_1, t_2, ... t_d\}$, the HKS for a point on the mesh $x$ is
 
-$$HKS(x) = [k_{\tau_1}(x,x), k_{\tau_2}(x,x), ..., k_{\tau_d}(x,x)]$$
+$$HKS(x) = [k_{t_1}(x,x), k_{t_2}(x,x), ..., k_{t_d}(x,x)]$$
 
-<!-- _footer: Sun et al. (2008) -->
+Often scale these: $\frac{k_{t_1}(x,x)}{\sum_i k_{t_1}(i,i)}$
+<!-- _footer: Sun et al., _Eurographics_ (2008) -->
 
 ---
 
-# Intuition for multiscale matching
+# Intuition for HKS matching
+
+<style scoped>
+
+p {
+  font-size: 20px;
+}
+
+</style>
 
 <div class="columns">
 <div>
 
-![](./images/hks_paper_synthetic_example.png)
+![h:350 center](./images/hks_paper_synthetic_example.png)
+
+> ...all four points have isometric neighborhoods at small scales, their HKS’s are the same for small $t$’s ($< t_1$).
+>
+> ...Point 1 and point 3 have isometric neighborhoods at middle scales and thus their HKS’s coincide even for middle $t$’s ($[t_1,t_3]$)...
 
 </div>
 <div>
 
-<!-- Do a scoped resizing of the font here -->
-
-> Since all four points have isometric neighborhoods at small scales, their HKS’s are the same for small $t$’s ($< t_1$). Point 1 and point 3 have isometric neighborhoods at middle scales and thus their HKS’s coincide even for middle $t$’s ($[t_1,t_3]$), as do the HKS’s of point 2 and point 4 ($[t_1,t_2]$). The signatures of points 3 and 4 are similar for large $t$’s since ... their neighborhoods at large scale are close.
+![center](./images/horses.png)
 
 </div>
 </div>
 
 <!-- _footer: Sun et al., _Eurographics_ (2008) -->
+
 
 ---
 
@@ -301,19 +337,21 @@ $$HKS(x) = [k_{\tau_1}(x,x), k_{\tau_2}(x,x), ..., k_{\tau_d}(x,x)]$$
 <div class="columns">
 <div>
 
-![center](./images/hks_clustermap.png)
+![h:270 center](./images/show_heat_diffusion/hks_lines.svg)
+
+![center h:270](./images/show_heat_diffusion/hks_clustermap.png)
 
 </div>
 <div>
 
 <div>
-<embed src="./images/hks_clustered.svg" width="96%" height="500px" name="hks_clustered"></embed>
+<embed src="./images/show_heat_diffusion/hks_clustered.svg" width="96%" height="550px" name="hks_clustered"></embed>
 
-<a href="./images/hks_clustered.html" target="hks_clustered">
+<a href="./images/show_heat_diffusion/hks_clustered.html" target="hks_clustered">
 <img src="./../../images/icons/search.svg"></img>
 </a>
-</div>
 
+</div>
 </div>
 </div>
 
@@ -335,7 +373,7 @@ Evolution of heat $u$ over time $t$ is governed by the heat equation:
 
 $$\frac{\partial{u}}{\partial{t}} = \Delta u$$
 
-where $\delta$ is the Laplacian (2nd derivative) operator.
+where $\Delta$ is the Laplacian (2nd derivative) operator.
 
 Heat transferred from point $x$ to $y$ at time $t$ is given by the heat kernel $k_t(x,y)$:
 
@@ -344,6 +382,8 @@ $$k_t(x,y) = \sum_{i=0}^{\infty} e^{-\lambda_i t} \phi_i(x) \phi_i(y)$$
 where $\lambda_i$ and $\phi_i$ are the eigenvalues and eigenvectors of the Laplacian operator.
 
 **We just need these eigenvectors/eigenvalues to describe heat**
+
+<!-- _footer: https://en.wikipedia.org/wiki/Heat_kernel -->
 
 ---
 
@@ -356,7 +396,7 @@ For a 1D grid,
 
 ![](./images/discrete_heat/1d_grid.svg)
 
-the eigenvectors of the Laplacian are:
+the eigenvectors of the Laplacian are the Fourier series:
 
 </div>
 <div>
@@ -392,7 +432,15 @@ the eigenvectors of the Laplacian are:
 <!-- ![](./images/fastest-evec.html)
  -->
 
-<embed src="./images/fastest-evec.html" width="100%" height="400px" style="border:0px"></embed>
+<!-- <embed src="./images/fastest-evec.html" width="100%" height="400px" style="border:0px"></embed> -->
+
+<div>
+<embed src="./images/show_heat_diffusion/eigenvector_on_mesh.svg" width="96%" height="380px" name="eigenvector_on_mesh"></embed>
+
+<a href="./images/show_heat_diffusion/eigenvector_on_mesh.html" target="eigenvector_on_mesh">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
 
 </div>
 </div>
@@ -499,14 +547,15 @@ $*$ Doesn't include mesh simplification/subdivision, adds $\thicksim 1-3$ minute
 
 # Spine prediction
 
-- Trained on dense spine labels for 6 neurons
+- Used dense spine labels for 6 neurons
   - _Bethanny Danskin, Erika Neace, Rachael Swanstrom_
 - Trained on HKS features from the mesh point closest to synapse center point
 - Used a simple random forest, didn't do much tuning or exploration here
+- Didn't try to do anything with the axon, so that gets labeled arbitrarily
 
 ---
 
-# Random forrest, leave-on-neuron-out testing
+# Random forest, leave-one-neuron-out testing
 
 <div class="columns">
 <div>
@@ -521,7 +570,7 @@ $*$ Doesn't include mesh simplification/subdivision, adds $\thicksim 1-3$ minute
 </div>
 </div>
 
----
+<!-- ---
 
 # Best neuron
 
@@ -537,7 +586,7 @@ $*$ Doesn't include mesh simplification/subdivision, adds $\thicksim 1-3$ minute
 <a href="./images/model0/neuron_posterior_best.html" target="neuron_posterior_best">
 <img src="./../../images/icons/search.svg"></img>
 </a>
-</div>
+</div> -->
 
 ---
 
@@ -873,84 +922,80 @@ $*$ Doesn't include mesh simplification/subdivision, adds $\thicksim 1-3$ minute
 
 ---
 
-# Extensions
-
----
-
-# Extensions
+# HKS modifications
 
 <div class="columns">
 <div>
 
-### Computation
+Volumetric HKS (w/ or w/o voxelization): Raviv et al. 2010; Rustamov et al. 2009; Rustamov 2011
 
-- Pade-Chebyshev polynomials
-
-### Physical properties
-
-- Scale-invariance: Bronstein et al. (2011)
-- Volumetric HKS: Rustamov et al. (2009); Rustamov (2011)
+![h:400 center](./images/rustamov_heat_distance.png)
 
 </div>
 <div>
 
-### More elaborate learning
+Scale-invariance: Bronstein et al. 2011
 
-- Classical ML: Bronstein...
-- Deep learning:
-  - DiffusionNet
-  - Hodge Net
+![h:250 center](./images/scaled-hks.png)
 
 </div>
 </div>
 
 ---
 
-# Volumetric diffusion distance / HKS
+# Computation
 
 <div class="columns">
 <div>
 
-![h:500 center](./images/rustamov_heat_distance.png)
+Projection-based methods: Nasikun et al. 2018; Nasikun et al. 2022; Magnet and Ovsjanikov 2023
+
+![center h:400](./images/fast-basis.png)
 
 </div>
 <div>
 
+Chebyshev polynomials: Hammond et al. 2009; Shuman et al. 2011; Huang et al. 2020
+
+![center h:300](./images/cheby-timing.png)
+
 </div>
 </div>
 
-<!-- _footer: Rustamov et al., *Eurographics* (2009); Rustamov, *The Visual Computer* (2011)  -->
-
 ---
 
-# Computing heat signatures from local integration
+# Learning
 
-- Padé-Chebyshev polynomials paper
+<div class="columns">
+<div>
 
----
+Learning more general functions of eigenvectors to discriminate classes: Litman & Bronstein 2014; Boscaini et al. 2015; Smirnov & Solomon 2021
 
-# Scale-invariance
+![h:80 center](./images/learning-eqn.png)
 
-- Bronstein paper
+<!-- - Halimi et al. 2019: Self-supervised learning  -->
 
----
+</div>
+<div>
 
-# More elaborate learning schemes
+Using approximate diffusion as an operator for local aggregation: Sharp et al. 2020
 
-- DiffusionNet/Hodge Net
-- Self-supervised learning?
+![](./images/diffusionnet.png)
+
+</div>
+</div>
 
 ---
 
 # Summary
 
 - Introduced the application of heat kernel signatures to neuron morphology
-  - Translation/rotation/reflection invariant
-  - Has some intrinsic "knowledge" of shape without learning
-- Showed how to efficiently scale computation of HKS to scale/detail of neuronal meshes
-- Showed these features can be used to create accurate classifiers for morphological features with relatively little training data
+  - Even without learning, capture some local structures of morphology
+- Showed how to scale computation of HKS to scale/resolution of neuronal meshes
+- Showed these features can be used to create accurate classifiers (at least for spines) with relatively little training data
+- There is a rich literature extending these ideas with different computational and learning techniques
 
----
+<!-- ---
 
 # Acknowledgements
 
@@ -958,11 +1003,11 @@ Casey M. Schneider-Mizell
 Forrest Collman
 Bethanny Danskin
 Erika Neace
-Rachael Swanstrom
+Rachael Swanstrom -->
 
 ---
 
-# Acknowledgements - extended
+# Acknowledgements
 
 <style scoped>
 p {
@@ -985,12 +1030,14 @@ Derrick Brittain
 Steven Cook
 Nuno da Costa
 **Bethanny Danskin**
+Cameron Devine
 Sven Dorkenwald
 Leila Elabbady
 Emily Joyce
 Dan Kapner
 Sam Kinn
 Cheryl Lea
+Melissa Lerch
 Xiaoyu Lu
 Gayathri Mahalingam
 **Erika Neace**
