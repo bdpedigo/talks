@@ -46,7 +46,8 @@ jobs:
       - name: Moving slides to static HTML
         run: |
           cp -R ./docs/slides/ ./docs/_build/html/
-
+          cp -R ./docs/images/ ./docs/_build/html/
+    
       # Deploy the book's HTML to gh-pages branch
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.6.1
