@@ -91,6 +91,8 @@ https://docs.astral.sh/uv/concepts/projects/layout/#the-lockfile
 
 # Random tips
 
+Many of these are flags that are shared across many commands in `uv`
+
 ---
 
 # Install from requirements, not looking at lock file
@@ -99,23 +101,23 @@ https://docs.astral.sh/uv/concepts/projects/layout/#the-lockfile
 
 ---
 
-# Avoid building anything from source 
+# Avoid building anything from source
 
 `--no-build`
 
 ---
 
-# Just see what would be installed 
+# Just see what would be installed
 
 `--dry-run`
 
 ---
 
-# Use the oldest version of packages 
+# Use the oldest version of packages
 
 `--resolution lowest`
 
---- 
+---
 
 # Upgrading
 
@@ -125,7 +127,7 @@ https://docs.astral.sh/uv/concepts/projects/layout/#the-lockfile
 
 ---
 
-# See what would get installed for another platform 
+# See what would get installed for another platform
 
 `uv pip install ... --dry-run --python-platform windows`
 
@@ -137,6 +139,6 @@ https://docs.astral.sh/uv/concepts/projects/layout/#the-lockfile
 
 ---
 
-# For a package, see who has opinions about it 
+# For a package, see who has opinions about it
 
 `uv tree --invert --package numpy`
