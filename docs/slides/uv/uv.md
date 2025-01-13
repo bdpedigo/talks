@@ -78,6 +78,13 @@ Allen Institute for Brain Science
 
 ---
 
+# adding
+
+- `uv pip install` works like normal pip...
+- `uv add` will add a package to your project (including `pyproject.toml`), but tell you if it is incompatible. If compatible, will install.
+
+---
+
 # lockfile
 
 https://docs.astral.sh/uv/concepts/projects/layout/#the-lockfile
@@ -142,3 +149,6 @@ Many of these are flags that are shared across many commands in `uv`
 # For a package, see who has opinions about it
 
 `uv tree --invert --package numpy`
+
+---
+
