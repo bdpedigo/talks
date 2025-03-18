@@ -10,7 +10,6 @@ backgroundImage: url(../themes/aibs-backgrounds/default.png)
 <style>
 a {
   position: fixed;
-  /* border: 10px solid #73AD21; */
 }
 embed{
   border: 0px;
@@ -80,7 +79,7 @@ Allen Institute for Brain Science
 
 # Very high level overview of EM data
 
-<!-- EM pipeline is going from brain to images to reconstructed segmentation -->
+<!-- EM pipeline is the science of going from brain to images to reconstructed segmentation -->
 
 <div class="columns">
 <div>
@@ -139,6 +138,8 @@ Reconstruction
 # Community interest in spines in EM: VORTEX
 
 <!-- Nothing existed in this space for doing something as fine as spines -->
+<!-- Many people had questions about spines -->
+<!-- This led to Virtual observatory of cortex grant doing a bunch of hand annotation -->
 
 - BC onto spine with multiple inputs
 - Spines with spine head apparatus (bit of ER that comes into spine head)
@@ -151,142 +152,35 @@ _Bethanny Danskin, Erika Neace, Rachael Swanstrom_
 
 ---
 
+<style scoped>
+section {
+  align-content: center;
+}
+p {
+  font-size: 30px;
+}
+</style>
+
+# Goal: pipeline for postsynaptic structure prediction
+
+Develop an accurate, robust, and scaleable prediction of postsynaptic structure
+
+---
+
 # Outline
 
-- Methods
-  - Intuition for heat kernel signatures
-  - Computing heat kernel signatures
-  - Application to spine prediction
-- Results in MICrONS
-
-<!-- ---
-
-# Morphological featurization of neuron morphology
-
-- "Kernel" based: compare all $n$ neurons to all other $n-1$ neurons, build up a similarity/dissimilarity matrix
-  - NBLAST
-  - CAJAL
-- Hand-crafted features:
-  - IVSCC pipeline features
-  - Nuclear features
-- Learning-based:
-  - GNNs on skeletons (Weis papers)
-  - NEURD
-  - SegCLR -->
-
-<!-- ---
-
-# Problem statement
-
-## Current spine classifcations have remained unsatisfying -->
-
-<!-- ---
-
-# NEURD classifies many spines as shaft
-
-_Bethanny Danskin, Erika Neace, Rachael Swanstrom_
-
-<div class="columns">
-<div>
-
-![center](./images/vortex_neurd_simple_confusion_matrix_normalized.svg)
-
-</div>
-<div>
-
-Coverage: 66% of VORTEX compartment labels are in the NEURD table
-
-</div>
-</div>
-
-Celii et al. _bioRxiv_ (2024) -->
-
-<!-- ---
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
-<img src="./../../images/icons/rect.svg"></img> model
-</div>
-
-<div>
-<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_0.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_0"></embed>
-
-<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_0.html" target="vortex_neurd_sample_meshes_0">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-
-</div>
-
-_footer:  -->
-
-<!-- ---
-
-##
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
-<img src="./../../images/icons/rect.svg"></img> model
-</div>
-
-<div>
-<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_1.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_1"></embed>
-
-<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_1.html" target="vortex_neurd_sample_meshes_1">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
+- Motivation
+- **Intuition for heat kernel signatures**
+- Computing heat kernel signatures
+- Application to spine prediction
+- Extensions
 
 ---
 
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
-<img src="./../../images/icons/rect.svg"></img> model
-</div>
-
-<div>
-<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_2.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_2"></embed>
-
-<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_2.html" target="vortex_neurd_sample_meshes_2">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
-<img src="./../../images/icons/rect.svg"></img> model
-</div>
-
-<div>
-<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_3.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_3"></embed>
-
-<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_3.html" target="vortex_neurd_sample_meshes_3">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
-<img src="./../../images/icons/rect.svg"></img> model
-</div>
-
-<div>
-<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_4.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_4"></embed>
-
-<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_4.html" target="vortex_neurd_sample_meshes_4">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div> -->
-
----
+<!-- First choice to make is what representation to use -->
+<!-- Explain what segmentation, mesh, and skeleton are -->
+<!-- Each of these differs in scale and size and ease of operaition etc. -->
+<!-- First intuition was that we should be able to use the mesh to find spines, because people do -->
 
 <!-- TODO add pretty pictures here -->
 
@@ -310,48 +204,7 @@ Skeleton
 </div>
 </div>
 
-<!-- **Resolution:**
-
-Segmentation/imagery $>$ Mesh $>$ Skeleton
-
-**Speed:**
-
-Skeleton $>$ Mesh $>$ Segmentation/imagery -->
-
-<!--
-Segmentation/imagery: SegCLR
-Skeleton: Weis et al (GNNs), Dendrite features
-Mesh: Soma-nucleus model -->
-
 ---
-
-<style scoped>
-section {
-  align-content: center;
-}
-p {
-  font-size: 30px;
-}
-</style>
-
-# Goal: pipeline for postsynaptic structure prediction
-
-Can we use the mesh alone to get an accurate, robust, and scaleable prediction of postsynaptic structure?
-
-<!--
-- _Accurate_: trust downstream science
-- _Scaleable_: run across massive EM datasets
-- _Robust_: get coverage on many cells/objects -->
-
----
-
-# Outline
-
-- Motivation
-- **Intuition for heat kernel signatures**
-- Computing heat kernel signatures
-- Application to spine prediction
-- Extensions
 
 ![center h:300](./images/sun-et-al.png)
 
@@ -441,10 +294,6 @@ p {
 
 > ...all four points have isometric neighborhoods at small scales, their HKS’s are the same for small $t$’s ($< t_1$).
 
-<!--
->
-> ...Point 1 and point 3 have isometric neighborhoods at middle scales and thus their HKS’s coincide even for middle $t$’s ($[t_1,t_3]$)... -->
-
 </div>
 <div>
 
@@ -479,6 +328,179 @@ p {
 </div>
 </div>
 </div>
+
+---
+
+# Spine prediction (with labels)
+
+<!-- TODO add a graphic showing a neuron with point labels -->
+
+- Used dense spine labels for 6 neurons
+  - _Erika Neace, Rachael Swanstrom, Bethanny Danskin_
+- Trained on HKS features from the mesh point closest to synapse center point
+- Used a simple random forest, didn't do much tuning or exploration here
+- Didn't try to do anything with the axon, so that gets labeled arbitrarily
+
+---
+
+# Random forest, leave-one-neuron-out testing
+
+<div class="columns">
+<div>
+
+![](./images/model_comparison/metrics-Heat-RF-NEURD.svg)
+
+</div>
+<div>
+
+![](./images/model_comparison/metrics-Heat-RF.svg)
+
+</div>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135182486274_posterior.svg" width="96%" height="600px" name="864691135182486274_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135182486274_posterior.html" target="864691135182486274_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135361404743_posterior.svg" width="96%" height="600px" name="864691135361404743_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135361404743_posterior.html" target="864691135361404743_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135416507322_posterior.svg" width="96%" height="600px" name="864691135416507322_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135416507322_posterior.html" target="864691135416507322_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
+
+<div class="columns">
+<div>
+
+![](./images/boosted_model_posteriors/864691135491229535_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135501563458_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135645292783_posterior.svg)
+
+</div>
+<div>
+
+![](./images/boosted_model_posteriors/864691135655141314_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135693690303_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135696697498_posterior.svg)
+
+</div>
+<div>
+
+![](./images/boosted_model_posteriors/864691135697250714_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135737477764_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135800244578_posterior.svg)
+
+</div>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135014021110_posterior.svg" width="96%" height="550px" name="864691135014021110_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135014021110_posterior.html" target="864691135014021110_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135497617939_posterior.svg" width="96%" height="550px" name="864691135497617939_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135497617939_posterior.html" target="864691135497617939_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691136195002188_posterior.svg" width="96%" height="550px" name="864691136195002188_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691136195002188_posterior.html" target="864691136195002188_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691136143786292_posterior.svg" width="96%" height="550px" name="864691136143786292_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691136143786292_posterior.html" target="864691136143786292_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691137020205166_posterior.svg" width="96%" height="550px" name="864691137020205166_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691137020205166_posterior.html" target="864691137020205166_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Zero-shot prediction on a human neuron
+
+<div>
+<embed src="./images/h01/h01_posterior.svg" width="96%" height="550px" name="h01_posterior"></embed>
+
+<a href="./images/h01/h01_posterior.html" target="h01_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+<!-- _footer: Shapson-Coe et al. _Science_ 2024  -->
+
+---
+
+# Detecting multi-input spines
+
+<!-- TODO make a figure to describe this -->
 
 ---
 
@@ -558,11 +580,6 @@ the eigenvectors of the Laplacian are the Fourier series:
 
 ### Mesh
 
-<!-- ![](./images/fastest-evec.html)
- -->
-
-<!-- <embed src="./images/fastest-evec.html" width="100%" height="400px" style="border:0px"></embed> -->
-
 <div>
 <embed src="./images/show_heat_diffusion/eigenvector_on_mesh.svg" width="96%" height="380px" name="eigenvector_on_mesh"></embed>
 
@@ -573,51 +590,6 @@ the eigenvectors of the Laplacian are the Fourier series:
 
 </div>
 </div>
-
-<!-- ---
-
-# Computing the eigendecomposition
-
-- :white_check_mark: Very sparse problem: power iteration methods/ARPACK are efficient
-- :white_check_mark: Can truncate the eigendecomposition to get an approximate solution
-- :x: Need $O(\text{Thousands})$ of eigenvectors to get resolution down to the scale of spines, mesh has $O(\text{Millions})$ of points
-  - Was taking $\thicksim$ 1-3 Hours to compute eigendecomposition on a single neuron -->
-
-<!-- ---
-
-# Improvement #1: band-by-band algorithm
-
-Band-by-band algorithm of Vallet and Levy (2008):
-
-- Use the "shift-invert" trick, do $\tilde{L} = L - \lambda_S I$ for some $\lambda_S$
-  - Converts the problem to one where power iteration methods are efficient for that range of eigenvalues
-- Compute eigenpairs (ARPACK)
-- Compute contribution of each eigenpair to HKS, throw away
-  - Memory efficient
-- Compute a new $\lambda_S$, repeat until reach desired eigenvalue -->
-
-<!-- _footer: Vallet and Levy, _Eurographics_ (2008) -->
-
-<!-- ---
-
-# Improvement #2: chunking
-
-- Intuition: don't need low frequency information to distinguish local features
-- Can break the mesh into pieces, compute the eigendecomposition on each chunk
-- Use overlapping mesh chunking to minimize edge effects at borders
-
-<div class="columns">
-<div>
-
-![](./images/show_mesh_splitting/submeshes.svg)
-
-</div>
-<div>
-
-![](./images/show_mesh_splitting/submeshes_overlapped.svg)
-
-</div>
-</div> -->
 
 ---
 
@@ -645,12 +617,6 @@ Band-by-band algorithm of Vallet and Levy (2008):
 ---
 
 # Timing
-
-<!-- Need to profile more comprehensively, but,
-
-~1-2 min to simplify mesh
-~1-2 min to subdivide mesh
-~1-4 min for (parallelized on 12 cores) eigendecomposition/HKS, longer for very big neurons -->
 
 <!-- TODO remake timing figures -->
 <!-- TODO: reach goal, compare to the version without these speedups -->
@@ -681,438 +647,6 @@ Whole neuron
 - Computing heat kernel signatures
 - **Application to spine prediction**
 - Extensions
-
----
-
-# Spine prediction
-
-- Used dense spine labels for 6 neurons
-  - _Bethanny Danskin, Erika Neace, Rachael Swanstrom_
-- Trained on HKS features from the mesh point closest to synapse center point
-- Used a simple random forest, didn't do much tuning or exploration here
-- Didn't try to do anything with the axon, so that gets labeled arbitrarily
-
----
-
-# Random forest, leave-one-neuron-out testing
-
-<div class="columns">
-<div>
-
-![](./images/model_comparison/metrics-Heat-RF-NEURD.svg)
-
-</div>
-<div>
-
-![](./images/model_comparison/metrics-Heat-RF.svg)
-
-</div>
-</div>
-
-<!-- ---
-
-# Best neuron
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
-<img src="./../../images/icons/rect.svg"></img> model
-</div>
-
-<div>
-<embed src="./images/model0/neuron_posterior_best.svg" width="96%" height="520px" name="neuron_posterior_best"></embed>
-
-<a href="./images/model0/neuron_posterior_best.html" target="neuron_posterior_best">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div> -->
-
-<!-- ---
-
-# Worst neuron
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
-<img src="./../../images/icons/rect.svg"></img> model
-</div>
-
-<div>
-<embed src="./images/model0/neuron_posterior_worst.svg" width="96%" height="520px" name="neuron_posterior_worst"></embed>
-
-<a href="./images/model0/neuron_posterior_worst.html" target="neuron_posterior_worst">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div> -->
-
----
-
-<div style="font-size:16px">
-<span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> 
-<img src="./../../images/icons/sphere-dashed.svg" style="display: inline; position: relative; top: 2px"></img> vortex
-<img src="./../../images/icons/rect.svg" style="display: inline; position: relative; top: 2px"></img> model
-</div>
-
-<div>
-<embed src="./images/model0/incorrect_gallery.svg" width="96%" height="600px" name="incorrect_gallery"></embed>
-
-<a href="./images/model0/incorrect_gallery.html" target="incorrect_gallery">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
-<!-- ---
-
-# Pseudo-active learning
-
-<div class="columns">
-<div>
-
-- Used model from these 6 neurons to predict on 20 more neurons
-  - These varied more in dendrite thickness and spine density
-- Plotted the posterior on the mesh, hand-labeled points I thought looked bad
-- Took $\thicksim 2$ clicky hours
-- Retrain
-- Applied model to another 20 more neurons (not the ones trained on)
-
-</div>
-<div>
-
-![h:450 center](./images/clicky-task.png)
-
-</div>
-</div> -->
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135182486274_posterior.svg" width="96%" height="600px" name="864691135182486274_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135182486274_posterior.html" target="864691135182486274_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135182839810_posterior.svg" width="96%" height="600px" name="864691135182839810_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135182839810_posterior.html" target="864691135182839810_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135335398121_posterior.svg" width="96%" height="600px" name="864691135335398121_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135335398121_posterior.html" target="864691135335398121_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135361404743_posterior.svg" width="96%" height="600px" name="864691135361404743_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135361404743_posterior.html" target="864691135361404743_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135416507322_posterior.svg" width="96%" height="600px" name="864691135416507322_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135416507322_posterior.html" target="864691135416507322_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135491229535_posterior.svg" width="96%" height="600px" name="864691135491229535_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135491229535_posterior.html" target="864691135491229535_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135501563458_posterior.svg" width="96%" height="600px" name="864691135501563458_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135501563458_posterior.html" target="864691135501563458_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135645292783_posterior.svg" width="96%" height="600px" name="864691135645292783_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135645292783_posterior.html" target="864691135645292783_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135655141314_posterior.svg" width="96%" height="600px" name="864691135655141314_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135655141314_posterior.html" target="864691135655141314_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135693690303_posterior.svg" width="96%" height="600px" name="864691135693690303_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135693690303_posterior.html" target="864691135693690303_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135696697498_posterior.svg" width="96%" height="600px" name="864691135696697498_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135696697498_posterior.html" target="864691135696697498_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135697250714_posterior.svg" width="96%" height="600px" name="864691135697250714_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135697250714_posterior.html" target="864691135697250714_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135737477764_posterior.svg" width="96%" height="600px" name="864691135737477764_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135737477764_posterior.html" target="864691135737477764_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135800244578_posterior.svg" width="96%" height="600px" name="864691135800244578_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135800244578_posterior.html" target="864691135800244578_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135851482823_posterior.svg" width="96%" height="600px" name="864691135851482823_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135851482823_posterior.html" target="864691135851482823_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135875972691_posterior.svg" width="96%" height="600px" name="864691135875972691_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135875972691_posterior.html" target="864691135875972691_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691136005566154_posterior.svg" width="96%" height="600px" name="864691136005566154_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691136005566154_posterior.html" target="864691136005566154_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691136109645240_posterior.svg" width="96%" height="600px" name="864691136109645240_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691136109645240_posterior.html" target="864691136109645240_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691136437250718_posterior.svg" width="96%" height="600px" name="864691136437250718_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691136437250718_posterior.html" target="864691136437250718_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691136923636708_posterior.svg" width="96%" height="600px" name="864691136923636708_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691136923636708_posterior.html" target="864691136923636708_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-# Inhibitory neurons
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135014021110_posterior.svg" width="96%" height="600px" name="864691135014021110_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135014021110_posterior.html" target="864691135014021110_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691135497617939_posterior.svg" width="96%" height="600px" name="864691135497617939_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691135497617939_posterior.html" target="864691135497617939_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691136195002188_posterior.svg" width="96%" height="600px" name="864691136195002188_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691136195002188_posterior.html" target="864691136195002188_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691136143786292_posterior.svg" width="96%" height="600px" name="864691136143786292_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691136143786292_posterior.html" target="864691136143786292_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-<div>
-<embed src="./images/boosted_model_posteriors/864691137020205166_posterior.svg" width="96%" height="600px" name="864691137020205166_posterior"></embed>
-
-<a href="./images/boosted_model_posteriors/864691137020205166_posterior.html" target="864691137020205166_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
----
-
-# Zero-shot prediction on a H01 neuron
-
-<div>
-<embed src="./images/h01/h01_posterior.svg" width="96%" height="550px" name="h01_posterior"></embed>
-
-<a href="./images/h01/h01_posterior.html" target="h01_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
-<!-- ---
-
-# HKS modifications
-
-<div class="columns">
-<div>
-
-Volumetric HKS (w/ or w/o voxelization): Raviv et al. 2010; Rustamov et al. 2009; Rustamov 2011
-
-![h:400 center](./images/rustamov_heat_distance.png)
-
-</div>
-<div>
-
-Scale-invariance: Bronstein et al. 2011
-
-![h:250 center](./images/scaled-hks.png)
-
-</div>
-</div> -->
-
-<!-- ---
-
-# Computation
-
-<div class="columns">
-<div>
-
-Projection-based methods: Nasikun et al. 2018; Nasikun et al. 2022; Magnet and Ovsjanikov 2023
-
-![center h:400](./images/fast-basis.png)
-
-</div>
-<div>
-
-Chebyshev polynomials: Hammond et al. 2009; Shuman et al. 2011; Huang et al. 2020
-
-![center h:300](./images/cheby-timing.png)
-
-</div>
-</div> -->
-
-<!-- ---
-
-# Learning
-
-<div class="columns">
-<div>
-
-Learning more general functions of eigenvectors to discriminate classes: Litman & Bronstein 2014; Boscaini et al. 2015; Smirnov & Solomon 2021
-
-![h:80 center](./images/learning-eqn.png)
-
-<!-- - Halimi et al. 2019: Self-supervised learning  -->
-<!--
-</div>
-<div>
-
-Using approximate diffusion as an operator for local aggregation: Sharp et al. 2020
-
-![](./images/diffusionnet.png)
-
-</div>
-</div> --> -->
 
 ---
 
@@ -1148,10 +682,6 @@ pre_pt_root_id	        post_pt_root_id	        size	target_id	tag
 864691135468221308	864691135383487706	4284	306517361	spine
 864691135979239816	864691135383487706	1620	285512620	shaft
 ```
-
-<!-- 864691136191176780	864691135383487706	3588	289213735	spine
-864691135349700562	864691135383487706	2488	298921428	shaft
-864691135899144524	864691135383487706	3136	304017639	spine -->
 
 <!-- _footer: CAVE: Dorkenwald, Schneider-Mizell et al Nature Methods (2025) -->
 
@@ -1209,52 +739,6 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 
 </div>
 </div>
-
-<!-- --- -->
-
-<!-- backgroImage: ../themes/aibs-backgrounds/blank.png -->
-<!-- pagie: false -->
-
-<!-- # Synapses by cell type -->
-
-<!-- <div class="columns-br">
-<div>
-
-# Connections by cell type
-
-<!-- Synapses from cleaned axons where pre- and post- have cell type classifications (1M synapses total) -->
-
-<!-- </div>
-<div>
-
-![h:620 center](./images/tabulation_by_type/cell_type_synapse_proportions_w_multi.svg)
-
-</div>
-</div> -->
-
-<!-- ![bg right:70% h:700](./images/tabulation_by_type/cell_type_synapse_proportions_w_multi.svg) -->
-
-<!-- --- -->
-
-<!-- ---
-
-# Summary
-
-- Introduced the application of heat kernel signatures to neuron morphology
-  - Even without learning, capture some local structures of morphology
-- Showed how to scale computation of HKS to scale/resolution of neuronal meshes
-- Showed these features can be used to create accurate classifiers (at least for spines) with relatively little training data
-- There is a rich literature extending these ideas with different computational and learning techniques -->
-
-<!-- ---
-
-# Acknowledgements
-
-Casey M. Schneider-Mizell
-Forrest Collman
-Bethanny Danskin
-Erika Neace
-Rachael Swanstrom -->
 
 ---
 
@@ -1457,8 +941,6 @@ NIH – BICCN
 </div>
 </div>
 
-
-
 ---
 
 # An aside...
@@ -1488,3 +970,558 @@ Spectral graph neural network layer (add citation):
 
 </div>
 </div>
+
+---
+
+<div style="font-size:16px">
+<span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> 
+<img src="./../../images/icons/sphere-dashed.svg" style="display: inline; position: relative; top: 2px"></img> vortex
+<img src="./../../images/icons/rect.svg" style="display: inline; position: relative; top: 2px"></img> model
+</div>
+
+<div>
+<embed src="./images/model0/incorrect_gallery.svg" width="96%" height="600px" name="incorrect_gallery"></embed>
+
+<a href="./images/model0/incorrect_gallery.html" target="incorrect_gallery">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135182839810_posterior.svg" width="100%" height="600px" name="864691135182839810_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135182839810_posterior.html" target="864691135182839810_posterior" style="position: relative; left: -60px; top: -580px;">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+<!-- ---
+
+# Morphological featurization of neuron morphology
+
+- "Kernel" based: compare all $n$ neurons to all other $n-1$ neurons, build up a similarity/dissimilarity matrix
+  - NBLAST
+  - CAJAL
+- Hand-crafted features:
+  - IVSCC pipeline features
+  - Nuclear features
+- Learning-based:
+  - GNNs on skeletons (Weis papers)
+  - NEURD
+  - SegCLR -->
+
+<!-- ---
+
+# Problem statement
+
+## Current spine classifcations have remained unsatisfying -->
+
+<!-- ---
+
+# NEURD classifies many spines as shaft
+
+_Bethanny Danskin, Erika Neace, Rachael Swanstrom_
+
+<div class="columns">
+<div>
+
+![center](./images/vortex_neurd_simple_confusion_matrix_normalized.svg)
+
+</div>
+<div>
+
+Coverage: 66% of VORTEX compartment labels are in the NEURD table
+
+</div>
+</div>
+
+Celii et al. _bioRxiv_ (2024) -->
+
+<!-- ---
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
+<img src="./../../images/icons/rect.svg"></img> model
+</div>
+
+<div>
+<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_0.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_0"></embed>
+
+<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_0.html" target="vortex_neurd_sample_meshes_0">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+
+</div>
+
+_footer:  -->
+
+<!-- ---
+
+##
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
+<img src="./../../images/icons/rect.svg"></img> model
+</div>
+
+<div>
+<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_1.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_1"></embed>
+
+<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_1.html" target="vortex_neurd_sample_meshes_1">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
+<img src="./../../images/icons/rect.svg"></img> model
+</div>
+
+<div>
+<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_2.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_2"></embed>
+
+<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_2.html" target="vortex_neurd_sample_meshes_2">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
+<img src="./../../images/icons/rect.svg"></img> model
+</div>
+
+<div>
+<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_3.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_3"></embed>
+
+<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_3.html" target="vortex_neurd_sample_meshes_3">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
+<img src="./../../images/icons/rect.svg"></img> model
+</div>
+
+<div>
+<embed src="./images/vortex_neurd/vortex_neurd_sample_meshes_4.svg" width="96%" height="600px" name="vortex_neurd_sample_meshes_4"></embed>
+
+<a href="./images/vortex_neurd/vortex_neurd_sample_meshes_4.html" target="vortex_neurd_sample_meshes_4">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div> -->
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135851482823_posterior.svg" width="96%" height="600px" name="864691135851482823_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135851482823_posterior.html" target="864691135851482823_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135875972691_posterior.svg" width="96%" height="600px" name="864691135875972691_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135875972691_posterior.html" target="864691135875972691_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691136005566154_posterior.svg" width="96%" height="600px" name="864691136005566154_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691136005566154_posterior.html" target="864691136005566154_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691136109645240_posterior.svg" width="96%" height="600px" name="864691136109645240_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691136109645240_posterior.html" target="864691136109645240_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691136437250718_posterior.svg" width="96%" height="600px" name="864691136437250718_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691136437250718_posterior.html" target="864691136437250718_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691136923636708_posterior.svg" width="96%" height="600px" name="864691136923636708_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691136923636708_posterior.html" target="864691136923636708_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+<!-- ---
+
+# Best neuron
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
+<img src="./../../images/icons/rect.svg"></img> model
+</div>
+
+<div>
+<embed src="./images/model0/neuron_posterior_best.svg" width="96%" height="520px" name="neuron_posterior_best"></embed>
+
+<a href="./images/model0/neuron_posterior_best.html" target="neuron_posterior_best">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div> -->
+
+<!-- ---
+
+# Worst neuron
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+<img src="./../../images/icons/sphere-dashed.svg"></img> vortex
+<img src="./../../images/icons/rect.svg"></img> model
+</div>
+
+<div>
+<embed src="./images/model0/neuron_posterior_worst.svg" width="96%" height="520px" name="neuron_posterior_worst"></embed>
+
+<a href="./images/model0/neuron_posterior_worst.html" target="neuron_posterior_worst">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div> -->
+
+<!-- ---
+
+# Pseudo-active learning
+
+<div class="columns">
+<div>
+
+- Used model from these 6 neurons to predict on 20 more neurons
+  - These varied more in dendrite thickness and spine density
+- Plotted the posterior on the mesh, hand-labeled points I thought looked bad
+- Took $\thicksim 2$ clicky hours
+- Retrain
+- Applied model to another 20 more neurons (not the ones trained on)
+
+</div>
+<div>
+
+![h:450 center](./images/clicky-task.png)
+
+</div>
+</div> -->
+
+<!-- REF: https://www.w3schools.com/howto/howto_js_image_zoom.asp -->
+<style>
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
+}
+</style>
+<script>
+function imageZoom(imgID, resultID) {
+  var img, lens, result, cx, cy;
+  img = document.getElementById(imgID);
+  result = document.getElementById(resultID);
+  /*create lens:*/
+  lens = document.createElement("DIV");
+  lens.setAttribute("class", "img-zoom-lens");
+  /*insert lens:*/
+  img.parentElement.insertBefore(lens, img);
+  /*calculate the ratio between result DIV and lens:*/
+  cx = result.offsetWidth / lens.offsetWidth;
+  cy = result.offsetHeight / lens.offsetHeight;
+  /*set background properties for the result DIV:*/
+  result.style.backgroundImage = "url('" + img.src + "')";
+  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+  /*execute a function when someone moves the cursor over the image, or the lens:*/
+  lens.addEventListener("mousemove", moveLens);
+  img.addEventListener("mousemove", moveLens);
+  /*and also for touch screens:*/
+  lens.addEventListener("touchmove", moveLens);
+  img.addEventListener("touchmove", moveLens);
+  function moveLens(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image:*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    /*calculate the position of the lens:*/
+    x = pos.x - (lens.offsetWidth / 2);
+    y = pos.y - (lens.offsetHeight / 2);
+    /*prevent the lens from being positioned outside the image:*/
+    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+    if (x < 0) {x = 0;}
+    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+    if (y < 0) {y = 0;}
+    /*set the position of the lens:*/
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    /*display what the lens "sees":*/
+    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+
+<div class="img-zoom-container">
+  <img id="myimage" src="./images/boosted_model_posteriors/864691135737477764_posterior.svg" width="300" height="240" alt="Girl">
+  <div id="myresult" class="img-zoom-result"></div>
+</div>
+
+<script>
+// Initiate zoom effect:
+imageZoom("myimage", "myresult");
+</script>
+
+---
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135335398121_posterior.svg" width="96%" height="600px" name="864691135335398121_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135335398121_posterior.html" target="864691135335398121_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+## <!--
+
+# HKS modifications
+
+<div class="columns">
+<div>
+
+Volumetric HKS (w/ or w/o voxelization): Raviv et al. 2010; Rustamov et al. 2009; Rustamov 2011
+
+![h:400 center](./images/rustamov_heat_distance.png)
+
+</div>
+<div>
+
+Scale-invariance: Bronstein et al. 2011
+
+![h:250 center](./images/scaled-hks.png)
+
+</div>
+</div> -->
+
+<!-- ---
+
+# Computation
+
+<div class="columns">
+<div>
+
+Projection-based methods: Nasikun et al. 2018; Nasikun et al. 2022; Magnet and Ovsjanikov 2023
+
+![center h:400](./images/fast-basis.png)
+
+</div>
+<div>
+
+Chebyshev polynomials: Hammond et al. 2009; Shuman et al. 2011; Huang et al. 2020
+
+![center h:300](./images/cheby-timing.png)
+
+</div>
+</div> -->
+
+<!-- ---
+
+# Learning
+
+<div class="columns">
+<div>
+
+Learning more general functions of eigenvectors to discriminate classes: Litman & Bronstein 2014; Boscaini et al. 2015; Smirnov & Solomon 2021
+
+![h:80 center](./images/learning-eqn.png)
+
+<!-- - Halimi et al. 2019: Self-supervised learning  -->
+<!--
+</div>
+<div>
+
+Using approximate diffusion as an operator for local aggregation: Sharp et al. 2020
+
+![](./images/diffusionnet.png)
+
+</div>
+</div> -->
+
+<!--
+>
+> ...Point 1 and point 3 have isometric neighborhoods at middle scales and thus their HKS’s coincide even for middle $t$’s ($[t_1,t_3]$)... -->
+
+<!-- **Resolution:**
+
+Segmentation/imagery $>$ Mesh $>$ Skeleton
+
+**Speed:**
+
+Skeleton $>$ Mesh $>$ Segmentation/imagery -->
+
+<!--
+Segmentation/imagery: SegCLR
+Skeleton: Weis et al (GNNs), Dendrite features
+Mesh: Soma-nucleus model -->
+
+<!--
+- _Accurate_: trust downstream science
+- _Scaleable_: run across massive EM datasets
+- _Robust_: get coverage on many cells/objects -->
+
+<!--
+- _Accurate_: trust downstream science
+- _Scaleable_: run across massive EM datasets
+- _Robust_: get coverage on many cells/objects -->
+
+<!-- ---
+
+# Computing the eigendecomposition
+
+- :white_check_mark: Very sparse problem: power iteration methods/ARPACK are efficient
+- :white_check_mark: Can truncate the eigendecomposition to get an approximate solution
+- :x: Need $O(\text{Thousands})$ of eigenvectors to get resolution down to the scale of spines, mesh has $O(\text{Millions})$ of points
+  - Was taking $\thicksim$ 1-3 Hours to compute eigendecomposition on a single neuron -->
+
+<!-- ---
+
+# Improvement #1: band-by-band algorithm
+
+Band-by-band algorithm of Vallet and Levy (2008):
+
+- Use the "shift-invert" trick, do $\tilde{L} = L - \lambda_S I$ for some $\lambda_S$
+  - Converts the problem to one where power iteration methods are efficient for that range of eigenvalues
+- Compute eigenpairs (ARPACK)
+- Compute contribution of each eigenpair to HKS, throw away
+  - Memory efficient
+- Compute a new $\lambda_S$, repeat until reach desired eigenvalue -->
+
+<!-- _footer: Vallet and Levy, _Eurographics_ (2008) -->
+
+<!-- ---
+
+# Improvement #2: chunking
+
+- Intuition: don't need low frequency information to distinguish local features
+- Can break the mesh into pieces, compute the eigendecomposition on each chunk
+- Use overlapping mesh chunking to minimize edge effects at borders
+
+<div class="columns">
+<div>
+
+![](./images/show_mesh_splitting/submeshes.svg)
+
+</div>
+<div>
+
+![](./images/show_mesh_splitting/submeshes_overlapped.svg)
+
+</div>
+</div> -->
+
+<!-- --- -->
+
+<!-- backgroImage: ../themes/aibs-backgrounds/blank.png -->
+<!-- pagie: false -->
+
+<!-- # Synapses by cell type -->
+
+<!-- <div class="columns-br">
+<div>
+
+# Connections by cell type
+
+<!-- Synapses from cleaned axons where pre- and post- have cell type classifications (1M synapses total) -->
+
+<!-- </div>
+<div>
+
+![h:620 center](./images/tabulation_by_type/cell_type_synapse_proportions_w_multi.svg)
+
+</div>
+</div> -->
+
+<!-- ![bg right:70% h:700](./images/tabulation_by_type/cell_type_synapse_proportions_w_multi.svg) -->
+
+<!-- --- -->
+
+<!-- ---
+
+# Summary
+
+- Introduced the application of heat kernel signatures to neuron morphology
+  - Even without learning, capture some local structures of morphology
+- Showed how to scale computation of HKS to scale/resolution of neuronal meshes
+- Showed these features can be used to create accurate classifiers (at least for spines) with relatively little training data
+- There is a rich literature extending these ideas with different computational and learning techniques -->
+
+<!-- ---
+
+# Acknowledgements
+
+Casey M. Schneider-Mizell
+Forrest Collman
+Bethanny Danskin
+Erika Neace
+Rachael Swanstrom -->
