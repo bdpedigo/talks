@@ -80,18 +80,74 @@ Allen Institute for Brain Science
 
 # Very high level overview of EM data
 
+<!-- EM pipeline is going from brain to images to reconstructed segmentation -->
+
+<div class="columns">
+<div>
+
+<!-- TODO -->
+
+Brain
+
+</div>
+<div>
+
+<!-- TODO -->
+
+Image stack
+
+</div>
+<div>
+
+<!-- TODO -->
+
+Reconstruction
+
+</div>
+</div>
+
 ---
 
-# Spines...
+# MICrONS
+
+<!-- TODO show something about the state of the whole dataset -->
+
+<!-- Narrative: Once you've gotten all this cool EM data, there's still a lot of work to add semantic information -->
+
+<!-- Briefly mention some papers that have worked on adding this info, like cell type, dendritic features  -->
 
 ---
 
-# Vortex was looking into spines
+<!-- Many things that one can focus on in an EM dataset, more like an observatory. One prevalent aspect of neurobiology is spines-->
+
+# Spines
+
+![](./images/spine_examples/dendrite-zoom-white.png)
+
+- Primary site of excitatory $\rightarrow$ excitatory synapses
+- Chemo-electrically isolated
+- Dynamic
+- May increase availability of presynaptic partners
+
+</div>
+</div>
+
+![bg right:55%](./images/spine_examples/dendrite-wide-white.png)
+
+---
+
+# Community interest in spines in EM: VORTEX
+
+<!-- Nothing existed in this space for doing something as fine as spines -->
 
 - BC onto spine with multiple inputs
 - Spines with spine head apparatus (bit of ER that comes into spine head)
 - Computational question about modeling spine heads as distinct compartments
 - Analyzing how passing axons relate to dendritic morphology
+
+_Bethanny Danskin, Erika Neace, Rachael Swanstrom_
+
+<!-- TODO add a graphic showing an example annotated cells -->
 
 ---
 
@@ -232,22 +288,60 @@ _footer:  -->
 
 ---
 
-# Morphological feature learning
+<!-- TODO add pretty pictures here -->
 
-**Resolution:**
+# Morphological representations
+
+<div class="columns">
+<div>
+
+Segmentation/imagery
+
+</div>
+<div>
+
+Mesh
+
+</div>
+<div>
+
+Skeleton
+
+</div>
+</div>
+
+<!-- **Resolution:**
 
 Segmentation/imagery $>$ Mesh $>$ Skeleton
 
 **Speed:**
 
-Skeleton $>$ Mesh $>$ Segmentation/imagery
+Skeleton $>$ Mesh $>$ Segmentation/imagery -->
 
-<br>
-<br>
-
+<!--
 Segmentation/imagery: SegCLR
 Skeleton: Weis et al (GNNs), Dendrite features
-Mesh: Soma-nucleus model
+Mesh: Soma-nucleus model -->
+
+---
+
+<style scoped>
+section {
+  align-content: center;
+}
+p {
+  font-size: 30px;
+}
+</style>
+
+# Goal: pipeline for postsynaptic structure prediction
+
+Can we use the mesh alone to get an accurate, robust, and scaleable prediction of postsynaptic structure?
+
+<!--
+- _Accurate_: trust downstream science
+- _Scaleable_: run across massive EM datasets
+- _Robust_: get coverage on many cells/objects -->
 
 ---
 
@@ -273,6 +367,8 @@ Imagine placing a unit of heat at a point on a surface, watching how that heat d
 
 ---
 
+<!-- TODO make the soma / shaft/ spine labels bigger, maybe move -->
+
 <div style="font-size:16px">
 <span style="color: var(--soma);"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
 
@@ -286,6 +382,8 @@ Increasing time $\rightarrow$
 </div>
 
 ---
+
+<!-- TODO: fix this up so the y axis starts the same for the panel at right -->
 
 # Tracking heat diffusion
 
@@ -316,6 +414,12 @@ $$HKS(x) = [k_{t_1}(x,x), k_{t_2}(x,x), ..., k_{t_d}(x,x)]$$
 
 Often scale these: $\frac{k_{t_1}(x,x)}{\sum_i k_{t_1}(i,i)}$
 
+<div id="highlightbox">
+
+HKS is a vector for each **node** in a mesh which describes its heat diffusion properties
+
+</div>
+
 <!-- _footer: Sun et al., _Eurographics_ (2008) -->
 
 ---
@@ -336,8 +440,10 @@ p {
 ![h:350 center](./images/hks_paper_synthetic_example.png)
 
 > ...all four points have isometric neighborhoods at small scales, their HKS’s are the same for small $t$’s ($< t_1$).
+
+<!--
 >
-> ...Point 1 and point 3 have isometric neighborhoods at middle scales and thus their HKS’s coincide even for middle $t$’s ($[t_1,t_3]$)...
+> ...Point 1 and point 3 have isometric neighborhoods at middle scales and thus their HKS’s coincide even for middle $t$’s ($[t_1,t_3]$)... -->
 
 </div>
 <div>
@@ -398,9 +504,13 @@ Heat transferred from point $x$ to $y$ at time $t$ is given by the heat kernel $
 
 $$k_t(x,y) = \sum_{i=0}^{\infty} e^{-\lambda_i t} \phi_i(x) \phi_i(y)$$
 
-where $\lambda_i$ and $\phi_i$ are the eigenvalues and eigenvectors of the Laplacian operator.
+where $\lambda_i$ and $\phi_i$ are the eigenvalues and eigenvectors of the Laplacian operator
 
-**We just need these eigenvectors/eigenvalues to describe heat**
+<div id="highlightbox">
+
+We just need these eigenvectors/eigenvalues to describe heat
+
+</div>
 
 <!-- _footer: https://en.wikipedia.org/wiki/Heat_kernel -->
 
@@ -464,16 +574,16 @@ the eigenvectors of the Laplacian are the Fourier series:
 </div>
 </div>
 
----
+<!-- ---
 
 # Computing the eigendecomposition
 
 - :white_check_mark: Very sparse problem: power iteration methods/ARPACK are efficient
 - :white_check_mark: Can truncate the eigendecomposition to get an approximate solution
 - :x: Need $O(\text{Thousands})$ of eigenvectors to get resolution down to the scale of spines, mesh has $O(\text{Millions})$ of points
-  - Was taking $\thicksim$ 1-3 Hours to compute eigendecomposition on a single neuron
+  - Was taking $\thicksim$ 1-3 Hours to compute eigendecomposition on a single neuron -->
 
----
+<!-- ---
 
 # Improvement #1: band-by-band algorithm
 
@@ -484,25 +594,11 @@ Band-by-band algorithm of Vallet and Levy (2008):
 - Compute eigenpairs (ARPACK)
 - Compute contribution of each eigenpair to HKS, throw away
   - Memory efficient
-- Compute a new $\lambda_S$, repeat until reach desired eigenvalue
-
-<!--
-<div class="columns">
-<div>
-
-> - Replace L with L - $\lambda_S$ I
-> -
-
-</div>
-<div>
-
-
-</div>
-</div> -->
+- Compute a new $\lambda_S$, repeat until reach desired eigenvalue -->
 
 <!-- _footer: Vallet and Levy, _Eurographics_ (2008) -->
 
----
+<!-- ---
 
 # Improvement #2: chunking
 
@@ -521,6 +617,29 @@ Band-by-band algorithm of Vallet and Levy (2008):
 ![](./images/show_mesh_splitting/submeshes_overlapped.svg)
 
 </div>
+</div> -->
+
+---
+
+# Computational improvements
+
+<div class="columns">
+<div>
+
+- Mesh simplification (Garland and Heckbert 1997)
+- Overlapping mesh subdivision
+- Band-by-band eigendecomposition (Vallet and Levy 2008)
+- Robust laplacian (Sharp and Crane 2020)
+- Mesh agglomeration (for compressed storage)
+
+</div>
+<div>
+
+![h:260](./images/show_mesh_splitting/submeshes.svg)
+
+![h:260](./images/show_mesh_splitting/submeshes_overlapped.svg)
+
+</div>
 </div>
 
 ---
@@ -532,6 +651,9 @@ Band-by-band algorithm of Vallet and Levy (2008):
 ~1-2 min to simplify mesh
 ~1-2 min to subdivide mesh
 ~1-4 min for (parallelized on 12 cores) eigendecomposition/HKS, longer for very big neurons -->
+
+<!-- TODO remake timing figures -->
+<!-- TODO: reach goal, compare to the version without these speedups -->
 
 <div class="columns">
 <div>
@@ -549,8 +671,6 @@ Whole neuron
 
 </div>
 </div>
-
-$*$ Doesn't include mesh simplification/subdivision, adds $\thicksim 1-3$ minutes per neuron
 
 ---
 
@@ -571,36 +691,6 @@ $*$ Doesn't include mesh simplification/subdivision, adds $\thicksim 1-3$ minute
 - Trained on HKS features from the mesh point closest to synapse center point
 - Used a simple random forest, didn't do much tuning or exploration here
 - Didn't try to do anything with the axon, so that gets labeled arbitrarily
-
----
-
-# An aside...
-
-<div class="columns">
-<div>
-
-Many generalizations/extensions of HKS:
-
-- Alternative computational schemes:
-  <span style="font-size: 14px">Nasikun et al. 2018; Nasikun et al. 2022; Magnet and Ovsjanikov 2023, Hammond et al. 2009; Shuman et al. 2011; Huang et al. 2020 </span>
-- Volumetric HKS:
-  <span style="font-size: 14px">Raviv et al. 2010; Rustamov et al. 2009; Rustamov 2011</span>
-
-</div>
-<div>
-
-HKS features:
-
-$$h_t(x) = \sum_{i=0}^{D} e^{-\lambda_i t} \phi_i(x)^2$$
-
-Learned spectral features (Litman & Bronstein 2014):
-
-$$x_t(x) = \sum_{i=0}^{D} \textcolor{red}{f_t(\lambda)} \phi_i(x)^2$$
-
-Spectral graph neural network layer (add citation):
-
-</div>
-</div>
 
 ---
 
@@ -1178,9 +1268,18 @@ Rachael Swanstrom -->
 
 <span style="position: absolute; top: 4.25in; left: 8in; font-size: 15px; background-color: white; padding: 5px; border-radius: 5px; color: #1f77b4">Automatically classified (Elabbady et al. Nature 2025)</span>
 
---- 
+---
 
 # Variability within type - outputs
+
+---
+
+# Summary
+
+- Described a system based on spectral shape analysis (HKS) for classifying postsynaptic structures based on the mesh alone
+- Showed how we scaled this system to robustly classify >200M synapses in the MICrONS dataset
+- Described some initial findings on how postsynaptic structure targeting patterns vary by cell type
+- Made these resources available to the public via CAVE
 
 ---
 
@@ -1354,6 +1453,38 @@ _Funding_
 IARPA - MICRONS
 NSF - NeuroNex
 NIH – BICCN
+
+</div>
+</div>
+
+
+
+---
+
+# An aside...
+
+<div class="columns">
+<div>
+
+Many generalizations/extensions of HKS:
+
+- Alternative computational schemes:
+  <span style="font-size: 14px">Nasikun et al. 2018; Nasikun et al. 2022; Magnet and Ovsjanikov 2023, Hammond et al. 2009; Shuman et al. 2011; Huang et al. 2020 </span>
+- Volumetric HKS:
+  <span style="font-size: 14px">Raviv et al. 2010; Rustamov et al. 2009; Rustamov 2011</span>
+
+</div>
+<div>
+
+HKS features:
+
+$$h_t(x) = \sum_{i=0}^{D} e^{-\lambda_i t} \phi_i(x)^2$$
+
+Learned spectral features (Litman & Bronstein 2014):
+
+$$x_t(x) = \sum_{i=0}^{D} \textcolor{red}{f_t(\lambda)} \phi_i(x)^2$$
+
+Spectral graph neural network layer (add citation):
 
 </div>
 </div>
