@@ -5,6 +5,7 @@ size: 16:9
 paginate: true
 math: true
 backgroundImage: url(../themes/aibs-backgrounds/default.png)
+transition: fade 0.1s
 ---
 
 <style>
@@ -34,6 +35,9 @@ img {
   position: relative;
   top: 2px
 }
+[data-morph] {
+  view-transition-name: attr(data-morph type(<custom-ident>), none);
+}
 </style>
 
 <!-- _paginate: false -->
@@ -43,13 +47,13 @@ img {
 
 <br>
 
-# Mapping million spines in EM with
-
-# spectral shape analysis
+# <!-- fit --> Mapping million spines in EM with spectral shape analysis
 
 <div class="columns">
 <div>
 
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -77,78 +81,125 @@ Allen Institute for Brain Science
 
 ---
 
-# Very high level overview of EM data
-
-<!-- EM pipeline is the science of going from brain to images to reconstructed segmentation -->
+# Dendritic spines
 
 <div class="columns">
 <div>
 
-<!-- TODO -->
-
-Brain
+<embed src="./images/new_posterior_plots/basic_neuron.html" width="99%" height="550px" name="basic_neuron" style="border-width: 0px; border-color: white; display: block; margin: 0 auto;" data-morph="microns"></embed>
 
 </div>
 <div>
 
-<!-- TODO -->
-
-Image stack
+* Primary site of excitatory $\rightarrow$ excitatory synapses
+* Chemo-electrically isolated
+* Dynamic
+* May be a way for neurons to "reach out" to partners
 
 </div>
+</div>
+
+<!-- _transition: fade 0.5s -->
+
+
+<!-- 
 <div>
+<a href="./images/new_posterior_plots/basic_neuron.html" target="basic_neuron">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div> 
+-->
 
-<!-- TODO -->
 
-Reconstruction
+<!-- NOTE Many things that one can focus on in an EM dataset, more like an observatory. One prevalent aspect of neurobiology is spines-->
+<!-- 
+# Spines
+
+![](./images/spine_examples/dendrite-zoom-white.png)
+
+* Primary site of excitatory $\rightarrow$ excitatory synapses
+* Chemo-electrically isolated
+* Dynamic
+* May increase availability of presynaptic partners
 
 </div>
 </div>
+
+![bg right:55%](./images/spine_examples/dendrite-wide-white.png) -->
 
 ---
 
 # MICrONS
 
-<!-- TODO show something about the state of the whole dataset -->
+<div class="columns-bl">
+<div>
 
-<!-- Narrative: Once you've gotten all this cool EM data, there's still a lot of work to add semantic information -->
+<img src="./images/microns_covers/minnie_activity_12color.png" style="display: block; margin: 0 auto;" data-morph="microns"></img>
 
-<!-- Briefly mention some papers that have worked on adding this info, like cell type, dendritic features  -->
+</div>
+<div>
 
----
-
-<!-- Many things that one can focus on in an EM dataset, more like an observatory. One prevalent aspect of neurobiology is spines-->
-
-# Spines
-
-![](./images/spine_examples/dendrite-zoom-white.png)
-
-- Primary site of excitatory $\rightarrow$ excitatory synapses
-- Chemo-electrically isolated
-- Dynamic
-- May increase availability of presynaptic partners
+* Cell types
+* Pre- and post-synaptic partners
+* Correlated activity
 
 </div>
 </div>
 
-![bg right:55%](./images/spine_examples/dendrite-wide-white.png)
+
+<!-- ![center h:560](./images/microns_covers/minnie_activity_12color.png) -->
+
+
+
+<!-- TODO EXP show visual depicting the state of the whole dataset -->
+
+<!-- NOTE Once you've gotten all this cool EM data, there's still a lot of work to add semantic information -->
+
+<!-- NOTE can see all sorts of patterns like myelin, somas, spines, etc but it is still a lot of work to measure -->
+
+<!-- NOTE Briefly mention some papers that have worked on adding this info, like cell type, dendritic features  -->
 
 ---
 
 # Community interest in spines in EM: VORTEX
 
-<!-- Nothing existed in this space for doing something as fine as spines -->
-<!-- Many people had questions about spines -->
-<!-- This led to Virtual observatory of cortex grant doing a bunch of hand annotation -->
+<!-- NOTE Nothing existed in this space for doing something as fine as spines -->
+<!-- NOTE Many people had questions about spines -->
+<!-- NOTE This led to Virtual observatory of cortex grant doing a bunch of hand annotation -->
 
-- BC onto spine with multiple inputs
-- Spines with spine head apparatus (bit of ER that comes into spine head)
-- Computational question about modeling spine heads as distinct compartments
-- Analyzing how passing axons relate to dendritic morphology
+<div class="columns">
+<div>
+
+* BC onto spine with multiple inputs
+* Spines with spine head apparatus (bit of ER that comes into spine head)
+* Computational question about modeling spine heads as distinct compartments
+* Analyzing how passing axons relate to dendritic morphology
+
+
+</div>
+<div>
+
+<div style="font-size:20px">
 
 _Bethanny Danskin, Erika Neace, Rachael Swanstrom_
 
-<!-- TODO add a graphic showing an example annotated cells -->
+Synapses labeled <span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+
+</div>
+
+<div>
+<embed src="./images/vortex_labels/vortex_labels_example.svg" width="96%" height="450px" name="vortex_labels_example"></embed>
+
+<a href="./images/vortex_labels/vortex_labels_example.html" target="vortex_labels_example">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+<div style="font-size:20px">
+</div>
+
+</div>
+</div>
 
 ---
 
@@ -161,19 +212,22 @@ p {
 }
 </style>
 
-# Goal: pipeline for postsynaptic structure prediction
+<div id='highlightbox'>
 
-Develop an accurate, robust, and scaleable prediction of postsynaptic structure
+# <!-- fit --> Goal: pipeline for automated postsynaptic structure prediction
+
+<!-- Develop an accurate, robust, and scaleable prediction of postsynaptic structure -->
+
+</div>
 
 ---
 
 # Outline
 
-- Motivation
-- **Intuition for heat kernel signatures**
-- Computing heat kernel signatures
-- Application to spine prediction
-- Extensions
+* Motivation
+* **Intuition for heat kernel signatures**
+* Computational pipeline for spine prediction
+* Spines in MICrONS
 
 ---
 
@@ -182,24 +236,31 @@ Develop an accurate, robust, and scaleable prediction of postsynaptic structure
 <!-- Each of these differs in scale and size and ease of operaition etc. -->
 <!-- First intuition was that we should be able to use the mesh to find spines, because people do -->
 
-<!-- TODO add pretty pictures here -->
-
 # Morphological representations
 
 <div class="columns">
 <div>
 
 Segmentation/imagery
+(_Voxels_)
+
+![](./images/explain_morphology_representations/segmentation.svg)
 
 </div>
 <div>
 
 Mesh
+(_Triangulation of surface_)
+
+![](./images/explain_morphology_representations/mesh.svg)
 
 </div>
 <div>
 
 Skeleton
+(_Coarse medial axis_)
+
+![](./images/explain_morphology_representations/skeleton.svg)
 
 </div>
 </div>
@@ -220,30 +281,33 @@ Imagine placing a unit of heat at a point on a surface, watching how that heat d
 
 ---
 
-<!-- TODO make the soma / shaft/ spine labels bigger, maybe move -->
+<div style="font-size:20px">
+<span style="color: var(--soma);"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
 
-<div style="font-size:16px">
-<span style="color: var(--soma);"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+<!-- ![gallery h:540 center](./images/show_heat_diffusion/heat_diffusion_gallery.svg) -->
 
-![h:540 center](./images/show_heat_diffusion/heat_diffusion_gallery.svg)
+<img src="./images/show_heat_diffusion/heat_diffusion_gallery.svg" height="540px" data-morph="gallery"></img>
 
-<!-- <img src="./images/show_heat_diffusion/heat_diffusion_gallery.svg" height="540px"></img> -->
 <div style="font-size:30px; text-align: center">
 
 Increasing time $\rightarrow$
 
 </div>
 
+<!-- _transition: fade 0.5s -->
+
 ---
 
-<!-- TODO: fix this up so the y axis starts the same for the panel at right -->
+<!-- TODO EXP fix this up so the y axis starts the same for the panel at right -->
 
 # Tracking heat diffusion
 
 <div class="columns">
 <div>
 
-![](./images/show_heat_diffusion/heat_diffusion_gallery.svg)
+<!-- ![gallery](./images/show_heat_diffusion/heat_diffusion_gallery.svg) -->
+
+<img src="./images/show_heat_diffusion/heat_diffusion_gallery.svg" data-morph="gallery"></img>
 
 </div>
 <div>
@@ -333,32 +397,74 @@ p {
 
 # Spine prediction (with labels)
 
-<!-- TODO add a graphic showing a neuron with point labels -->
-
-- Used dense spine labels for 6 neurons
-  - _Erika Neace, Rachael Swanstrom, Bethanny Danskin_
-- Trained on HKS features from the mesh point closest to synapse center point
-- Used a simple random forest, didn't do much tuning or exploration here
-- Didn't try to do anything with the axon, so that gets labeled arbitrarily
-
----
-
-# Random forest, leave-one-neuron-out testing
+<!-- TODO EXP add something to depict features on this slide -->
 
 <div class="columns">
 <div>
 
-![](./images/model_comparison/metrics-Heat-RF-NEURD.svg)
+- Synapse target labels from VORTEX _(Erika Neace, Rachael Swanstrom, Bethanny Danskin)_
+* HKS features from the mesh point closest to synapse
+* Random forest classifier
+<!-- - Used a simple random forest, didn't do much tuning or exploration here
+- Didn't try to do anything with the axon, so that gets labeled arbitrarily -->
 
 </div>
 <div>
 
-![](./images/model_comparison/metrics-Heat-RF.svg)
+![](./images/vortex_labels/vortex_labels_example.svg)
+
+</div>
+</div>
+
+
+<!-- --- -->
+
+<!-- Import the component
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+<style>
+model-viewer {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #3d3d3d
+}
+</style>
+
+<model-viewer alt="A neuron" src="https://raw.githubusercontent.com/bdpedigo/talks/refs/heads/main/docs/slides/2025-03-25-brain-science-seminar/models/864691135855890478.gltf" camera-controls touch-action="pan-y"
+auto-rotate rotation-per-second="150%" camera-target="0m 0m 0m" min-field-of-view="0.25deg" field-of-view="auto" max-field-of-view="6deg"> -->
+
+<!--
+<model-viewer alt="A neuron" src="http://localhost:9001/864691135855890478.gltf" camera-controls touch-action="pan-y"
+auto-rotate rotation-per-second="150%" camera-target="0m 0m 0m" min-field-of-view="0.25deg" field-of-view="auto" max-field-of-view="6deg"> -->
+
+<!--
+<model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="shared-assets/models/NeilArmstrong.glb" ar environment-image="shared-assets/environments/moon_1k.hdr" poster="shared-assets/models/NeilArmstrong.webp" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+-->
+
+---
+
+# <!-- fit --> Random forest on HKS is an accurate classifier
+
+Train test split over _neurons_
+<div class="columns">
+<div>
+
+![h:500 center](./images/model_comparison/metrics-Heat-RF-NEURD.svg)
+
+</div>
+<div>
+
+![h:500 center](./images/model_comparison/metrics-Heat-RF.svg)
 
 </div>
 </div>
 
 ---
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
 
 <div>
 <embed src="./images/boosted_model_posteriors/864691135182486274_posterior.svg" width="96%" height="600px" name="864691135182486274_posterior"></embed>
@@ -370,6 +476,10 @@ p {
 
 ---
 
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
 <div>
 <embed src="./images/boosted_model_posteriors/864691135361404743_posterior.svg" width="96%" height="600px" name="864691135361404743_posterior"></embed>
 
@@ -379,6 +489,10 @@ p {
 </div>
 
 ---
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
 
 <div>
 <embed src="./images/boosted_model_posteriors/864691135416507322_posterior.svg" width="96%" height="600px" name="864691135416507322_posterior"></embed>
@@ -390,25 +504,40 @@ p {
 
 ---
 
+<div style="font-size:16px; padding: 10px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+<style scoped>
+section {
+  align-content: center;
+  padding: 20px;
+  margin: 10px;
+},
+p{ font-size: 0px; },
+img {
+  height: 200px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  margin: 0px;
+  /* position: relative; */
+  /* top: -50px; */
+  /* display: inline-block; */
+}
+</style>
+
 <!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
 
 <div class="columns">
 <div>
 
-![](./images/boosted_model_posteriors/864691135491229535_posterior.svg)
-
-![](./images/boosted_model_posteriors/864691135501563458_posterior.svg)
-
-![](./images/boosted_model_posteriors/864691135645292783_posterior.svg)
+![](./images/boosted_model_posteriors/864691135491229535_posterior.svg) ![](./images/boosted_model_posteriors/864691135501563458_posterior.svg) ![](./images/boosted_model_posteriors/864691135645292783_posterior.svg)
 
 </div>
 <div>
 
-![](./images/boosted_model_posteriors/864691135655141314_posterior.svg)
-
-![](./images/boosted_model_posteriors/864691135693690303_posterior.svg)
-
-![](./images/boosted_model_posteriors/864691135696697498_posterior.svg)
+![](./images/boosted_model_posteriors/864691135655141314_posterior.svg) ![](./images/boosted_model_posteriors/864691135693690303_posterior.svg) ![](./images/boosted_model_posteriors/864691135696697498_posterior.svg)
 
 </div>
 <div>
@@ -420,11 +549,26 @@ p {
 ![](./images/boosted_model_posteriors/864691135800244578_posterior.svg)
 
 </div>
+<div>
+
+![](./images/boosted_model_posteriors/864691135851482823_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135875972691_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691136005566154_posterior.svg)
+
+</div>
 </div>
 
 ---
 
+<!-- TODO EXP run a few cleaned inhibitory neurons through with axon pruning off -->
+
 # Inhibitory neurons
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
 
 <div>
 <embed src="./images/boosted_model_posteriors/864691135014021110_posterior.svg" width="96%" height="550px" name="864691135014021110_posterior"></embed>
@@ -438,6 +582,10 @@ p {
 
 # Inhibitory neurons
 
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
 <div>
 <embed src="./images/boosted_model_posteriors/864691135497617939_posterior.svg" width="96%" height="550px" name="864691135497617939_posterior"></embed>
 
@@ -449,6 +597,10 @@ p {
 ---
 
 # Inhibitory neurons
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
 
 <div>
 <embed src="./images/boosted_model_posteriors/864691136195002188_posterior.svg" width="96%" height="550px" name="864691136195002188_posterior"></embed>
@@ -462,6 +614,10 @@ p {
 
 # Inhibitory neurons
 
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
 <div>
 <embed src="./images/boosted_model_posteriors/864691136143786292_posterior.svg" width="96%" height="550px" name="864691136143786292_posterior"></embed>
 
@@ -473,6 +629,10 @@ p {
 ---
 
 # Inhibitory neurons
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
 
 <div>
 <embed src="./images/boosted_model_posteriors/864691137020205166_posterior.svg" width="96%" height="550px" name="864691137020205166_posterior"></embed>
@@ -486,6 +646,10 @@ p {
 
 # Zero-shot prediction on a human neuron
 
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
 <div>
 <embed src="./images/h01/h01_posterior.svg" width="96%" height="550px" name="h01_posterior"></embed>
 
@@ -498,9 +662,51 @@ p {
 
 ---
 
-# Detecting multi-input spines
+# Finding multi-input spines
 
-<!-- TODO make a figure to describe this -->
+<!-- <div style="font-size:20px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span> &nbsp; &nbsp; &nbsp; <img src="./../../images/icons/sphere-dashed.svg" style="display: inline; position: relative; top: 2px"></img> :black_circle: :smile: - synapse detection
+</div>
+
+:smile: -->
+
+<div class="columns">
+<div>
+
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span> &nbsp;&nbsp;&nbsp; :black_circle: synapse detection
+
+![](./images/new_posterior_plots/zoom_posterior_colors.svg)
+
+</div>
+<div>
+
+Connected components sharing a label
+
+![](./images/new_posterior_plots/zoom_component_colors.svg)
+
+<!-- absolute-positioned box-circle on top of image -->
+
+<div style="position: absolute; top: 1.8in; left: 9.5in;">Multi-input</div>
+<div style="position: absolute; top: 2.2in; left: 9.5in; width: 140px; height: 140px; background-color: none; border-radius: 70px; border-width: 3px; border-color: black; border-style: solid;"></div>
+
+<div style="position: absolute; top: 4.1in; left: 10.8in;">Single-input</div>
+<div style="position: absolute; top: 4.5in; left: 10.8in; width: 140px; height: 140px; background-color: none; border-radius: 70px; border-width: 3px; border-color: black; border-style: solid;"></div>
+
+</div>
+</div>
+
+<!-- 
+
+# Beyond spine detection
+
+- ~:white_check_mark: finding multi-input spines
+
+_Future work_
+
+- Computing spine volume, surface area
+- Sub-segmentation of spines
+- Morphological characterization of spines
+-->
 
 ---
 
@@ -618,22 +824,23 @@ the eigenvectors of the Laplacian are the Fourier series:
 
 # Timing
 
-<!-- TODO remake timing figures -->
-<!-- TODO: reach goal, compare to the version without these speedups -->
+<!-- TODO SCI compare to the version without these speedups -->
 
 <div class="columns">
 <div>
 
-Per chunk
+- Deployed on Google Kubernetes Engine
+- Mean 20 minutes per neuron per CPU
+- Mean cost **~0.5 cents per neuron**
 
-![center h:420](./images/timing/timing_n_vertices_vs_wall_time.svg)
+<!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time.svg) -->
 
 </div>
 <div>
 
-Whole neuron
+![center](./images/timing_foggy_forest_call/wall_time_scatter_by_size.svg)
 
-![center h:420](./images/timing/timing_n_vertices_vs_wall_time_per_root.svg)
+<!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time_per_root.svg) -->
 
 </div>
 </div>
@@ -650,49 +857,27 @@ Whole neuron
 
 ---
 
-# Outline
-
-- Methods
-  - Intuition for heat kernel signatures
-  - Computing heat kernel signatures
-  - Application to spine prediction
-- _Results in MICrONS_
-
----
-
 # Run on the whole dataset
 
 - Ran pipeline on putative neurons ~72,000
 - ~204 million synapses classified into { <span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> }
 - ~$500 in cloud compute cost
-- Available in the **C**onnectome **A**nnotation and **V**ersioning **E**ngine (CAVE):
-
-```python
-from caveclient import CAVEclient
-client = CAVEclient("minnie65_public", version=1300)
-client.materialize.query_table(
-    "synapse_target_predictions_ssa",
-    limit=2,
-    select_columns=["target_id", "pre_pt_root_id", "post_pt_root_id", "tag", "size"],
-)
-```
-
-```plaintext
-pre_pt_root_id	        post_pt_root_id	        size	target_id	tag
-864691135468221308	864691135383487706	4284	306517361	spine
-864691135979239816	864691135383487706	1620	285512620	shaft
-```
-
-<!-- _footer: CAVE: Dorkenwald, Schneider-Mizell et al Nature Methods (2025) -->
 
 ---
+
+<!-- NOTE at a high level, we can look at things in terms of their laminar distribution -->
+<!-- NOTE there is an abundance of synapses onto spines in upper layers  -->
 
 # Spatial distribution of synapses
 
 <div class="columns">
 <div>
 
-![center h:550](./images/synapse_spatial/synapse_cloud_layered.svg)
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+![center h:520](./images/synapse_spatial/synapse_cloud_layered.svg)
 
 <!-- 1.3M synapses (= .63% of classified) -->
 
@@ -706,9 +891,10 @@ pre_pt_root_id	        post_pt_root_id	        size	target_id	tag
 
 ---
 
-# Explain how structuring a query is important in current connectome data
-
----
+<!-- NOTE E -> E is mainly onto single input spines -->
+<!-- NOTE All other connection types are predominantly onto shaft -->
+<!-- NOTE Inhibitory neurons more likely to target somas-->
+<!-- NOTE Inhibitory neurons do target other inhibitory "spines" but often onto multi input structures -->
 
 <div class="columns-br">
 <div>
@@ -720,12 +906,20 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 </div>
 <div>
 
+<div style="font-size:16px; left: 1in;">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
 ![h:600 center](./images/tabulation_by_type/ei_synapse_proportions_w_multi.svg)
 
 </div>
 </div>
 
 ---
+
+<!-- NOTE because microns also has some cell type information, we can also look at a similar plot but now broken out by cell type
+-->
+<!-- NOTE a lot going on here, but going to draw your attention to just a few things -->
 
 <div class="columns-br">
 <div>
@@ -742,6 +936,185 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 
 ---
 
+# Basket cells target somas, even of inhibitory cells
+
+![](./images/tabulation_by_type/bc_targets.svg)
+
+<div class="columns">
+<div>
+
+![center](./images/example_contacts/bc_to_inhibitory/state=4910284205457408.png)
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4910284205457408 -->
+
+<span style="color: #e1562c">Basket </span> $\rightarrow$ <span style="color: #00cb85"> Basket</span>
+
+</div>
+<div>
+
+![center](./images/example_contacts/bc_to_inhibitory/state=6700069303615488.png)
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6700069303615488 -->
+
+<span style="color: #e1562c">Basket</span> $\rightarrow$ <span style="color: #00cb85"> Bipolar </span>
+
+</div>
+<div>
+
+![center](./images/example_contacts/bc_to_inhibitory/state=6074562245558272.png)
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6074562245558272 -->
+
+<span style="color: #e1562c">Basket</span> $\rightarrow$ <span style="color: #00cb85"> Martinotti </span>
+
+</div>
+</div>
+
+---
+
+# L6 CT cells target shafts of other excitatory cells
+
+![](./images/tabulation_by_type/6pct_targets.svg)
+
+<div class="columns">
+<div>
+
+![center](./images/example_contacts/6ct_to_shaft/state=4808939033067520.png)
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4808939033067520 -->
+
+<span style="color: #e1562c">6P-CT </span> $\rightarrow$ <span style="color: #00cb85"> 4P</span>
+
+</div>
+<div>
+
+![center](./images/example_contacts/6ct_to_shaft/state=6560729223135232.png)
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6560729223135232 -->
+
+<span style="color: #e1562c">6P-CT </span> $\rightarrow$ <span style="color: #00cb85"> 5P-ET</span>
+
+</div>
+<div>
+
+![center](./images/example_contacts/6ct_to_shaft/state=4835245372211200.png)
+
+<span style="color: #e1562c">6P-CT </span> $\rightarrow$ <span style="color: #00cb85"> 5P-IT</span>
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4835245372211200 -->
+
+</div>
+</div>
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4808939033067520 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4637776583589888 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5895863655202816 -->
+
+<!-- ---
+
+# Martinotti cells are spiniest inhibitory, multi-input spines are overrepresented
+
+---
+
+-->
+
+<!-- ---
+
+# L5ET to Martinotti cell spines
+
+<div class="columns">
+<div>
+
+![center](./images/example_contacts/5et_to_mc/state=6411529894232064.png)
+
+https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6411529894232064
+
+<span style="color: #e1562c">5P-ET </span> $\rightarrow$ <span style="color: #00cb85"> Martinotti</span>
+
+</div>
+<div>
+
+![center](./images/example_contacts/5et_to_mc/state=6128785033265152.png)
+
+https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6128785033265152
+
+<span style="color: #e1562c">5P-ET </span> $\rightarrow$ <span style="color: #00cb85"> Martinotti</span>
+
+</div>
+<div>
+
+![center](./images/example_contacts/5et_to_mc/state=6310820913872896.png)
+
+https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6310820913872896
+
+<span style="color: #e1562c">5P-ET </span> $\rightarrow$ <span style="color: #00cb85"> Martinotti</span>
+
+</div>
+</div> -->
+
+<!-- ---
+
+<div class="columns-bl">
+<div>
+
+![](./images/tabulation_by_type/5pet_targets.svg)
+
+</div>
+<div>
+
+![h:620](./images/tabulation_by_type/mc_inputs.svg)
+
+</div>
+</div> -->
+
+---
+
+<!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
+
+<div class="columns-bl">
+<div>
+
+![h:650](./images/tabulation_by_type/cell_type_synapse_proportions_w_multi.svg)
+
+<!-- add an absolute position white box without text, with black border -->
+
+<!-- block out upper left corner -->
+<div style="position: absolute; bottom: 5.74in; right: 6.8in; width: 5.55in; height: 1.07in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
+
+<!-- block out lower left corner -->
+<div style="position: absolute; top:2.32in; right: 6.9in; width: 5.45in; height: 10in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
+
+<!-- block out upper right corner -->
+<div style="position: absolute; bottom: 5.74in; left: 7.0in; width: .6in; height: 1.07in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
+
+<!-- block out lower right corner -->
+<div style="position: absolute; top:2.32in; left: 7.0in; width: .6in; height: 10in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
+
+<!-- red block in the gap between the above -->
+<div style="position: absolute; top: 2.0in; left: 6.7in; width: 0.35in; height: .4in; backbround-color: none; border: 3px solid red; border-radius:10px"></div>
+
+</div>
+<div>
+
+![center h:200](./images/example_contacts/5et_to_mc/state=6411529894232064.png)
+
+![center h:200](./images/example_contacts/5et_to_mc/state=6128785033265152.png)
+
+![center h:200](./images/example_contacts/5et_to_mc/state=6310820913872896.png)
+
+</div>
+</div>
+
+---
+
+# Nano-targeting patterns as a possible method for future cell typing
+
+<!-- TODO SCI Refine a figure showing outputs of inhibitory proofread axons and their type distributions -->
+
+- Another feature in a connectivity-based descriptor of cell type
+
+---
+
 # Variability within type - inputs
 
 ![center h:550](./images/projection_by_cell_scatters/cell_type_input_scatter.svg)
@@ -754,16 +1127,58 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 
 ---
 
-# Variability within type - outputs
+# Accessing the data
+
+* Cafe in AM
+* Available in the **C**onnectome **A**nnotation and **V**ersioning **E**ngine (CAVE):
+  ```python
+  from caveclient import CAVEclient
+  client = CAVEclient("minnie65_public", version=1300)
+  client.materialize.query_table(
+      "synapse_target_predictions_ssa",
+      limit=2,
+      select_columns=["target_id", "pre_pt_root_id", "post_pt_root_id", "tag", "size"],
+  )
+  ```
+
+  ```plaintext
+  pre_pt_root_id	        post_pt_root_id	        size	target_id	tag
+  864691135468221308	864691135383487706	4284	306517361	spine
+  864691135979239816	864691135383487706	1620	285512620	shaft
+  ```
+
+<!-- _footer: CAVE: Dorkenwald, Schneider-Mizell et al Nature Methods (2025) -->
 
 ---
 
 # Summary
 
-- Described a system based on spectral shape analysis (HKS) for classifying postsynaptic structures based on the mesh alone
-- Showed how we scaled this system to robustly classify >200M synapses in the MICrONS dataset
-- Described some initial findings on how postsynaptic structure targeting patterns vary by cell type
-- Made these resources available to the public via CAVE
+- Developed a method based on spectral shape analysis (HKS) for classifying postsynaptic structures based on mesh alone
+- Scaled this system to robustly classify >200M synapses in MICrONS
+- Described initial findings on how postsynaptic structure targeting varies by cell type
+
+---
+
+# Future directions
+
+<!-- TODO EXP add in a nice figure on axonal boutons -->
+
+<div class="columns">
+<div>
+
+* Other classification/segmentation tasks (e.g. axonal boutons)
+* Add morphometry (e.g. compute spine volumes, surface area, etc.)
+* Study spatial distribution of spine densities on individual neurons
+* Deploy on more datasets
+
+</div>
+<div>
+
+![h:500](./images/boutons/boutons.png)
+_Thalamic axon terminals_
+
+</div>
+</div>
 
 ---
 
@@ -773,6 +1188,7 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 p {
     font-size: 11px;
 }
+
 </style>
 
 <div class="columns">
@@ -1525,3 +1941,31 @@ Forrest Collman
 Bethanny Danskin
 Erika Neace
 Rachael Swanstrom -->
+
+<!-- new -->
+<!-- BC to BPC
+https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6700069303615488
+ -->
+
+<!-- screenshotable -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4666052953767936 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5360043131142144 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6750579394084864 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6581222592479232 -->
+
+<!-- BC to BPC good examples -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6138769892704256 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6204468061274112 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4589006978285568 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6054340096688128 -->
+
+<!-- BC to BPC examples -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5794013639606272 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5958557628366848 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6600367711191040 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6047743026921472 -->
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4646713487785984 -->
+
+---
+
+![center h:600](./images/em-pipeline.png)
