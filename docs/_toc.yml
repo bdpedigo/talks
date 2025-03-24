@@ -3,6 +3,8 @@ root: slides
 parts:
   - caption: Slides
     chapters:
+    - url: https://bdpedigo.github.io/talks/slides/2025-03-25-brain-science-seminar/2025-03-25-brain-science-seminar.html
+      title: Brain Science Seminar 2025
     - url: https://bdpedigo.github.io/talks/slides/edit-retrospective/edit-retrospective-lab-meeting-2024-01-23.html
       title: Edit Retrospective
     - url: https://bdpedigo.github.io/talks/slides/skedits/skedits.html
