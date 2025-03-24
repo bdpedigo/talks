@@ -937,24 +937,23 @@ We just need these eigenvectors/eigenvalues to describe heat
 </div>
 </div>
 
+
 ---
 
-# Run on MICrONS
+# Multi-input spines
 
-- Ran pipeline on putative neurons: ~72,000
-- ~204 million synapses classified into { <span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> }
-<!-- - Stored predictions for synapses and whether multi -->
-- ~$500 in cloud compute cost
+- Most (>90%) excitatory spines receive a single excitatory input
+- Some excitatory spines receive two
+  - Thought to be specifically one E, one I
+  - Enriched for thalamic input
+  - More stable
+- Multi-input spines common for inhibitory neurons
+
+<!-- _footer: Kubota et al _J. Neuroscience_ (2007), Villa et al _Neuron_ (2016) -->
 
 ---
 
 # Finding multi-input spines
-
-<!-- <div style="font-size:20px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span> &nbsp; &nbsp; &nbsp; <img src="./../../images/icons/sphere-dashed.svg" style="display: inline; position: relative; top: 2px"></img> :black_circle: :smile: - synapse detection
-</div>
-
-:smile: -->
 
 <div class="columns">
 <div>
@@ -970,8 +969,6 @@ Connected components sharing a label
 
 ![](./images/new_posterior_plots/zoom_component_colors.svg)
 
-<!-- absolute-positioned box-circle on top of image -->
-
 <div style="position: absolute; top: 1.8in; left: 9.5in;">Multi-input</div>
 <div style="position: absolute; top: 2.2in; left: 9.5in; width: 140px; height: 140px; background-color: none; border-radius: 70px; border-width: 3px; border-color: black; border-style: solid;"></div>
 
@@ -981,19 +978,24 @@ Connected components sharing a label
 </div>
 </div>
 
-<!-- 
+---
 
-# Beyond spine detection
+# Run on MICrONS
 
-- ~:white_check_mark: finding multi-input spines
+<div class="columns">
+<div>
 
-_Future work_
+- Ran on ~72,000 putative neurons
+- ~204 million synapses classified into &nbsp; { <span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> }
+- ~$500 in cloud compute cost
 
-- Computing spine volume, surface area
-- Sub-segmentation of spines
-- Morphological characterization of spines
--->
+</div>
+<div>
 
+![center h:520](./images/synapse_spatial/synapse_cloud_layered.svg)
+
+</div>
+</div>
 
 ---
 
