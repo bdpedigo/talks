@@ -24,13 +24,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      # Caching
-      - name: Try to uncache environment
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.pythonLocation }}
-          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
-
       # Installing
       - name: Install dependencies
         run: |
