@@ -38,6 +38,9 @@ img {
 [data-morph] {
   view-transition-name: attr(data-morph type(<custom-ident>), none);
 }
+section::after {
+    content: attr(data-marpit-pagination) '/47';
+}
 </style>
 
 <!-- _paginate: false -->
@@ -100,13 +103,33 @@ Allen Institute for Brain Science
 <!-- _transition: fade 0.5s -->
 
 ---
+<style scoped>
+.fig belowcaption {
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    vertical-align: top;
+    text-anchor: start;
+    font-size: 20px;
+    font-weight: normal;
+}
+</style>
 
 # MICrONS
 
 <div class="columns-bl">
 <div>
 
+<figure class='fig'>
 <img src="./images/microns_covers/minnie_activity_12color.png" style="display: block; margin: 0 auto;" data-morph="microns"></img>
+
+<belowcaption>
+
+Forrest Collman
+
+</belowcaption>
+
+</figure>
 
 </div>
 <div>
@@ -121,12 +144,11 @@ Allen Institute for Brain Science
 </div>
 </div>
 
+<!-- _footer: MICrONS consortium et al. Nature (In press) -->
+
 
 <!-- ![center h:560](./images/microns_covers/minnie_activity_12color.png) -->
 
-
-
-<!-- TODO EXP show visual depicting the state of the whole dataset -->
 
 <!-- NOTE Once you've gotten all this cool EM data, there's still a lot of work to add semantic information -->
 
@@ -142,13 +164,36 @@ Allen Institute for Brain Science
 <!-- NOTE Many people had questions about spines -->
 <!-- NOTE This led to Virtual observatory of cortex grant doing a bunch of hand annotation -->
 
+
 <div class="columns">
 <div>
+
+VORTEX: supporting community interest in MICrONS:
 
 * Basket cells onto spines with multiple inputs
 * Spines with spine head apparatus
 * Computational questions about modeling spine heads as distinct compartments
-* Analyzing how passing axons relate to dendritic morphology
+<!-- * Analyzing how passing axons relate to dendritic morphology -->
+
+</div>
+<div>
+
+</div>
+</div>
+
+---
+
+# Community interest in spines in EM: VORTEX
+
+<div class="columns">
+<div>
+
+VORTEX: supporting community interest in MICrONS:
+
+- Basket cells onto spines with multiple inputs
+-  Spines with spine head apparatus
+- Computational questions about modeling spine heads as distinct compartments
+<!-- * Analyzing how passing axons relate to dendritic morphology -->
 
 </div>
 <div>
@@ -175,6 +220,7 @@ Synapses labeled <span style="color: var(--soma);">soma</span> <span style="colo
 </div>
 </div>
 
+
 ---
 
 <style scoped>
@@ -196,12 +242,14 @@ p {
 
 ---
 
+![bg opacity:0.2](./images/boosted_model_posteriors/864691135361404743_posterior.svg)
+
 # Outline
 
-* Motivation
+- Motivation
 * **Intuition for heat kernel signatures**
-* Computational pipeline for spine prediction
-* Spines in MICrONS
+* Computational pipeline for postsynaptic structure prediction
+* Postsynaptic structures in MICrONS
 
 ---
 
@@ -508,7 +556,6 @@ Train test split over _neurons_
 </a>
 </div>
 
-
 ---
 
 # Excitatory neurons
@@ -516,8 +563,6 @@ Train test split over _neurons_
 <div style="font-size:20px; padding: 0px; position: absolute; top: 0.6in; right: 0.7in;">
 <span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
 </div>
-
-<!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
 
 <div class="columns">
 <div>
@@ -586,6 +631,8 @@ Train test split over _neurons_
 
 </div>
 </div>
+
+<!-- _footer: Cell types from Schneider-Mizell et al. Nature (In press) -->
 
 ---
 
@@ -721,8 +768,6 @@ img:hover {
 
 # Inhibitory neurons
 
-<!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
-
 <div style="font-size:20px; padding: 0px; position: absolute; top: 0.6in; right: 0.7in;">
 <span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
 </div>
@@ -793,6 +838,8 @@ Bipolar
 </div>
 </div>
 
+<!-- _footer: Cell types from Schneider-Mizell et al. Nature (In press) -->
+
 ---
 
 # Zero-shot prediction on a human neuron
@@ -814,13 +861,14 @@ Bipolar
 
 ---
 
+![bg opacity:0.2](./images/boosted_model_posteriors/864691135361404743_posterior.svg)
+
 # Outline
 
 - Motivation
 - Intuition for heat kernel signatures
-- **Computing heat kernel signatures**
-- Application to spine prediction
-- Extensions
+- **Computational pipeline for postsynaptic structure prediction**
+- Postsynaptic structures in MICrONS
 
 ---
 
@@ -901,12 +949,19 @@ We just need these eigenvectors/eigenvalues to describe heat
 </div>
 <div>
 
-###### _Subdivided mesh_
+<figure class='fig'>
+<img src="./images/show_mesh_splitting/submeshes.svg" height=260px/>
+<figcaption>
+Subdivided mesh
+</figcaption>
+</figure>
 
-![h:260](./images/show_mesh_splitting/submeshes.svg)
-
-###### _Subdivided mesh with overlap_
-![h:260](./images/show_mesh_splitting/submeshes_overlapped.svg)
+<figure class='fig'>
+<img src="./images/show_mesh_splitting/submeshes_overlapped.svg" height=260px/>
+<figcaption>
+Subdivided mesh with overlap
+</figcaption>
+</figure>
 
 </div>
 </div>
@@ -936,6 +991,68 @@ We just need these eigenvectors/eigenvalues to describe heat
 </div>
 </div>
 
+---
+
+# Run on MICrONS
+
+<div class="columns">
+<div>
+
+- Ran on ~72,000 putative neurons
+- ~204 million synapses classified into &nbsp; { <span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> }
+- ~$500 in cloud compute cost
+
+</div>
+<div>
+
+<figure class="fig">
+<img src="./images/synapse_spatial/synapse_cloud_layered.svg" height=500px/>
+<belowcaption>
+
+_~1 million (0.5%) of classified synapses_
+
+</belowcaption>
+</figure>
+
+</div>
+</div>
+
+---
+
+![bg opacity:0.2](./images/boosted_model_posteriors/864691135361404743_posterior.svg)
+
+# Outline
+
+- Motivation
+- Intuition for heat kernel signatures
+- Computational pipeline for postsynaptic structure prediction
+- **Postsynaptic structures in MICrONS**
+
+---
+
+<!-- NOTE at a high level, we can look at things in terms of their laminar distribution -->
+<!-- NOTE there is an abundance of synapses onto spines in upper layers  -->
+
+# Spatial distribution of synapses
+
+<div class="columns">
+<div>
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+![center h:520](./images/synapse_spatial/synapse_cloud_layered.svg)
+
+<!-- 1.3M synapses (= .63% of classified) -->
+
+</div>
+<div>
+
+![center h:500](./images/synapse_spatial/synapse_spatial_kde.svg)
+
+</div>
+</div>
 
 ---
 
@@ -977,68 +1094,6 @@ Connected components sharing a label
 </div>
 </div>
 
----
-
-# Run on MICrONS
-
-<div class="columns">
-<div>
-
-- Ran on ~72,000 putative neurons
-- ~204 million synapses classified into &nbsp; { <span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> }
-- ~$500 in cloud compute cost
-
-</div>
-<div>
-
-<figure class="fig">
-<img src="./images/synapse_spatial/synapse_cloud_layered.svg" height=500px/>
-<belowcaption>
-
-_~1 million (0.5%) of classified synapses_
-
-</belowcaption>
-</figure>
-
-</div>
-</div>
-
----
-
-# Outline
-
-- Motivation
-- Intuition for heat kernel signatures
-- Computing heat kernel signatures
-- **Application to spine prediction**
-- Extensions
-
-
----
-
-<!-- NOTE at a high level, we can look at things in terms of their laminar distribution -->
-<!-- NOTE there is an abundance of synapses onto spines in upper layers  -->
-
-# Spatial distribution of synapses
-
-<div class="columns">
-<div>
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-</div>
-
-![center h:520](./images/synapse_spatial/synapse_cloud_layered.svg)
-
-<!-- 1.3M synapses (= .63% of classified) -->
-
-</div>
-<div>
-
-![center h:500](./images/synapse_spatial/synapse_spatial_kde.svg)
-
-</div>
-</div>
 
 ---
 
