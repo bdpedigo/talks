@@ -269,3 +269,30 @@ vertical-align: middle;
   width: 300px;
   height: 300px;
 }
+
+
+.fig {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+.fig figcaption {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    vertical-align: top;
+    text-anchor: start;
+    font-weight: bold;
+    font-size: 24px;
+/* transform: translate(-50%, -50%); */
+}
+.fig belowcaption {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    vertical-align: top;
+    text-anchor: start;
+    font-weight: bold;
+    font-size: 24px;
+    /* transform: translate(-50%, -50%); */
+}

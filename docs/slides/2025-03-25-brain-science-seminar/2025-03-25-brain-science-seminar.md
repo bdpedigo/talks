@@ -508,66 +508,84 @@ Train test split over _neurons_
 </a>
 </div>
 
+
 ---
 
-<!-- TODO: remake to show examples from multiple cell types, maybe column?  -->
+# Excitatory neurons
 
-<div style="font-size:16px; padding: 10px">
+<div style="font-size:20px; padding: 0px; position: absolute; top: 0.6in; right: 0.7in;">
 <span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
 </div>
-
-<style scoped>
-section {
-  align-content: center;
-  padding: 20px;
-  margin: 10px;
-},
-p{ font-size: 0px; },
-img {
-  height: 200px;
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-  margin: 0px;
-  /* position: relative; */
-  /* top: -50px; */
-  /* display: inline-block; */
-}
-</style>
 
 <!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
 
 <div class="columns">
 <div>
 
-![](./images/boosted_model_posteriors/864691135491229535_posterior.svg) ![](./images/boosted_model_posteriors/864691135501563458_posterior.svg) ![](./images/boosted_model_posteriors/864691135645292783_posterior.svg)
+<!-- ![](./images/new_posterior_plots/864691135119068125-23P.svg) -->
+
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135119068125-23P.svg" />
+<figcaption >
+23P
+</figcaption>
+</figure>
 
 </div>
 <div>
 
-![](./images/boosted_model_posteriors/864691135655141314_posterior.svg) ![](./images/boosted_model_posteriors/864691135693690303_posterior.svg) ![](./images/boosted_model_posteriors/864691135696697498_posterior.svg)
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691136067090584-4P.svg" />
+<figcaption >
+4P
+</figcaption>
+</figure>
 
 </div>
 <div>
 
-![](./images/boosted_model_posteriors/864691135697250714_posterior.svg)
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135388264577-5P-IT.svg" />
+<figcaption >
+5P-IT
+</figcaption>
+</figure>
 
-![](./images/boosted_model_posteriors/864691135737477764_posterior.svg)
+</div>
+</div>
 
-![](./images/boosted_model_posteriors/864691135800244578_posterior.svg)
+<div class="columns">
+<div>
+
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691136362746082-5P-NP.svg" />
+<figcaption >
+5P-NP
+</figcaption>
+</figure>
 
 </div>
 <div>
 
-![](./images/boosted_model_posteriors/864691135851482823_posterior.svg)
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691136362774498-5P-PT.svg" />
+<figcaption >
+5P-ET
+</figcaption>
+</figure>
 
-![](./images/boosted_model_posteriors/864691135875972691_posterior.svg)
+</div>
+<div>
 
-![](./images/boosted_model_posteriors/864691136005566154_posterior.svg)
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135688407776-6P-CT.svg" />
+<figcaption >
+6P-CT
+</figcaption>
+</figure>
 
 </div>
 </div>
-
 
 ---
 
@@ -584,19 +602,6 @@ img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 </style>
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5294319914188800 -->
-
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4927362740256768 -->
-
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5256989132193792 -->
-
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6342512605134848 -->
-
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5018403698900992 -->
-
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4938240147587072 -->
-
-<!-- state=5256989132193792, state=4927362740256768, state=5256989132193792 are MC?-->
 
 <div class="columns">
 <div>
@@ -714,84 +719,78 @@ img:hover {
 
 ---
 
-<!-- TODO EXP run a few cleaned inhibitory neurons through with axon pruning off -->
-
 # Inhibitory neurons
 
-<div style="font-size:16px">
+<!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
+
+<div style="font-size:20px; padding: 0px; position: absolute; top: 0.6in; right: 0.7in;">
 <span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
 </div>
 
+<div class="columns">
 <div>
-<embed src="./images/boosted_model_posteriors/864691135014021110_posterior.svg" width="96%" height="550px" name="864691135014021110_posterior"></embed>
 
-<a href="./images/boosted_model_posteriors/864691135014021110_posterior.html" target="864691135014021110_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135082840567-BC.svg" />
+<figcaption >
+Basket
+</figcaption>
+</figure>
+
 </div>
-
----
-
-# Inhibitory neurons
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-</div>
-
 <div>
-<embed src="./images/boosted_model_posteriors/864691135497617939_posterior.svg" width="96%" height="550px" name="864691135497617939_posterior"></embed>
 
-<a href="./images/boosted_model_posteriors/864691135497617939_posterior.html" target="864691135497617939_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135865240702-BC.svg" />
+<figcaption >
+Basket
+</figcaption>
+</figure>
+
 </div>
-
----
-
-# Inhibitory neurons
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-</div>
-
 <div>
-<embed src="./images/boosted_model_posteriors/864691136195002188_posterior.svg" width="96%" height="550px" name="864691136195002188_posterior"></embed>
 
-<a href="./images/boosted_model_posteriors/864691136195002188_posterior.html" target="864691136195002188_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135339516390-MC.svg" />
+<figcaption >
+Martinotti
+</figcaption>
+</figure>
+
+</div>
 </div>
 
----
-
-# Inhibitory neurons
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-</div>
-
+<div class="columns">
 <div>
-<embed src="./images/boosted_model_posteriors/864691136143786292_posterior.svg" width="96%" height="550px" name="864691136143786292_posterior"></embed>
 
-<a href="./images/boosted_model_posteriors/864691136143786292_posterior.html" target="864691136143786292_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135777888864-MC.svg"/>
+<figcaption >
+Martinotti
+</figcaption>
+</figure>
+
 </div>
-
----
-
-# Inhibitory neurons
-
-<div style="font-size:16px">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-</div>
-
 <div>
-<embed src="./images/boosted_model_posteriors/864691137020205166_posterior.svg" width="96%" height="550px" name="864691137020205166_posterior"></embed>
 
-<a href="./images/boosted_model_posteriors/864691137020205166_posterior.html" target="864691137020205166_posterior">
-<img src="./../../images/icons/search.svg"></img>
-</a>
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135976155459-NGC.svg"/>
+<figcaption >
+Neurogliaform
+</figcaption>
+</figure>
+
+</div>
+<div>
+
+<figure class="fig">
+<img src="./images/new_posterior_plots/864691135386940245-BPC.svg"/>
+<figcaption >
+Bipolar
+</figcaption>
+</figure>
+
+</div>
 </div>
 
 ---
@@ -992,7 +991,14 @@ Connected components sharing a label
 </div>
 <div>
 
-![center h:520](./images/synapse_spatial/synapse_cloud_layered.svg)
+<figure class="fig">
+<img src="./images/synapse_spatial/synapse_cloud_layered.svg" height=500px/>
+<belowcaption>
+
+_~1 million (0.5%) of classified synapses_
+
+</belowcaption>
+</figure>
 
 </div>
 </div>
@@ -2156,3 +2162,142 @@ the eigenvectors of the Laplacian are the Fourier series:
 
 </div>
 </div>
+
+
+<!-- ---
+
+# Inhibitory neurons
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135014021110_posterior.svg" width="96%" height="550px" name="864691135014021110_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135014021110_posterior.html" target="864691135014021110_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691135497617939_posterior.svg" width="96%" height="550px" name="864691135497617939_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691135497617939_posterior.html" target="864691135497617939_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691136195002188_posterior.svg" width="96%" height="550px" name="864691136195002188_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691136195002188_posterior.html" target="864691136195002188_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691136143786292_posterior.svg" width="96%" height="550px" name="864691136143786292_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691136143786292_posterior.html" target="864691136143786292_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+---
+
+# Inhibitory neurons
+
+<div style="font-size:16px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+<div>
+<embed src="./images/boosted_model_posteriors/864691137020205166_posterior.svg" width="96%" height="550px" name="864691137020205166_posterior"></embed>
+
+<a href="./images/boosted_model_posteriors/864691137020205166_posterior.html" target="864691137020205166_posterior">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div> -->
+
+<!-- ---
+
+<div style="font-size:16px; padding: 10px">
+<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
+</div>
+
+<style scoped>
+section {
+  align-content: center;
+  padding: 20px;
+  margin: 10px;
+},
+p{ font-size: 0px; },
+img {
+  height: 200px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  margin: 0px;
+  /* position: relative; */
+  /* top: -50px; */
+  /* display: inline-block; */
+}
+</style>
+
+<!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
+<!-- 
+<div class="columns">
+<div>
+
+![](./images/boosted_model_posteriors/864691135491229535_posterior.svg) ![](./images/boosted_model_posteriors/864691135501563458_posterior.svg) ![](./images/boosted_model_posteriors/864691135645292783_posterior.svg)
+
+</div>
+<div>
+
+![](./images/boosted_model_posteriors/864691135655141314_posterior.svg) ![](./images/boosted_model_posteriors/864691135693690303_posterior.svg) ![](./images/boosted_model_posteriors/864691135696697498_posterior.svg)
+
+</div>
+<div>
+
+![](./images/boosted_model_posteriors/864691135697250714_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135737477764_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135800244578_posterior.svg)
+
+</div>
+<div>
+
+![](./images/boosted_model_posteriors/864691135851482823_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691135875972691_posterior.svg)
+
+![](./images/boosted_model_posteriors/864691136005566154_posterior.svg)
+
+</div>
+</div> --> 
