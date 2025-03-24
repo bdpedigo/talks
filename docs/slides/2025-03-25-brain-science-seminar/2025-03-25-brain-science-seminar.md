@@ -67,10 +67,6 @@ Allen Institute for Brain Science
 
 <div style='' >
 
-<!-- ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/github.png) [@bdpedigo (Github)](https://github.com/bdpedigo) -->
-<!-- ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/twitter.png) [@bpedigod (Twitter)](https://twitter.com/bpedigod) -->
-<!-- ![icon](https://raw.githubusercontent.com/bdpedigo/talks/main/docs/images/icons/web.png) [bdpedigo.github.io](https://bdpedigo.github.io/) -->
-
 </div>
 
 </div>
@@ -80,6 +76,8 @@ Allen Institute for Brain Science
 </div>
 
 ---
+
+<!-- NOTE spines are a prevalent morphological features, and a fundamental building block of connectivity between neurons -->
 
 # Dendritic spines
 
@@ -94,38 +92,12 @@ Allen Institute for Brain Science
 * Primary site of excitatory $\rightarrow$ excitatory synapses
 * Chemo-electrically isolated
 * Dynamic
-* May be a way for neurons to "reach out" to partners
+* Mechanism for neurons to "reach out" to partners
 
 </div>
 </div>
 
 <!-- _transition: fade 0.5s -->
-
-
-<!-- 
-<div>
-<a href="./images/new_posterior_plots/basic_neuron.html" target="basic_neuron">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div> 
--->
-
-
-<!-- NOTE Many things that one can focus on in an EM dataset, more like an observatory. One prevalent aspect of neurobiology is spines-->
-<!-- 
-# Spines
-
-![](./images/spine_examples/dendrite-zoom-white.png)
-
-* Primary site of excitatory $\rightarrow$ excitatory synapses
-* Chemo-electrically isolated
-* Dynamic
-* May increase availability of presynaptic partners
-
-</div>
-</div>
-
-![bg right:55%](./images/spine_examples/dendrite-wide-white.png) -->
 
 ---
 
@@ -139,9 +111,12 @@ Allen Institute for Brain Science
 </div>
 <div>
 
-* Cell types
+* Scale
 * Pre- and post-synaptic partners
-* Correlated activity
+* Cell types
+* EM imagery
+
+<!-- * Correlated activity -->
 
 </div>
 </div>
@@ -170,11 +145,10 @@ Allen Institute for Brain Science
 <div class="columns">
 <div>
 
-* BC onto spine with multiple inputs
-* Spines with spine head apparatus (bit of ER that comes into spine head)
-* Computational question about modeling spine heads as distinct compartments
+* Basket cells onto spines with multiple inputs
+* Spines with spine head apparatus
+* Computational questions about modeling spine heads as distinct compartments
 * Analyzing how passing axons relate to dendritic morphology
-
 
 </div>
 <div>
@@ -252,7 +226,9 @@ Segmentation/imagery
 Mesh
 (_Triangulation of surface_)
 
-![](./images/explain_morphology_representations/mesh.svg)
+<!-- ![](./images/explain_morphology_representations/mesh.svg) -->
+
+<img src="./images/explain_morphology_representations/mesh.svg" data-morph="mesh"></img>
 
 </div>
 <div>
@@ -265,9 +241,31 @@ Skeleton
 </div>
 </div>
 
+<div style="text-align: center">
+
+$\leftarrow$ More expensive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Less expensive $\rightarrow$
+
+</div>
+
+<!-- _transition: fade 1s -->
+
 ---
 
-![center h:300](./images/sun-et-al.png)
+# How to generate features for a mesh?
+
+<div class="columns">
+<div>
+
+<img src=./images/explain_morphology_representations/mesh.svg data-morph="mesh"></img>
+
+</div>
+<div>
+
+![center](./images/sun-et-al.png)
+
+</div>
+</div>
+
 
 ---
 
@@ -319,6 +317,8 @@ Increasing time $\rightarrow$
 
 ---
 
+<!-- TODO add the plot of 3 heat kernel signatures back in here -->
+
 # Defining the heat kernel signature (HKS)
 
 $k_{t}(x, y)$: the amount of heat that diffuses from point $x$ to point $y$ after time $t$.
@@ -354,19 +354,25 @@ p {
 <div class="columns">
 <div>
 
-![h:350 center](./images/hks_paper_synthetic_example.png)
+<!-- ![h:350 center](./images/hks_paper_synthetic_example.png) -->
+
+<img src="./images/hks_paper_synthetic_example.png" data-morph="hks-plot" height=350px style="display: block; margin: 0 auto;"></img>
 
 > ...all four points have isometric neighborhoods at small scales, their HKS’s are the same for small $t$’s ($< t_1$).
 
 </div>
 <div>
 
-![center](./images/horses.png)
+<!-- ![center](./images/horses.png) -->
+
+<img src="./images/sun-fig7.png" data-morph="octopus"></img>
 
 </div>
 </div>
 
 <!-- _footer: Sun et al., _Eurographics_ (2008) -->
+
+<!-- _transition: fade 0.7s -->
 
 ---
 
@@ -379,11 +385,13 @@ p {
 
 ![center h:270](./images/show_heat_diffusion/hks_clustermap.png)
 
+<!-- <img src="./images/show_heat_diffusion/hks_lines.svg" data-morph="hks-plot" height=270px style="display: block; margin: 0 auto;"></img> -->
+
 </div>
 <div>
 
 <div>
-<embed src="./images/show_heat_diffusion/hks_clustered.svg" width="96%" height="550px" name="hks_clustered"></embed>
+<embed src="./images/show_heat_diffusion/hks_clustered.svg" width="96%" height="550px" name="hks_clustered" data-morph="octopus"></embed>
 
 <a href="./images/show_heat_diffusion/hks_clustered.html" target="hks_clustered">
 <img src="./../../images/icons/search.svg"></img>
@@ -395,23 +403,21 @@ p {
 
 ---
 
-# Spine prediction (with labels)
+# Postsynaptic structure prediction (with labels)
 
 <!-- TODO EXP add something to depict features on this slide -->
 
 <div class="columns">
 <div>
 
-- Synapse target labels from VORTEX _(Erika Neace, Rachael Swanstrom, Bethanny Danskin)_
-* HKS features from the mesh point closest to synapse
-* Random forest classifier
-<!-- - Used a simple random forest, didn't do much tuning or exploration here
-- Didn't try to do anything with the axon, so that gets labeled arbitrarily -->
+![](./images/vortex_labels/vortex_labels_example.svg)
 
 </div>
 <div>
 
-![](./images/vortex_labels/vortex_labels_example.svg)
+- Synapse target labels from VORTEX _(Erika Neace, Rachael Swanstrom, Bethanny Danskin)_
+* HKS features from the mesh point closest to synapse
+* Random forest classifier
 
 </div>
 </div>
@@ -504,6 +510,8 @@ Train test split over _neurons_
 
 ---
 
+<!-- TODO: remake to show examples from multiple cell types, maybe column?  -->
+
 <div style="font-size:16px; padding: 10px">
 <span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
 </div>
@@ -556,6 +564,150 @@ img {
 ![](./images/boosted_model_posteriors/864691135875972691_posterior.svg)
 
 ![](./images/boosted_model_posteriors/864691136005566154_posterior.svg)
+
+</div>
+</div>
+
+
+---
+
+# Excitatory or inhibitory?
+
+<style scoped>
+a {
+  position: relative;
+}
+img {
+
+}
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5294319914188800 -->
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4927362740256768 -->
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5256989132193792 -->
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6342512605134848 -->
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5018403698900992 -->
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4938240147587072 -->
+
+<!-- state=5256989132193792, state=4927362740256768, state=5256989132193792 are MC?-->
+
+<div class="columns">
+<div>
+
+##### A) <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4927362740256768"><img src="./images/e_vs_i_spines/state=4927362740256768.png"></img></a>
+
+
+</div>
+<div>
+
+##### B)
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5018403698900992"><img src="./images/e_vs_i_spines/state=5018403698900992.png"></img></a>
+
+
+</div>
+<div>
+
+##### C)
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5294319914188800"><img src="./images/e_vs_i_spines/state=5294319914188800.png"></img></a>
+
+</div>
+</div>
+
+<div class="columns">
+<div>
+
+##### D)
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4938240147587072"><img src="./images/e_vs_i_spines/state=4938240147587072.png"></img></a>
+
+
+</div>
+<div>
+
+##### E)
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5256989132193792"><img src="./images/e_vs_i_spines/state=5256989132193792.png"></img></a>
+
+</div>
+<div>
+
+##### F)
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6342512605134848"><img src="./images/e_vs_i_spines/state=6342512605134848.png"></img></a>
+
+</div>
+</div>
+
+---
+
+# Excitatory or inhibitory?
+
+<style scoped>
+a {
+  position: relative;
+}
+img {
+
+}
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
+
+<div class="columns">
+<div>
+
+##### Inhibitory <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4927362740256768"><img src="./images/e_vs_i_spines/state=4927362740256768.png"></img></a>
+
+
+</div>
+<div>
+
+##### Excitatory
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5018403698900992"><img src="./images/e_vs_i_spines/state=5018403698900992.png"></img></a>
+
+
+</div>
+<div>
+
+##### Inhibitory
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5294319914188800"><img src="./images/e_vs_i_spines/state=5294319914188800.png"></img></a>
+
+</div>
+</div>
+
+<div class="columns">
+<div>
+
+##### Excitatory
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4938240147587072"><img src="./images/e_vs_i_spines/state=4938240147587072.png"></img></a>
+
+
+</div>
+<div>
+
+##### Inhibitory
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5256989132193792"><img src="./images/e_vs_i_spines/state=5256989132193792.png"></img></a>
+
+</div>
+<div>
+
+##### Excitatory
+
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6342512605134848"><img src="./images/e_vs_i_spines/state=6342512605134848.png"></img></a>
 
 </div>
 </div>
@@ -651,7 +803,7 @@ img {
 </div>
 
 <div>
-<embed src="./images/h01/h01_posterior.svg" width="96%" height="550px" name="h01_posterior"></embed>
+<embed src="./images/h01/h01_posterior.svg" width="96%" height="520px" name="h01_posterior"></embed>
 
 <a href="./images/h01/h01_posterior.html" target="h01_posterior">
 <img src="./../../images/icons/search.svg"></img>
@@ -659,6 +811,140 @@ img {
 </div>
 
 <!-- _footer: Shapson-Coe et al. _Science_ 2024  -->
+
+
+---
+
+# Outline
+
+- Motivation
+- Intuition for heat kernel signatures
+- **Computing heat kernel signatures**
+- Application to spine prediction
+- Extensions
+
+---
+
+<!-- TODO EXP reduce math here -->
+
+# Heat diffusion
+
+Evolution of heat $u$ over time $t$ is governed by the heat equation:
+
+$$\frac{\partial{u}}{\partial{t}} = \Delta u$$
+
+where $\Delta$ is the Laplacian (2nd derivative) operator.
+
+Heat transferred from point $x$ to $y$ at time $t$ is given by the heat kernel $k_t(x,y)$:
+
+$$k_t(x,y) = \sum_{i=0}^{\infty} e^{-\lambda_i t} \phi_i(x) \phi_i(y)$$
+
+where $\lambda_i$ and $\phi_i$ are the eigenvalues and eigenvectors of the Laplacian operator
+
+<div id="highlightbox">
+
+We just need these eigenvectors/eigenvalues to describe heat
+
+</div>
+
+<!-- _footer: https://en.wikipedia.org/wiki/Heat_kernel -->
+
+---
+
+# Laplacian eigenvectors
+
+<div class="columns">
+<div>
+
+### 1D grid
+
+![](./images/discrete_heat/1d_eigenvectors.svg)
+
+</div>
+<div>
+
+### 2D grid
+
+![](./images/discrete_heat/plane_eigenvector_199.svg)
+
+</div>
+<div>
+
+### Mesh
+
+<div>
+<embed src="./images/show_heat_diffusion/eigenvector_on_mesh.svg" width="96%" height="380px" name="eigenvector_on_mesh"></embed>
+
+<a href="./images/show_heat_diffusion/eigenvector_on_mesh.html" target="eigenvector_on_mesh">
+<img src="./../../images/icons/search.svg"></img>
+</a>
+</div>
+
+</div>
+</div>
+
+* Just need a truncated eigendecomposition
+* Takes several hours for a full neuron mesh
+
+---
+
+# Computational improvements
+
+<div class="columns">
+<div>
+
+- Overlapping mesh subdivision
+* Mesh simplification (Garland and Heckbert 1997)
+* Band-by-band eigendecomposition (Vallet and Levy 2008)
+* Robust laplacian (Sharp and Crane 2020)
+* Mesh agglomeration (for compressed storage)
+
+</div>
+<div>
+
+###### _Subdivided mesh_
+
+![h:260](./images/show_mesh_splitting/submeshes.svg)
+
+###### _Subdivided mesh with overlap_
+![h:260](./images/show_mesh_splitting/submeshes_overlapped.svg)
+
+</div>
+</div>
+
+---
+
+# Timing
+
+<!-- TODO SCI compare to the version without these speedups -->
+
+<div class="columns">
+<div>
+
+- Deployed on Google Kubernetes Engine
+- Mean 20 minutes per neuron per CPU
+- Mean cost **~0.5 cents per neuron**
+
+<!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time.svg) -->
+
+</div>
+<div>
+
+![center](./images/timing_foggy_forest_call/wall_time_scatter_by_size.svg)
+
+<!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time_per_root.svg) -->
+
+</div>
+</div>
+
+---
+
+# Run on MICrONS
+
+- Ran pipeline on putative neurons: ~72,000
+- ~204 million synapses classified into { <span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> }
+<!-- - Stored predictions for synapses and whether multi -->
+- ~$500 in cloud compute cost
 
 ---
 
@@ -708,142 +994,6 @@ _Future work_
 - Morphological characterization of spines
 -->
 
----
-
-# Outline
-
-- Motivation
-- Intuition for heat kernel signatures
-- **Computing heat kernel signatures**
-- Application to spine prediction
-- Extensions
-
----
-
-# Heat diffusion
-
-Evolution of heat $u$ over time $t$ is governed by the heat equation:
-
-$$\frac{\partial{u}}{\partial{t}} = \Delta u$$
-
-where $\Delta$ is the Laplacian (2nd derivative) operator.
-
-Heat transferred from point $x$ to $y$ at time $t$ is given by the heat kernel $k_t(x,y)$:
-
-$$k_t(x,y) = \sum_{i=0}^{\infty} e^{-\lambda_i t} \phi_i(x) \phi_i(y)$$
-
-where $\lambda_i$ and $\phi_i$ are the eigenvalues and eigenvectors of the Laplacian operator
-
-<div id="highlightbox">
-
-We just need these eigenvectors/eigenvalues to describe heat
-
-</div>
-
-<!-- _footer: https://en.wikipedia.org/wiki/Heat_kernel -->
-
----
-
-# Heat on a 1D grid
-
-<div class="columns">
-<div>
-
-For a 1D grid,
-
-![](./images/discrete_heat/1d_grid.svg)
-
-the eigenvectors of the Laplacian are the Fourier series:
-
-</div>
-<div>
-
-![](./images/discrete_heat/1d_eigenvectors.svg)
-
-</div>
-</div>
-
----
-
-# Laplacian eigenvectors
-
-<div class="columns">
-<div>
-
-### 1D grid
-
-![](./images/discrete_heat/1d_eigenvectors.svg)
-
-</div>
-<div>
-
-### 2D grid
-
-![](./images/discrete_heat/plane_eigenvector_199.svg)
-
-</div>
-<div>
-
-### Mesh
-
-<div>
-<embed src="./images/show_heat_diffusion/eigenvector_on_mesh.svg" width="96%" height="380px" name="eigenvector_on_mesh"></embed>
-
-<a href="./images/show_heat_diffusion/eigenvector_on_mesh.html" target="eigenvector_on_mesh">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
-</div>
-</div>
-
----
-
-# Computational improvements
-
-<div class="columns">
-<div>
-
-- Mesh simplification (Garland and Heckbert 1997)
-- Overlapping mesh subdivision
-- Band-by-band eigendecomposition (Vallet and Levy 2008)
-- Robust laplacian (Sharp and Crane 2020)
-- Mesh agglomeration (for compressed storage)
-
-</div>
-<div>
-
-![h:260](./images/show_mesh_splitting/submeshes.svg)
-
-![h:260](./images/show_mesh_splitting/submeshes_overlapped.svg)
-
-</div>
-</div>
-
----
-
-# Timing
-
-<!-- TODO SCI compare to the version without these speedups -->
-
-<div class="columns">
-<div>
-
-- Deployed on Google Kubernetes Engine
-- Mean 20 minutes per neuron per CPU
-- Mean cost **~0.5 cents per neuron**
-
-<!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time.svg) -->
-
-</div>
-<div>
-
-![center](./images/timing_foggy_forest_call/wall_time_scatter_by_size.svg)
-
-<!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time_per_root.svg) -->
-
-</div>
-</div>
 
 ---
 
@@ -855,13 +1005,6 @@ the eigenvectors of the Laplacian are the Fourier series:
 - **Application to spine prediction**
 - Extensions
 
----
-
-# Run on the whole dataset
-
-- Ran pipeline on putative neurons ~72,000
-- ~204 million synapses classified into { <span style="color: rgb(0, 227, 255);">soma</span> <span style="color: rgb(239, 230, 69);">shaft</span> <span style="color: rgb(233, 53, 161);">spine</span> }
-- ~$500 in cloud compute cost
 
 ---
 
@@ -1153,20 +1296,18 @@ https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/ngl
 
 # Summary
 
-- Developed a method based on spectral shape analysis (HKS) for classifying postsynaptic structures based on mesh alone
-- Scaled this system to robustly classify >200M synapses in MICrONS
-- Described initial findings on how postsynaptic structure targeting varies by cell type
+* Developed a method based on spectral shape analysis (HKS) for classifying postsynaptic structures based on mesh alone
+* Scaled this system to robustly classify >200M synapses in MICrONS
+* Described initial findings on how postsynaptic structure targeting varies by cell type
 
 ---
 
 # Future directions
 
-<!-- TODO EXP add in a nice figure on axonal boutons -->
-
 <div class="columns">
 <div>
 
-* Other classification/segmentation tasks (e.g. axonal boutons)
+- Other classification/segmentation tasks (e.g. axonal boutons)
 * Add morphometry (e.g. compute spine volumes, surface area, etc.)
 * Study spatial distribution of spine densities on individual neurons
 * Deploy on more datasets
@@ -1175,7 +1316,7 @@ https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/ngl
 <div>
 
 ![h:500](./images/boutons/boutons.png)
-_Thalamic axon terminals_
+_Segmenting thalamic axon boutons_
 
 </div>
 </div>
@@ -1356,6 +1497,28 @@ NIH – BICCN
 
 </div>
 </div>
+
+---
+
+# Questions?
+
+<!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
+
+![bg opacity:0.4](./images/boosted_model_posteriors/864691135361404743_posterior.svg)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Ben Pedigo
+(he/him)
+Scientist I
+Allen Institute for Brain Science
+[ben.pedigo@alleninstitute.org](mailto:ben.pedigo@alleninstitute.org)
 
 ---
 
@@ -1969,3 +2132,25 @@ https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/ngl
 ---
 
 ![center h:600](./images/em-pipeline.png)
+
+
+---
+
+# Heat on a 1D grid
+
+<div class="columns">
+<div>
+
+For a 1D grid,
+
+![](./images/discrete_heat/1d_grid.svg)
+
+the eigenvectors of the Laplacian are the Fourier series:
+
+</div>
+<div>
+
+![](./images/discrete_heat/1d_eigenvectors.svg)
+
+</div>
+</div>
