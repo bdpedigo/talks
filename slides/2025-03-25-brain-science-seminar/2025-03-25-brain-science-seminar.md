@@ -968,7 +968,7 @@ Subdivided mesh with overlap
 
 ---
 
-# Timing
+# Timing and compute
 
 <!-- TODO SCI compare to the version without these speedups -->
 
@@ -976,7 +976,7 @@ Subdivided mesh with overlap
 <div>
 
 - Deployed on Google Kubernetes Engine
-- Mean 20 minutes per neuron per CPU
+- ~20 minutes per neuron per CPU
 - Mean cost **~0.5 cents per neuron**
 
 <!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time.svg) -->
@@ -984,7 +984,7 @@ Subdivided mesh with overlap
 </div>
 <div>
 
-![center](./images/timing_foggy_forest_call/wall_time_scatter_by_size.svg)
+![center](./images/timing_foggy_forest_call/effective_time_scatter_by_size.svg)
 
 <!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time_per_root.svg) -->
 
@@ -1058,6 +1058,8 @@ _~1 million (0.5%) of classified synapses_
 
 # Multi-input spines
 
+<!-- TODO EXP add a nice image here of more than one axon onto a spine -->
+
 - Most (>90%) excitatory spines receive a single excitatory input
 - Some excitatory spines receive two
   - Thought to be specifically one E, one I
@@ -1094,6 +1096,13 @@ Connected components sharing a label
 </div>
 </div>
 
+---
+
+# <!-- fit --> A triple-input spine onto an excitatory cell
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6077690223263744 -->
+
+![h:525 center](./images/triple-spine.png)
 
 ---
 
@@ -1101,6 +1110,9 @@ Connected components sharing a label
 <!-- NOTE All other connection types are predominantly onto shaft -->
 <!-- NOTE Inhibitory neurons more likely to target somas-->
 <!-- NOTE Inhibitory neurons do target other inhibitory "spines" but often onto multi input structures -->
+
+<!-- TODO EXP add dynamics to this slide here to make things disappear -->
+<!-- TODO EXP move the legend somewhere nicer here -->
 
 <div class="columns-br">
 <div>
@@ -1112,9 +1124,10 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 </div>
 <div>
 
-<div style="font-size:16px; left: 1in;">
+<!-- 
+<div style="font-size:20px; right: 1in; position: absolute;">
 <span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-</div>
+</div> -->
 
 ![h:600 center](./images/tabulation_by_type/ei_synapse_proportions_w_multi.svg)
 
@@ -1185,7 +1198,7 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 <div class="columns">
 <div>
 
-![center](./images/example_contacts/6ct_to_shaft/state=4808939033067520.png)
+![center](./images/example_contacts/6ct_to_e_shaft/state=4808939033067520.png)
 
 <!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4808939033067520 -->
 
@@ -1194,7 +1207,7 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 </div>
 <div>
 
-![center](./images/example_contacts/6ct_to_shaft/state=6560729223135232.png)
+![center](./images/example_contacts/6ct_to_e_shaft/state=6560729223135232.png)
 
 <!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6560729223135232 -->
 
@@ -1203,7 +1216,7 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 </div>
 <div>
 
-![center](./images/example_contacts/6ct_to_shaft/state=4835245372211200.png)
+![center](./images/example_contacts/6ct_to_e_shaft/state=4835245372211200.png)
 
 <span style="color: #e1562c">6P-CT </span> $\rightarrow$ <span style="color: #00cb85"> 5P-IT</span>
 
