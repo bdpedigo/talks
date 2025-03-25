@@ -170,7 +170,7 @@ Forrest Collman
 <div class="columns">
 <div>
 
-VORTEX: supporting community interest in MICrONS:
+VORTEX - supporting scientific community engagement with MICrONS
 
 * Basket cells onto spines with multiple inputs
 * Spines with spine head apparatus
