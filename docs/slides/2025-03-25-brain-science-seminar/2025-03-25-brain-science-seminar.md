@@ -8,6 +8,8 @@ backgroundImage: url(../themes/aibs-backgrounds/default.png)
 transition: fade 0.1s
 ---
 
+<!-- TODO cell types plot -->
+
 <style>
 a {
   position: fixed;
@@ -39,7 +41,7 @@ img {
   view-transition-name: attr(data-morph type(<custom-ident>), none);
 }
 section::after {
-    content: attr(data-marpit-pagination) '/47';
+    content: attr(data-marpit-pagination) '/51';
 }
 </style>
 
@@ -304,7 +306,7 @@ $\leftarrow$ More expensive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 <div class="columns">
 <div>
 
-<img src=./images/explain_morphology_representations/mesh.svg data-morph="mesh"></img>
+<img src="./images/explain_morphology_representations/mesh.svg" data-morph="mesh"></img>
 
 </div>
 <div>
@@ -332,9 +334,9 @@ Imagine placing a unit of heat at a point on a surface, watching how that heat d
 
 <!-- ![gallery h:540 center](./images/show_heat_diffusion/heat_diffusion_gallery.svg) -->
 
-<img src="./images/show_heat_diffusion/heat_diffusion_gallery.svg" height="540px" data-morph="gallery"></img>
+<img src="./images/show_heat_diffusion/heat_diffusion_gallery.svg" height="540px" data-morph="gallery" style="display: block; margin: 0 auto;" ></img>
 
-<div style="font-size:30px; text-align: center">
+<div style="font-size:30px; text-align: center; top: -40px; position: relative;">
 
 Increasing time $\rightarrow$
 
@@ -358,31 +360,34 @@ Increasing time $\rightarrow$
 </div>
 <div>
 
-![](./images/show_heat_diffusion/heat_diffusion_curves.svg)
+<img src="./images/show_heat_diffusion/heat_diffusion_time_scale.svg" data-morph="hks-curves"></img>
+
 
 </div>
 </div>
+
+<!-- _transition: fade 0.5s -->
 
 ---
 
-<!-- TODO add the plot of 3 heat kernel signatures back in here -->
-
 # Defining the heat kernel signature (HKS)
 
-$k_{t}(x, y)$: the amount of heat that diffuses from point $x$ to point $y$ after time $t$.
+<div class="columns">
+<div>
 
-Consider $k_{t}(x, x)$: how much heat is left at $x$ after some amount of time $t$.
+<img src="./images/show_heat_diffusion/heat_diffusion_time_scale.svg" data-morph="hks-curves"></img>
 
-For timescales $T = \{t_1, t_2, ... t_d\}$, the HKS for a point on the mesh $x$ is
+</div>
+<div>
 
-$$HKS(x) = [k_{t_1}(x,x), k_{t_2}(x,x), ..., k_{t_d}(x,x)]$$
+* $k_{t}(x)$: amount of heat left at $x$ after time $t$.
+* For timescales $\{t_1, ... t_d\}$ the HKS for point $x$ is
+  $$HKS(x) = [k_{t_1}(x), ..., k_{t_d}(x)]$$
+* Often scale these: $\frac{k_{t_1}(x)}{\sum_i k_{t_1}(i)}$
+* <div id="highlightbox"> HKS is a vector for each <span style="font-weight: bold">node</span> in a mesh which describes its heat diffusion properties </div>
 
-Often scale these: $\frac{k_{t_1}(x,x)}{\sum_i k_{t_1}(i,i)}$
 
-<div id="highlightbox">
-
-HKS is a vector for each **node** in a mesh which describes its heat diffusion properties
-
+</div>
 </div>
 
 <!-- _footer: Sun et al., _Eurographics_ (2008) -->
@@ -452,8 +457,6 @@ p {
 ---
 
 # Postsynaptic structure prediction (with labels)
-
-<!-- TODO EXP add something to depict features on this slide -->
 
 <div class="columns">
 <div>
@@ -825,6 +828,9 @@ Neurogliaform
 </figcaption>
 </figure>
 
+<!-- cover some axon that didn't get pruned -->
+<div style="position: absolute; top: 6.25in; left: 8.25in; background-color: white; width:10px; height:10px; border-width: 0px; border-color: black; border-style: solid;"></div>
+
 </div>
 <div>
 
@@ -872,27 +878,15 @@ Bipolar
 
 ---
 
-<!-- TODO EXP reduce math here -->
-
 # Heat diffusion
 
-Evolution of heat $u$ over time $t$ is governed by the heat equation:
-
-$$\frac{\partial{u}}{\partial{t}} = \Delta u$$
-
-where $\Delta$ is the Laplacian (2nd derivative) operator.
-
-Heat transferred from point $x$ to $y$ at time $t$ is given by the heat kernel $k_t(x,y)$:
-
-$$k_t(x,y) = \sum_{i=0}^{\infty} e^{-\lambda_i t} \phi_i(x) \phi_i(y)$$
-
-where $\lambda_i$ and $\phi_i$ are the eigenvalues and eigenvectors of the Laplacian operator
-
-<div id="highlightbox">
-
-We just need these eigenvectors/eigenvalues to describe heat
-
-</div>
+* Evolution of heat $u$ is governed by the heat equation:
+  $$\frac{\partial{u}}{\partial{t}} = \Delta u$$  
+  where $\Delta$ is the Laplacian (2nd derivative) operator
+* Heat remaining at $x$ after $t$ is:
+  $$k_t(x) = \sum_{i=0}^{\infty} e^{-\lambda_i t} \phi_i(x)^2 \approx \sum_{i=0}^{K} e^{-\lambda_i t} \phi_i(x)^2 $$
+  where $\lambda_i$ and $\phi_i$ are the eigenvalues and eigenvectors of the Laplacian operator
+* <div id="highlightbox"> We just need these eigenvectors/eigenvalues to compute HKS </div>
 
 <!-- _footer: https://en.wikipedia.org/wiki/Heat_kernel -->
 
@@ -930,7 +924,7 @@ We just need these eigenvectors/eigenvalues to describe heat
 </div>
 </div>
 
-* Just need a truncated eigendecomposition
+* Eigendecomposition allows you to compute HKS for every point simultaneously
 * Takes several hours for a full neuron mesh
 
 ---
@@ -977,6 +971,7 @@ Subdivided mesh with overlap
 
 - Deployed on Google Kubernetes Engine
 - ~20 minutes per neuron per CPU
+  - ~2 minutes on your laptop
 - Mean cost **~0.5 cents per neuron**
 
 <!-- ![center h:420](./images/timing/timing_n_vertices_vs_wall_time.svg) -->
@@ -1056,16 +1051,48 @@ _~1 million (0.5%) of classified synapses_
 
 ---
 
+<div class="columns-br">
+<div>
+
+# Synapses by E/I
+
+Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M synapses total)
+
+</div>
+<div>
+
+![h:600 center](./images/tabulation_by_type/empty.svg)
+
+</div>
+</div>
+
+<!-- _footer: Cell types from Schneider-Mizell et al. Nature (In press), Elabbady et al. Nature (In press) -->
+
+---
+
 # Multi-input spines
 
 <!-- TODO EXP add a nice image here of more than one axon onto a spine -->
 
-- Most (>90%) excitatory spines receive a single excitatory input
-- Some excitatory spines receive two
-  - Thought to be specifically one E, one I
+<div class="columns">
+<div>
+
+* Most (>90%) excitatory spines receive a single excitatory input
+* Some excitatory spines receive two
+  - Specifically one E, one I
   - Enriched for thalamic input
   - More stable
-- Multi-input spines common for inhibitory neurons
+* Multi-input spines common for inhibitory neurons
+
+</div>
+<div>
+
+![](./images/double-contact.png)
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6025508249665536 -->
+
+</div>
+</div>
 
 <!-- _footer: Kubota et al _J. Neuroscience_ (2007), Villa et al _Neuron_ (2016) -->
 
@@ -1106,13 +1133,24 @@ Connected components sharing a label
 
 ---
 
-<!-- NOTE E -> E is mainly onto single input spines -->
-<!-- NOTE All other connection types are predominantly onto shaft -->
-<!-- NOTE Inhibitory neurons more likely to target somas-->
-<!-- NOTE Inhibitory neurons do target other inhibitory "spines" but often onto multi input structures -->
+<div class="columns-br">
+<div>
 
-<!-- TODO EXP add dynamics to this slide here to make things disappear -->
-<!-- TODO EXP move the legend somewhere nicer here -->
+# Synapses by E/I
+
+Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M synapses total)
+
+</div>
+<div>
+
+![h:600 center](./images/tabulation_by_type/ei_synapse_proportions_w_multi_just_e_e.svg)
+
+</div>
+</div>
+
+<!-- _footer: Cell types from Schneider-Mizell et al. Nature (In press), Elabbady et al. Nature (In press) -->
+
+---
 
 <div class="columns-br">
 <div>
@@ -1124,15 +1162,12 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 </div>
 <div>
 
-<!-- 
-<div style="font-size:20px; right: 1in; position: absolute;">
-<span style="color: var(--soma);">soma</span> <span style="color: var(--shaft);">shaft</span> <span style="color: var(--spine);">spine</span>
-</div> -->
-
 ![h:600 center](./images/tabulation_by_type/ei_synapse_proportions_w_multi.svg)
 
 </div>
 </div>
+
+<!-- _footer: Cell types from Schneider-Mizell et al. Nature (In press), Elabbady et al. Nature (In press) -->
 
 ---
 
@@ -1152,6 +1187,8 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 
 </div>
 </div>
+
+<!-- _footer: Cell types from Schneider-Mizell et al. Nature (In press) -->
 
 ---
 
@@ -1225,28 +1262,41 @@ Synapses from cleaned axons where pre- and post- have E/I classifications (1.3M 
 </div>
 </div>
 
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4808939033067520 -->
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4637776583589888 -->
-<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5895863655202816 -->
-
-<!-- ---
-
-# Martinotti cells are spiniest inhibitory, multi-input spines are overrepresented
-
 ---
 
--->
+# 5P-ET to Martinotti spines
 
-<!-- ---
+<!-- TODO add text to this slide -->
 
-# L5ET to Martinotti cell spines
+<!-- __backgroundImage: ../themes/aibs-backgrounds/blank.png -->
 
 <div class="columns">
 <div>
 
-![center](./images/example_contacts/5et_to_mc/state=6411529894232064.png)
+![h:550](./images/tabulation_by_type/cell_type_synapse_proportions_w_multi.svg)
 
-https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6411529894232064
+<!-- add an absolute position white box without text, with black border -->
+
+<!-- block out upper left corner -->
+<div style="position: absolute; bottom: 5.26in; right: 7.76in; width: 4.4in; height: .94in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
+
+<!-- block out lower left corner -->
+<div style="position: absolute; top:2.7in; right: 7.76in; width: 4.4in; height: 4.2in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
+
+<!-- block out upper right corner -->
+<div style="position: absolute; bottom: 5.26in; left: 6.05in; width: .6in; height: .94in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
+
+<!-- block out lower right corner -->
+<div style="position: absolute; top:2.7in; left: 6.05in; width: .6in; height: 4.2in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
+
+<!-- red block in the gap between the above -->
+<div style="position: absolute; top: 2.35in; left: 5.7in; width: 0.4in; height: .5in; backbround-color: none; border: 3px solid red; border-radius:20px"></div>
+
+</div>
+<div>
+
+<div class="columns-br-tight">
+<div>
 
 <span style="color: #e1562c">5P-ET </span> $\rightarrow$ <span style="color: #00cb85"> Martinotti</span>
 
@@ -1255,7 +1305,11 @@ https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/ngl
 
 ![center](./images/example_contacts/5et_to_mc/state=6128785033265152.png)
 
-https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6128785033265152
+</div>
+</div>
+
+<div class="columns-br-tight">
+<div>
 
 <span style="color: #e1562c">5P-ET </span> $\rightarrow$ <span style="color: #00cb85"> Martinotti</span>
 
@@ -1264,65 +1318,24 @@ https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/ngl
 
 ![center](./images/example_contacts/5et_to_mc/state=6310820913872896.png)
 
-https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6310820913872896
-
-<span style="color: #e1562c">5P-ET </span> $\rightarrow$ <span style="color: #00cb85"> Martinotti</span>
-
 </div>
-</div> -->
-
-<!-- ---
-
-<div class="columns-bl">
-<div>
-
-![](./images/tabulation_by_type/5pet_targets.svg)
-
 </div>
-<div>
 
-![h:620](./images/tabulation_by_type/mc_inputs.svg)
 
-</div>
-</div> -->
+<!-- 
 
----
+![center h:200](./images/example_contacts/5et_to_mc/state=6128785033265152.png) -->
 
-<!-- _backgroundImage: ../themes/aibs-backgrounds/blank.png -->
+<!-- ![center h:200](./images/example_contacts/5et_to_mc/state=6310820913872896.png) -->
 
-<div class="columns-bl">
-<div>
-
-![h:650](./images/tabulation_by_type/cell_type_synapse_proportions_w_multi.svg)
-
-<!-- add an absolute position white box without text, with black border -->
-
-<!-- block out upper left corner -->
-<div style="position: absolute; bottom: 5.74in; right: 6.8in; width: 5.55in; height: 1.07in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
-
-<!-- block out lower left corner -->
-<div style="position: absolute; top:2.32in; right: 6.9in; width: 5.45in; height: 10in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
-
-<!-- block out upper right corner -->
-<div style="position: absolute; bottom: 5.74in; left: 7.0in; width: .6in; height: 1.07in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
-
-<!-- block out lower right corner -->
-<div style="position: absolute; top:2.32in; left: 7.0in; width: .6in; height: 10in; background-color: white; opacity:0.9; border: 0px solid black;"></div>
-
-<!-- red block in the gap between the above -->
-<div style="position: absolute; top: 2.0in; left: 6.7in; width: 0.35in; height: .4in; backbround-color: none; border: 3px solid red; border-radius:10px"></div>
-
-</div>
-<div>
-
-![center h:200](./images/example_contacts/5et_to_mc/state=6411529894232064.png)
-
-![center h:200](./images/example_contacts/5et_to_mc/state=6128785033265152.png)
-
-![center h:200](./images/example_contacts/5et_to_mc/state=6310820913872896.png)
+<!-- <figure class='fig'>
+<img src="./images/example_contacts/5et_to_mc/state=6310820913872896.png" />
+</figure> -->
 
 </div>
 </div>
+
+<!-- _footer: Bodor et al. Nature Neuroscience (In press) -->
 
 ---
 
@@ -1336,6 +1349,8 @@ https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/ngl
 
 # Variability within type - inputs
 
+<!-- TODO sci make stuff appear sequentially, show correlation with other stuff -->
+
 ![center h:550](./images/projection_by_cell_scatters/cell_type_input_scatter.svg)
 
 <!-- add an span with absolute positioning above the figure -->
@@ -1343,6 +1358,29 @@ https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/ngl
 <span style="position: absolute; top: 4in; left: 8in; font-size: 15px; background-color: white; padding: 5px; border-radius: 5px; color: red">Manually classified (Schneider-Mizell et al. Nature 2025)</span>
 
 <span style="position: absolute; top: 4.25in; left: 8in; font-size: 15px; background-color: white; padding: 5px; border-radius: 5px; color: #1f77b4">Automatically classified (Elabbady et al. Nature 2025)</span>
+
+---
+
+# Perisomatic targeting cells
+
+![h:500 center](./images/basket-cell-spineyness.png)
+
+<div class="columns">
+<div>
+
+<span style="color:#4da0ff; text-align: right; display: block">~1% inputs onto spines</span>
+
+</div>
+<div>
+
+<span style="color: #FFA94D">~23% inputs onto spines</span>
+
+</div>
+</div>
+
+<!-- https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6748095493701632 -->
+
+<!-- _footer: Schneider-Mizell et al. Nature (In press) -->
 
 ---
 
@@ -1366,7 +1404,7 @@ https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/ngl
   864691135979239816	864691135383487706	1620	285512620	shaft
   ```
 
-<!-- _footer: CAVE: Dorkenwald, Schneider-Mizell et al Nature Methods (2025) -->
+<!-- _footer: CAVE: Dorkenwald, Schneider-Mizell et al Nature Methods (In press) -->
 
 ---
 
@@ -1403,7 +1441,7 @@ _Segmenting thalamic axon boutons_
 
 <style scoped>
 p {
-    font-size: 11px;
+    font-size: 10.5px;
 }
 
 </style>
@@ -1411,33 +1449,34 @@ p {
 <div class="columns">
 <div>
 
-_Network Anatomy_
-Clay Reid
-Agnes Bodor
-Adam Bleckert
-JoAnn Buchanan
-**Casey M. Schneider-Mizell**
-Dan Bumbarger
-Derrick Brittain
+<ins>_Network Anatomy_</ins>
 **Forrest Collman**
+**Bethanny Danskin**
+**Casey M. Schneider-Mizell**
+**Erika Neace**
+**Rachel Swanstrom**
+Adam Bleckert
+Agnes Bodor
+Derrick Brittain
+JoAnn Buchanan
+Dan Bumbarger
 Steven Cook
 Nuno da Costa
-**Bethanny Danskin**
 Cameron Devine
 Sven Dorkenwald
 Leila Elabbady
+Elizabeth Guadarrama
+Kim Gruver
 Emily Joyce
 Dan Kapner
 Sam Kinn
 Cheryl Lea
-Melissa Lerch
 Xiaoyu Lu
 Gayathri Mahalingam
-**Erika Neace**
-Ben Pedigo
-Sharmi Seshamani
+Sid Rath
+Clay Reid
 Jenna Schardt
-**Rachael Swanstrom**
+Sharmi Seshamani
 Marc Takeno
 Russel Torres
 Keith Wiley
@@ -1447,21 +1486,22 @@ Chi Zhang
 </div>
 <div>
 
-_PM_
+<ins>_PM_</ins>
 Lynne Becker
-Florence D'Orazi
+Florence D'Orazi 
+Melissa Lerch
 Sarah Naylor
 Shelby Suckow
-David Vumbaco
 Susan Sunkin
+David Vumbaco
 
-_Morphology and 3D Reconstruction_
+<ins>_Morphology and 3D Reconstruction_</ins>
 Rachel Dalley
 Clare Gamlin
 Staci Sorensen
 Grace Williams
 
-_Modeling & Simulation_
+<ins>_Modeling & Simulation_</ins>
 Ani Nandi
 Tom Chartrand
 Anatoly Buchin
@@ -1469,12 +1509,12 @@ Yina Wei
 Soo Yeun Lee
 Costas Anastassiou
 
-_Technology_
+<ins>_Technology_</ins>
 Tim Fliss
 Rob Young
 And others
 
-_IT_
+<ins>_IT_</ins>
 Brian Youngstrom
 Stuart Kendrick
 Scott Harrison
@@ -1484,12 +1524,12 @@ And others
 </div>
 <div>
 
-_MPE_
+<ins>_MPE_</ins>
 Jay Borseth
 Collin Farrell
 And others
 
-_MindScope_
+<ins>_MindScope_</ins>
 Reza Abbasi-Asi
 Anton Arkhipov
 Michael Buice
@@ -1504,7 +1544,7 @@ Kevin Takasaki
 Saskia de Vries
 Jun Zhuang
 
-_Alen Institute for Brain Science_
+<ins>_Alen Institute for Brain Science_</ins>
 Tanya Daigle
 Shenqin Yao
 Nikolas Jorstad
@@ -1519,54 +1559,54 @@ And many others
 </div>
 <div>
 
-_Princeton_
+<ins>_Princeton_</ins>
 Sven Dorkenwald
 Tommy Macrina
 Sebastian Seung
 Nick Turner
 And team
 
-_Baylor_
+<ins>_Baylor_</ins>
 Jake Riemer
 Andreas Tolias
 And team
 
-_Harvard Medical School_
+<ins>_Harvard Medical School_</ins>
 Brett Graham
 Wei-Chung Lee
 And team
 
-_Janelia_
+<ins>_Janelia_</ins>
 Khaled Khairy
 Stephan Saalfeld
 Carolyn Ott
 Jennifer Lippincott-Schwartz
 And others
 
-_JHU_
+<ins>_JHU_</ins>
 Jenna Glatzer
 Dwight Bergles
 
-_APL_
+<ins>_APL_</ins>
 Brock Wester
 And team
 
 </div>
 <div>
 
-_Neuro Surgery and Behavior_
-_Lab Animal Services_
-_Transgenic Colony Management_
-_Finance_
-_Legal_
+<ins>_Neuro Surgery and Behavior_</ins>
+<ins>_Lab Animal Services_</ins>
+<ins>_Transgenic Colony Management_</ins>
+<ins>_Finance_</ins>
+<ins>_Legal_</ins>
 
-_Computing Resources_
+<ins>_Computing Resources_</ins>
 BBP5 Supercomputing Resources
 National Energy Research Computing Center
 AI HPC
 Google Cloud
 
-_Funding_
+<ins>_Funding_</ins>
 IARPA - MICRONS
 NSF - NeuroNex
 NIH – BICCN

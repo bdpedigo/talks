@@ -123,6 +123,12 @@ img[alt~="zoomed"] {
     gap: 0.1rem;
 }
 
+.columns-br-tight {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.0rem;
+}
+
 .social_icons {
     padding: 0em;
     display: inline-block;
