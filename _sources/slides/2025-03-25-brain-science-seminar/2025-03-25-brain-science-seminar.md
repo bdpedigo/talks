@@ -170,7 +170,7 @@ Forrest Collman
 <div class="columns">
 <div>
 
-VORTEX: supporting community interest in MICrONS:
+VORTEX - supporting scientific community engagement with MICrONS
 
 * Basket cells onto spines with multiple inputs
 * Spines with spine head apparatus
@@ -209,15 +209,7 @@ Synapses labeled <span style="color: var(--soma);">soma</span> <span style="colo
 </div>
 
 <div>
-<embed src="./images/vortex_labels/vortex_labels_example.svg" width="96%" height="450px" name="vortex_labels_example"></embed>
-
-<a href="./images/vortex_labels/vortex_labels_example.html" target="vortex_labels_example">
-<img src="./../../images/icons/search.svg"></img>
-</a>
-</div>
-
-<div style="font-size:20px">
-</div>
+<embed src="./images/vortex_labels/vortex_labels_example.html" width="96%" height="450px" name="vortex_labels_example"></embed>
 
 </div>
 </div>
@@ -416,16 +408,14 @@ p {
 </div>
 <div>
 
-<!-- ![center](./images/horses.png) -->
+![center](./images/horses.png)
 
-<img src="./images/sun-fig7.png" data-morph="octopus"></img>
+<!-- <img src="./images/horses.png" data-morph="octopus"></img> -->
 
 </div>
 </div>
 
 <!-- _footer: Sun et al., _Eurographics_ (2008) -->
-
-<!-- _transition: fade 0.7s -->
 
 ---
 
@@ -444,11 +434,7 @@ p {
 <div>
 
 <div>
-<embed src="./images/show_heat_diffusion/hks_clustered.svg" width="96%" height="550px" name="hks_clustered" data-morph="octopus"></embed>
-
-<a href="./images/show_heat_diffusion/hks_clustered.html" target="hks_clustered">
-<img src="./../../images/icons/search.svg"></img>
-</a>
+<embed src="./images/show_heat_diffusion/hks_clustered.html" width="96%" height="550px" name="hks_clustered" data-morph="octopus"></embed>
 
 </div>
 </div>
@@ -914,11 +900,8 @@ Bipolar
 ### Mesh
 
 <div>
-<embed src="./images/show_heat_diffusion/eigenvector_on_mesh.svg" width="96%" height="380px" name="eigenvector_on_mesh"></embed>
+<embed src="./images/show_heat_diffusion/eigenvector_on_mesh.html" width="96%" height="380px" name="eigenvector_on_mesh"></embed>
 
-<a href="./images/show_heat_diffusion/eigenvector_on_mesh.html" target="eigenvector_on_mesh">
-<img src="./../../images/icons/search.svg"></img>
-</a>
 </div>
 
 </div>
