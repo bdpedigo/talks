@@ -1648,6 +1648,12 @@ Allen Institute for Brain Science
 
 ---
 
+# Variability within type - outputs 
+
+![h:550 center](./images/projection_by_cell_scatters/cell_type_scatter_outputs.svg)
+
+---
+
 # An aside...
 
 <div class="columns">
