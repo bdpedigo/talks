@@ -190,10 +190,10 @@ VORTEX - supporting scientific community engagement with MICrONS
 <div class="columns">
 <div>
 
-VORTEX: supporting community interest in MICrONS:
+VORTEX - supporting scientific community engagement with MICrONS
 
 - Basket cells onto spines with multiple inputs
--  Spines with spine head apparatus
+- Spines with spine head apparatus
 - Computational questions about modeling spine heads as distinct compartments
 <!-- * Analyzing how passing axons relate to dendritic morphology -->
 
