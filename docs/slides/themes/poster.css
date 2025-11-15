@@ -9,6 +9,7 @@
  * @size 40:40 40in 40in
  * @size 40:30 40in 30in
  * @size 44:33 44in 33in
+ * @size 60:40 60in 40in
  */
 
 /* the sizes above provide options for the size of the poster */
@@ -21,6 +22,7 @@
 section {
   font-size: 0.25in;
   padding: 1in; 
+  position: absolute;
   justify-content: flex-start;
   --nd-blue: #6FA5E1;
   --left: #66c2a5;

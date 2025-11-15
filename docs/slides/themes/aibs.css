@@ -295,8 +295,8 @@ vertical-align: middle;
 .fig belowcaption {
     position: absolute;
     bottom: 0%;
-    left: 0%;
-    vertical-align: top;
+    left: 5%;
+    vertical-align: bottom;
     text-anchor: start;
     font-weight: bold;
     font-size: 24px;

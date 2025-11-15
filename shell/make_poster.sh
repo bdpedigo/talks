@@ -6,11 +6,12 @@ FILE=$SLIDE_DIR/$1.md
 
 if test -f "$FILE"; then
     echo "$FILE exists." 
-    # marp --theme $SLIDE_DIR/../themes/aibs.css --preview --html --allow-local-files $FILE --template "bespoke" --bespoke.osc=false
+    marp --theme $SLIDE_DIR/../themes/poster.css --preview --html --allow-local-files $FILE --template "bespoke" --bespoke.osc=false
+    # marp --theme $SLIDE_DIR/../themes/aibs.css --html --pdf --allow-local-files $FILE
 
     # REF: https://github.com/orgs/marp-team/discussions/225
     # had timeout issues on some large presentations
-    PUPPETEER_TIMEOUT=45000 marp --theme $SLIDE_DIR/../themes/aibs.css --pdf --allow-local-files $FILE --template "bespoke" --bespoke.osc=false
+    # PUPPETEER_TIMEOUT=45000 marp --theme $SLIDE_DIR/../themes/slides.css --pdf --allow-local-files $FILE
 else
     echo "$FILE does not exist."
 fi
